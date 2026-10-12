@@ -927,7 +927,8 @@ export const TRACKS: Track[] = [
       { id: "embeddings", title: "Embeddings and similarity search", blurb: "Move a query in vector space and see which notes come back.", status: "live",
         section: "retrieval",
         shape: { kind: "process", steps: 4, flow: "pipeline", richSteps: true } },
-      { id: "chunking", title: "Chunking strategies", blurb: "Fixed size, by heading, or by meaning, and how it changes what gets retrieved.", status: "soon", section: "retrieval" },
+      { id: "chunking", title: "Chunking strategies", blurb: "Fixed size, overlap or by heading: see which one cuts the answer in half.", status: "live", section: "retrieval",
+        shape: { kind: "process", steps: 4, flow: "state" } },
       {
         id: "hybrid-search",
         title: "Hybrid search and reranking",

@@ -87,6 +87,7 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/devops/rolling-deploys` | maxSurge, readiness probes, a stalled rollout, kubectl rollout undo | — |
 | `/tracks/ai/training-loss` | Fit a line by gradient descent: predict, loss, gradient, step; four learning rates from crawl to blow-up | — |
 | `/tracks/ai/kv-cache` | Generate token by token with and without a KV cache: rows computed, and cache size by conversation length | — |
+| `/tracks/ai/chunking` | Fixed size, overlap or by heading on one help page: which questions get their whole answer, and what it costs | — |
 | `/tracks/ai/tokenization` | Train a tiny BPE tokenizer merge by merge, then tokenize your own text | — |
 | `/tracks/ai/attention` | One attention head: query, key, value, score, scale, mask, softmax, blend | — |
 | `/tracks/ai/next-token` | How an LLM picks the next token: logits, softmax, temperature, top-k, top-p, sampling | social-content AI Engineering #02 |
@@ -481,6 +482,7 @@ It never ships to production.
 | RAG | system, 6, pipeline, rich | Top to bottom |
 | Coding agent loop | system, 5, cycle, rich | Top to bottom |
 | Hash map, two pointers | algorithm, 5, state | One view |
+| Training loss, KV cache, chunking | algorithm 4 cycle; process 5 cycle; process 4 state | One view |
 | Tree recursion, dynamic programming | algorithm, 4, state | One view |
 | Monotonic stack | algorithm, 4, state | One view |
 | BFS vs DFS | comparison, 2 | One view |

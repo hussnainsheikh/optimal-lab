@@ -196,6 +196,15 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Prompt caching", kind: "service", note: "Providers reuse the cached prefix of a repeated prompt and charge less for it.", href: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching" },
     ],
   },
+  "ai/chunking": {
+    lead: "Every RAG pipeline has a splitter; most offer the same three choices: size, overlap and structure.",
+    tools: [
+      { name: "LangChain text splitters", kind: "software", note: "Character, recursive, Markdown-header and token splitters.", href: "https://python.langchain.com/docs/concepts/text_splitters/" },
+      { name: "LlamaIndex node parsers", kind: "software", note: "Sentence, semantic and hierarchical chunking.", href: "https://docs.llamaindex.ai/en/stable/module_guides/loading/node_parsers/" },
+      { name: "Unstructured", kind: "software", note: "Parse PDFs, slides and HTML into titled elements before chunking.", href: "https://github.com/Unstructured-IO/unstructured" },
+      { name: "Chonkie", kind: "software", note: "A small chunking library with token, sentence and semantic chunkers.", href: "https://github.com/chonkie-inc/chonkie" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [
