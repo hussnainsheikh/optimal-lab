@@ -972,7 +972,8 @@ export const TRACKS: Track[] = [
       { id: "red-teaming", title: "Red-teaming", blurb: "Try hard to make the model fail before users do.", status: "soon", section: "evaluation" },
       // Adapting models
       { id: "fine-tuning", title: "Fine-tuning", blurb: "Train on your own examples to change style, format or behavior.", status: "soon", section: "adapting" },
-      { id: "lora", title: "LoRA and parameter-efficient tuning", blurb: "Train a small add-on instead of the whole model.", status: "soon", section: "adapting" },
+      { id: "lora", title: "LoRA and parameter-efficient tuning", blurb: "Train a small add-on instead of the whole model.", status: "live", section: "adapting",
+        shape: { kind: "algorithm", steps: 4, flow: "state" } },
       { id: "preference-tuning", title: "Preference tuning: RLHF and DPO", blurb: "Teach the model which of two answers people prefer.", status: "soon", section: "adapting" },
       { id: "distillation", title: "Distillation", blurb: "A big model teaches a small one to be nearly as good, much cheaper.", status: "soon", section: "adapting" },
       { id: "synthetic-data", title: "Synthetic data", blurb: "Use a model to generate training and test data, and its traps.", status: "soon", section: "adapting" },

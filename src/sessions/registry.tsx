@@ -30,6 +30,7 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
 import LlmJudgeDemo from "./ai/llm-as-judge/LlmJudgeDemo";
+import LoraDemo from "./ai/lora/LoraDemo";
 import QueryRewriteDemo from "./ai/query-rewriting/QueryRewriteDemo";
 import KvCacheDemo from "./ai/kv-cache/KvCacheDemo";
 import TrainingDemo from "./ai/training-loss/TrainingDemo";
@@ -59,6 +60,7 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/chunking": <ChunkingDemo />,
   "ai/llm-as-judge": <LlmJudgeDemo />,
   "ai/query-rewriting": <QueryRewriteDemo />,
+  "ai/lora": <LoraDemo />,
   "dsa/hash-map": <HashMapDemo />,
   "dsa/two-pointers": <TwoPointersDemo />,
   "dsa/sliding-window": <SlidingWindowDemo />,

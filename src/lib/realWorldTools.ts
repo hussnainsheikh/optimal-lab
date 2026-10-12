@@ -221,6 +221,15 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Elasticsearch synonyms", kind: "software", note: "The pre-LLM fix: map user words to document words.", href: "https://www.elastic.co/docs/solutions/search/full-text/search-with-synonyms" },
     ],
   },
+  "ai/lora": {
+    lead: "LoRA is the default way to fine-tune open models, and many hosted APIs fine-tune with adapters too.",
+    tools: [
+      { name: "Hugging Face PEFT", kind: "software", note: "LoRA, QLoRA and other adapters for Transformers models.", href: "https://github.com/huggingface/peft" },
+      { name: "Unsloth", kind: "software", note: "Faster, lower-memory LoRA fine-tuning on one GPU.", href: "https://github.com/unslothai/unsloth" },
+      { name: "vLLM multi-LoRA", kind: "software", note: "Serve one base model with many adapters loaded per request.", href: "https://docs.vllm.ai/en/latest/features/lora.html" },
+      { name: "LoRA paper", kind: "standard", note: "Hu et al., 2021: Low-Rank Adaptation of Large Language Models.", href: "https://arxiv.org/abs/2106.09685" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [
