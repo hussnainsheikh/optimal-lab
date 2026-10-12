@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SessionCard from "@/components/SessionCard";
 import { RealWorldTools } from "@/components/session/RealWorldTools";
 import { listRealWorldToolsForTrack } from "@/lib/realWorldTools";
-import { TRACKS, firstLive, getTrack, sessionHref } from "@/lib/tracks";
+import { TRACKS, firstLive, getSession, getTrack, sessionGroups, sessionHref } from "@/lib/tracks";
 
 export const dynamicParams = false;
 
@@ -94,13 +94,70 @@ export default async function TrackPage(props: PageProps<"/tracks/[track]">) {
             The first sessions for this track are being built. Here is what is coming.
           </p>
         )}
-        <ol className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {[...live, ...soon].map((s) => (
-            <li key={s.id}>
-              <SessionCard track={t} session={s} />
-            </li>
-          ))}
-        </ol>
+        {t.sections?.length ? (
+          <>
+            {/* jump to a section */}
+            <nav className="mt-5 flex flex-wrap gap-1.5 text-xs" aria-label="Sections">
+              {sessionGroups(t).map(({ section, sessions }) => (
+                <a
+                  key={section!.id}
+                  href={`#section-${section!.id}`}
+                  className="rounded-full border border-[var(--line)] px-2.5 py-1 text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--text)]"
+                >
+                  {section!.title} <span className="text-[var(--faint)]">{sessions.length}</span>
+                </a>
+              ))}
+            </nav>
+            {sessionGroups(t).map(({ section, sessions }, i) => {
+              const related = (section!.related ?? [])
+                .map((key) => getSession(...(key.split("/") as [string, string])))
+                .filter((x) => x !== undefined && x.session.status === "live");
+              const liveHere = sessions.filter((s) => s.status === "live").length;
+              return (
+                <section key={section!.id} id={`section-${section!.id}`} className="mt-10 scroll-mt-20">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-[var(--line)] pb-2">
+                    <h3 className="text-lg font-semibold">
+                      <span className="mr-2 font-mono text-sm text-[var(--faint)]">{String(i + 1).padStart(2, "0")}</span>
+                      {section!.title}
+                    </h3>
+                    <span className="font-mono text-xs text-[var(--faint)]">
+                      {liveHere} live · {sessions.length - liveHere} coming
+                    </span>
+                  </div>
+                  {section!.blurb && <p className="mt-2 text-sm text-[var(--muted)]">{section!.blurb}</p>}
+                  {related.length > 0 && (
+                    <p className="mt-2 text-sm text-[var(--muted)]">
+                      Already live in other tracks:{" "}
+                      {related.map((r, j) => (
+                        <span key={`${r!.track.id}/${r!.session.id}`}>
+                          {j > 0 && ", "}
+                          <Link href={sessionHref(r!.track, r!.session)} className="text-[var(--accent)] hover:underline">
+                            {r!.session.title}
+                          </Link>
+                        </span>
+                      ))}
+                    </p>
+                  )}
+                  <ol className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    {sessions.map((s) => (
+                      <li key={s.id}>
+                        <SessionCard track={t} session={s} />
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              );
+            })}
+          </>
+        ) : (
+          <ol className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[...live, ...soon].map((s) => (
+              <li key={s.id}>
+                <SessionCard track={t} session={s} />
+              </li>
+            ))}
+          </ol>
+        )}
       </section>
 
       {hasTools ? <RealWorldTools track={t} /> : null}

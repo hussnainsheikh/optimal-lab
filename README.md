@@ -104,7 +104,18 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/tools/n8n` | Webhook → IF → Slack or email | — |
 | `/tracks/tools/github-actions` | on:, parallel jobs, a matrix, needs: and if: on three different events | — |
 
-Every session in `tracks.ts` gets a page. Sessions marked `soon` show a "coming soon" page (none right now).
+Every session in `tracks.ts` gets a page. Sessions marked `soon` show a "coming soon" page: title and one-line blurb only, no visual.
+
+**System Design is grouped into sections.** A long track can list `sections` in `tracks.ts`
+(id, title, blurb, and `related` live sessions from other tracks), and each session names its
+`section`. The track page then shows the sessions under numbered section headings with jump
+links, and `/tracks` shows only the live ones plus a "+N topics coming" card. System Design has
+18 sections and 144 topics (9 live): scalability, data, networking, reliability, distributed
+systems, architecture, security, production, web applications, seven AI system design
+sections (LLM apps, RAG, agents, memory, evaluation, serving, security), specialized systems,
+and case studies (design a URL shortener, chat app, news feed, payment system, coding agent…).
+Topics already live in another track (structured output, MCP, CI/CD, evals and so on) are
+linked from the matching section through `related` instead of being repeated.
 The old URLs `/dsa-01` and `/next-token` redirect to the new ones (`next.config.ts`), so
 links in published posts keep working.
 

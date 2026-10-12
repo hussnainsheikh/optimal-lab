@@ -20,6 +20,16 @@ export type Session = {
    * `chooseLayout` in src/lib/sessionLayout.ts.
    */
   shape?: SessionShape;
+  /** Section id within the track, when the track groups its sessions (see Track.sections). */
+  section?: string;
+};
+
+export type TrackSection = {
+  id: string;
+  title: string;
+  blurb?: string;
+  /** Live sessions in other tracks that cover part of this section, as "<track>/<session>". */
+  related?: string[];
 };
 
 export type Track = {
@@ -31,6 +41,8 @@ export type Track = {
   learningPathBlurb?: string;
   accent: string; // CSS colour token from globals.css
   sessions: Session[];
+  /** Optional groups for a long track. Sessions point at one with `section`; the track page shows them under these headings, in this order. */
+  sections?: TrackSection[];
   roadmap: string[]; // planned stages, shown as "coming soon" for now
   projects: string[]; // planned build-it projects, shown as "coming soon" for now
 };
@@ -119,34 +131,72 @@ export const TRACKS: Track[] = [
     short: "System Design",
     tagline: "Push traffic through real architectures and watch where they break.",
     learningPathBlurb:
-      "Spread the load, cache it close to users, and cap abusers. Then split the data across machines, move slow work to queues, and keep one failing service from taking down the rest.",
+      "Spread the load, cache it close to users, and cap abusers. Then copy and split the data, keep one failing service from taking down the rest, and move slow work to queues.",
     accent: "var(--sys)",
+    sections: [
+      { id: "scalability", title: "Scalability and performance", blurb: "Handle more users without slowing down.", related: ["nodejs/streams-backpressure"] },
+      { id: "data", title: "Data and databases", blurb: "Choose where data lives and how it stays correct." },
+      { id: "networking", title: "Networking and APIs", blurb: "How services find and talk to each other." },
+      { id: "reliability", title: "Reliability and resilience", blurb: "Keep working when parts fail." },
+      { id: "distributed", title: "Distributed systems", blurb: "Many machines acting like one system." },
+      { id: "architecture", title: "Software architecture", blurb: "How to split a codebase into parts." },
+      { id: "security", title: "Security and access control", blurb: "Who can do what, and keeping data safe." },
+      { id: "production", title: "Production engineering", blurb: "Run it, watch it and pay for it.", related: ["devops/ci-cd-pipeline", "devops/containers-vs-vms", "devops/rolling-deploys"] },
+      { id: "web", title: "Web application design", blurb: "Putting it together for real products." },
+      { id: "ai-apps", title: "AI: LLM application architecture", blurb: "The parts around the model.", related: ["ai/next-token", "ai/context-window", "ai-native/structured-output"] },
+      { id: "ai-rag", title: "AI: RAG and knowledge systems", blurb: "Give the model the right documents.", related: ["ai/embeddings", "ai/hybrid-search", "ai/rag"] },
+      { id: "ai-agents", title: "AI: Agents and orchestration", blurb: "Models that take actions.", related: ["ai-native/tool-calling", "ai/agent-patterns", "ai-automation/human-approval", "tools/mcp", "tools/cursor-agent"] },
+      { id: "ai-memory", title: "AI: Context and memory", blurb: "What the model remembers between turns." },
+      { id: "ai-quality", title: "AI: Evaluation and quality", blurb: "Know whether it actually works.", related: ["ai/evals"] },
+      { id: "ai-serving", title: "AI: Model serving and infrastructure", blurb: "Running the models themselves." },
+      { id: "ai-security", title: "AI: Security and governance", blurb: "New ways for AI systems to go wrong." },
+      { id: "specialized", title: "Specialized systems", blurb: "Common product types that combine the above." },
+      { id: "case-studies", title: "Case studies: design a system", blurb: "Put the pieces together: one product, end to end." },
+    ],
     sessions: [
+      // Scalability and performance
+      { id: "scaling", title: "Vertical vs horizontal scaling", blurb: "Make one server bigger or add more servers, and see where each one hits a wall.", status: "soon", section: "scalability" },
+      { id: "estimation", title: "Back-of-the-envelope estimates", blurb: "Turn daily users into requests per second, storage and bandwidth.", status: "soon", section: "scalability" },
       { id: "load-balancing", title: "Load balancing strategies", blurb: "Queues, health checks, and timeouts — not just which server is next.", status: "live",
+        section: "scalability",
         shape: { kind: "system", steps: 4, flow: "cycle", richSteps: true } },
+      { id: "autoscaling", title: "Autoscaling", blurb: "Add servers when traffic climbs and remove them when it drops, without flapping.", status: "soon", section: "scalability" },
       { id: "caching", title: "Caching and eviction", blurb: "Watch a cache hit, miss and evict, then predict the next request.", status: "live",
+        section: "scalability",
         shape: { kind: "simulation", steps: 10 } },
+      { id: "cache-invalidation", title: "Cache invalidation", blurb: "Write-through, write-behind, TTLs and explicit purges: keeping cached data fresh.", status: "soon", section: "scalability" },
       {
         id: "cdn",
         title: "CDNs: caching at the edge",
         blurb: "Pick a TTL, ship a new logo, and see which cities still get the old one.",
         status: "live",
+        section: "scalability",
         shape: { kind: "system", steps: 5, flow: "cycle" },
       },
+      { id: "latency-throughput", title: "Latency, throughput and concurrency", blurb: "Why a faster request and more requests per second are different goals.", status: "soon", section: "scalability" },
+      { id: "database-bottlenecks", title: "Database bottlenecks", blurb: "Connection pools, slow queries, N+1 calls and read replicas.", status: "soon", section: "scalability" },
       {
         id: "rate-limiting",
         title: "Rate limiting",
         blurb: "Fixed window, sliding window and token bucket on the same burst.",
         status: "live",
+        section: "scalability",
         shape: { kind: "comparison", steps: 3 },
       },
-      { id: "consistent-hashing", title: "Consistent hashing", blurb: "Add and remove nodes and see how few keys move.", status: "live",
-        shape: { kind: "system", steps: 5, flow: "state" } },
+      { id: "backpressure", title: "Backpressure and load shedding", blurb: "Slow the sender or drop work on purpose before the whole system falls over.", status: "soon", section: "scalability" },
+      { id: "probabilistic-counting", title: "Counting at scale: HyperLogLog and count-min sketch", blurb: "Count unique visitors and frequent items in kilobytes, by accepting a small error.", status: "soon", section: "scalability" },
+      { id: "top-k", title: "Top-K, trending and leaderboards", blurb: "Rank millions of scores live, and find what's trending right now.", status: "soon", section: "scalability" },
+      // Data and databases
+      { id: "sql-vs-nosql", title: "SQL, document and graph databases", blurb: "Same data in three models: joins, flexible documents, or relationships first.", status: "soon", section: "data" },
+      { id: "data-modeling", title: "Data modeling: normalize or denormalize", blurb: "Design a schema, then trade duplicate data for faster reads.", status: "soon", section: "data" },
+      { id: "database-indexes", title: "Indexes and query optimization", blurb: "Find one row in a million with a B-tree instead of a full scan, and pay for it on writes.", status: "soon", section: "data" },
+      { id: "transactions", title: "Transactions, ACID and isolation levels", blurb: "Two people book the last seat at once: see which isolation level stops the double booking.", status: "soon", section: "data" },
       {
         id: "replication",
         title: "Replication and stale reads",
         blurb: "Write to the leader, read from a follower, and crash the leader mid-write.",
         status: "live",
+        section: "data",
         shape: { kind: "system", steps: 5, flow: "pipeline" },
       },
       {
@@ -154,24 +204,168 @@ export const TRACKS: Track[] = [
         title: "Sharding: choosing the shard key",
         blurb: "Hash, country or date: see hot shards and queries that ask every shard.",
         status: "live",
+        section: "data",
         shape: { kind: "system", steps: 5, flow: "state" },
       },
-      {
-        id: "message-queues",
-        title: "Message queues",
-        blurb: "Slow consumers, duplicate charges and a dead-letter queue: at-least-once in action.",
-        status: "live",
-        shape: { kind: "system", steps: 5, flow: "cycle" },
-      },
+      { id: "bloom-filters", title: "Bloom filters", blurb: "Answer \"definitely not here\" without touching the database, with a tunable false-positive rate.", status: "soon", section: "data" },
+      { id: "storage-engines", title: "B-trees vs LSM trees and the write-ahead log", blurb: "How databases lay data on disk, and why one is faster for reads and the other for writes.", status: "soon", section: "data" },
+      { id: "change-data-capture", title: "Change data capture", blurb: "Stream every database change to search, caches and analytics without dual writes.", status: "soon", section: "data" },
+      { id: "schema-migrations", title: "Zero-downtime schema migrations", blurb: "Change a table under live traffic: expand, migrate, then contract.", status: "soon", section: "data" },
+      { id: "time-series", title: "Time-series databases", blurb: "Metrics and sensor data: append-only writes, downsampling and retention.", status: "soon", section: "data" },
+      // Networking and APIs
+      { id: "request-journey", title: "DNS, TCP, TLS and HTTP: one request", blurb: "Follow a request from a domain name to a response, one layer at a time.", status: "soon", section: "networking" },
+      { id: "api-styles", title: "REST, GraphQL, gRPC and WebSockets", blurb: "Four ways to shape an API, and what each one is good at.", status: "soon", section: "networking" },
+      { id: "sync-vs-async", title: "Synchronous vs asynchronous communication", blurb: "Wait for the answer, or hand off the work and get told later.", status: "soon", section: "networking" },
+      { id: "api-gateway", title: "API gateways and service discovery", blurb: "One front door for auth, routing and limits, and how it finds services that move.", status: "soon", section: "networking" },
+      { id: "idempotency", title: "Idempotency and request deduplication", blurb: "Send the same payment twice and charge it once.", status: "soon", section: "networking" },
+      { id: "webhooks", title: "Webhooks", blurb: "Call another system when something happens: signatures, retries and replay.", status: "soon", section: "networking" },
+      { id: "service-mesh", title: "Service mesh", blurb: "Sidecars handle retries, TLS and traffic splits between services.", status: "soon", section: "networking" },
+      { id: "http2-http3", title: "HTTP/2, HTTP/3 and QUIC", blurb: "Multiplexing, head-of-line blocking, and why HTTP/3 moved to UDP.", status: "soon", section: "networking" },
+      // Reliability and resilience
+      { id: "availability", title: "Availability and the nines", blurb: "What 99.9% really allows, and how redundancy buys more nines.", status: "soon", section: "reliability" },
+      { id: "graceful-degradation", title: "Fault tolerance and graceful degradation", blurb: "Turn off the extras so the core feature keeps working.", status: "soon", section: "reliability" },
       {
         id: "circuit-breaker",
         title: "Retries and circuit breakers",
         blurb: "Turn a retry storm into a fast failure and let the broken service recover.",
         status: "live",
+        section: "reliability",
         shape: { kind: "system", steps: 5, flow: "cycle" },
       },
+      { id: "bulkheads", title: "Bulkheads", blurb: "Split resources so one slow dependency can't use up every thread.", status: "soon", section: "reliability" },
+      { id: "failover-dr", title: "Failover, disaster recovery, RTO and RPO", blurb: "Lose a region and measure how long you're down and how much data you lose.", status: "soon", section: "reliability" },
+      { id: "cap-theorem", title: "CAP theorem and quorums", blurb: "Split the network and choose: answer with stale data, or refuse until it heals.", status: "soon", section: "reliability" },
+      { id: "distributed-transactions", title: "Distributed transactions and two-phase commit", blurb: "Commit across two databases, and see what happens when the coordinator dies.", status: "soon", section: "reliability" },
+      { id: "hedged-requests", title: "Hedged requests and retry budgets", blurb: "Send a backup request to cut slow tails, without doubling the load.", status: "soon", section: "reliability" },
+      // Distributed systems
+      { id: "event-driven", title: "Event-driven architecture", blurb: "Services react to events instead of calling each other directly.", status: "soon", section: "distributed" },
+      {
+        id: "message-queues",
+        title: "Message queues",
+        blurb: "Slow consumers, duplicate charges and a dead-letter queue: at-least-once in action.",
+        status: "live",
+        section: "distributed",
+        shape: { kind: "system", steps: 5, flow: "cycle" },
+      },
+      { id: "pub-sub", title: "Pub/sub and event streaming", blurb: "Publish once; many consumers read a partitioned log at their own pace.", status: "soon", section: "distributed" },
+      { id: "delivery-guarantees", title: "Ordering, delivery guarantees and duplicates", blurb: "At-most-once, at-least-once, exactly-once, and keeping events in order.", status: "soon", section: "distributed" },
+      { id: "eventual-consistency", title: "Eventual consistency", blurb: "Replicas disagree for a moment, then converge. When is that acceptable?", status: "soon", section: "distributed" },
+      { id: "cqrs-event-sourcing", title: "CQRS and event sourcing", blurb: "Store every change as an event and build separate read models from them.", status: "soon", section: "distributed" },
+      { id: "sagas-outbox", title: "Sagas and the transactional outbox", blurb: "Run a multi-service order without a global transaction, and never lose the event.", status: "soon", section: "distributed" },
+      { id: "consensus", title: "Leader election and consensus", blurb: "Nodes vote in a leader with Raft; crash it and watch them elect another.", status: "soon", section: "distributed" },
+      { id: "distributed-locks", title: "Distributed locks", blurb: "Only one worker may run the job: leases, fencing tokens and expired locks.", status: "soon", section: "distributed" },
+      { id: "consistent-hashing", title: "Consistent hashing", blurb: "Add and remove nodes and see how few keys move.", status: "live",
+        section: "distributed",
+        shape: { kind: "system", steps: 5, flow: "state" } },
+      { id: "unique-ids", title: "Unique IDs at scale", blurb: "Auto-increment, UUIDs and Snowflake IDs: ordering, collisions and coordination.", status: "soon", section: "distributed" },
+      { id: "clocks", title: "Clocks and ordering", blurb: "Machine clocks drift: Lamport and vector clocks order events without them.", status: "soon", section: "distributed" },
+      { id: "gossip", title: "Gossip protocols", blurb: "Spread membership and state through a cluster by talking to a few peers at a time.", status: "soon", section: "distributed" },
+      { id: "merkle-trees", title: "Merkle trees and anti-entropy", blurb: "Find which data two replicas disagree on without comparing every row.", status: "soon", section: "distributed" },
+      // Software architecture
+      { id: "monolith-vs-microservices", title: "Monolith, modular monolith or microservices", blurb: "Where to draw service boundaries, and what each split costs.", status: "soon", section: "architecture" },
+      { id: "clean-architecture", title: "Layered, clean and hexagonal architecture", blurb: "Keep business logic apart from the database and the web framework: ports and adapters.", status: "soon", section: "architecture" },
+      { id: "domain-driven-design", title: "Domain-driven design", blurb: "Bounded contexts, aggregates and a shared language with the business.", status: "soon", section: "architecture" },
+      { id: "adrs", title: "Architecture decision records", blurb: "Write down why a choice was made so the next person doesn't undo it.", status: "soon", section: "architecture" },
+      // Security and access control
+      { id: "authn-vs-authz", title: "Authentication vs authorization", blurb: "Who you are versus what you're allowed to do.", status: "soon", section: "security" },
+      { id: "oauth-oidc", title: "OAuth 2.0, OpenID Connect and JWTs", blurb: "Sign in with another provider and pass tokens between services safely.", status: "soon", section: "security" },
+      { id: "access-control", title: "Role- and attribute-based access control", blurb: "RBAC and ABAC: permissions by role, or by rules about the user and the data.", status: "soon", section: "security" },
+      { id: "encryption", title: "Encryption at rest and in transit", blurb: "TLS on the wire, encrypted disks and keys you can rotate.", status: "soon", section: "security" },
+      { id: "secrets", title: "Secrets management", blurb: "Keep API keys and passwords out of code, and rotate them without downtime.", status: "soon", section: "security" },
+      { id: "audit-logs", title: "Audit logs", blurb: "Record who did what and when, in a log nobody can quietly edit.", status: "soon", section: "security" },
+      { id: "threat-modeling", title: "Threat modeling and security boundaries", blurb: "Map where untrusted input enters and what an attacker could reach.", status: "soon", section: "security" },
+      { id: "web-vulnerabilities", title: "XSS, CSRF and SQL injection", blurb: "The classic web attacks from the OWASP Top 10, and what stops each one.", status: "soon", section: "security" },
+      { id: "ddos-waf", title: "DDoS protection and WAFs", blurb: "Absorb floods of traffic and filter bad requests before they reach your servers.", status: "soon", section: "security" },
+      // Production engineering
+      { id: "observability", title: "Logs, metrics and distributed tracing", blurb: "Follow one slow request across five services.", status: "soon", section: "production" },
+      { id: "monitoring-alerting", title: "Monitoring, SLOs and alerting", blurb: "Alert on what users feel, not on every CPU spike.", status: "soon", section: "production" },
+      { id: "deployment-strategies", title: "Blue-green and canary deployments", blurb: "Ship to a small slice of traffic first, and roll back in seconds.", status: "soon", section: "production" },
+      { id: "infrastructure-as-code", title: "Infrastructure as code", blurb: "Describe servers and networks in files you can review and repeat.", status: "soon", section: "production" },
+      { id: "capacity-planning", title: "Capacity planning and cost optimization", blurb: "Forecast growth, size for the peak, and stop paying for idle machines.", status: "soon", section: "production" },
+      { id: "feature-flags", title: "Feature flags", blurb: "Ship code dark, turn it on for 1% of users, and switch it off without a deploy.", status: "soon", section: "production" },
+      { id: "chaos-engineering", title: "Chaos engineering", blurb: "Break things on purpose in a controlled way to find weak spots first.", status: "soon", section: "production" },
+      { id: "incident-response", title: "Incident response and postmortems", blurb: "Roles, communication and a blameless write-up when production goes down.", status: "soon", section: "production" },
+      // Web application design
+      { id: "frontend-architecture", title: "Frontend architecture", blurb: "Component boundaries, state, data fetching and rendering choices.", status: "soon", section: "web" },
+      { id: "backend-architecture", title: "Backend architecture", blurb: "API boundaries, service layers and where business rules live.", status: "soon", section: "web" },
+      { id: "api-design", title: "API design: pagination, versioning and errors", blurb: "Resource modeling, cursors vs offsets, validation and useful error responses.", status: "soon", section: "web" },
+      { id: "session-auth", title: "Sessions, tokens and refresh flows", blurb: "Cookies or tokens, short-lived access and safe refresh.", status: "soon", section: "web" },
+      { id: "realtime", title: "Real-time: WebSockets, SSE and presence", blurb: "Push live updates and show who is online, and what each approach costs.", status: "soon", section: "web" },
+      { id: "file-uploads", title: "File uploads and object storage", blurb: "Signed URLs, multipart uploads and processing media after upload.", status: "soon", section: "web" },
+      { id: "background-jobs", title: "Background jobs and scheduling", blurb: "Workers, retries, cron and dead-letter queues for work users shouldn't wait on.", status: "soon", section: "web" },
+      { id: "multi-tenancy", title: "Multi-tenancy", blurb: "Keep each customer's data apart, with per-tenant settings and limits.", status: "soon", section: "web" },
+      { id: "search", title: "Search: indexing, filtering and ranking", blurb: "Full-text search that returns the right results first.", status: "soon", section: "web" },
+      { id: "offline-sync", title: "Mobile and offline sync", blurb: "Local databases, syncing back, resolving conflicts and push notifications.", status: "soon", section: "web" },
+      { id: "collaborative-editing", title: "Collaborative editing", blurb: "Two people type in the same document: operational transforms and CRDTs.", status: "soon", section: "web" },
+      { id: "email-notifications", title: "Email and notification delivery", blurb: "Queues, providers, retries, preferences and not sending the same alert twice.", status: "soon", section: "web" },
+      // AI: LLM application architecture
+      { id: "llm-gateway", title: "LLM gateways: routing, fallbacks and versions", blurb: "Pick a model per request, fall back when a provider fails, and pin versions.", status: "soon", section: "ai-apps" },
+      { id: "prompt-versioning", title: "Prompt templates and versioning", blurb: "Treat prompts like code: templates, versions and safe rollouts.", status: "soon", section: "ai-apps" },
+      { id: "token-budgets", title: "Context windows and token budgets", blurb: "Decide what fits in the prompt when everything can't.", status: "soon", section: "ai-apps" },
+      { id: "streaming-responses", title: "Streaming responses", blurb: "Send tokens as they're generated, through every hop to the browser.", status: "soon", section: "ai-apps" },
+      { id: "inference-cost", title: "Inference latency and token cost", blurb: "Where the seconds and the money go, and how to cut both.", status: "soon", section: "ai-apps" },
+      { id: "prompt-rag-finetune", title: "Prompting vs RAG vs fine-tuning", blurb: "Which one to reach for: missing knowledge, missing behavior, or missing format.", status: "soon", section: "ai-apps" },
+      { id: "semantic-caching", title: "Semantic caching", blurb: "Reuse an answer when a new question means the same thing as an old one.", status: "soon", section: "ai-apps" },
+      // AI: RAG and knowledge systems
+      { id: "document-ingestion", title: "Document ingestion and chunking", blurb: "Parse PDFs and pages, then split them so each chunk still makes sense.", status: "soon", section: "ai-rag" },
+      { id: "vector-databases", title: "Embeddings and vector databases", blurb: "Store vectors, search them fast, and filter by metadata.", status: "soon", section: "ai-rag" },
+      { id: "retrieval-evaluation", title: "Retrieval evaluation and reranking", blurb: "Measure whether the right chunks come back, then reorder them.", status: "soon", section: "ai-rag" },
+      { id: "citations", title: "Citations and source attribution", blurb: "Show which document each part of the answer came from.", status: "soon", section: "ai-rag" },
+      { id: "incremental-indexing", title: "Incremental indexing", blurb: "Update the index when one document changes, without rebuilding everything.", status: "soon", section: "ai-rag" },
+      { id: "re-embedding", title: "Changing embedding models", blurb: "Swap the embedding model without breaking search: dual indexes and backfills.", status: "soon", section: "ai-rag" },
+      // AI: Agents and orchestration
+      { id: "tool-execution", title: "Tool execution and sandboxing", blurb: "Run the tool the model asked for, safely, with limits.", status: "soon", section: "ai-agents" },
+      { id: "agent-state-machines", title: "Agent loops and state machines", blurb: "Model an agent as explicit states so you can see and resume where it is.", status: "soon", section: "ai-agents" },
+      { id: "workflows-vs-agents", title: "Workflows vs autonomous agents", blurb: "Fixed steps you control, or a model that decides the next step.", status: "soon", section: "ai-agents" },
+      { id: "task-planning", title: "Planning and task decomposition", blurb: "Break a big request into steps, and replan when one fails.", status: "soon", section: "ai-agents" },
+      { id: "multi-agent", title: "Multi-agent coordination", blurb: "Several agents share work: hand-offs, shared state and conflicts.", status: "soon", section: "ai-agents" },
+      { id: "durable-execution", title: "Durable execution and recovery", blurb: "Crash mid-task and resume from the last step instead of starting over.", status: "soon", section: "ai-agents" },
+      // AI: Context and memory
+      { id: "conversation-state", title: "Conversation and session state", blurb: "Store the chat so it survives reloads, devices and server restarts.", status: "soon", section: "ai-memory" },
+      { id: "agent-memory", title: "Short-term and long-term memory", blurb: "Working memory, semantic facts and episodes: what to keep and for how long.", status: "soon", section: "ai-memory" },
+      { id: "memory-updates", title: "Memory extraction, updates and conflicts", blurb: "Pull facts from chats, fix wrong ones, and resolve contradictions.", status: "soon", section: "ai-memory" },
+      { id: "context-compression", title: "Context selection and compression", blurb: "Summarize and pick what matters when the history is too long.", status: "soon", section: "ai-memory" },
+      { id: "memory-isolation", title: "Per-user memory and isolation", blurb: "One user's memories must never reach another user.", status: "soon", section: "ai-memory" },
+      // AI: Evaluation and quality
+      { id: "golden-datasets", title: "Golden datasets and regression tests", blurb: "A fixed set of questions with known good answers, run on every change.", status: "soon", section: "ai-quality" },
+      { id: "answer-quality", title: "Retrieval quality vs answer quality", blurb: "Faithfulness, relevance and correctness: find which stage caused a bad answer.", status: "soon", section: "ai-quality" },
+      { id: "online-evals", title: "Online evals, A/B tests and feedback", blurb: "Measure quality on real traffic and feed it back into the next version.", status: "soon", section: "ai-quality" },
+      { id: "agent-tracing", title: "Tracing and debugging agents", blurb: "See every model call, tool call and decision in one timeline.", status: "soon", section: "ai-quality" },
+      // AI: Model serving and infrastructure
+      { id: "hosted-vs-self-hosted", title: "Hosted APIs vs self-hosted models", blurb: "Pay per token or run your own GPUs: cost, control and effort.", status: "soon", section: "ai-serving" },
+      { id: "inference-batching", title: "GPU capacity, batching and queueing", blurb: "Group requests to keep GPUs busy without making users wait.", status: "soon", section: "ai-serving" },
+      { id: "quantization", title: "Quantization and serving optimization", blurb: "Smaller numbers, smaller models, faster answers, and what you lose.", status: "soon", section: "ai-serving" },
+      { id: "provider-limits", title: "Provider rate limits and quotas", blurb: "Stay under tokens-per-minute limits across many users and keys.", status: "soon", section: "ai-serving" },
+      // AI: Security and governance
+      { id: "prompt-injection", title: "Prompt injection, direct and indirect", blurb: "Instructions hidden in user input or in a retrieved document take over the model.", status: "soon", section: "ai-security" },
+      { id: "tool-permissions", title: "Tool permissions and least privilege", blurb: "Give an agent only the tools and scopes this task needs.", status: "soon", section: "ai-security" },
+      { id: "data-leakage", title: "Sensitive-data leakage", blurb: "Stop secrets and personal data from reaching prompts, logs or other users.", status: "soon", section: "ai-security" },
+      { id: "permission-aware-retrieval", title: "Tenant-aware retrieval", blurb: "Only retrieve documents the current user is allowed to see.", status: "soon", section: "ai-security" },
+      { id: "output-validation", title: "Output validation and action approval", blurb: "Check what the model produced before the backend acts on it.", status: "soon", section: "ai-security" },
+      { id: "ai-audit", title: "AI auditability and data retention", blurb: "Keep a record of what the model saw and did, for as long as you need it, and no longer.", status: "soon", section: "ai-security" },
+      { id: "guardrails", title: "Guardrails and content moderation", blurb: "Check inputs and outputs for unsafe content, off-topic requests and policy breaks.", status: "soon", section: "ai-security" },
+      // Specialized systems
+      { id: "payments-ledgers", title: "Payments and ledgers", blurb: "Double-entry ledgers, reconciliation and never losing a cent.", status: "soon", section: "specialized" },
+      { id: "data-pipelines", title: "Event pipelines and data warehouses", blurb: "Move events into analytics: batch vs streaming, and late data.", status: "soon", section: "specialized" },
+      { id: "object-storage", title: "Distributed object storage", blurb: "How systems like S3 store and replicate huge numbers of files.", status: "soon", section: "specialized" },
+      { id: "multi-region", title: "Multi-region systems", blurb: "Serve users from several regions: latency, failover and data residency.", status: "soon", section: "specialized" },
+      { id: "edge-iot", title: "Edge and IoT systems", blurb: "Devices with patchy connections: telemetry, sync and updates.", status: "soon", section: "specialized" },
+      // Case studies: design a system
+      { id: "design-url-shortener", title: "Design a URL shortener", blurb: "Short codes, redirects at scale, and counting clicks.", status: "soon", section: "case-studies" },
+      { id: "design-rate-limiter", title: "Design a rate limiter", blurb: "A shared limiter for many servers: where counters live and what happens when it fails.", status: "soon", section: "case-studies" },
+      { id: "design-notification-system", title: "Design a notification system", blurb: "Push, email and SMS to millions of users, with preferences and retries.", status: "soon", section: "case-studies" },
+      { id: "design-chat", title: "Design a chat app", blurb: "Messages, delivery receipts, presence and group chats.", status: "soon", section: "case-studies" },
+      { id: "design-news-feed", title: "Design a news feed", blurb: "Fan-out on write vs fan-out on read, and what to do about celebrities.", status: "soon", section: "case-studies" },
+      { id: "design-autocomplete", title: "Design search autocomplete", blurb: "Suggestions in under 100 ms as the user types.", status: "soon", section: "case-studies" },
+      { id: "design-file-sync", title: "Design file sync (like Dropbox)", blurb: "Chunked uploads, deduplication and syncing edits across devices.", status: "soon", section: "case-studies" },
+      { id: "design-video-streaming", title: "Design video streaming", blurb: "Upload, transcode, and adaptive bitrate playback through a CDN.", status: "soon", section: "case-studies" },
+      { id: "design-ride-sharing", title: "Design ride sharing (like Uber)", blurb: "Find nearby drivers with geohashing and match them in real time.", status: "soon", section: "case-studies" },
+      { id: "design-web-crawler", title: "Design a web crawler", blurb: "Crawl billions of pages politely, without fetching the same page twice.", status: "soon", section: "case-studies" },
+      { id: "design-payment-system", title: "Design a payment system", blurb: "Charge exactly once, keep a ledger, and reconcile with the bank.", status: "soon", section: "case-studies" },
+      { id: "design-document-assistant", title: "Design a document assistant", blurb: "RAG with citations that only shows each user documents they're allowed to read.", status: "soon", section: "case-studies" },
+      { id: "design-coding-agent", title: "Design a coding agent", blurb: "Read the repo, propose a fix, run the tests, and report the evidence.", status: "soon", section: "case-studies" },
     ],
-    roadmap: ["Scaling basics", "Caching & CDNs", "Rate limiting", "Databases, replication & sharding", "Queues & async work", "Designing for failure"],
+    roadmap: ["Foundations and trade-offs", "Distributed systems and production design", "AI application architecture", "Agent and AI production systems", "Advanced architecture"],
     projects: ["Design a URL shortener", "Design a chat service", "Design a news feed"],
   },
   {
@@ -390,6 +584,16 @@ export const liveCount = (t: Track) => t.sessions.filter((s) => s.status === "li
 
 // the first live session in a track: where its "Start" button goes
 export const firstLive = (t: Track) => t.sessions.find((s) => s.status === "live");
+
+// A track's sessions under its section headings, in section order. Tracks with no sections
+// come back as one unnamed group. Sessions with an unknown section land in "Other".
+export const sessionGroups = (t: Track) => {
+  if (!t.sections?.length) return [{ section: null, sessions: t.sessions }];
+  const known = new Set(t.sections.map((x) => x.id));
+  const groups = t.sections.map((section) => ({ section, sessions: t.sessions.filter((s) => s.section === section.id) }));
+  const rest = t.sessions.filter((s) => !s.section || !known.has(s.section));
+  return rest.length ? [...groups, { section: { id: "other", title: "Other" } as TrackSection, sessions: rest }] : groups;
+};
 
 /**
  * The layout for a live session, from its declared `shape`.

@@ -59,11 +59,26 @@ export default function TracksPage() {
               </Link>
             </div>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {t.sessions.map((s) => (
+              {(t.sections?.length ? t.sessions.filter((s) => s.status === "live") : t.sessions).map((s) => (
                 <li key={s.id}>
                   <SessionCard track={t} session={s} />
                 </li>
               ))}
+              {t.sections?.length ? (
+                <li>
+                  <Link
+                    href={`${trackHref(t)}#sessions`}
+                    className="flex h-full flex-col justify-center rounded-xl border border-dashed border-[var(--line-strong)] p-4 text-sm text-[var(--muted)] transition-colors hover:border-[var(--accent)]"
+                  >
+                    <span className="font-semibold text-[var(--text)]">
+                      +{t.sessions.length - live} topics coming
+                    </span>
+                    <span className="mt-1">
+                      In {t.sections.length} sections. <span className="text-[var(--accent)]">See the full map →</span>
+                    </span>
+                  </Link>
+                </li>
+              ) : null}
             </ul>
           </section>
         );
