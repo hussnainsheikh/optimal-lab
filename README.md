@@ -114,6 +114,9 @@ links, and `/tracks` shows only the live ones plus a "+N topics coming" card. Sy
 systems, architecture, security, production, web applications, seven AI system design
 sections (LLM apps, RAG, agents, memory, evaluation, serving, security), specialized systems,
 and case studies (design a URL shortener, chat app, news feed, payment system, coding agent…).
+DevOps uses the same layout: 13 sections and 77 topics (3 live), from Linux, networking and Git
+through containers, CI/CD, Kubernetes, infrastructure as code, cloud, observability, SRE,
+DevSecOps and platform engineering, to end-to-end case studies.
 Topics already live in another track (structured output, MCP, CI/CD, evals and so on) are
 linked from the matching section through `related` instead of being repeated.
 The old URLs `/dsa-01` and `/next-token` redirect to the new ones (`next.config.ts`), so
