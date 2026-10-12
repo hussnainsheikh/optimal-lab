@@ -238,6 +238,15 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "React docs: memo", kind: "standard", note: "When memo skips a render, and when it can't.", href: "https://react.dev/reference/react/memo" },
     ],
   },
+  "databases/btree-index": {
+    lead: "B-trees are the default index in almost every relational database.",
+    tools: [
+      { name: "PostgreSQL indexes", kind: "software", note: "CREATE INDEX makes a B-tree unless you ask for another type.", href: "https://www.postgresql.org/docs/current/indexes-types.html" },
+      { name: "MySQL InnoDB", kind: "software", note: "Tables are stored as B+ trees ordered by the primary key.", href: "https://dev.mysql.com/doc/refman/8.4/en/innodb-physical-structure.html" },
+      { name: "SQLite", kind: "software", note: "Every table and index is a B-tree in one file.", href: "https://www.sqlite.org/fileformat2.html" },
+      { name: "EXPLAIN", kind: "standard", note: "Shows whether a query used an index scan or a sequential scan.", href: "https://www.postgresql.org/docs/current/using-explain.html" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

@@ -614,7 +614,8 @@ export const TRACKS: Track[] = [
       { id: "query-tuning", title: "Query tuning in practice", blurb: "Rewrite, index or restructure: a slow query, fixed step by step.", status: "soon", section: "query-engine" },
       // Storage and indexes
       { id: "pages-heap", title: "Pages, rows and the heap", blurb: "The 8 KB pages a table is really made of.", status: "soon", section: "storage-indexes" },
-      { id: "btree-index", title: "B-tree indexes", blurb: "How an index finds one row among millions.", status: "soon", section: "storage-indexes" },
+      { id: "btree-index", title: "B-tree indexes", blurb: "How an index finds one row among millions.", status: "live", section: "storage-indexes",
+        shape: { kind: "algorithm", steps: 4, flow: "state" } },
       { id: "composite-indexes", title: "Composite and covering indexes", blurb: "Column order, and answering a query from the index alone.", status: "soon", section: "storage-indexes" },
       { id: "other-indexes", title: "Hash, GIN and GiST indexes", blurb: "Indexes for equality, arrays, full text and geometry.", status: "soon", section: "storage-indexes" },
       { id: "lsm-trees", title: "LSM trees", blurb: "Fast writes with memtables, SSTables and compaction.", status: "soon", section: "storage-indexes" },

@@ -92,6 +92,7 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/ai/query-rewriting` | Search with the question as typed, rewritten, or as a HyDE fake answer, and see where the right page lands | — |
 | `/tracks/ai/lora` | Freeze W, train thin B and A: an 8×8 picture of B·A and trainable parameters by rank for a 7B model | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
+| `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/ai/tokenization` | Train a tiny BPE tokenizer merge by merge, then tokenize your own text | — |
 | `/tracks/ai/attention` | One attention head: query, key, value, score, scale, mask, softmax, blend | — |
 | `/tracks/ai/next-token` | How an LLM picks the next token: logits, softmax, temperature, top-k, top-p, sampling | social-content AI Engineering #02 |
