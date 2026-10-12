@@ -264,6 +264,15 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Atomics.add", kind: "standard", note: "JavaScript's atomic increment on shared memory between workers.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/add" },
     ],
   },
+  "security/xss": {
+    lead: "Frameworks escape by default; XSS comes back wherever code opts out.",
+    tools: [
+      { name: "OWASP XSS Prevention Cheat Sheet", kind: "standard", note: "Which encoding to use in each context.", href: "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html" },
+      { name: "DOMPurify", kind: "software", note: "The common HTML sanitizer for when you must allow some markup.", href: "https://github.com/cure53/DOMPurify" },
+      { name: "Content Security Policy", kind: "standard", note: "Tell the browser which scripts may run.", href: "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" },
+      { name: "Trusted Types", kind: "standard", note: "Make the browser reject raw strings in innerHTML.", href: "https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

@@ -822,7 +822,8 @@ export const TRACKS: Track[] = [
       { id: "mfa", title: "Multi-factor authentication", blurb: "Codes, push and hardware keys, and which ones get phished.", status: "soon", section: "identity" },
       { id: "authz-models", title: "Authorization models", blurb: "RBAC, ABAC and relationship-based access.", status: "soon", section: "identity" },
       // Web attacks
-      { id: "xss", title: "Cross-site scripting (XSS)", blurb: "Injected script running in someone else's session.", status: "soon", section: "web-attacks" },
+      { id: "xss", title: "Cross-site scripting (XSS)", blurb: "Injected script running in someone else's session.", status: "live", section: "web-attacks",
+        shape: { kind: "process", steps: 4, flow: "state" } },
       { id: "csrf", title: "Cross-site request forgery (CSRF)", blurb: "Another site makes the user's browser send a request.", status: "soon", section: "web-attacks" },
       { id: "sql-injection", title: "SQL injection", blurb: "User input that changes the query.", status: "soon", section: "web-attacks" },
       { id: "ssrf", title: "Server-side request forgery (SSRF)", blurb: "Trick the server into calling internal addresses.", status: "soon", section: "web-attacks" },

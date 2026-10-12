@@ -33,6 +33,7 @@ import BtreeDemo from "./databases/btree-index/BtreeDemo";
 import ReRendersDemo from "./frontend/re-renders/ReRendersDemo";
 import HandshakeDemo from "./networking/tcp-handshake/HandshakeDemo";
 import RaceDemo from "./operating-systems/race-conditions/RaceDemo";
+import XssDemo from "./security/xss/XssDemo";
 import LlmJudgeDemo from "./ai/llm-as-judge/LlmJudgeDemo";
 import LoraDemo from "./ai/lora/LoraDemo";
 import QueryRewriteDemo from "./ai/query-rewriting/QueryRewriteDemo";
@@ -66,6 +67,7 @@ const SESSIONS: Record<string, ReactNode> = {
   "databases/btree-index": <BtreeDemo />,
   "networking/tcp-handshake": <HandshakeDemo />,
   "operating-systems/race-conditions": <RaceDemo />,
+  "security/xss": <XssDemo />,
   "ai/llm-as-judge": <LlmJudgeDemo />,
   "ai/query-rewriting": <QueryRewriteDemo />,
   "ai/lora": <LoraDemo />,
