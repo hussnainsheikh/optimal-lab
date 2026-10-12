@@ -76,6 +76,13 @@ export const TRACKS: Track[] = [
       },
       { id: "binary-search", title: "Binary search", blurb: "Halve the search space and see why it takes log n steps.", status: "live",
         shape: { kind: "algorithm", steps: 4, flow: "state" } },
+      {
+        id: "tree-recursion",
+        title: "Trees: let the children answer first",
+        blurb: "Find a tree's depth one call at a time and watch the call stack grow and shrink with it.",
+        status: "live",
+        shape: { kind: "algorithm", steps: 4, flow: "state" },
+      },
       { id: "bfs-vs-dfs", title: "BFS vs DFS", blurb: "Run both on the same graph and compare the order they visit nodes.", status: "live",
         shape: { kind: "comparison", steps: 2 } },
     ],

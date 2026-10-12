@@ -67,6 +67,7 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/dsa/sliding-window` | Fixed window: drop the cell that left, add the cell that entered | — |
 | `/tracks/dsa/monotonic-stack` | Daily temperatures: a stack of days still waiting for a warmer one | — |
 | `/tracks/dsa/binary-search` | Halve a sorted list until the target is found or the range is empty | — |
+| `/tracks/dsa/tree-recursion` | Max depth of a binary tree: calls go down, answers come back up, the stack height is the depth | — |
 | `/tracks/dsa/bfs-vs-dfs` | Queue vs stack on the same graph; only BFS finds the fewest hops | — |
 | `/tracks/nodejs/event-loop` | One turn of the event loop: sync, nextTick, promises, timers, poll, check | — |
 | `/tracks/nodejs/streams-backpressure` | Producer, buffer, high water mark, consumer | — |

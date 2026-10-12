@@ -389,6 +389,14 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Stream processing", kind: "software", note: "Flink, Kafka Streams — windows over live events at scale.", href: "https://flink.apache.org/" },
     ],
   },
+  "dsa/tree-recursion": {
+    lead: "Trees are everywhere software keeps a hierarchy, and most code that walks them is this same recursion.",
+    tools: [
+      { name: "Optimal Round: tree problems", kind: "software", note: "Invert, depth, validate a BST, level order and more.", href: "https://github.com/sarmadkung/optimal-round/tree/main/problems/07-trees" },
+      { name: "The DOM", kind: "standard", note: "A web page is a tree; browsers walk it to style, lay out and paint.", href: "https://dom.spec.whatwg.org/" },
+      { name: "TypeScript compiler", kind: "software", note: "Parses code into a syntax tree and checks it node by node.", href: "https://github.com/microsoft/TypeScript" },
+    ],
+  },
   "dsa/binary-search": {
     lead: "Binary search is an algorithm on sorted data; libraries only save you from writing the loop.",
     tools: [
