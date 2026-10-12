@@ -532,7 +532,8 @@ export const TRACKS: Track[] = [
       { id: "css-animations", title: "Animations and transitions", blurb: "Which properties animate cheaply and which cause jank.", status: "soon", section: "css-layout" },
       // React
       { id: "reconciliation", title: "Rendering and reconciliation", blurb: "Render, diff, commit: how React updates the DOM.", status: "soon", section: "react" },
-      { id: "re-renders", title: "Why components re-render", blurb: "State, props, context and parents: every trigger, made visible.", status: "soon", section: "react" },
+      { id: "re-renders", title: "Why components re-render", blurb: "State, props, context and parents: every trigger, made visible.", status: "live", section: "react",
+        shape: { kind: "algorithm", steps: 4, flow: "state" } },
       { id: "hooks", title: "useState and useEffect, step by step", blurb: "When state updates land and when effects run.", status: "soon", section: "react" },
       { id: "memoization", title: "memo, useMemo and useCallback", blurb: "Skip work you don't need, and when it doesn't help.", status: "soon", section: "react" },
       { id: "context", title: "Context and prop drilling", blurb: "Share state down the tree, and what re-renders when it changes.", status: "soon", section: "react" },

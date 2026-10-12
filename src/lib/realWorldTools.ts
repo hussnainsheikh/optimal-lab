@@ -230,6 +230,14 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "LoRA paper", kind: "standard", note: "Hu et al., 2021: Low-Rank Adaptation of Large Language Models.", href: "https://arxiv.org/abs/2106.09685" },
     ],
   },
+  "frontend/re-renders": {
+    lead: "Every React app re-renders by these rules; the tools show you which renders happened and why.",
+    tools: [
+      { name: "React Developer Tools", kind: "software", note: "Profiler with \"why did this render?\" and highlight-on-render.", href: "https://react.dev/learn/react-developer-tools" },
+      { name: "React Compiler", kind: "software", note: "Adds memoization automatically at build time.", href: "https://react.dev/learn/react-compiler" },
+      { name: "React docs: memo", kind: "standard", note: "When memo skips a render, and when it can't.", href: "https://react.dev/reference/react/memo" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

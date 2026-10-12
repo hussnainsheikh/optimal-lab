@@ -29,6 +29,7 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import ReRendersDemo from "./frontend/re-renders/ReRendersDemo";
 import LlmJudgeDemo from "./ai/llm-as-judge/LlmJudgeDemo";
 import LoraDemo from "./ai/lora/LoraDemo";
 import QueryRewriteDemo from "./ai/query-rewriting/QueryRewriteDemo";
@@ -58,6 +59,7 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "frontend/re-renders": <ReRendersDemo />,
   "ai/llm-as-judge": <LlmJudgeDemo />,
   "ai/query-rewriting": <QueryRewriteDemo />,
   "ai/lora": <LoraDemo />,
