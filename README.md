@@ -24,7 +24,7 @@ in `~/Documents/startups/`.
 
 | Repo | Local path | Role |
 |---|---|---|
-| **optimal-lab** (this repo) | `../optimal-lab` | The website: interactive visuals and, later, practice |
+| **optimal-lab** (this repo) | `../optimal-lab` | The website: interactive visuals and DSA practice |
 | **[social-content](https://github.com/sarmadkung/social-content)** | `../social-content` | Content pipeline for LinkedIn, daily.dev, Instagram and X. Decides *which* concepts get a visual |
 | **[optimal-round](https://github.com/sarmadkung/optimal-round)** | `../optimal-round` | 178 hand-solved DSA problems with a `./practice` test runner. The source for the Practice section |
 
@@ -34,9 +34,10 @@ Every post lives in `social-content/generated/drafts/<pillar>/`. A post whose co
 teaches better when you can play with it gets a visual here. The flow:
 
 1. The post is written in social-content.
-2. The visual is built here as a page under `src/app/<slug>/`.
-3. The post links to `optimallab.dev/<slug>`, and a short screen recording of the
-   visual becomes the post's clip.
+2. The visual is built here as a session under `src/sessions/<track>/<session>/` (see
+   "Adding a visual").
+3. The post links to `optimallab.dev/tracks/<track>/<session>`, and a short screen recording
+   of the visual becomes the post's clip.
 
 Only concepts with a mechanism you can vary get a visual (algorithms, sampling
 settings, failure scenarios). Stories, opinions and lists stay as static images in
