@@ -247,6 +247,15 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "EXPLAIN", kind: "standard", note: "Shows whether a query used an index scan or a sequential scan.", href: "https://www.postgresql.org/docs/current/using-explain.html" },
     ],
   },
+  "networking/tcp-handshake": {
+    lead: "Every HTTPS request pays these round trips; the protocols and providers below exist to cut them.",
+    tools: [
+      { name: "TLS 1.3 (RFC 8446)", kind: "protocol", note: "One-round-trip handshake, and 0-RTT resumption.", href: "https://www.rfc-editor.org/rfc/rfc8446" },
+      { name: "QUIC (RFC 9000)", kind: "protocol", note: "Transport over UDP with the TLS handshake built in.", href: "https://www.rfc-editor.org/rfc/rfc9000" },
+      { name: "Chrome DevTools timing", kind: "software", note: "See DNS, connection, TLS and waiting time for every request.", href: "https://developer.chrome.com/docs/devtools/network/reference#timing" },
+      { name: "curl -w", kind: "software", note: "Print time_connect, time_appconnect and time_starttransfer from the terminal.", href: "https://curl.se/docs/manpage.html#-w" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

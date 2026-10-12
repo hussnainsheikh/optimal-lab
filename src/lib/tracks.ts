@@ -678,7 +678,8 @@ export const TRACKS: Track[] = [
       { id: "nat", title: "NAT and private networks", blurb: "Many devices behind one public address.", status: "soon", section: "net-fundamentals" },
       { id: "ipv6", title: "IPv6", blurb: "Why we need it and what changes.", status: "soon", section: "net-fundamentals" },
       // Transport: TCP and UDP
-      { id: "tcp-handshake", title: "The TCP handshake", blurb: "SYN, SYN-ACK, ACK, and what it costs in round trips.", status: "soon", section: "transport" },
+      { id: "tcp-handshake", title: "The TCP handshake", blurb: "SYN, SYN-ACK, ACK, and what it costs in round trips.", status: "live", section: "transport",
+        shape: { kind: "system", steps: 4, flow: "cycle" } },
       { id: "tcp-reliability", title: "Retransmission and acknowledgements", blurb: "How TCP recovers a lost packet.", status: "soon", section: "transport" },
       { id: "flow-control", title: "Flow control", blurb: "The receive window stops a fast sender drowning a slow receiver.", status: "soon", section: "transport" },
       { id: "congestion-control", title: "Congestion control", blurb: "Slow start, backing off on loss, and sharing the link.", status: "soon", section: "transport" },
