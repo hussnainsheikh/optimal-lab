@@ -21,6 +21,11 @@
   --native: #ff8fab;
   --auto: #e6c15a;
   --tools: #b6e37a;
+  --web: #f472d0;
+  --db: #d6b07a;
+  --net: #7cc4ff;
+  --os: #c3c9d6;
+  --sec: #ff6b6b;
 
   /* states */
   --good: #7ee0b5;
@@ -59,6 +64,11 @@
   --native: #c4315c;
   --auto: #7a5b00;
   --tools: #4d7a12;
+  --web: #b0258c;
+  --db: #8a5a1f;
+  --net: #1d6fb8;
+  --os: #4b5563;
+  --sec: #c53030;
 
   --good: #0f8a5c;
   --bad: #c2366a;

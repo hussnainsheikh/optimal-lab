@@ -60,7 +60,7 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/practice` | Every practice pattern, with counts by difficulty and what you've solved | optimal-round |
 | `/practice/<pattern>` | One pattern's problems, its session and its written explainer | optimal-round |
 | `/practice/<pattern>/<problem>` | Statement, constraints, examples, edge cases, target complexity behind a spoiler, how to run it | optimal-round |
-| `/tracks/<track>` | One track: sessions, roadmap, projects. Tracks: `dsa`, `nodejs`, `system-design`, `devops`, `ai`, `ai-native`, `ai-automation`, `tools` | — |
+| `/tracks/<track>` | One track: sessions, roadmap, projects. Tracks: `dsa`, `nodejs`, `system-design`, `devops`, `frontend`, `databases`, `networking`, `operating-systems`, `security`, `ai`, `ai-native`, `ai-automation`, `tools` | — |
 | `/tracks/dsa/two-sum` | Two Sum, three ways: brute force, sort + two pointers, hash map, and how each scales | social-content DSA #01 |
 | `/tracks/dsa/hash-map` | Group anagrams: one key per word, one lookup per word | — |
 | `/tracks/dsa/two-pointers` | Container with most water: always move the shorter line | — |
@@ -123,6 +123,10 @@ The four AI tracks are split by question so they don't repeat each other or Syst
 (28) covers AI features, AI UX and shipping them; **AI Automation** (28) covers workflows with
 AI steps and people in the loop; **Tools** (27) covers the actual tools: coding agents, MCP,
 workflow builders, model SDKs, vector databases and LLMOps.
+Five more tracks have topic maps but no live sessions yet: **Frontend and the browser** (60
+topics), **Databases in depth** (40), **Networking** (37), **Operating systems and concurrency**
+(35) and **Security and cryptography** (40). Each has its own accent token in `globals.css`
+(`--web`, `--db`, `--net`, `--os`, `--sec`) for dark and light mode.
 Topics already live in another track (structured output, MCP, CI/CD, evals and so on) are
 linked from the matching section through `related` instead of being repeated.
 The old URLs `/dsa-01` and `/next-token` redirect to the new ones (`next.config.ts`), so
