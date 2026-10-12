@@ -940,7 +940,8 @@ export const TRACKS: Track[] = [
       { id: "rag", title: "RAG, step by step", blurb: "Chunk, retrieve and prompt, and see what the model actually gets.", status: "live",
         section: "retrieval",
         shape: { kind: "system", steps: 6, flow: "pipeline", richSteps: true } },
-      { id: "query-rewriting", title: "Query rewriting and HyDE", blurb: "Rewrite a vague question before searching, so retrieval finds more.", status: "soon", section: "retrieval" },
+      { id: "query-rewriting", title: "Query rewriting and HyDE", blurb: "Rewrite a vague question before searching, so retrieval finds more.", status: "live", section: "retrieval",
+        shape: { kind: "process", steps: 4, flow: "state" } },
       { id: "graph-rag", title: "GraphRAG and knowledge graphs", blurb: "Retrieve through relationships, not just similar text.", status: "soon", section: "retrieval" },
       // Agents
       {

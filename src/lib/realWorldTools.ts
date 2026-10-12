@@ -213,6 +213,14 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Chatbot Arena", kind: "service", note: "Pairwise human votes, the ground truth many judges are checked against.", href: "https://lmarena.ai" },
     ],
   },
+  "ai/query-rewriting": {
+    lead: "Most RAG frameworks can rewrite or expand the query before retrieval with one setting.",
+    tools: [
+      { name: "LlamaIndex query transforms", kind: "software", note: "HyDE and multi-step query rewriting.", href: "https://docs.llamaindex.ai/en/stable/optimizing/advanced_retrieval/query_transformations/" },
+      { name: "LangChain MultiQueryRetriever", kind: "software", note: "Generate several rephrasings and merge what they retrieve.", href: "https://python.langchain.com/docs/how_to/MultiQueryRetriever/" },
+      { name: "Elasticsearch synonyms", kind: "software", note: "The pre-LLM fix: map user words to document words.", href: "https://www.elastic.co/docs/solutions/search/full-text/search-with-synonyms" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [
