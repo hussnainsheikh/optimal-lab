@@ -32,6 +32,7 @@ import ChunkingDemo from "./ai/chunking/ChunkingDemo";
 import BtreeDemo from "./databases/btree-index/BtreeDemo";
 import ReRendersDemo from "./frontend/re-renders/ReRendersDemo";
 import HandshakeDemo from "./networking/tcp-handshake/HandshakeDemo";
+import RaceDemo from "./operating-systems/race-conditions/RaceDemo";
 import LlmJudgeDemo from "./ai/llm-as-judge/LlmJudgeDemo";
 import LoraDemo from "./ai/lora/LoraDemo";
 import QueryRewriteDemo from "./ai/query-rewriting/QueryRewriteDemo";
@@ -64,6 +65,7 @@ const SESSIONS: Record<string, ReactNode> = {
   "frontend/re-renders": <ReRendersDemo />,
   "databases/btree-index": <BtreeDemo />,
   "networking/tcp-handshake": <HandshakeDemo />,
+  "operating-systems/race-conditions": <RaceDemo />,
   "ai/llm-as-judge": <LlmJudgeDemo />,
   "ai/query-rewriting": <QueryRewriteDemo />,
   "ai/lora": <LoraDemo />,

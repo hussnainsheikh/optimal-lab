@@ -256,6 +256,14 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "curl -w", kind: "software", note: "Print time_connect, time_appconnect and time_starttransfer from the terminal.", href: "https://curl.se/docs/manpage.html#-w" },
     ],
   },
+  "operating-systems/race-conditions": {
+    lead: "Any language with threads has this bug and the same fixes: locks, atomics or not sharing memory.",
+    tools: [
+      { name: "ThreadSanitizer", kind: "software", note: "Finds data races in C, C++ and Go at run time.", href: "https://clang.llvm.org/docs/ThreadSanitizer.html" },
+      { name: "Go race detector", kind: "software", note: "go test -race reports conflicting accesses.", href: "https://go.dev/doc/articles/race_detector" },
+      { name: "Atomics.add", kind: "standard", note: "JavaScript's atomic increment on shared memory between workers.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/add" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

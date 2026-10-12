@@ -757,7 +757,8 @@ export const TRACKS: Track[] = [
       { id: "gc", title: "Garbage collection", blurb: "Mark and sweep, generations and pauses.", status: "soon", section: "memory" },
       { id: "memory-leaks", title: "Memory leaks", blurb: "Memory nobody frees, and how to find it.", status: "soon", section: "memory" },
       // Concurrency
-      { id: "race-conditions", title: "Race conditions", blurb: "Two threads update one counter and lose an increment.", status: "soon", section: "concurrency" },
+      { id: "race-conditions", title: "Race conditions", blurb: "Two threads update one counter and lose an increment.", status: "live", section: "concurrency",
+        shape: { kind: "algorithm", steps: 4, flow: "state" } },
       { id: "mutexes", title: "Mutexes and critical sections", blurb: "Let one thread in at a time.", status: "soon", section: "concurrency" },
       { id: "semaphores", title: "Semaphores", blurb: "Let up to N threads in at once.", status: "soon", section: "concurrency" },
       { id: "deadlocks", title: "Deadlocks", blurb: "Two threads each hold what the other needs.", status: "soon", section: "concurrency" },
