@@ -85,6 +85,7 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/devops/ci-cd-pipeline` | Lint, test, build, deploy — stop at the first failure | — |
 | `/tracks/devops/containers-vs-vms` | Start a container, or boot a virtual machine | — |
 | `/tracks/devops/rolling-deploys` | maxSurge, readiness probes, a stalled rollout, kubectl rollout undo | — |
+| `/tracks/ai/training-loss` | Fit a line by gradient descent: predict, loss, gradient, step; four learning rates from crawl to blow-up | — |
 | `/tracks/ai/tokenization` | Train a tiny BPE tokenizer merge by merge, then tokenize your own text | — |
 | `/tracks/ai/attention` | One attention head: query, key, value, score, scale, mask, softmax, blend | — |
 | `/tracks/ai/next-token` | How an LLM picks the next token: logits, softmax, temperature, top-k, top-p, sampling | social-content AI Engineering #02 |

@@ -870,7 +870,8 @@ export const TRACKS: Track[] = [
     sessions: [
       // Machine learning foundations
       { id: "what-is-a-model", title: "What a model is", blurb: "Parameters in, prediction out: a model is a function you tune.", status: "soon", section: "ml-foundations" },
-      { id: "training-loss", title: "Training: loss and gradient descent", blurb: "Nudge every parameter downhill until the error stops falling.", status: "soon", section: "ml-foundations" },
+      { id: "training-loss", title: "Training: loss and gradient descent", blurb: "Nudge every parameter downhill until the error stops falling.", status: "live", section: "ml-foundations",
+        shape: { kind: "algorithm", steps: 4, flow: "cycle" } },
       { id: "overfitting", title: "Overfitting and train/test splits", blurb: "A model that memorizes the training set and fails on new data.", status: "soon", section: "ml-foundations" },
       { id: "neural-networks", title: "Neural networks, layer by layer", blurb: "Weights, activations and how stacking layers learns features.", status: "soon", section: "ml-foundations" },
       { id: "learning-types", title: "Supervised, unsupervised and reinforcement learning", blurb: "Learn from labels, from structure, or from rewards.", status: "soon", section: "ml-foundations" },

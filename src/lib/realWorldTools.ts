@@ -178,6 +178,15 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Azure AI Search", kind: "service", note: "Hybrid keyword + vector retrieval in one index.", href: "https://azure.microsoft.com/en-us/products/ai-services/ai-search" },
     ],
   },
+  "ai/training-loss": {
+    lead: "Every framework trains models with this same loop; they compute the gradients for you.",
+    tools: [
+      { name: "PyTorch", kind: "software", note: "Autograd computes every gradient; optimizers take the step.", href: "https://github.com/pytorch/pytorch" },
+      { name: "JAX", kind: "software", note: "Gradients of plain numerical functions, compiled for GPUs and TPUs.", href: "https://github.com/jax-ml/jax" },
+      { name: "TensorFlow Playground", kind: "software", note: "Train a small neural network in the browser and watch the loss.", href: "https://playground.tensorflow.org" },
+      { name: "scikit-learn SGD", kind: "software", note: "Linear models trained with stochastic gradient descent.", href: "https://scikit-learn.org/stable/modules/sgd.html" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [
