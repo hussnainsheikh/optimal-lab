@@ -117,6 +117,12 @@ and case studies (design a URL shortener, chat app, news feed, payment system, c
 DevOps uses the same layout: 13 sections and 77 topics (3 live), from Linux, networking and Git
 through containers, CI/CD, Kubernetes, infrastructure as code, cloud, observability, SRE,
 DevSecOps and platform engineering, to end-to-end case studies.
+The four AI tracks are split by question so they don't repeat each other or System Design
+(which owns AI architecture: gateways, serving, RAG pipelines, memory, AI security):
+**AI Engineering** (53 topics) covers how models work and the core techniques; **AI Native**
+(28) covers AI features, AI UX and shipping them; **AI Automation** (28) covers workflows with
+AI steps and people in the loop; **Tools** (27) covers the actual tools: coding agents, MCP,
+workflow builders, model SDKs, vector databases and LLMOps.
 Topics already live in another track (structured output, MCP, CI/CD, evals and so on) are
 linked from the matching section through `related` instead of being repeated.
 The old URLs `/dsa-01` and `/next-token` redirect to the new ones (`next.config.ts`), so
