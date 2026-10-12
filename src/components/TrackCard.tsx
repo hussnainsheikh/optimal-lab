@@ -12,8 +12,7 @@ export default function TrackCard({ track }: { track: Track }) {
     >
       <span className="block h-1 w-10 rounded-full bg-[var(--accent)]" />
       <p className="mt-4 text-lg font-semibold">{track.title}</p>
-      <p className="mt-1 flex-1 text-sm text-[var(--muted)]">{track.tagline}</p>
-      <p className="mt-4 font-mono text-xs text-[var(--faint)]">
+      <p className="mt-auto pt-3 font-mono text-xs text-[var(--faint)]">
         {live > 0 ? `${live} live · ` : ""}
         {soon} coming
       </p>
