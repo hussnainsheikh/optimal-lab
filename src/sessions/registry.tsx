@@ -29,6 +29,7 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import TrainingDemo from "./ai/training-loss/TrainingDemo";
+import KvCacheDemo from "./ai/kv-cache/KvCacheDemo";
 import SchedulesDemo from "./ai-automation/schedules/SchedulesDemo";
 import RollingDeployDemo from "./devops/rolling-deploys/RollingDeployDemo";
 import BfsDfsDemo from "./dsa/bfs-vs-dfs/BfsDfsDemo";
@@ -51,6 +52,7 @@ import ShardingDemo from "./system-design/sharding/ShardingDemo";
 const SESSIONS: Record<string, ReactNode> = {
   "dsa/two-sum": <TwoSumDemo />,
   "ai/training-loss": <TrainingDemo />,
+  "ai/kv-cache": <KvCacheDemo />,
   "dsa/hash-map": <HashMapDemo />,
   "dsa/two-pointers": <TwoPointersDemo />,
   "dsa/sliding-window": <SlidingWindowDemo />,

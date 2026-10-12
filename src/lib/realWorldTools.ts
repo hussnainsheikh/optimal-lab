@@ -187,6 +187,15 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "scikit-learn SGD", kind: "software", note: "Linear models trained with stochastic gradient descent.", href: "https://scikit-learn.org/stable/modules/sgd.html" },
     ],
   },
+  "ai/kv-cache": {
+    lead: "Every serving stack keeps a KV cache; the differences are in how they store and share it.",
+    tools: [
+      { name: "vLLM", kind: "software", note: "PagedAttention stores the KV cache in pages to fit more users per GPU.", href: "https://github.com/vllm-project/vllm" },
+      { name: "Hugging Face Transformers", kind: "software", note: "Cache classes for generation, including quantized and offloaded caches.", href: "https://huggingface.co/docs/transformers/kv_cache" },
+      { name: "llama.cpp", kind: "software", note: "Local inference with a configurable context size and cache type.", href: "https://github.com/ggml-org/llama.cpp" },
+      { name: "Prompt caching", kind: "service", note: "Providers reuse the cached prefix of a repeated prompt and charge less for it.", href: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [
