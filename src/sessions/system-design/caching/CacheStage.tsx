@@ -44,15 +44,16 @@ function useNarrow() {
 
 function useTrip(runId: number, paused: boolean, ms: number, reduced: boolean) {
   const pausedRef = useRef(paused);
-  pausedRef.current = paused;
-  const [t, setT] = useState(reduced ? 1 : 0);
+  useEffect(() => {
+    pausedRef.current = paused;
+  }, [paused]);
+
+  // a new runId starts a new trip from 0 (reset during render, not in an effect)
+  const [trip, setTrip] = useState({ id: runId, t: 0 });
+  if (trip.id !== runId) setTrip({ id: runId, t: 0 });
 
   useEffect(() => {
-    if (reduced) {
-      setT(1);
-      return;
-    }
-    setT(0);
+    if (reduced) return;
     let elapsed = 0;
     let last = performance.now();
     let raf = 0;
@@ -60,14 +61,15 @@ function useTrip(runId: number, paused: boolean, ms: number, reduced: boolean) {
       if (!pausedRef.current) elapsed += now - last;
       last = now;
       const next = Math.min(1, elapsed / ms);
-      setT(next);
+      setTrip({ id: runId, t: next });
       if (next < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [runId, ms, reduced]);
 
-  return t;
+  if (reduced) return 1;
+  return trip.id === runId ? trip.t : 0;
 }
 
 function layout(narrow: boolean) {
@@ -327,7 +329,12 @@ function Cold({ points, ctx, reduced }: { points: ReturnType<typeof layout>; ctx
     return () => clearTimeout(id);
   }, [reduced, ctx.paused, t]);
 
-  useEffect(() => setCycle(0), [ctx.runId]);
+  // restart the cycle when the lesson replays
+  const [cycleRun, setCycleRun] = useState(ctx.runId);
+  if (cycleRun !== ctx.runId) {
+    setCycleRun(ctx.runId);
+    setCycle(0);
+  }
 
   const at = reduced ? points.dbCold : lerp(points[person.id], points.dbCold, t);
   return (
@@ -412,19 +419,21 @@ function Replay({ points, size, ctx, reduced }: { points: ReturnType<typeof layo
   const ms = Math.round(1200 / ctx.speed);
   const t = useTrip(ctx.runId * 20 + i + size * 100, ctx.paused, Math.round(ms * 0.85), reduced);
 
-  useEffect(() => setI(0), [ctx.runId, size]);
+  // replay from the first frame when the lesson replays or the cache size changes
+  const runKey = `${ctx.runId}-${size}`;
+  const [seenKey, setSeenKey] = useState(runKey);
+  if (seenKey !== runKey) {
+    setSeenKey(runKey);
+    setI(0);
+  }
 
   useEffect(() => {
-    if (ctx.paused || i >= frames.length - 1) return;
-    if (reduced) {
-      setI(frames.length - 1);
-      return;
-    }
+    if (reduced || ctx.paused || i >= frames.length - 1) return;
     const id = setTimeout(() => setI((n) => n + 1), ms);
     return () => clearTimeout(id);
   }, [ctx.paused, reduced, i, frames.length, ms]);
 
-  const frame = frames[Math.min(i, frames.length - 1)];
+  const frame = frames[reduced ? frames.length - 1 : Math.min(i, frames.length - 1)];
   const person = PEOPLE[frame.key];
   const moved = trip(points, person.id, reduced ? 1 : t, frame.hit, true);
 

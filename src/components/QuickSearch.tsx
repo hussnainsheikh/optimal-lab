@@ -47,7 +47,6 @@ export function QuickSearchSlot() {
     };
   }, [open]);
 
-  useEffect(() => setActive(0), [query]);
 
   const go = (href: string) => {
     close();
@@ -112,7 +111,10 @@ export function QuickSearchSlot() {
                 ref={inputRef}
                 type="search"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setActive(0);
+                }}
                 placeholder="Sessions, tracks, tools…"
                 className="min-h-11 min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-[var(--faint)] sm:text-sm"
                 autoComplete="off"

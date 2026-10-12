@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import {
   flattenProjectCatalog,
   PROJECT_PILLARS,
@@ -14,14 +14,12 @@ type AreaFilter = "all" | string;
 
 export default function ProjectCatalog() {
   const catalog = useMemo(() => flattenProjectCatalog(), []);
-  const [pillar, setPillar] = useState<PillarFilter>("all");
-  const [area, setArea] = useState<AreaFilter>("all");
+  // a pillar in the URL hash (/#projects-ai-engineering) is the default until the reader picks one
+  const hashPillar = useSyncExternalStore(subscribeHash, () => pillarIdFromProjectsHash(window.location.hash), () => null);
+  const [picked, setPillar] = useState<PillarFilter | null>(null);
+  const pillar: PillarFilter = picked ?? hashPillar ?? "all";
+  const [chosenArea, setArea] = useState<AreaFilter>("all");
   const [started, setStarted] = useState<Record<string, number>>({});
-
-  useEffect(() => {
-    const id = pillarIdFromProjectsHash(window.location.hash);
-    if (id) setPillar(id);
-  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -46,9 +44,8 @@ export default function ProjectCatalog() {
     return [...seen.entries()].map(([id, title]) => ({ id, title }));
   }, [catalog, pillar]);
 
-  useEffect(() => {
-    if (area !== "all" && !areas.some((a) => a.id === area)) setArea("all");
-  }, [area, areas]);
+  // an area from another pillar no longer applies, so fall back to all areas
+  const area: AreaFilter = chosenArea !== "all" && !areas.some((a) => a.id === chosenArea) ? "all" : chosenArea;
 
   const filtered = useMemo(() => {
     return catalog.filter((p) => {
@@ -215,4 +212,9 @@ function LevelBadge({ level }: { level: ProjectLevel }) {
       {level}
     </span>
   );
+}
+
+function subscribeHash(onChange: () => void) {
+  window.addEventListener("hashchange", onChange);
+  return () => window.removeEventListener("hashchange", onChange);
 }

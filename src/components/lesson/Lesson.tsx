@@ -59,7 +59,9 @@ export function Lesson({ steps, accent, renderStage, renderExtra }: Props) {
   const ctx: LessonContext = { index, speed, runId, paused, revealed };
 
   const stepKey = steps.map((s) => s.id).join("|");
-  indexRef.current = index;
+  useEffect(() => {
+    indexRef.current = index;
+  }, [index]);
 
   useEffect(() => {
     function applyHash() {

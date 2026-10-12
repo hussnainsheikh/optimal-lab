@@ -53,6 +53,7 @@ export default function LoadBalanceDemo() {
   const simConfig = useMemo(() => configFromScenario(scenario, strategy), [scenario, strategy]);
   const frames = useMemo(() => simulate(simConfig), [simConfig]);
   const comparison = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { strategy: _ignored, ...rest } = configFromScenario(scenario, "roundRobin");
     return compareStrategies(rest);
   }, [scenario]);

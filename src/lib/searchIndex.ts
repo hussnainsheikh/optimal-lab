@@ -205,6 +205,7 @@ export function searchDocs(docs: SearchDoc[], query: string, limit = 12): Search
     .sort((a, b) => b.score - a.score || a.doc.title.localeCompare(b.doc.title))
     .slice(0, limit)
     .map(({ doc }) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { haystack: _h, ...result } = doc;
       return result;
     });
