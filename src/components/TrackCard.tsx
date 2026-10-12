@@ -13,14 +13,9 @@ export default function TrackCard({ track }: { track: Track }) {
       <span className="block h-1 w-10 rounded-full bg-[var(--accent)]" />
       <p className="mt-4 text-lg font-semibold">{track.title}</p>
       <p className="mt-1 flex-1 text-sm text-[var(--muted)]">{track.tagline}</p>
-      <p className="mt-4 flex items-center justify-between gap-2 text-xs">
-        <span className="font-mono text-[var(--faint)]">
-          {live > 0 ? `${live} live · ` : ""}
-          {soon} coming
-        </span>
-        <span className="text-sm text-[var(--accent)]">
-          View track <span className="inline-block transition-transform group-hover:translate-x-0.5">→</span>
-        </span>
+      <p className="mt-4 font-mono text-xs text-[var(--faint)]">
+        {live > 0 ? `${live} live · ` : ""}
+        {soon} coming
       </p>
     </Link>
   );
