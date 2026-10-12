@@ -205,6 +205,14 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Chonkie", kind: "software", note: "A small chunking library with token, sentence and semantic chunkers.", href: "https://github.com/chonkie-inc/chonkie" },
     ],
   },
+  "ai/llm-as-judge": {
+    lead: "Eval tools ship LLM judges; the bias fixes (swap order, rubrics, human spot checks) are up to you.",
+    tools: [
+      { name: "promptfoo", kind: "software", note: "LLM-rubric and pairwise grading in test configs.", href: "https://github.com/promptfoo/promptfoo" },
+      { name: "OpenAI Evals", kind: "software", note: "Model-graded eval templates you can adapt.", href: "https://github.com/openai/evals" },
+      { name: "Chatbot Arena", kind: "service", note: "Pairwise human votes, the ground truth many judges are checked against.", href: "https://lmarena.ai" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

@@ -965,7 +965,8 @@ export const TRACKS: Track[] = [
         shape: { kind: "process", steps: 6, flow: "pipeline", richSteps: true },
       },
       { id: "eval-metrics", title: "Evaluation metrics", blurb: "Exact match, similarity scores, faithfulness and when each misleads.", status: "soon", section: "evaluation" },
-      { id: "llm-as-judge", title: "LLM-as-judge and its biases", blurb: "A model grading a model: position bias, length bias and self-preference.", status: "soon", section: "evaluation" },
+      { id: "llm-as-judge", title: "LLM-as-judge and its biases", blurb: "A model grading a model: position bias, length bias and self-preference.", status: "live", section: "evaluation",
+        shape: { kind: "process", steps: 4, flow: "state" } },
       { id: "benchmarks", title: "Benchmarks", blurb: "What MMLU-style scores measure, and why they stop meaning much.", status: "soon", section: "evaluation" },
       { id: "red-teaming", title: "Red-teaming", blurb: "Try hard to make the model fail before users do.", status: "soon", section: "evaluation" },
       // Adapting models

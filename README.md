@@ -88,6 +88,7 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/ai/training-loss` | Fit a line by gradient descent: predict, loss, gradient, step; four learning rates from crawl to blow-up | — |
 | `/tracks/ai/kv-cache` | Generate token by token with and without a KV cache: rows computed, and cache size by conversation length | — |
 | `/tracks/ai/chunking` | Fixed size, overlap or by heading on one help page: which questions get their whole answer, and what it costs | — |
+| `/tracks/ai/llm-as-judge` | Eight answer pairs graded by a judge with position and length bias; swap orders and a rubric remove confident wrong picks | — |
 | `/tracks/ai/tokenization` | Train a tiny BPE tokenizer merge by merge, then tokenize your own text | — |
 | `/tracks/ai/attention` | One attention head: query, key, value, score, scale, mask, softmax, blend | — |
 | `/tracks/ai/next-token` | How an LLM picks the next token: logits, softmax, temperature, top-k, top-p, sampling | social-content AI Engineering #02 |
