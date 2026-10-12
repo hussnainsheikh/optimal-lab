@@ -31,6 +31,7 @@ import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import SchedulesDemo from "./ai-automation/schedules/SchedulesDemo";
 import RollingDeployDemo from "./devops/rolling-deploys/RollingDeployDemo";
 import BfsDfsDemo from "./dsa/bfs-vs-dfs/BfsDfsDemo";
+import DynamicProgrammingDemo from "./dsa/dynamic-programming/DynamicProgrammingDemo";
 import TreeRecursionDemo from "./dsa/tree-recursion/TreeRecursionDemo";
 import HashMapDemo from "./dsa/hash-map/HashMapDemo";
 import MonotonicStackDemo from "./dsa/monotonic-stack/MonotonicStackDemo";
@@ -55,6 +56,7 @@ const SESSIONS: Record<string, ReactNode> = {
   "dsa/binary-search": <BinarySearchDemo />,
   "dsa/bfs-vs-dfs": <BfsDfsDemo />,
   "dsa/tree-recursion": <TreeRecursionDemo />,
+  "dsa/dynamic-programming": <DynamicProgrammingDemo />,
   "nodejs/event-loop": <EventLoopDemo />,
   "nodejs/streams-backpressure": <BackpressureDemo />,
   "nodejs/thread-pool": <ThreadPoolDemo />,

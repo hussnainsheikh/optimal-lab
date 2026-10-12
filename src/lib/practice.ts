@@ -45,6 +45,7 @@ const LINKS: Record<string, { sessions?: string[]; explainer?: string }> = {
   "06-linked-list": { explainer: "04-fast-and-slow-pointers" },
   "07-trees": { sessions: ["dsa/tree-recursion"] },
   "08-graphs": { sessions: ["dsa/bfs-vs-dfs"], explainer: "11-bfs-and-dfs" },
+  "09-dynamic-programming": { sessions: ["dsa/dynamic-programming"] },
   "10-backtracking": { explainer: "17-backtracking" },
   "11-intervals-greedy": { explainer: "22-interval-merging" },
   "12-math-bits": { explainer: "20-xor-tricks" },

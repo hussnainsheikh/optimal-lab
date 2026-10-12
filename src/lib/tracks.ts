@@ -85,6 +85,13 @@ export const TRACKS: Track[] = [
       },
       { id: "bfs-vs-dfs", title: "BFS vs DFS", blurb: "Run both on the same graph and compare the order they visit nodes.", status: "live",
         shape: { kind: "comparison", steps: 2 } },
+      {
+        id: "dynamic-programming",
+        title: "Dynamic programming: coin change",
+        blurb: "Fill a table from 0 upward so every answer is worked out once, and see where greedy goes wrong.",
+        status: "live",
+        shape: { kind: "algorithm", steps: 4, flow: "state" },
+      },
     ],
     roadmap: ["Arrays & hashing", "Two pointers & sliding window", "Stacks, queues & linked lists", "Trees & graphs", "Dynamic programming"],
     projects: ["Build an LRU cache", "Autocomplete with a trie", "Route finder with Dijkstra"],

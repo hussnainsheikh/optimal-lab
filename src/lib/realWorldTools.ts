@@ -397,6 +397,14 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "TypeScript compiler", kind: "software", note: "Parses code into a syntax tree and checks it node by node.", href: "https://github.com/microsoft/TypeScript" },
     ],
   },
+  "dsa/dynamic-programming": {
+    lead: "Dynamic programming shows up wherever a big choice splits into smaller ones that repeat.",
+    tools: [
+      { name: "Optimal Round: DP problems", kind: "software", note: "Climbing stairs, coin change, edit distance and 15 more.", href: "https://github.com/sarmadkung/optimal-round/tree/main/problems/09-dynamic-programming" },
+      { name: "git diff", kind: "software", note: "Finds the smallest set of line edits between two files with a DP-style search.", href: "https://git-scm.com/docs/git-diff" },
+      { name: "PostgreSQL query planner", kind: "software", note: "Picks the cheapest join order by building it up from smaller joins.", href: "https://www.postgresql.org/docs/current/planner-optimizer.html" },
+    ],
+  },
   "dsa/binary-search": {
     lead: "Binary search is an algorithm on sorted data; libraries only save you from writing the loop.",
     tools: [

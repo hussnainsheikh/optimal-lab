@@ -69,6 +69,7 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/dsa/binary-search` | Halve a sorted list until the target is found or the range is empty | — |
 | `/tracks/dsa/tree-recursion` | Max depth of a binary tree: calls go down, answers come back up, the stack height is the depth | — |
 | `/tracks/dsa/bfs-vs-dfs` | Queue vs stack on the same graph; only BFS finds the fewest hops | — |
+| `/tracks/dsa/dynamic-programming` | Coin change as a table filled from 0 upward; greedy fails on 6, plain recursion repeats work | — |
 | `/tracks/nodejs/event-loop` | One turn of the event loop: sync, nextTick, promises, timers, poll, check | — |
 | `/tracks/nodejs/streams-backpressure` | Producer, buffer, high water mark, consumer | — |
 | `/tracks/nodejs/thread-pool` | libuv pool: crypto fills the threads, a file read waits; UV_THREADPOOL_SIZE | — |
@@ -454,6 +455,7 @@ It never ships to production.
 | RAG | system, 6, pipeline, rich | Top to bottom |
 | Coding agent loop | system, 5, cycle, rich | Top to bottom |
 | Hash map, two pointers | algorithm, 5, state | One view |
+| Tree recursion, dynamic programming | algorithm, 4, state | One view |
 | Monotonic stack | algorithm, 4, state | One view |
 | BFS vs DFS | comparison, 2 | One view |
 | Thread pool, rolling deploys, schedules | system, 5, cycle | One view |
