@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import WindowFunctionsDemo from "./databases/window-functions/WindowFunctionsDemo";
+import LsmDemo from "./databases/lsm-trees/LsmDemo";
+import WalDemo from "./databases/write-ahead-log/WalDemo";
+import ReplicasDemo from "./databases/read-replicas/ReplicasDemo";
+import CompositeIndexDemo from "./databases/composite-indexes/CompositeIndexDemo";
+import RoutingDemo from "./networking/routing/RoutingDemo";
+import Http2Demo from "./networking/http2/Http2Demo";
+import TracerouteDemo from "./networking/traceroute/TracerouteDemo";
+import FlowControlDemo from "./networking/flow-control/FlowControlDemo";
+import LatencyBandwidthDemo from "./networking/latency-bandwidth/LatencyBandwidthDemo";
 import CacheInvalidationDemo from "./system-design/cache-invalidation/CacheInvalidationDemo";
 import QueueBackpressureDemo from "./system-design/backpressure/QueueBackpressureDemo";
 import RaftDemo from "./system-design/consensus/RaftDemo";
@@ -127,6 +137,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "databases/window-functions": <WindowFunctionsDemo />,
+  "databases/lsm-trees": <LsmDemo />,
+  "databases/write-ahead-log": <WalDemo />,
+  "databases/read-replicas": <ReplicasDemo />,
+  "databases/composite-indexes": <CompositeIndexDemo />,
+  "networking/routing": <RoutingDemo />,
+  "networking/http2": <Http2Demo />,
+  "networking/traceroute": <TracerouteDemo />,
+  "networking/flow-control": <FlowControlDemo />,
+  "networking/latency-bandwidth": <LatencyBandwidthDemo />,
   "system-design/cache-invalidation": <CacheInvalidationDemo />,
   "system-design/backpressure": <QueueBackpressureDemo />,
   "system-design/consensus": <RaftDemo />,

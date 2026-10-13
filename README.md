@@ -155,6 +155,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/security/key-exchange` | Pick Alice's and Bob's secrets and watch both reach the same key while Eve sees only public values | — |
 | `/tracks/security/idor` | Change the invoice id in the URL with and without an ownership check | — |
 | `/tracks/security/ssrf` | Paste internal and sneaky URLs into a link-preview feature against three defences | — |
+| `/tracks/databases/window-functions` | Running totals, ranks and LAG over a sales table, with the partition and frame highlighted | — |
+| `/tracks/databases/lsm-trees` | Step through writes, flushes to SSTables, reads across files and compaction | — |
+| `/tracks/databases/write-ahead-log` | A committed transfer and a crash, with and without a write-ahead log and recovery | — |
+| `/tracks/databases/read-replicas` | A user renames themselves and reloads: stale replicas, read-your-writes routing and waiting for catch-up | — |
+| `/tracks/databases/composite-indexes` | Run five WHERE clauses against an index on (country, city, age) and see which entries are read | — |
+| `/tracks/networking/routing` | Send packets to five destinations and see which routes match and which one wins | — |
+| `/tracks/networking/http2` | Load ten files over HTTP/1.1, HTTP/2 and HTTP/3, then lose a packet | — |
+| `/tracks/networking/traceroute` | Raise the TTL one hop at a time and watch each router reveal itself | — |
+| `/tracks/networking/flow-control` | A receiving app stalls; watch the window shrink to zero and the sender pause | — |
+| `/tracks/networking/latency-bandwidth` | Change bandwidth and round-trip time and see handshakes, slow start and transfer for three sizes | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |

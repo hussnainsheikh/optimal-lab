@@ -788,6 +788,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "ssrf-req-filter", kind: "software", note: "Node agent that blocks private IPs.", href: "https://www.npmjs.com/package/ssrf-req-filter" },
     ],
   },
+  "databases/window-functions": {
+    lead: "Every modern SQL database supports window functions.",
+    tools: [
+      { name: "PostgreSQL window functions", kind: "software", note: "The tutorial and reference.", href: "https://www.postgresql.org/docs/current/tutorial-window.html" },
+      { name: "BigQuery analytic functions", kind: "service", note: "Window functions at warehouse scale.", href: "https://cloud.google.com/bigquery/docs/reference/standard-sql/window-function-calls" },
+      { name: "DuckDB", kind: "software", note: "Fast local SQL with QUALIFY.", href: "https://duckdb.org/docs/sql/functions/window_functions" },
+    ],
+  },
+  "databases/lsm-trees": {
+    lead: "Most write-heavy databases are built on LSM trees.",
+    tools: [
+      { name: "RocksDB", kind: "software", note: "The embedded LSM engine behind many databases.", href: "https://rocksdb.org/" },
+      { name: "Apache Cassandra", kind: "software", note: "Memtables, SSTables and compaction.", href: "https://cassandra.apache.org/doc/latest/cassandra/architecture/storage-engine.html" },
+      { name: "ScyllaDB", kind: "software", note: "An LSM-based Cassandra-compatible store.", href: "https://www.scylladb.com/" },
+    ],
+  },
+  "databases/write-ahead-log": {
+    lead: "Every durable database writes a log before data pages.",
+    tools: [
+      { name: "PostgreSQL WAL", kind: "software", note: "Write-ahead logging and checkpoints.", href: "https://www.postgresql.org/docs/current/wal-intro.html" },
+      { name: "SQLite WAL mode", kind: "software", note: "Readers don't block writers.", href: "https://www.sqlite.org/wal.html" },
+      { name: "ARIES", kind: "standard", note: "The classic recovery algorithm.", href: "https://cs.stanford.edu/people/chrismre/cs345/rl/aries.pdf" },
+    ],
+  },
+  "databases/read-replicas": {
+    lead: "Managed databases make replicas one click; lag is still yours.",
+    tools: [
+      { name: "Amazon RDS read replicas", kind: "service", note: "Asynchronous replicas for read scaling.", href: "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html" },
+      { name: "PostgreSQL streaming replication", kind: "software", note: "WAL shipping to standbys.", href: "https://www.postgresql.org/docs/current/warm-standby.html" },
+      { name: "ProxySQL", kind: "software", note: "Route reads and writes for MySQL.", href: "https://proxysql.com/" },
+    ],
+  },
+  "databases/composite-indexes": {
+    lead: "Column order in an index decides which queries it helps.",
+    tools: [
+      { name: "Use The Index, Luke", kind: "standard", note: "The free guide to SQL indexing.", href: "https://use-the-index-luke.com/sql/where-clause/the-equals-operator/concatenated-keys" },
+      { name: "PostgreSQL multicolumn indexes", kind: "software", note: "How Postgres uses them.", href: "https://www.postgresql.org/docs/current/indexes-multicolumn.html" },
+      { name: "MySQL index merge", kind: "software", note: "When MySQL combines indexes.", href: "https://dev.mysql.com/doc/refman/8.0/en/multiple-column-indexes.html" },
+    ],
+  },
+  "networking/routing": {
+    lead: "Every router and cloud network uses longest-prefix routing.",
+    tools: [
+      { name: "AWS route tables", kind: "service", note: "Longest prefix match in a VPC.", href: "https://docs.aws.amazon.com/vpc/latest/userguide/how-route-tables-work.html" },
+      { name: "ip route", kind: "software", note: "See and edit Linux routes.", href: "https://man7.org/linux/man-pages/man8/ip-route.8.html" },
+      { name: "BGP (RFC 4271)", kind: "protocol", note: "How networks share routes.", href: "https://www.rfc-editor.org/rfc/rfc4271" },
+    ],
+  },
+  "networking/http2": {
+    lead: "Browsers and CDNs negotiate HTTP/2 and HTTP/3 automatically.",
+    tools: [
+      { name: "RFC 9113 (HTTP/2)", kind: "standard", note: "Streams, frames and HPACK.", href: "https://www.rfc-editor.org/rfc/rfc9113" },
+      { name: "RFC 9114 (HTTP/3)", kind: "standard", note: "HTTP over QUIC.", href: "https://www.rfc-editor.org/rfc/rfc9114" },
+      { name: "Chrome DevTools Network", kind: "software", note: "The Protocol column shows h2 or h3.", href: "https://developer.chrome.com/docs/devtools/network" },
+    ],
+  },
+  "networking/traceroute": {
+    lead: "Path tools are the first step in debugging the network.",
+    tools: [
+      { name: "traceroute", kind: "software", note: "The classic TTL-based path tracer.", href: "https://man7.org/linux/man-pages/man8/traceroute.8.html" },
+      { name: "mtr", kind: "software", note: "Continuous traceroute with loss per hop.", href: "https://github.com/traviscross/mtr" },
+      { name: "RIPE Atlas", kind: "service", note: "Traceroutes from probes worldwide.", href: "https://atlas.ripe.net/" },
+    ],
+  },
+  "networking/flow-control": {
+    lead: "Flow control is built into TCP and QUIC.",
+    tools: [
+      { name: "RFC 9293 (TCP)", kind: "standard", note: "The receive window and zero-window probes.", href: "https://www.rfc-editor.org/rfc/rfc9293" },
+      { name: "Wireshark", kind: "software", note: "Spot TCP ZeroWindow in captures.", href: "https://www.wireshark.org/" },
+      { name: "ss", kind: "software", note: "See socket buffers on Linux.", href: "https://man7.org/linux/man-pages/man8/ss.8.html" },
+    ],
+  },
+  "networking/latency-bandwidth": {
+    lead: "CDNs exist because latency beats bandwidth for most web traffic.",
+    tools: [
+      { name: "Cloudflare", kind: "service", note: "Edge servers close to users.", href: "https://www.cloudflare.com/learning/cdn/what-is-a-cdn/" },
+      { name: "High Performance Browser Networking", kind: "standard", note: "Ilya Grigorik's free book.", href: "https://hpbn.co/" },
+      { name: "WebPageTest", kind: "service", note: "Waterfalls with real round trips.", href: "https://www.webpagetest.org/" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [
