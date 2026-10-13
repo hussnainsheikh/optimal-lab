@@ -225,6 +225,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/devops/volumes` | Insert rows, restart, remove and recreate a database container with three kinds of storage | — |
 | `/tracks/devops/pod-autoscaling` | Change the app's CPU needs and step through the HPA's replica calculation, min and max | — |
 | `/tracks/devops/scheduling` | Place seven pods on three nodes by CPU requests, with a taint and a pod left pending | — |
+| `/tracks/devops/branching-strategies` | Three developers over two weeks with trunk-based, short and long-lived branches | — |
+| `/tracks/devops/releases-versioning` | Pick what changed, get the next version, and see which dependency ranges accept it | — |
+| `/tracks/devops/build-caching` | Change one package in a monorepo and compare building everything, affected only, and with a remote cache | — |
+| `/tracks/devops/supply-chain` | Turn on lockfiles, scanning, CI builds, signing and verification and see which attacks get through | — |
+| `/tracks/devops/regions-zones` | Deploy in one zone, three zones or two regions, then fail a server, a zone and a region | — |
+| `/tracks/devops/serverless` | Compare function and container costs as traffic grows, and cold starts by traffic shape | — |
+| `/tracks/devops/cloud-costs` | Apply six common savings to a monthly cloud bill and see which lines shrink | — |
+| `/tracks/devops/structured-logging` | Find a user's errors with grep on free-text logs, then with a query on structured JSON | — |
+| `/tracks/devops/opentelemetry` | Read a checkout trace waterfall: normal, a slow external API, and N+1 queries | — |
+| `/tracks/devops/dora-metrics` | Compare quarterly, weekly and continuous delivery teams on the four DORA metrics | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |

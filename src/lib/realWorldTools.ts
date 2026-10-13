@@ -1348,6 +1348,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Karpenter", kind: "software", note: "Just-in-time node provisioning.", href: "https://karpenter.sh/" },
     ],
   },
+  "devops/branching-strategies": {
+    lead: "How a team branches shapes how fast it ships.",
+    tools: [
+      { name: "Trunk-based development", kind: "standard", note: "The practice explained.", href: "https://trunkbaseddevelopment.com/" },
+      { name: "GitHub flow", kind: "standard", note: "Short-lived branches and PRs.", href: "https://docs.github.com/en/get-started/using-github/github-flow" },
+      { name: "Merge queues", kind: "software", note: "Keep main green while merging often.", href: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue" },
+    ],
+  },
+  "devops/releases-versioning": {
+    lead: "Package managers rely on semantic versions.",
+    tools: [
+      { name: "Semantic Versioning", kind: "standard", note: "The spec.", href: "https://semver.org/" },
+      { name: "Conventional Commits", kind: "standard", note: "Commit messages that drive versions.", href: "https://www.conventionalcommits.org/" },
+      { name: "release-please", kind: "software", note: "Automated releases and changelogs.", href: "https://github.com/googleapis/release-please" },
+    ],
+  },
+  "devops/build-caching": {
+    lead: "Monorepo tools skip work that a change can't affect.",
+    tools: [
+      { name: "Turborepo", kind: "software", note: "Task graph and remote caching.", href: "https://turbo.build/repo" },
+      { name: "Nx affected", kind: "software", note: "Run only affected projects.", href: "https://nx.dev/ci/features/affected" },
+      { name: "Bazel", kind: "software", note: "Hermetic, cached builds at scale.", href: "https://bazel.build/" },
+    ],
+  },
+  "devops/supply-chain": {
+    lead: "Supply chain security tooling is now standard in CI.",
+    tools: [
+      { name: "SLSA", kind: "standard", note: "Supply-chain levels for software artifacts.", href: "https://slsa.dev/" },
+      { name: "Sigstore cosign", kind: "software", note: "Sign and verify container images.", href: "https://docs.sigstore.dev/cosign/signing/overview/" },
+      { name: "Trivy", kind: "software", note: "Scan images and dependencies.", href: "https://trivy.dev/" },
+    ],
+  },
+  "devops/regions-zones": {
+    lead: "Every cloud is organised into regions and zones.",
+    tools: [
+      { name: "AWS regions and AZs", kind: "service", note: "How the infrastructure is laid out.", href: "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/" },
+      { name: "Google Cloud zones", kind: "service", note: "Regions and zones on GCP.", href: "https://cloud.google.com/compute/docs/regions-zones" },
+      { name: "Azure availability zones", kind: "service", note: "Zone-redundant services.", href: "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview" },
+    ],
+  },
+  "devops/serverless": {
+    lead: "Serverless platforms bill per request and compute time.",
+    tools: [
+      { name: "AWS Lambda", kind: "service", note: "Functions billed per request and ms.", href: "https://aws.amazon.com/lambda/pricing/" },
+      { name: "Google Cloud Run", kind: "service", note: "Containers that scale to zero.", href: "https://cloud.google.com/run" },
+      { name: "Cloudflare Workers", kind: "service", note: "Functions at the edge, tiny cold starts.", href: "https://workers.cloudflare.com/" },
+    ],
+  },
+  "devops/cloud-costs": {
+    lead: "FinOps tools break the bill down by team and service.",
+    tools: [
+      { name: "AWS Cost Explorer", kind: "service", note: "Spend by service and tag.", href: "https://aws.amazon.com/aws-cost-management/aws-cost-explorer/" },
+      { name: "Infracost", kind: "software", note: "Cost estimates in pull requests.", href: "https://www.infracost.io/" },
+      { name: "Kubecost", kind: "software", note: "Kubernetes cost allocation.", href: "https://www.kubecost.com/" },
+    ],
+  },
+  "devops/structured-logging": {
+    lead: "Log platforms index structured fields.",
+    tools: [
+      { name: "Grafana Loki", kind: "software", note: "Log aggregation with labels.", href: "https://grafana.com/oss/loki/" },
+      { name: "pino", kind: "software", note: "Fast JSON logging for Node.js.", href: "https://getpino.io/" },
+      { name: "structlog", kind: "software", note: "Structured logging for Python.", href: "https://www.structlog.org/" },
+    ],
+  },
+  "devops/opentelemetry": {
+    lead: "OpenTelemetry is the standard for instrumentation.",
+    tools: [
+      { name: "OpenTelemetry", kind: "standard", note: "APIs, SDKs and the collector.", href: "https://opentelemetry.io/" },
+      { name: "Jaeger", kind: "software", note: "Open-source trace storage and UI.", href: "https://www.jaegertracing.io/" },
+      { name: "Grafana Tempo", kind: "software", note: "Scalable trace backend.", href: "https://grafana.com/oss/tempo/" },
+    ],
+  },
+  "devops/dora-metrics": {
+    lead: "DORA metrics are built into many engineering dashboards.",
+    tools: [
+      { name: "DORA research", kind: "standard", note: "The State of DevOps reports.", href: "https://dora.dev/" },
+      { name: "Four Keys", kind: "software", note: "Open-source DORA metrics pipeline.", href: "https://github.com/dora-team/fourkeys" },
+      { name: "Accelerate", kind: "standard", note: "The book behind the metrics.", href: "https://itrevolution.com/product/accelerate/" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import BranchingDemo from "./devops/branching-strategies/BranchingDemo";
+import SemverDemo from "./devops/releases-versioning/SemverDemo";
+import AffectedDemo from "./devops/build-caching/AffectedDemo";
+import SupplyChainDemo from "./devops/supply-chain/SupplyChainDemo";
+import ZonesDemo from "./devops/regions-zones/ZonesDemo";
+import ServerlessDemo from "./devops/serverless/ServerlessDemo";
+import CloudCostsDemo from "./devops/cloud-costs/CloudCostsDemo";
+import StructuredLogsDemo from "./devops/structured-logging/StructuredLogsDemo";
+import TraceDemo from "./devops/opentelemetry/TraceDemo";
+import DoraDemo from "./devops/dora-metrics/DoraDemo";
 import ProcessTreeDemo from "./devops/linux-processes/ProcessTreeDemo";
 import LoadAverageDemo from "./devops/system-resources/LoadAverageDemo";
 import DnsRecordsDemo from "./devops/dns-records/DnsRecordsDemo";
@@ -197,6 +207,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "devops/branching-strategies": <BranchingDemo />,
+  "devops/releases-versioning": <SemverDemo />,
+  "devops/build-caching": <AffectedDemo />,
+  "devops/supply-chain": <SupplyChainDemo />,
+  "devops/regions-zones": <ZonesDemo />,
+  "devops/serverless": <ServerlessDemo />,
+  "devops/cloud-costs": <CloudCostsDemo />,
+  "devops/structured-logging": <StructuredLogsDemo />,
+  "devops/opentelemetry": <TraceDemo />,
+  "devops/dora-metrics": <DoraDemo />,
   "devops/linux-processes": <ProcessTreeDemo />,
   "devops/system-resources": <LoadAverageDemo />,
   "devops/dns-records": <DnsRecordsDemo />,
