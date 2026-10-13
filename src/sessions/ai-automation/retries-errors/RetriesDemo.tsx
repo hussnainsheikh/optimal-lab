@@ -11,6 +11,11 @@ import { FAILURES, POLICIES, simulate, type Failure, type Policy } from "@/lib/r
 const ACCENT = "var(--auto)";
 const SPAN = 12;
 
+// Keep pills at least 11% apart so attempts made at nearly the same moment stay readable.
+function spread(xs: number[]): number[] {
+  return xs.reduce<number[]>((out, x) => [...out, out.length ? Math.max(x, out[out.length - 1] + 11) : x], []);
+}
+
 export default function RetriesDemo() {
   const [failure, setFailure] = useState<Failure>("transient");
   const [policy, setPolicy] = useState<Policy>("backoff");
@@ -30,8 +35,8 @@ export default function RetriesDemo() {
             <section className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-4 sm:p-5" aria-label="Attempts over time">
               <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--faint)]">Attempts, 0 to {SPAN} s</p>
               <div className="relative mt-3 h-14 rounded bg-[var(--inset)]">
-                {r.attempts.map((a, i) => (
-                  <span key={i} className="absolute top-1/2 grid h-6 min-w-6 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full px-1 font-mono text-[10px]" style={{ left: `${4 + (Math.min(a.t, SPAN) / SPAN) * 92}%`, background: a.ok ? "var(--good)" : "var(--bad)", color: "var(--on-accent)", top: `${50 + (i % 2 ? 22 : -22)}%` }}>{a.code}</span>
+                {spread(r.attempts.map((a) => 5 + (Math.min(a.t, SPAN) / SPAN) * 90)).map((x, i) => (
+                  <span key={i} className="absolute top-1/2 grid h-7 min-w-7 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full px-1 font-mono text-[10px]" style={{ left: `${x}%`, background: r.attempts[i].ok ? "var(--good)" : "var(--bad)", color: "var(--on-accent)" }}>{r.attempts[i].code}</span>
                 ))}
               </div>
               <ul className="mt-3 space-y-1 font-mono text-xs">

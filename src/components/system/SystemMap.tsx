@@ -198,7 +198,7 @@ export function SystemMap({
               <motion.span
                 key={p.id}
                 aria-hidden
-                className={`absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-full font-mono text-[10px] font-semibold whitespace-nowrap text-[var(--on-accent)] shadow ${
+                className={`absolute z-10 -translate-x-1/2 -translate-y-1/2 rounded-full font-mono text-[10px] font-semibold whitespace-nowrap text-[var(--on-accent)] shadow ${
                   p.label ? "px-2 py-0.5" : "h-3 w-3"
                 }`}
                 style={{ background: bg }}
