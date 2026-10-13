@@ -868,6 +868,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "WebPageTest", kind: "service", note: "Waterfalls with real round trips.", href: "https://www.webpagetest.org/" },
     ],
   },
+  "operating-systems/memory-hierarchy": {
+    lead: "Every performance decision sits on these numbers.",
+    tools: [
+      { name: "Latency numbers", kind: "standard", note: "Jeff Dean's numbers, updated by year.", href: "https://colin-scott.github.io/personal_website/research/interactive_latency.html" },
+      { name: "perf", kind: "software", note: "Measure cache misses on Linux.", href: "https://perf.wiki.kernel.org/" },
+      { name: "Intel VTune", kind: "software", note: "Memory access analysis.", href: "https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html" },
+    ],
+  },
+  "operating-systems/cache-locality": {
+    lead: "Data layout decides cache performance.",
+    tools: [
+      { name: "perf stat", kind: "software", note: "Count cache misses for any program.", href: "https://man7.org/linux/man-pages/man1/perf-stat.1.html" },
+      { name: "What every programmer should know about memory", kind: "standard", note: "Ulrich Drepper's classic paper.", href: "https://people.freebsd.org/~lstewart/articles/cpumemory.pdf" },
+      { name: "Apache Arrow", kind: "software", note: "Columnar memory layout for analytics.", href: "https://arrow.apache.org/" },
+    ],
+  },
+  "operating-systems/producer-consumer": {
+    lead: "Blocking queues implement this pattern for you.",
+    tools: [
+      { name: "Java BlockingQueue", kind: "software", note: "Bounded producer-consumer queues.", href: "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/BlockingQueue.html" },
+      { name: "Go channels", kind: "software", note: "Buffered channels block when full.", href: "https://go.dev/tour/concurrency/3" },
+      { name: "Python queue", kind: "software", note: "Thread-safe queue.Queue.", href: "https://docs.python.org/3/library/queue.html" },
+    ],
+  },
+  "operating-systems/epoll": {
+    lead: "Every high-concurrency server waits on sockets this way.",
+    tools: [
+      { name: "epoll(7)", kind: "software", note: "The Linux readiness API.", href: "https://man7.org/linux/man-pages/man7/epoll.7.html" },
+      { name: "libuv", kind: "software", note: "The event loop under Node.js.", href: "https://libuv.org/" },
+      { name: "io_uring", kind: "software", note: "Linux's newer async I/O interface.", href: "https://kernel.dk/io_uring.pdf" },
+    ],
+  },
+  "operating-systems/gc": {
+    lead: "Managed runtimes all trace the heap; some also count references.",
+    tools: [
+      { name: "V8 Orinoco", kind: "software", note: "JavaScript's concurrent garbage collector.", href: "https://v8.dev/blog/trash-talk" },
+      { name: "Go GC guide", kind: "software", note: "Tuning Go's collector.", href: "https://go.dev/doc/gc-guide" },
+      { name: "Chrome heap snapshots", kind: "software", note: "Find what keeps objects alive.", href: "https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots" },
+    ],
+  },
+  "frontend/event-propagation": {
+    lead: "Every DOM event follows this path.",
+    tools: [
+      { name: "MDN event bubbling", kind: "standard", note: "Capture, target and bubble.", href: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling" },
+      { name: "DOM spec: dispatch", kind: "standard", note: "How events are dispatched.", href: "https://dom.spec.whatwg.org/#concept-event-dispatch" },
+      { name: "React events", kind: "software", note: "React delegates to the root.", href: "https://react.dev/learn/responding-to-events#event-propagation" },
+    ],
+  },
+  "frontend/closures": {
+    lead: "Closures are everywhere in JavaScript: callbacks, hooks, modules.",
+    tools: [
+      { name: "MDN closures", kind: "standard", note: "The guide with examples.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" },
+      { name: "Chrome DevTools scope pane", kind: "software", note: "See closure variables while paused.", href: "https://developer.chrome.com/docs/devtools/javascript/reference#scope" },
+      { name: "You Don't Know JS: Scope & Closures", kind: "standard", note: "Kyle Simpson's free book.", href: "https://github.com/getify/You-Dont-Know-JS" },
+    ],
+  },
+  "frontend/css-cascade": {
+    lead: "Browsers resolve conflicting styles the same way.",
+    tools: [
+      { name: "MDN specificity", kind: "standard", note: "How specificity is calculated.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" },
+      { name: "Specificity calculator", kind: "software", note: "Paste selectors, compare scores.", href: "https://specificity.keegan.st/" },
+      { name: "Cascade layers", kind: "standard", note: "@layer for controlling order.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/@layer" },
+    ],
+  },
+  "frontend/stacking-contexts": {
+    lead: "Overlays break the same way in every codebase.",
+    tools: [
+      { name: "MDN stacking context", kind: "standard", note: "What creates one.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context" },
+      { name: "React createPortal", kind: "software", note: "Render overlays outside the parent.", href: "https://react.dev/reference/react-dom/createPortal" },
+      { name: "<dialog> top layer", kind: "standard", note: "Native modals above everything.", href: "https://developer.mozilla.org/en-US/docs/Glossary/Top_layer" },
+    ],
+  },
+  "frontend/code-splitting": {
+    lead: "Bundlers split code by route and dynamic import.",
+    tools: [
+      { name: "Next.js lazy loading", kind: "software", note: "next/dynamic and route chunks.", href: "https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading" },
+      { name: "webpack-bundle-analyzer", kind: "software", note: "See what's in each chunk.", href: "https://github.com/webpack-contrib/webpack-bundle-analyzer" },
+      { name: "Vite code splitting", kind: "software", note: "Dynamic imports become chunks.", href: "https://vite.dev/guide/features#dynamic-import" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

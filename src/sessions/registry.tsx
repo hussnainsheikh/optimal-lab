@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import MemoryHierarchyDemo from "./operating-systems/memory-hierarchy/MemoryHierarchyDemo";
+import CacheLocalityDemo from "./operating-systems/cache-locality/CacheLocalityDemo";
+import ProducerConsumerDemo from "./operating-systems/producer-consumer/ProducerConsumerDemo";
+import EpollDemo from "./operating-systems/epoll/EpollDemo";
+import GcDemo from "./operating-systems/gc/GcDemo";
+import EventPropagationDemo from "./frontend/event-propagation/EventPropagationDemo";
+import ClosuresDemo from "./frontend/closures/ClosuresDemo";
+import CascadeDemo from "./frontend/css-cascade/CascadeDemo";
+import StackingDemo from "./frontend/stacking-contexts/StackingDemo";
+import CodeSplittingDemo from "./frontend/code-splitting/CodeSplittingDemo";
 import WindowFunctionsDemo from "./databases/window-functions/WindowFunctionsDemo";
 import LsmDemo from "./databases/lsm-trees/LsmDemo";
 import WalDemo from "./databases/write-ahead-log/WalDemo";
@@ -137,6 +147,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "operating-systems/memory-hierarchy": <MemoryHierarchyDemo />,
+  "operating-systems/cache-locality": <CacheLocalityDemo />,
+  "operating-systems/producer-consumer": <ProducerConsumerDemo />,
+  "operating-systems/epoll": <EpollDemo />,
+  "operating-systems/gc": <GcDemo />,
+  "frontend/event-propagation": <EventPropagationDemo />,
+  "frontend/closures": <ClosuresDemo />,
+  "frontend/css-cascade": <CascadeDemo />,
+  "frontend/stacking-contexts": <StackingDemo />,
+  "frontend/code-splitting": <CodeSplittingDemo />,
   "databases/window-functions": <WindowFunctionsDemo />,
   "databases/lsm-trees": <LsmDemo />,
   "databases/write-ahead-log": <WalDemo />,

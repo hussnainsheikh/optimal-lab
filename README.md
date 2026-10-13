@@ -165,6 +165,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/networking/traceroute` | Raise the TTL one hop at a time and watch each router reveal itself | — |
 | `/tracks/networking/flow-control` | A receiving app stalls; watch the window shrink to zero and the sender pause | — |
 | `/tracks/networking/latency-bandwidth` | Change bandwidth and round-trip time and see handshakes, slow start and transfer for three sizes | — |
+| `/tracks/operating-systems/memory-hierarchy` | Access times from registers to cross-continent round trips, in real time and at human scale | — |
+| `/tracks/operating-systems/cache-locality` | Sum an 8×8 array row by row and column by column through a tiny cache and count the misses | — |
+| `/tracks/operating-systems/producer-consumer` | A fast producer and slow consumer share a 3-slot buffer, without coordination and with semaphores | — |
+| `/tracks/operating-systems/epoll` | Five connections with requests at different times under blocking reads, a thread each, and epoll | — |
+| `/tracks/operating-systems/gc` | Reference counting and mark-and-sweep on a small heap with an unreachable cycle | — |
+| `/tracks/frontend/event-propagation` | Click a nested button and watch capture, target and bubble, then stopPropagation and delegation | — |
+| `/tracks/frontend/closures` | var vs let in a loop and a private counter, with the scopes each function keeps alive | — |
+| `/tracks/frontend/css-cascade` | Toggle seven competing rules and see which color wins and why | — |
+| `/tracks/frontend/stacking-contexts` | A z-index 9999 modal trapped under a z-index 10 header, rendered live, and the fixes | — |
+| `/tracks/frontend/code-splitting` | One bundle vs route splitting vs lazy heavy parts, and what a visitor downloads first | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |
