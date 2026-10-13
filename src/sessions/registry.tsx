@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import BulkheadsDemo from "./system-design/bulkheads/BulkheadsDemo";
+import FailoverDemo from "./system-design/failover-dr/FailoverDemo";
+import QuorumDemo from "./system-design/eventual-consistency/QuorumDemo";
+import EventSourcingDemo from "./system-design/cqrs-event-sourcing/EventSourcingDemo";
+import GossipDemo from "./system-design/gossip/GossipDemo";
+import NinesDemo from "./system-design/availability/NinesDemo";
+import FeatureFlagsDemo from "./system-design/feature-flags/FeatureFlagsDemo";
+import RealtimeDemo from "./system-design/realtime/RealtimeDemo";
+import BackgroundJobsDemo from "./system-design/background-jobs/BackgroundJobsDemo";
+import MultiTenancyDemo from "./system-design/multi-tenancy/MultiTenancyDemo";
 import ScaleOutDemo from "./system-design/scaling/ScaleOutDemo";
 import LittlesLawDemo from "./system-design/latency-throughput/LittlesLawDemo";
 import CountMinDemo from "./system-design/top-k/CountMinDemo";
@@ -177,6 +187,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "system-design/bulkheads": <BulkheadsDemo />,
+  "system-design/failover-dr": <FailoverDemo />,
+  "system-design/eventual-consistency": <QuorumDemo />,
+  "system-design/cqrs-event-sourcing": <EventSourcingDemo />,
+  "system-design/gossip": <GossipDemo />,
+  "system-design/availability": <NinesDemo />,
+  "system-design/feature-flags": <FeatureFlagsDemo />,
+  "system-design/realtime": <RealtimeDemo />,
+  "system-design/background-jobs": <BackgroundJobsDemo />,
+  "system-design/multi-tenancy": <MultiTenancyDemo />,
   "system-design/scaling": <ScaleOutDemo />,
   "system-design/latency-throughput": <LittlesLawDemo />,
   "system-design/top-k": <CountMinDemo />,

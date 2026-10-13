@@ -1188,6 +1188,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Cloudflare CDN", kind: "service", note: "Edge caching close to users.", href: "https://www.cloudflare.com/application-services/products/cdn/" },
     ],
   },
+  "system-design/bulkheads": {
+    lead: "Resilience libraries implement bulkheads as separate pools.",
+    tools: [
+      { name: "Resilience4j Bulkhead", kind: "software", note: "Semaphore and thread-pool bulkheads.", href: "https://resilience4j.readme.io/docs/bulkhead" },
+      { name: "Envoy circuit breaking", kind: "software", note: "Per-cluster connection limits.", href: "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/circuit_breaking" },
+      { name: "Release It!", kind: "standard", note: "Michael Nygard's stability patterns.", href: "https://pragprog.com/titles/mnee2/release-it-second-edition/" },
+    ],
+  },
+  "system-design/failover-dr": {
+    lead: "Clouds document these DR tiers explicitly.",
+    tools: [
+      { name: "AWS DR strategies", kind: "standard", note: "Backup, pilot light, warm standby, active-active.", href: "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html" },
+      { name: "Route 53 failover", kind: "service", note: "DNS health checks and failover.", href: "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html" },
+      { name: "Google SRE: DR testing", kind: "standard", note: "Practising disaster recovery.", href: "https://sre.google/sre-book/emergency-response/" },
+    ],
+  },
+  "system-design/eventual-consistency": {
+    lead: "Leaderless stores let you tune R and W per query.",
+    tools: [
+      { name: "Cassandra consistency levels", kind: "software", note: "ONE, QUORUM, ALL.", href: "https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo.html#tunable-consistency" },
+      { name: "Amazon Dynamo paper", kind: "standard", note: "Quorums, hinted handoff, read repair.", href: "https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf" },
+      { name: "Jepsen", kind: "standard", note: "Testing consistency claims.", href: "https://jepsen.io/" },
+    ],
+  },
+  "system-design/cqrs-event-sourcing": {
+    lead: "Event stores and stream processors make this practical.",
+    tools: [
+      { name: "EventStoreDB", kind: "software", note: "A database built for event sourcing.", href: "https://www.eventstore.com/" },
+      { name: "Axon Framework", kind: "software", note: "CQRS and event sourcing on the JVM.", href: "https://www.axoniq.io/" },
+      { name: "Martin Fowler: Event Sourcing", kind: "standard", note: "The pattern explained.", href: "https://martinfowler.com/eaaDev/EventSourcing.html" },
+    ],
+  },
+  "system-design/gossip": {
+    lead: "Gossip runs membership in many distributed databases.",
+    tools: [
+      { name: "HashiCorp Serf", kind: "software", note: "SWIM-based gossip membership.", href: "https://github.com/hashicorp/serf" },
+      { name: "SWIM paper", kind: "standard", note: "Scalable membership protocol.", href: "https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf" },
+      { name: "Cassandra gossip", kind: "software", note: "How nodes learn cluster state.", href: "https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo.html#gossip" },
+    ],
+  },
+  "system-design/availability": {
+    lead: "Every SLA is expressed in nines.",
+    tools: [
+      { name: "Uptime calculator", kind: "software", note: "Downtime for any percentage.", href: "https://uptime.is/" },
+      { name: "Google SRE: availability", kind: "standard", note: "Embracing risk.", href: "https://sre.google/sre-book/embracing-risk/" },
+      { name: "AWS SLAs", kind: "service", note: "Per-service availability commitments.", href: "https://aws.amazon.com/legal/service-level-agreements/" },
+    ],
+  },
+  "system-design/feature-flags": {
+    lead: "Flag platforms handle targeting and rollout for you.",
+    tools: [
+      { name: "LaunchDarkly", kind: "service", note: "Feature management platform.", href: "https://launchdarkly.com/" },
+      { name: "Unleash", kind: "software", note: "Open-source feature flags.", href: "https://www.getunleash.io/" },
+      { name: "OpenFeature", kind: "standard", note: "A vendor-neutral flag API.", href: "https://openfeature.dev/" },
+    ],
+  },
+  "system-design/realtime": {
+    lead: "Real-time services wrap these transports for you.",
+    tools: [
+      { name: "Socket.IO", kind: "software", note: "WebSockets with fallbacks.", href: "https://socket.io/" },
+      { name: "Ably", kind: "service", note: "Managed pub/sub and presence.", href: "https://ably.com/" },
+      { name: "MDN Server-Sent Events", kind: "standard", note: "EventSource in the browser.", href: "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events" },
+    ],
+  },
+  "system-design/background-jobs": {
+    lead: "Every web framework has a job queue library.",
+    tools: [
+      { name: "BullMQ", kind: "software", note: "Redis-backed jobs for Node.js.", href: "https://docs.bullmq.io/" },
+      { name: "Sidekiq", kind: "software", note: "Background jobs for Ruby.", href: "https://sidekiq.org/" },
+      { name: "Amazon SQS dead-letter queues", kind: "service", note: "Park messages that keep failing.", href: "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html" },
+    ],
+  },
+  "system-design/multi-tenancy": {
+    lead: "SaaS platforms choose a tenancy model early.",
+    tools: [
+      { name: "Postgres row-level security", kind: "software", note: "The database enforces tenant filters.", href: "https://www.postgresql.org/docs/current/ddl-rowsecurity.html" },
+      { name: "AWS SaaS Lens", kind: "standard", note: "Silo, bridge and pool models.", href: "https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html" },
+      { name: "Citus", kind: "software", note: "Sharding multi-tenant Postgres.", href: "https://www.citusdata.com/use-cases/multi-tenant-apps/" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

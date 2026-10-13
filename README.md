@@ -205,6 +205,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/webhooks` | Receive webhooks when your endpoint is down, slow or forged, with signature checks and dedupe | — |
 | `/tracks/system-design/graceful-degradation` | Break a product page's dependencies with and without timeouts and fallbacks | — |
 | `/tracks/system-design/request-journey` | Follow one request through DNS, CDN, load balancer, app, cache and database, cold and warm | — |
+| `/tracks/system-design/bulkheads` | A hanging payments dependency eats a shared thread pool; separate pools keep the catalog up | — |
+| `/tracks/system-design/failover-dr` | Lose a region and compare four DR strategies by recovery time, data loss and cost | — |
+| `/tracks/system-design/eventual-consistency` | Tune W and R across three lagging replicas and see when a read can return stale data | — |
+| `/tracks/system-design/cqrs-event-sourcing` | Replay an account's events to any point and watch several read models rebuild | — |
+| `/tracks/system-design/gossip` | Spread news through 32 nodes by random gossip and count the rounds for different fanouts | — |
+| `/tracks/system-design/availability` | Chain a load balancer, app servers and a database, add redundancy, and watch the nines | — |
+| `/tracks/system-design/feature-flags` | Roll a feature out to staff, then a percentage of 100 hashed users, then hit the kill switch | — |
+| `/tracks/system-design/realtime` | Deliver four chat messages with polling, long polling, SSE and WebSockets and compare delay and cost | — |
+| `/tracks/system-design/background-jobs` | Sign-up side effects done inline vs on a queue, with retries and a dead-letter queue | — |
+| `/tracks/system-design/multi-tenancy` | Compare shared tables, schema per tenant and database per tenant, then forget a WHERE clause | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |
