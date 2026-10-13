@@ -1268,6 +1268,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Citus", kind: "software", note: "Sharding multi-tenant Postgres.", href: "https://www.citusdata.com/use-cases/multi-tenant-apps/" },
     ],
   },
+  "devops/linux-processes": {
+    lead: "Every container and service manager works with these signals.",
+    tools: [
+      { name: "signal(7)", kind: "software", note: "The full list of Linux signals.", href: "https://man7.org/linux/man-pages/man7/signal.7.html" },
+      { name: "tini", kind: "software", note: "A tiny init for containers.", href: "https://github.com/krallin/tini" },
+      { name: "Kubernetes pod termination", kind: "software", note: "SIGTERM, grace period, SIGKILL.", href: "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-termination" },
+    ],
+  },
+  "devops/system-resources": {
+    lead: "The first tools anyone runs on a slow server.",
+    tools: [
+      { name: "htop", kind: "software", note: "Interactive process viewer.", href: "https://htop.dev/" },
+      { name: "sysstat", kind: "software", note: "iostat, mpstat, sar.", href: "https://github.com/sysstat/sysstat" },
+      { name: "Linux load averages explained", kind: "standard", note: "Brendan Gregg on what load means.", href: "https://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html" },
+    ],
+  },
+  "devops/dns-records": {
+    lead: "Every domain is managed through a zone like this.",
+    tools: [
+      { name: "Cloudflare DNS", kind: "service", note: "Managed DNS with ALIAS-style flattening.", href: "https://developers.cloudflare.com/dns/" },
+      { name: "dig", kind: "software", note: "Query DNS from the command line.", href: "https://www.isc.org/bind/" },
+      { name: "OctoDNS", kind: "software", note: "DNS records as code.", href: "https://github.com/octodns/octodns" },
+    ],
+  },
+  "devops/reverse-proxy-config": {
+    lead: "Reverse proxies front almost every web app.",
+    tools: [
+      { name: "nginx", kind: "software", note: "The most common reverse proxy.", href: "https://nginx.org/en/docs/http/ngx_http_proxy_module.html" },
+      { name: "Caddy", kind: "software", note: "Automatic HTTPS and simple config.", href: "https://caddyserver.com/" },
+      { name: "Traefik", kind: "software", note: "Proxy configured from container labels.", href: "https://traefik.io/" },
+    ],
+  },
+  "devops/vpc": {
+    lead: "Every cloud network is built from these pieces.",
+    tools: [
+      { name: "AWS VPC", kind: "service", note: "Subnets, route tables, gateways.", href: "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html" },
+      { name: "Security groups", kind: "service", note: "Stateful firewalls per resource.", href: "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html" },
+      { name: "VPC flow logs", kind: "service", note: "See accepted and rejected traffic.", href: "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html" },
+    ],
+  },
+  "devops/dockerfiles": {
+    lead: "Build caching is the biggest lever on Docker build time.",
+    tools: [
+      { name: "Dockerfile best practices", kind: "standard", note: "Ordering, caching, multi-stage.", href: "https://docs.docker.com/build/building/best-practices/" },
+      { name: "BuildKit cache", kind: "software", note: "Cache mounts and remote caches.", href: "https://docs.docker.com/build/cache/" },
+      { name: "hadolint", kind: "software", note: "Lint Dockerfiles.", href: "https://github.com/hadolint/hadolint" },
+    ],
+  },
+  "devops/container-networking": {
+    lead: "Docker and Compose networking is where most local setups break.",
+    tools: [
+      { name: "Docker networking", kind: "software", note: "Bridge networks and DNS.", href: "https://docs.docker.com/engine/network/" },
+      { name: "Compose networking", kind: "software", note: "Services reach each other by name.", href: "https://docs.docker.com/compose/how-tos/networking/" },
+      { name: "Kubernetes networking model", kind: "software", note: "Pods, Services, DNS.", href: "https://kubernetes.io/docs/concepts/services-networking/" },
+    ],
+  },
+  "devops/volumes": {
+    lead: "Persistent data in containers lives in volumes.",
+    tools: [
+      { name: "Docker volumes", kind: "software", note: "Named volumes and bind mounts.", href: "https://docs.docker.com/engine/storage/volumes/" },
+      { name: "Kubernetes PersistentVolumes", kind: "software", note: "Storage that outlives pods.", href: "https://kubernetes.io/docs/concepts/storage/persistent-volumes/" },
+      { name: "Compose volumes", kind: "software", note: "Declaring volumes in compose.yaml.", href: "https://docs.docker.com/reference/compose-file/volumes/" },
+    ],
+  },
+  "devops/pod-autoscaling": {
+    lead: "The HPA is built into Kubernetes.",
+    tools: [
+      { name: "Horizontal Pod Autoscaler", kind: "software", note: "The algorithm and its settings.", href: "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#algorithm-details" },
+      { name: "KEDA", kind: "software", note: "Autoscale on events and queues.", href: "https://keda.sh/" },
+      { name: "Cluster Autoscaler", kind: "software", note: "Adds nodes for pending pods.", href: "https://github.com/kubernetes/autoscaler" },
+    ],
+  },
+  "devops/scheduling": {
+    lead: "Every pod goes through the scheduler.",
+    tools: [
+      { name: "kube-scheduler", kind: "software", note: "Filtering and scoring.", href: "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/" },
+      { name: "Taints and tolerations", kind: "software", note: "Keep pods off special nodes.", href: "https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/" },
+      { name: "Karpenter", kind: "software", note: "Just-in-time node provisioning.", href: "https://karpenter.sh/" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

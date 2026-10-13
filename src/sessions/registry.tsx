@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import ProcessTreeDemo from "./devops/linux-processes/ProcessTreeDemo";
+import LoadAverageDemo from "./devops/system-resources/LoadAverageDemo";
+import DnsRecordsDemo from "./devops/dns-records/DnsRecordsDemo";
+import ReverseProxyDemo from "./devops/reverse-proxy-config/ReverseProxyDemo";
+import VpcDemo from "./devops/vpc/VpcDemo";
+import LayerCacheDemo from "./devops/dockerfiles/LayerCacheDemo";
+import ContainerNetDemo from "./devops/container-networking/ContainerNetDemo";
+import VolumesDemo from "./devops/volumes/VolumesDemo";
+import HpaDemo from "./devops/pod-autoscaling/HpaDemo";
+import SchedulerDemo from "./devops/scheduling/SchedulerDemo";
 import BulkheadsDemo from "./system-design/bulkheads/BulkheadsDemo";
 import FailoverDemo from "./system-design/failover-dr/FailoverDemo";
 import QuorumDemo from "./system-design/eventual-consistency/QuorumDemo";
@@ -187,6 +197,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "devops/linux-processes": <ProcessTreeDemo />,
+  "devops/system-resources": <LoadAverageDemo />,
+  "devops/dns-records": <DnsRecordsDemo />,
+  "devops/reverse-proxy-config": <ReverseProxyDemo />,
+  "devops/vpc": <VpcDemo />,
+  "devops/dockerfiles": <LayerCacheDemo />,
+  "devops/container-networking": <ContainerNetDemo />,
+  "devops/volumes": <VolumesDemo />,
+  "devops/pod-autoscaling": <HpaDemo />,
+  "devops/scheduling": <SchedulerDemo />,
   "system-design/bulkheads": <BulkheadsDemo />,
   "system-design/failover-dr": <FailoverDemo />,
   "system-design/eventual-consistency": <QuorumDemo />,

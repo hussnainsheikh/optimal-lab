@@ -1,0 +1,31 @@
+// An nginx config and how it routes requests.
+export const CONFIG = [
+  "upstream api {",
+  "  server 10.0.1.11:8080;",
+  "  server 10.0.1.12:8080;",
+  "}",
+  "server {",
+  "  listen 443 ssl;",
+  "  server_name shop.example.com;",
+  "  location /api/ {",
+  "    proxy_pass http://api;",
+  "    proxy_set_header X-Forwarded-For $remote_addr;",
+  "  }",
+  "  location /ws {",
+  "    proxy_pass http://api;",
+  "    proxy_set_header Upgrade $http_upgrade;",
+  "    proxy_set_header Connection \"upgrade\";",
+  "  }",
+  "  location / {",
+  "    root /var/www/shop;",
+  "    try_files $uri /index.html;",
+  "  }",
+  "}",
+];
+export const REQS = [
+  { path: "/api/orders", block: [7, 10], to: "api → 10.0.1.11:8080", note: "Longest matching prefix /api/ wins. Forwarded to the upstream pool; the app sees the client's IP in X-Forwarded-For." },
+  { path: "/api/cart", block: [7, 10], to: "api → 10.0.1.12:8080", note: "Same block; round-robin picks the second server." },
+  { path: "/ws", block: [11, 15], to: "api (WebSocket)", note: "The Upgrade headers must be passed on explicitly, or the WebSocket handshake fails." },
+  { path: "/logo.svg", block: [16, 19], to: "file /var/www/shop/logo.svg", note: "Static file served directly by nginx: fast, and the app never sees it." },
+  { path: "/products/42", block: [16, 19], to: "file /var/www/shop/index.html", note: "No such file, so try_files falls back to index.html: how single-page apps get client-side routes." },
+];

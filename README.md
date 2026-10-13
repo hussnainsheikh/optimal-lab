@@ -215,6 +215,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/realtime` | Deliver four chat messages with polling, long polling, SSE and WebSockets and compare delay and cost | — |
 | `/tracks/system-design/background-jobs` | Sign-up side effects done inline vs on a queue, with retries and a dead-letter queue | — |
 | `/tracks/system-design/multi-tenancy` | Compare shared tables, schema per tenant and database per tenant, then forget a WHERE clause | — |
+| `/tracks/devops/linux-processes` | Send SIGTERM and SIGKILL, kill a parent, and leave children unreaped in a small process tree | — |
+| `/tracks/devops/system-resources` | Read load average and CPU breakdown on a 4-core box: healthy, busy, overloaded and stuck on disk | — |
+| `/tracks/devops/dns-records` | Look up A, CNAME, MX and TXT records in a zone and follow CNAME chains | — |
+| `/tracks/devops/reverse-proxy-config` | Route five requests through nginx location blocks to an upstream pool, WebSockets and static files | — |
+| `/tracks/devops/vpc` | Trace five flows through public and private subnets, gateways and security groups | — |
+| `/tracks/devops/dockerfiles` | Change code or dependencies and see which layers rebuild with two Dockerfile orderings | — |
+| `/tracks/devops/container-networking` | Try five connections between the host and containers: published ports, names and the localhost trap | — |
+| `/tracks/devops/volumes` | Insert rows, restart, remove and recreate a database container with three kinds of storage | — |
+| `/tracks/devops/pod-autoscaling` | Change the app's CPU needs and step through the HPA's replica calculation, min and max | — |
+| `/tracks/devops/scheduling` | Place seven pods on three nodes by CPU requests, with a taint and a pod left pending | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |
