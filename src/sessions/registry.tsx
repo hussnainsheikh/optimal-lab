@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import ScaleOutDemo from "./system-design/scaling/ScaleOutDemo";
+import LittlesLawDemo from "./system-design/latency-throughput/LittlesLawDemo";
+import CountMinDemo from "./system-design/top-k/CountMinDemo";
+import HllDemo from "./system-design/probabilistic-counting/HllDemo";
+import CdcDemo from "./system-design/change-data-capture/CdcDemo";
+import SchemaMigrationDemo from "./system-design/schema-migrations/SchemaMigrationDemo";
+import ApiGatewayDemo from "./system-design/api-gateway/ApiGatewayDemo";
+import WebhooksDemo from "./system-design/webhooks/WebhooksDemo";
+import DegradationDemo from "./system-design/graceful-degradation/DegradationDemo";
+import RequestJourneyDemo from "./system-design/request-journey/RequestJourneyDemo";
 import PermissionsDemo from "./devops/files-permissions/PermissionsDemo";
 import ServicesDemo from "./devops/services-ingress/ServicesDemo";
 import PromDemo from "./devops/prometheus-metrics/PromDemo";
@@ -167,6 +177,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "system-design/scaling": <ScaleOutDemo />,
+  "system-design/latency-throughput": <LittlesLawDemo />,
+  "system-design/top-k": <CountMinDemo />,
+  "system-design/probabilistic-counting": <HllDemo />,
+  "system-design/change-data-capture": <CdcDemo />,
+  "system-design/schema-migrations": <SchemaMigrationDemo />,
+  "system-design/api-gateway": <ApiGatewayDemo />,
+  "system-design/webhooks": <WebhooksDemo />,
+  "system-design/graceful-degradation": <DegradationDemo />,
+  "system-design/request-journey": <RequestJourneyDemo />,
   "devops/files-permissions": <PermissionsDemo />,
   "devops/services-ingress": <ServicesDemo />,
   "devops/prometheus-metrics": <PromDemo />,

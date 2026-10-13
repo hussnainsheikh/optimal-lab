@@ -195,6 +195,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/security/oauth-flow` | Step through the authorization code flow, then see a stolen code succeed without PKCE and fail with it | — |
 | `/tracks/system-design/estimation` | Size a photo-sharing app: QPS, peak reads, storage per year, egress and servers from a few assumptions | — |
 | `/tracks/databases/table-partitioning` | Queries and retention on a 120M-row table, as one table and partitioned by month | — |
+| `/tracks/system-design/scaling` | Raise traffic and compare one bigger machine with many small ones on cost, limits and failure | — |
+| `/tracks/system-design/latency-throughput` | Increase traffic towards capacity and watch latency stay flat, then explode | — |
+| `/tracks/system-design/top-k` | Hash words into a 3×8 count-min sketch and see why the minimum counter is the best estimate | — |
+| `/tracks/system-design/probabilistic-counting` | Estimate distinct visitors from 48 bytes of registers and compare with an exact set | — |
+| `/tracks/system-design/change-data-capture` | Sync a search index with dual writes and with CDC, then crash halfway | — |
+| `/tracks/system-design/schema-migrations` | Rename a column during a rolling deploy in one step, then with expand and contract | — |
+| `/tracks/system-design/api-gateway` | Send six requests through TLS, auth, rate limit, cache and routing and see where each stops | — |
+| `/tracks/system-design/webhooks` | Receive webhooks when your endpoint is down, slow or forged, with signature checks and dedupe | — |
+| `/tracks/system-design/graceful-degradation` | Break a product page's dependencies with and without timeouts and fallbacks | — |
+| `/tracks/system-design/request-journey` | Follow one request through DNS, CDN, load balancer, app, cache and database, cold and warm | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |

@@ -1108,6 +1108,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "BigQuery partitioned tables", kind: "service", note: "Partition pruning to cut scan costs.", href: "https://cloud.google.com/bigquery/docs/partitioned-tables" },
     ],
   },
+  "system-design/scaling": {
+    lead: "Clouds make both kinds of scaling a configuration change.",
+    tools: [
+      { name: "AWS EC2 instance types", kind: "service", note: "From 2 to hundreds of vCPUs.", href: "https://aws.amazon.com/ec2/instance-types/" },
+      { name: "Kubernetes HPA", kind: "software", note: "Scale out pods automatically.", href: "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/" },
+      { name: "The Twelve-Factor App", kind: "standard", note: "Stateless processes that scale out.", href: "https://12factor.net/processes" },
+    ],
+  },
+  "system-design/latency-throughput": {
+    lead: "Every load test shows this curve.",
+    tools: [
+      { name: "Little's law", kind: "standard", note: "L = \u03bbW, for any stable queue.", href: "https://en.wikipedia.org/wiki/Little%27s_law" },
+      { name: "k6", kind: "software", note: "Load testing to find the knee.", href: "https://k6.io/" },
+      { name: "USE method", kind: "standard", note: "Utilisation, saturation, errors.", href: "https://www.brendangregg.com/usemethod.html" },
+    ],
+  },
+  "system-design/top-k": {
+    lead: "Sketches power trending lists and heavy-hitter detection.",
+    tools: [
+      { name: "RedisBloom Count-Min", kind: "software", note: "CMS.INCRBY and CMS.QUERY.", href: "https://redis.io/docs/latest/develop/data-types/probabilistic/count-min-sketch/" },
+      { name: "Redis Top-K", kind: "software", note: "Heavy hitters in Redis.", href: "https://redis.io/docs/latest/develop/data-types/probabilistic/top-k/" },
+      { name: "Apache DataSketches", kind: "software", note: "Production sketch library.", href: "https://datasketches.apache.org/" },
+    ],
+  },
+  "system-design/probabilistic-counting": {
+    lead: "HyperLogLog counts uniques in most analytics systems.",
+    tools: [
+      { name: "Redis HyperLogLog", kind: "software", note: "PFADD, PFCOUNT, PFMERGE.", href: "https://redis.io/docs/latest/develop/data-types/probabilistic/hyperloglogs/" },
+      { name: "BigQuery HLL functions", kind: "service", note: "Approximate distinct counts.", href: "https://cloud.google.com/bigquery/docs/reference/standard-sql/hll_functions" },
+      { name: "HyperLogLog paper", kind: "standard", note: "Flajolet et al., 2007.", href: "https://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf" },
+    ],
+  },
+  "system-design/change-data-capture": {
+    lead: "CDC keeps search, caches and warehouses in sync with the database.",
+    tools: [
+      { name: "Debezium", kind: "software", note: "Open-source CDC for many databases.", href: "https://debezium.io/" },
+      { name: "AWS DMS", kind: "service", note: "Managed change data capture.", href: "https://aws.amazon.com/dms/" },
+      { name: "Postgres logical decoding", kind: "software", note: "The feature CDC builds on.", href: "https://www.postgresql.org/docs/current/logicaldecoding.html" },
+    ],
+  },
+  "system-design/schema-migrations": {
+    lead: "Migration tools help, but expand and contract is a process.",
+    tools: [
+      { name: "gh-ost", kind: "software", note: "Online schema changes for MySQL.", href: "https://github.com/github/gh-ost" },
+      { name: "pgroll", kind: "software", note: "Zero-downtime Postgres migrations.", href: "https://github.com/xataio/pgroll" },
+      { name: "Parallel change", kind: "standard", note: "Martin Fowler on expand and contract.", href: "https://martinfowler.com/bliki/ParallelChange.html" },
+    ],
+  },
+  "system-design/api-gateway": {
+    lead: "Most API platforms put a gateway in front of services.",
+    tools: [
+      { name: "Kong", kind: "software", note: "Open-source API gateway.", href: "https://konghq.com/" },
+      { name: "AWS API Gateway", kind: "service", note: "Managed gateway with auth and throttling.", href: "https://aws.amazon.com/api-gateway/" },
+      { name: "Envoy", kind: "software", note: "Proxy used as gateway and mesh.", href: "https://www.envoyproxy.io/" },
+    ],
+  },
+  "system-design/webhooks": {
+    lead: "Every payment and SaaS platform sends webhooks.",
+    tools: [
+      { name: "Stripe webhooks", kind: "service", note: "Signatures, retries and best practices.", href: "https://docs.stripe.com/webhooks" },
+      { name: "Standard Webhooks", kind: "standard", note: "A common spec for signing.", href: "https://www.standardwebhooks.com/" },
+      { name: "Svix", kind: "service", note: "Webhook sending as a service.", href: "https://www.svix.com/" },
+    ],
+  },
+  "system-design/graceful-degradation": {
+    lead: "Resilience libraries provide timeouts and fallbacks.",
+    tools: [
+      { name: "Resilience4j", kind: "software", note: "Timeouts, circuit breakers, fallbacks.", href: "https://resilience4j.readme.io/" },
+      { name: "Polly", kind: "software", note: "Resilience policies for .NET.", href: "https://www.pollydocs.org/" },
+      { name: "AWS: avoiding fallback pitfalls", kind: "standard", note: "When fallbacks hurt.", href: "https://aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems/" },
+    ],
+  },
+  "system-design/request-journey": {
+    lead: "Tracing tools show the whole path of a request.",
+    tools: [
+      { name: "WebPageTest", kind: "service", note: "Waterfall of a real page load.", href: "https://www.webpagetest.org/" },
+      { name: "Jaeger", kind: "software", note: "Distributed tracing.", href: "https://www.jaegertracing.io/" },
+      { name: "Cloudflare CDN", kind: "service", note: "Edge caching close to users.", href: "https://www.cloudflare.com/application-services/products/cdn/" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [
