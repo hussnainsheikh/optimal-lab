@@ -273,6 +273,441 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Trusted Types", kind: "standard", note: "Make the browser reject raw strings in innerHTML.", href: "https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API" },
     ],
   },
+  "system-design/idempotency": {
+    lead: "Payment and messaging APIs accept idempotency keys so clients can retry safely.",
+    tools: [
+      { name: "Stripe idempotent requests", kind: "service", note: "Send Idempotency-Key and Stripe replays the first result for 24 hours.", href: "https://docs.stripe.com/api/idempotent_requests" },
+      { name: "IETF Idempotency-Key header", kind: "standard", note: "Draft standard for the header and its error codes.", href: "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/" },
+      { name: "AWS Lambda Powertools idempotency", kind: "software", note: "Store keys and results in DynamoDB around a handler.", href: "https://docs.powertools.aws.dev/lambda/python/latest/utilities/idempotency/" },
+    ],
+  },
+  "system-design/cap-theorem": {
+    lead: "Every replicated database makes this choice; most let you tune it per request.",
+    tools: [
+      { name: "Cassandra consistency levels", kind: "software", note: "Choose ONE, QUORUM or ALL per read and write.", href: "https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo.html" },
+      { name: "etcd", kind: "software", note: "Raft-based key-value store that refuses writes without a majority (CP).", href: "https://etcd.io" },
+      { name: "Amazon DynamoDB", kind: "service", note: "Eventually consistent reads by default; strongly consistent on request.", href: "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html" },
+      { name: "Jepsen", kind: "software", note: "Tests what databases really do during partitions.", href: "https://jepsen.io" },
+    ],
+  },
+  "devops/images-layers": {
+    lead: "Layer caching works the same in every OCI image builder; order decides how much is reused.",
+    tools: [
+      { name: "Docker build cache", kind: "software", note: "How cache invalidation works, and how to order instructions.", href: "https://docs.docker.com/build/cache/" },
+      { name: "BuildKit cache mounts", kind: "software", note: "Keep the npm or pip cache between builds even when a layer reruns.", href: "https://docs.docker.com/build/cache/optimize/" },
+      { name: "dive", kind: "software", note: "Inspect each layer of an image and what it added.", href: "https://github.com/wagoodman/dive" },
+    ],
+  },
+  "nodejs/blocking-the-event-loop": {
+    lead: "Every single-threaded runtime has this rule: keep long CPU work off the thread that serves requests.",
+    tools: [
+      { name: "worker_threads", kind: "platform", note: "Run JavaScript on another thread and message results back.", href: "https://nodejs.org/api/worker_threads.html" },
+      { name: "Piscina", kind: "software", note: "A worker thread pool for Node.js.", href: "https://github.com/piscinajs/piscina" },
+      { name: "perf_hooks.monitorEventLoopDelay", kind: "platform", note: "Measure how long the event loop is blocked.", href: "https://nodejs.org/api/perf_hooks.html#perf_hooksmonitoreventloopdelayoptions" },
+      { name: "Clinic.js", kind: "software", note: "Find what is blocking the event loop in a running app.", href: "https://github.com/clinicjs/node-clinic" },
+    ],
+  },
+  "system-design/bloom-filters": {
+    lead: "Bloom filters sit in front of slow lookups in databases, caches and browsers.",
+    tools: [
+      { name: "RedisBloom", kind: "software", note: "BF.ADD and BF.EXISTS inside Redis.", href: "https://redis.io/docs/latest/develop/data-types/probabilistic/bloom-filter/" },
+      { name: "Cassandra", kind: "software", note: "A Bloom filter per SSTable skips files that can't hold a key.", href: "https://cassandra.apache.org/doc/latest/cassandra/managing/operating/bloom_filters.html" },
+      { name: "PostgreSQL bloom index", kind: "software", note: "An index type built on Bloom filters.", href: "https://www.postgresql.org/docs/current/bloom.html" },
+    ],
+  },
+  "system-design/unique-ids": {
+    lead: "Most large systems generate ids without a central counter.",
+    tools: [
+      { name: "Twitter Snowflake", kind: "software", note: "The original 64-bit time + machine + sequence design.", href: "https://github.com/twitter-archive/snowflake" },
+      { name: "UUIDv7 (RFC 9562)", kind: "standard", note: "A time-ordered UUID standard.", href: "https://www.rfc-editor.org/rfc/rfc9562" },
+      { name: "ULID", kind: "standard", note: "Sortable 128-bit ids encoded as 26 characters.", href: "https://github.com/ulid/spec" },
+    ],
+  },
+  "system-design/distributed-locks": {
+    lead: "Lock services give you leases; correctness under pauses needs fencing at the storage.",
+    tools: [
+      { name: "etcd leases", kind: "software", note: "Keys that expire unless kept alive; revisions work as fencing tokens.", href: "https://etcd.io/docs/latest/learning/api/#lease-api" },
+      { name: "ZooKeeper recipes", kind: "software", note: "Locks built from ephemeral sequential nodes.", href: "https://zookeeper.apache.org/doc/current/recipes.html#sc_recipes_Locks" },
+      { name: "Redis SET NX PX", kind: "software", note: "A simple lease lock, with the caveats shown here.", href: "https://redis.io/docs/latest/develop/use/patterns/distributed-locks/" },
+    ],
+  },
+  "databases/mvcc": {
+    lead: "Postgres, MySQL InnoDB and Oracle all use multi-version concurrency control.",
+    tools: [
+      { name: "PostgreSQL MVCC", kind: "software", note: "How snapshots and row versions work.", href: "https://www.postgresql.org/docs/current/mvcc-intro.html" },
+      { name: "VACUUM", kind: "software", note: "Reclaims dead row versions.", href: "https://www.postgresql.org/docs/current/routine-vacuuming.html" },
+      { name: "InnoDB consistent reads", kind: "software", note: "MySQL's snapshot reads from undo logs.", href: "https://dev.mysql.com/doc/refman/8.4/en/innodb-consistent-read.html" },
+    ],
+  },
+  "databases/isolation-anomalies": {
+    lead: "The same bug appears in any database; the fixes are standard SQL.",
+    tools: [
+      { name: "PostgreSQL isolation levels", kind: "software", note: "What each level allows and prevents.", href: "https://www.postgresql.org/docs/current/transaction-iso.html" },
+      { name: "SELECT \u2026 FOR UPDATE", kind: "standard", note: "Row-level locks on read.", href: "https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-ROWS" },
+      { name: "Hermitage", kind: "software", note: "Tests of which anomalies each database really prevents.", href: "https://github.com/ept/hermitage" },
+    ],
+  },
+  "networking/dns-resolution": {
+    lead: "Every connection starts with a lookup like this one.",
+    tools: [
+      { name: "dig +trace", kind: "software", note: "Follow the referrals from the root yourself.", href: "https://www.isc.org/bind/" },
+      { name: "Cloudflare 1.1.1.1", kind: "service", note: "A public recursive resolver.", href: "https://1.1.1.1/dns/" },
+      { name: "DNS (RFC 1034)", kind: "protocol", note: "The original design of names, zones and referrals.", href: "https://www.rfc-editor.org/rfc/rfc1034" },
+    ],
+  },
+  "networking/congestion-control": {
+    lead: "Every TCP stack runs a congestion controller; the default differs by OS.",
+    tools: [
+      { name: "CUBIC (RFC 9438)", kind: "protocol", note: "The default in Linux, Windows and macOS.", href: "https://www.rfc-editor.org/rfc/rfc9438" },
+      { name: "BBR", kind: "software", note: "Google's model-based congestion control.", href: "https://github.com/google/bbr" },
+      { name: "TCP congestion control (RFC 5681)", kind: "protocol", note: "Slow start, congestion avoidance and fast recovery.", href: "https://www.rfc-editor.org/rfc/rfc5681" },
+    ],
+  },
+  "operating-systems/deadlocks": {
+    lead: "Deadlocks appear in threads and in database transactions alike.",
+    tools: [
+      { name: "PostgreSQL deadlock detection", kind: "software", note: "Finds wait cycles and aborts one transaction.", href: "https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-DEADLOCKS" },
+      { name: "Go runtime", kind: "platform", note: "Reports \u201call goroutines are asleep - deadlock!\u201d.", href: "https://go.dev/doc/effective_go#concurrency" },
+      { name: "Java thread dumps", kind: "software", note: "jstack shows which thread holds and waits for which lock.", href: "https://docs.oracle.com/en/java/javase/21/docs/specs/man/jstack.html" },
+    ],
+  },
+  "operating-systems/cpu-scheduling": {
+    lead: "Every OS has a scheduler; you mostly influence it through priorities and limits.",
+    tools: [
+      { name: "Linux EEVDF scheduler", kind: "software", note: "The Linux scheduler since 6.6, successor to CFS.", href: "https://docs.kernel.org/scheduler/sched-eevdf.html" },
+      { name: "nice and renice", kind: "software", note: "Change a process's priority.", href: "https://man7.org/linux/man-pages/man1/nice.1.html" },
+      { name: "Kubernetes CPU requests", kind: "platform", note: "Become scheduler weights for containers.", href: "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/" },
+    ],
+  },
+  "security/password-hashing": {
+    lead: "Use a password-hashing function from your platform; never design your own.",
+    tools: [
+      { name: "OWASP Password Storage Cheat Sheet", kind: "standard", note: "Recommended algorithms and parameters.", href: "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html" },
+      { name: "Argon2", kind: "standard", note: "Winner of the Password Hashing Competition.", href: "https://github.com/P-H-C/phc-winner-argon2" },
+      { name: "bcrypt", kind: "standard", note: "The long-standing slow, salted password hash.", href: "https://en.wikipedia.org/wiki/Bcrypt" },
+      { name: "Have I Been Pwned", kind: "service", note: "Check passwords against known breaches.", href: "https://haveibeenpwned.com/Passwords" },
+    ],
+  },
+  "security/jwt": {
+    lead: "JWTs carry identity between services; the libraries decide how safe they are.",
+    tools: [
+      { name: "jose", kind: "software", note: "A widely used JavaScript JWT/JWS library.", href: "https://github.com/panva/jose" },
+      { name: "RFC 7519", kind: "standard", note: "The JSON Web Token spec.", href: "https://www.rfc-editor.org/rfc/rfc7519" },
+      { name: "jwt.io", kind: "software", note: "Decode a token and see its header and claims.", href: "https://jwt.io/" },
+    ],
+  },
+  "security/csrf": {
+    lead: "Frameworks and browsers now ship most CSRF defenses by default.",
+    tools: [
+      { name: "SameSite cookies", kind: "standard", note: "Browsers default to Lax, blocking most cross-site POSTs.", href: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#samesitesamesite-value" },
+      { name: "OWASP CSRF cheat sheet", kind: "standard", note: "Tokens, origin checks and their trade-offs.", href: "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html" },
+      { name: "Django CSRF", kind: "software", note: "Token middleware on by default.", href: "https://docs.djangoproject.com/en/stable/ref/csrf/" },
+    ],
+  },
+  "security/sql-injection": {
+    lead: "Parameterized queries are built into every major driver and ORM.",
+    tools: [
+      { name: "node-postgres", kind: "software", note: "Placeholders like $1 are sent separately from the SQL.", href: "https://node-postgres.com/features/queries" },
+      { name: "sqlmap", kind: "software", note: "Finds injection flaws in testing.", href: "https://sqlmap.org/" },
+      { name: "OWASP SQL injection", kind: "standard", note: "Prevention cheat sheet.", href: "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" },
+    ],
+  },
+  "frontend/rendering-pipeline": {
+    lead: "Browser devtools show exactly which pipeline stages each frame runs.",
+    tools: [
+      { name: "Chrome DevTools Performance", kind: "software", note: "Layout, paint and composite per frame.", href: "https://developer.chrome.com/docs/devtools/performance" },
+      { name: "CSS Triggers", kind: "standard", note: "Which properties trigger layout, paint or composite.", href: "https://web.dev/articles/rendering-performance" },
+      { name: "Firefox Profiler", kind: "software", note: "Frame-by-frame timing in Firefox.", href: "https://profiler.firefox.com/" },
+    ],
+  },
+  "frontend/browser-event-loop": {
+    lead: "Every browser follows the same HTML event loop spec.",
+    tools: [
+      { name: "HTML event loop spec", kind: "standard", note: "Tasks, microtasks and rendering steps.", href: "https://html.spec.whatwg.org/multipage/webappapis.html#event-loops" },
+      { name: "Loupe", kind: "software", note: "Visualizes the call stack and queues.", href: "http://latentflip.com/loupe/" },
+      { name: "queueMicrotask", kind: "platform", note: "Schedule a microtask directly.", href: "https://developer.mozilla.org/en-US/docs/Web/API/Window/queueMicrotask" },
+    ],
+  },
+  "frontend/hydration": {
+    lead: "Modern frameworks compete on how little they hydrate.",
+    tools: [
+      { name: "React Server Components", kind: "software", note: "Server-only components ship no client JS.", href: "https://react.dev/reference/rsc/server-components" },
+      { name: "Astro islands", kind: "software", note: "Hydrate only the interactive parts.", href: "https://docs.astro.build/en/concepts/islands/" },
+      { name: "Qwik", kind: "software", note: "Resumability instead of hydration.", href: "https://qwik.dev/docs/concepts/resumable/" },
+    ],
+  },
+  "frontend/core-web-vitals": {
+    lead: "Core Web Vitals are measured in the field and in the lab.",
+    tools: [
+      { name: "PageSpeed Insights", kind: "software", note: "Real-user LCP, INP and CLS for a URL.", href: "https://pagespeed.web.dev/" },
+      { name: "web-vitals", kind: "software", note: "Measure the vitals in your own analytics.", href: "https://github.com/GoogleChrome/web-vitals" },
+      { name: "Lighthouse", kind: "software", note: "Lab audits with fix suggestions.", href: "https://developer.chrome.com/docs/lighthouse/overview" },
+    ],
+  },
+  "frontend/flexbox": {
+    lead: "Flexbox is the default for one-dimensional layout in every browser.",
+    tools: [
+      { name: "CSS Flexbox spec", kind: "standard", note: "The flex sizing algorithm in full.", href: "https://www.w3.org/TR/css-flexbox-1/#resolve-flexible-lengths" },
+      { name: "Flexbox Froggy", kind: "software", note: "A game for learning flex properties.", href: "https://flexboxfroggy.com/" },
+      { name: "MDN flexbox guide", kind: "standard", note: "Controlling ratios of flex items.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis" },
+    ],
+  },
+  "devops/probes": {
+    lead: "Probes are how Kubernetes decides to route to or restart a container.",
+    tools: [
+      { name: "Kubernetes probes", kind: "software", note: "Liveness, readiness and startup probes.", href: "https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/" },
+      { name: "Spring Boot Actuator", kind: "software", note: "Ready-made /liveness and /readiness endpoints.", href: "https://docs.spring.io/spring-boot/reference/actuator/endpoints.html#actuator.endpoints.kubernetes-probes" },
+      { name: "AWS ALB health checks", kind: "service", note: "The same idea at the load balancer.", href: "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html" },
+    ],
+  },
+  "devops/resource-limits": {
+    lead: "Requests and limits are enforced by the kernel through cgroups.",
+    tools: [
+      { name: "Kubernetes resources", kind: "software", note: "Requests, limits and QoS classes.", href: "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/" },
+      { name: "Vertical Pod Autoscaler", kind: "software", note: "Recommends requests from real usage.", href: "https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler" },
+      { name: "cAdvisor", kind: "software", note: "Per-container memory and CPU throttling metrics.", href: "https://github.com/google/cadvisor" },
+    ],
+  },
+  "devops/ip-subnets": {
+    lead: "Every cloud network starts with a CIDR block.",
+    tools: [
+      { name: "AWS VPC sizing", kind: "service", note: "Plan VPC and subnet CIDR blocks.", href: "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html" },
+      { name: "RFC 1918", kind: "standard", note: "The private address ranges.", href: "https://www.rfc-editor.org/rfc/rfc1918" },
+      { name: "ipcalc", kind: "software", note: "Subnet maths on the command line.", href: "https://gitlab.com/ipcalc/ipcalc" },
+    ],
+  },
+  "devops/git-internals": {
+    lead: "Every Git host stores the same content-addressed objects.",
+    tools: [
+      { name: "Git internals", kind: "software", note: "The Pro Git chapter on objects.", href: "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects" },
+      { name: "GitHub", kind: "platform", note: "Hosts Git repositories and pull requests.", href: "https://github.com/" },
+      { name: "git cat-file", kind: "software", note: "Inspect any object by its hash.", href: "https://git-scm.com/docs/git-cat-file" },
+    ],
+  },
+  "devops/terraform-plan-apply": {
+    lead: "Infrastructure as code tools all follow plan, review, apply.",
+    tools: [
+      { name: "Terraform", kind: "software", note: "HashiCorp's plan/apply workflow.", href: "https://developer.hashicorp.com/terraform/cli/commands/plan" },
+      { name: "OpenTofu", kind: "software", note: "The open-source Terraform fork.", href: "https://opentofu.org/" },
+      { name: "Atlantis", kind: "software", note: "Posts plans on pull requests.", href: "https://www.runatlantis.io/" },
+    ],
+  },
+  "devops/slos-error-budgets": {
+    lead: "SLOs are built into most observability platforms.",
+    tools: [
+      { name: "Google SRE book", kind: "standard", note: "The chapter that defined error budgets.", href: "https://sre.google/sre-book/embracing-risk/" },
+      { name: "Sloth", kind: "software", note: "Generates Prometheus SLO and burn-rate rules.", href: "https://sloth.dev/" },
+      { name: "Datadog SLOs", kind: "service", note: "Track SLOs and budgets in Datadog.", href: "https://docs.datadoghq.com/service_management/service_level_objectives/" },
+    ],
+  },
+  "ai/react-loop": {
+    lead: "Most agent frameworks run a version of this loop.",
+    tools: [
+      { name: "ReAct paper", kind: "standard", note: "Reasoning and acting, Yao et al.", href: "https://arxiv.org/abs/2210.03629" },
+      { name: "LangGraph", kind: "software", note: "Build agent loops as graphs.", href: "https://langchain-ai.github.io/langgraph/" },
+      { name: "Claude Agent SDK", kind: "software", note: "Anthropic's agent loop with tools.", href: "https://docs.claude.com/en/api/agent-sdk/overview" },
+    ],
+  },
+  "ai-native/streaming-ui": {
+    lead: "AI SDKs ship partial-object streaming helpers.",
+    tools: [
+      { name: "Vercel AI SDK", kind: "software", note: "streamObject renders partial JSON.", href: "https://ai-sdk.dev/docs/ai-sdk-ui/object-generation" },
+      { name: "partial-json", kind: "software", note: "Parse incomplete JSON.", href: "https://www.npmjs.com/package/partial-json" },
+      { name: "Server-Sent Events", kind: "standard", note: "The usual transport for token streams.", href: "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events" },
+    ],
+  },
+  "ai-automation/retries-errors": {
+    lead: "Workflow tools have retries built in; the policy is yours to set.",
+    tools: [
+      { name: "Temporal", kind: "software", note: "Retry policies per activity.", href: "https://docs.temporal.io/encyclopedia/retry-policies" },
+      { name: "n8n", kind: "software", note: "Retry on fail and error workflows.", href: "https://docs.n8n.io/flow-logic/error-handling/" },
+      { name: "AWS backoff and jitter", kind: "standard", note: "Why jitter matters.", href: "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/" },
+    ],
+  },
+  "ai-automation/confidence-fallbacks": {
+    lead: "Human review queues are a standard part of document automation.",
+    tools: [
+      { name: "Amazon A2I", kind: "service", note: "Human review for low-confidence predictions.", href: "https://aws.amazon.com/augmented-ai/" },
+      { name: "Label Studio", kind: "software", note: "Review and correct model outputs.", href: "https://labelstud.io/" },
+      { name: "Azure Document Intelligence", kind: "service", note: "Field-level confidence scores.", href: "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/accuracy-confidence" },
+    ],
+  },
+  "tools/model-routers": {
+    lead: "Routers and gateways put many providers behind one API.",
+    tools: [
+      { name: "OpenRouter", kind: "service", note: "One API for hundreds of models, with fallbacks.", href: "https://openrouter.ai/docs/features/model-routing" },
+      { name: "LiteLLM", kind: "software", note: "Self-hosted proxy with fallbacks and budgets.", href: "https://docs.litellm.ai/docs/routing" },
+      { name: "Cloudflare AI Gateway", kind: "service", note: "Caching, retries and fallbacks.", href: "https://developers.cloudflare.com/ai-gateway/" },
+    ],
+  },
+  "system-design/streaming-responses": {
+    lead: "Streaming has to be enabled at every hop.",
+    tools: [
+      { name: "Server-Sent Events", kind: "standard", note: "text/event-stream from server to browser.", href: "https://html.spec.whatwg.org/multipage/server-sent-events.html" },
+      { name: "Nginx proxy_buffering", kind: "software", note: "Turn buffering off for streams.", href: "https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering" },
+      { name: "Anthropic streaming", kind: "service", note: "Streaming Messages API events.", href: "https://docs.claude.com/en/docs/build-with-claude/streaming" },
+    ],
+  },
+  "dsa/heap-top-k": {
+    lead: "Heaps back every priority queue.",
+    tools: [
+      { name: "Python heapq", kind: "software", note: "heappush, heappop and nlargest.", href: "https://docs.python.org/3/library/heapq.html" },
+      { name: "Java PriorityQueue", kind: "software", note: "A binary heap in the standard library.", href: "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/PriorityQueue.html" },
+      { name: "Kafka Streams top-N", kind: "software", note: "Top-k over an endless stream.", href: "https://kafka.apache.org/documentation/streams/" },
+    ],
+  },
+  "dsa/fast-slow-pointers": {
+    lead: "Floyd's trick appears wherever memory is tight.",
+    tools: [
+      { name: "Floyd's cycle detection", kind: "standard", note: "The tortoise and hare algorithm.", href: "https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare" },
+      { name: "Pollard's rho", kind: "standard", note: "Factoring integers with the same idea.", href: "https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm" },
+      { name: "Linux list debugging", kind: "software", note: "Kernel list-corruption checks.", href: "https://www.kernel.org/doc/html/latest/core-api/kernel-api.html#list-management-functions" },
+    ],
+  },
+  "dsa/trie": {
+    lead: "Tries power prefix search in many systems.",
+    tools: [
+      { name: "Redis autocomplete", kind: "software", note: "FT.SUGGET prefix suggestions.", href: "https://redis.io/docs/latest/commands/ft.sugget/" },
+      { name: "Linux routing (LC-trie)", kind: "software", note: "IP lookups use a compressed trie.", href: "https://www.kernel.org/doc/html/latest/networking/fib_trie.html" },
+      { name: "marisa-trie", kind: "software", note: "A compact static trie library.", href: "https://github.com/s-yata/marisa-trie" },
+    ],
+  },
+  "dsa/union-find": {
+    lead: "Union-find shows up in graphs, images and compilers.",
+    tools: [
+      { name: "Kruskal's algorithm", kind: "standard", note: "Minimum spanning trees with union-find.", href: "https://en.wikipedia.org/wiki/Kruskal%27s_algorithm" },
+      { name: "scipy connected_components", kind: "software", note: "Graph components in SciPy.", href: "https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csgraph.connected_components.html" },
+      { name: "NetworkX UnionFind", kind: "software", note: "A ready-made disjoint set.", href: "https://networkx.org/documentation/stable/reference/utils.html" },
+    ],
+  },
+  "dsa/prefix-sum": {
+    lead: "Running totals hide inside databases and image libraries.",
+    tools: [
+      { name: "NumPy cumsum", kind: "software", note: "Prefix sums in one call.", href: "https://numpy.org/doc/stable/reference/generated/numpy.cumsum.html" },
+      { name: "OpenCV integral image", kind: "software", note: "2D prefix sums for fast box filters.", href: "https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html" },
+      { name: "SQL window SUM", kind: "standard", note: "SUM() OVER (ORDER BY \u2026) is a prefix sum.", href: "https://www.postgresql.org/docs/current/tutorial-window.html" },
+    ],
+  },
+  "dsa/merge-intervals": {
+    lead: "Interval merging runs in calendars and genome tools.",
+    tools: [
+      { name: "Google Calendar free/busy", kind: "service", note: "Merges busy blocks across calendars.", href: "https://developers.google.com/calendar/api/v3/reference/freebusy" },
+      { name: "bedtools merge", kind: "software", note: "Merges overlapping genome ranges.", href: "https://bedtools.readthedocs.io/en/latest/content/tools/merge.html" },
+      { name: "PostgreSQL range types", kind: "software", note: "Ranges with overlap operators.", href: "https://www.postgresql.org/docs/current/rangetypes.html" },
+    ],
+  },
+  "dsa/backtracking": {
+    lead: "Backtracking is the core of constraint solvers.",
+    tools: [
+      { name: "Sudoku solvers", kind: "standard", note: "Classic backtracking with pruning.", href: "https://en.wikipedia.org/wiki/Sudoku_solving_algorithms#Backtracking" },
+      { name: "OR-Tools CP-SAT", kind: "software", note: "Google's constraint solver.", href: "https://developers.google.com/optimization/cp" },
+      { name: "Prolog", kind: "software", note: "A language built on backtracking search.", href: "https://www.swi-prolog.org/" },
+    ],
+  },
+  "dsa/dijkstra": {
+    lead: "Shortest-path search runs maps and networks.",
+    tools: [
+      { name: "OSRM", kind: "software", note: "Open-source route planning on OpenStreetMap.", href: "https://project-osrm.org/" },
+      { name: "OSPF", kind: "protocol", note: "Routers run Dijkstra on the link-state map.", href: "https://www.rfc-editor.org/rfc/rfc2328" },
+      { name: "NetworkX shortest paths", kind: "software", note: "dijkstra_path and friends.", href: "https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html" },
+    ],
+  },
+  "dsa/topological-sort": {
+    lead: "Every build and package tool sorts dependencies.",
+    tools: [
+      { name: "make", kind: "software", note: "Builds targets in dependency order.", href: "https://www.gnu.org/software/make/manual/make.html" },
+      { name: "Airflow DAGs", kind: "software", note: "Runs tasks once upstream tasks finish.", href: "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html" },
+      { name: "npm", kind: "software", note: "Installs packages in dependency order.", href: "https://docs.npmjs.com/cli/commands/npm-install" },
+    ],
+  },
+  "dsa/lru-cache": {
+    lead: "LRU and its approximations sit in front of most slow storage.",
+    tools: [
+      { name: "Redis eviction", kind: "software", note: "allkeys-lru, approximated by sampling.", href: "https://redis.io/docs/latest/develop/reference/eviction/" },
+      { name: "lru-cache (npm)", kind: "software", note: "The common Node.js LRU.", href: "https://www.npmjs.com/package/lru-cache" },
+      { name: "functools.lru_cache", kind: "software", note: "Memoise Python functions.", href: "https://docs.python.org/3/library/functools.html#functools.lru_cache" },
+    ],
+  },
+  "system-design/autoscaling": {
+    lead: "Every cloud has an autoscaler; the policy is the hard part.",
+    tools: [
+      { name: "Kubernetes HPA", kind: "software", note: "Scale pods on CPU or custom metrics.", href: "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/" },
+      { name: "AWS Auto Scaling", kind: "service", note: "Target tracking, step and scheduled policies.", href: "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html" },
+      { name: "KEDA", kind: "software", note: "Scale on queue length and events.", href: "https://keda.sh/" },
+    ],
+  },
+  "system-design/delivery-guarantees": {
+    lead: "Queues give you at-least-once; consumers make it safe.",
+    tools: [
+      { name: "Kafka delivery semantics", kind: "software", note: "At-most, at-least and exactly-once.", href: "https://kafka.apache.org/documentation/#semantics" },
+      { name: "Amazon SQS", kind: "service", note: "At-least-once standard queues, FIFO with dedupe.", href: "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html" },
+      { name: "RabbitMQ acks", kind: "software", note: "Consumer acknowledgements and redelivery.", href: "https://www.rabbitmq.com/docs/confirms" },
+    ],
+  },
+  "system-design/sagas-outbox": {
+    lead: "Workflow engines run sagas; CDC tools relay outboxes.",
+    tools: [
+      { name: "Temporal", kind: "software", note: "Durable orchestration with compensation.", href: "https://docs.temporal.io/" },
+      { name: "AWS Step Functions", kind: "service", note: "Orchestrated sagas with catch and retry.", href: "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html" },
+      { name: "Debezium outbox", kind: "software", note: "Relays outbox rows to Kafka via CDC.", href: "https://debezium.io/documentation/reference/stable/transformations/outbox-event-router.html" },
+    ],
+  },
+  "databases/connection-pooling": {
+    lead: "Poolers sit between apps and Postgres in most production setups.",
+    tools: [
+      { name: "PgBouncer", kind: "software", note: "Lightweight Postgres connection pooler.", href: "https://www.pgbouncer.org/" },
+      { name: "Amazon RDS Proxy", kind: "service", note: "Managed pooling for RDS and Aurora.", href: "https://aws.amazon.com/rds/proxy/" },
+      { name: "HikariCP", kind: "software", note: "The standard JVM connection pool.", href: "https://github.com/brettwooldridge/HikariCP" },
+    ],
+  },
+  "databases/join-algorithms": {
+    lead: "Every SQL planner chooses between these three.",
+    tools: [
+      { name: "PostgreSQL EXPLAIN", kind: "software", note: "See the join method your query used.", href: "https://www.postgresql.org/docs/current/using-explain.html" },
+      { name: "MySQL hash join", kind: "software", note: "Added in MySQL 8.0.18.", href: "https://dev.mysql.com/doc/refman/8.0/en/hash-joins.html" },
+      { name: "explain.dalibo.com", kind: "software", note: "Visualise Postgres plans.", href: "https://explain.dalibo.com/" },
+    ],
+  },
+  "networking/nat": {
+    lead: "NAT is in every home router and cloud network.",
+    tools: [
+      { name: "AWS NAT gateway", kind: "service", note: "Outbound internet for private subnets.", href: "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html" },
+      { name: "RFC 3022", kind: "standard", note: "Traditional NAT.", href: "https://www.rfc-editor.org/rfc/rfc3022" },
+      { name: "STUN (RFC 8489)", kind: "protocol", note: "Lets peers discover their public address.", href: "https://www.rfc-editor.org/rfc/rfc8489" },
+    ],
+  },
+  "operating-systems/virtual-memory": {
+    lead: "Every modern OS and CPU translates addresses this way.",
+    tools: [
+      { name: "Linux memory management", kind: "software", note: "Page tables, the TLB and page faults.", href: "https://www.kernel.org/doc/html/latest/admin-guide/mm/concepts.html" },
+      { name: "perf", kind: "software", note: "Count TLB misses and page faults.", href: "https://perf.wiki.kernel.org/" },
+      { name: "Huge pages", kind: "software", note: "2 MB pages to cut TLB misses.", href: "https://www.kernel.org/doc/html/latest/admin-guide/mm/hugetlbpage.html" },
+    ],
+  },
+  "frontend/css-grid": {
+    lead: "Grid is supported in every modern browser.",
+    tools: [
+      { name: "MDN CSS Grid", kind: "standard", note: "The full guide.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" },
+      { name: "Grid Garden", kind: "software", note: "A game for learning grid.", href: "https://cssgridgarden.com/" },
+      { name: "Firefox grid inspector", kind: "software", note: "Overlay grid lines in devtools.", href: "https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_grid_layouts/" },
+    ],
+  },
+  "frontend/promises-async": {
+    lead: "async/await is built into every JavaScript runtime.",
+    tools: [
+      { name: "MDN async function", kind: "standard", note: "How await suspends a function.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" },
+      { name: "Promise.all", kind: "standard", note: "Run independent promises together.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all" },
+      { name: "Chrome DevTools async stacks", kind: "software", note: "Debug across awaits.", href: "https://developer.chrome.com/docs/devtools/javascript/reference" },
+    ],
+  },
+  "security/digital-signatures": {
+    lead: "Signatures secure TLS, software updates and tokens.",
+    tools: [
+      { name: "Ed25519", kind: "standard", note: "Fast modern signatures (RFC 8032).", href: "https://www.rfc-editor.org/rfc/rfc8032" },
+      { name: "Sigstore", kind: "software", note: "Sign and verify software artifacts.", href: "https://www.sigstore.dev/" },
+      { name: "OpenSSL dgst", kind: "software", note: "Sign and verify files on the command line.", href: "https://docs.openssl.org/master/man1/openssl-dgst/" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

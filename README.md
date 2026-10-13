@@ -91,6 +91,60 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/ai/llm-as-judge` | Eight answer pairs graded by a judge with position and length bias; swap orders and a rubric remove confident wrong picks | — |
 | `/tracks/ai/query-rewriting` | Search with the question as typed, rewritten, or as a HyDE fake answer, and see where the right page lands | — |
 | `/tracks/ai/lora` | Freeze W, train thin B and A: an 8×8 picture of B·A and trainable parameters by rank for a 7B model | — |
+| `/tracks/system-design/idempotency` | A lost payment response and a retry: two charges without a key, one with an idempotency key | — |
+| `/tracks/system-design/cap-theorem` | Three replicas and a partition: CP refuses the minority read, AP answers stale; then the network heals | — |
+| `/tracks/devops/images-layers` | Which Dockerfile layers rebuild after a code or dependency change, for two instruction orders | — |
+| `/tracks/nodejs/blocking-the-event-loop` | A 200 ms request on the main thread delays every 2 ms request; a worker thread keeps them at 2 ms | — |
+| `/tracks/system-design/bloom-filters` | Add names to a 24-bit filter and check others: definitely not, or probably yes (with a false positive) | — |
+| `/tracks/system-design/unique-ids` | Build a Snowflake id bit by bit (time, machine, sequence) and see ids from three servers sort by time | — |
+| `/tracks/system-design/distributed-locks` | A GC pause outlives a lock's lease and two clients write; a fencing token makes storage reject the stale one | — |
+| `/tracks/databases/mvcc` | Row versions with xmin/xmax: a reader keeps its snapshot while a writer commits, then VACUUM cleans up | — |
+| `/tracks/databases/isolation-anomalies` | Two deposits at once: read-then-write loses one; FOR UPDATE, SERIALIZABLE (with retry) and an atomic UPDATE don't | — |
+| `/tracks/networking/dns-resolution` | Resolve a name cold (browser, OS, resolver, root, TLD, authoritative: 103 ms) or warm (8 ms) | — |
+| `/tracks/networking/congestion-control` | The congestion window per round trip: slow start, additive increase, and Reno vs Tahoe after a loss | — |
+| `/tracks/operating-systems/deadlocks` | Two threads take two locks in opposite order and hang; one global lock order prevents it | — |
+| `/tracks/operating-systems/cpu-scheduling` | Four processes under FCFS, shortest-job-first and round robin: a Gantt chart, waiting times and switches | — |
+| `/tracks/security/password-hashing` | A leaked users table under plain text, SHA-256, salted SHA-256 and bcrypt: what the attacker sees and how long cracking takes | — |
+| `/tracks/security/jwt` | Tamper with a token, switch it to alg none, or let it expire, and see which checks catch it | — |
+| `/tracks/security/csrf` | A malicious page submits a form to your bank; try each defense and see which request gets through | — |
+| `/tracks/security/sql-injection` | Type a login payload and compare string concatenation with a parameterized query | — |
+| `/tracks/frontend/rendering-pipeline` | Change width, color or transform and see which of style, layout, paint and composite each one runs | — |
+| `/tracks/frontend/browser-event-loop` | Step through sync code, a promise and a setTimeout to see why the output is A E C D B | — |
+| `/tracks/frontend/hydration` | Compare client rendering, server rendering and islands: when content appears and when it can be clicked | — |
+| `/tracks/frontend/core-web-vitals` | Toggle a CDN, deferred scripts, a preload and image compression and watch LCP drop below 2.5 s | — |
+| `/tracks/frontend/flexbox` | Drag the container width and see grow split the extra space and shrink take it back | — |
+| `/tracks/devops/probes` | An app warms up and later hangs; try no probes, readiness, liveness or both and count failed requests | — |
+| `/tracks/devops/resource-limits` | A leaking app under different memory and CPU limits: OOM kills versus throttling | — |
+| `/tracks/devops/ip-subnets` | Drag the prefix length to see network and host bits, split a /16 into subnets and test which IPs fall inside | — |
+| `/tracks/devops/git-internals` | Step through commits and a branch and watch blobs, trees, commits and refs get written | — |
+| `/tracks/devops/terraform-plan-apply` | Make a change, from adding a bucket to console drift, and read the create, update, replace or destroy plan | — |
+| `/tracks/devops/slos-error-budgets` | The same incidents against 99%, 99.9% and 99.99% targets: how much budget is left | — |
+| `/tracks/ai/react-loop` | Step through thought, action and observation with search, weather and calculator tools | — |
+| `/tracks/ai-native/streaming-ui` | Stream a JSON answer and compare waiting, raw text, and parsing partial chunks | — |
+| `/tracks/ai-automation/retries-errors` | Try no retries, immediate retries and backoff against a 503, a 429 and a 400 | — |
+| `/tracks/ai-automation/confidence-fallbacks` | Slide the auto-approve threshold and trade automation rate against errors that slip through | — |
+| `/tracks/tools/model-routers` | Twelve requests during a provider outage: one provider, a fallback chain, or routing by difficulty | — |
+| `/tracks/system-design/streaming-responses` | Watch tokens move model to API to proxy to browser, and see one buffering proxy undo streaming | — |
+| `/tracks/dsa/heap-top-k` | Push a stream through a min-heap of size k, with sift-up and sift-down drawn as a tree | — |
+| `/tracks/dsa/fast-slow-pointers` | Slow and fast pointers on a linked list with and without a loop, then find where the loop starts | — |
+| `/tracks/dsa/trie` | Pick a prefix and watch the walk down a trie of words, then the words collected below | — |
+| `/tracks/dsa/union-find` | Add edges one at a time and watch groups merge, with the parent array and depths | — |
+| `/tracks/dsa/prefix-sum` | Drag a range and see its sum come from two prefix totals instead of adding every cell | — |
+| `/tracks/dsa/merge-intervals` | Sort intervals on a number line and sweep through, merging overlaps | — |
+| `/tracks/dsa/backtracking` | Find subsets that hit a target in a take/skip decision tree, with and without pruning | — |
+| `/tracks/dsa/dijkstra` | Watch Dijkstra settle nodes and relax edges on a weighted graph, then trace the path back | — |
+| `/tracks/dsa/topological-sort` | Kahn's algorithm on a course plan: indegrees, a ready queue, and what a cycle looks like | — |
+| `/tracks/dsa/lru-cache` | Run gets and puts against a 3-slot cache and watch hits, moves to front and evictions | — |
+| `/tracks/system-design/autoscaling` | A traffic spike against a fixed fleet, naive per-minute scaling and target tracking with cooldown | — |
+| `/tracks/system-design/delivery-guarantees` | A consumer crashes mid-stream: commit-first loses a payment, process-first doubles it, dedupe fixes it | — |
+| `/tracks/system-design/sagas-outbox` | Step an order saga through four services, fail a step and watch compensations, and see why the outbox exists | — |
+| `/tracks/databases/connection-pooling` | Add app servers and watch connections hit max_connections, with per-request, per-server pools and PgBouncer | — |
+| `/tracks/databases/join-algorithms` | Step through nested loop, hash and merge joins on small tables and compare costs at scale | — |
+| `/tracks/networking/nat` | Packets leave three private devices, get rewritten by the router, and replies are mapped back | — |
+| `/tracks/operating-systems/virtual-memory` | Translate addresses through a TLB and page table, and trigger page faults that evict a page | — |
+| `/tracks/frontend/css-grid` | Pick a grid template, drag the container width and watch fr, fixed and auto-fill tracks resize | — |
+| `/tracks/frontend/promises-async` | Step through what await pauses and in what order logs appear, then compare sequential awaits with Promise.all | — |
+| `/tracks/security/digital-signatures` | Sign with toy RSA and verify a genuine message, a tampered one, and a forgery | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |
