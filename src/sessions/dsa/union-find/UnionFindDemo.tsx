@@ -27,7 +27,7 @@ export default function UnionFindDemo() {
                 {EDGES.map(([a, b], i) => <li key={i} className="rounded px-2 py-1" style={{ background: "var(--inset)", outline: f.edge && f.edge[0] === a && f.edge[1] === b ? `2px solid ${ACCENT}` : undefined, opacity: i < playback.i ? 0.5 : 1 }}>{a}–{b}</li>)}
               </ol>
               <p className="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-[var(--faint)]">{f.components} groups</p>
-              <div className="mt-2 grid gap-2 sm:grid-cols-2">
+              <div className="mt-2 grid grid-cols-2 gap-2">
                 {roots.map((r) => (
                   <div key={r} className="rounded-lg border p-2" style={{ borderColor: COLORS[r] }}>
                     <p className="font-mono text-[11px] text-[var(--faint)]">root {r}</p>
