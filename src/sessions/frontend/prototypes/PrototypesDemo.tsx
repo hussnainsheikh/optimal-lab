@@ -20,7 +20,7 @@ export default function PrototypesDemo() {
         <SessionLayout
           visual={
             <section className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-4 sm:p-5" aria-label="Prototype chain">
-              <pre className="rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{"class Animal { speak() {} eat() {} }\nclass Dog extends Animal { bark() {} }\nconst rex = new Dog(); rex.name = \"Rex\"; rex.age = 3;"}</pre>
+              <pre className="overflow-x-auto rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{"class Animal { speak() {} eat() {} }\nclass Dog extends Animal { bark() {} }\nconst rex = new Dog(); rex.name = \"Rex\"; rex.age = 3;"}</pre>
               <ol className="mt-3 space-y-1">
                 {CHAIN.map((c, i) => {
                   const visited = r.visited.includes(i), found = r.foundAt === i;

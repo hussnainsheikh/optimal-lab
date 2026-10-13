@@ -24,7 +24,7 @@ export default function PromDemo() {
         <SessionLayout
           visual={
             <section className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-4 sm:p-5" aria-label="Metric view">
-              <pre className="rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{v === "raw" ? "http_requests_total" : v === "rate" ? "rate(http_requests_total[1m])" : "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))"}</pre>
+              <pre className="overflow-x-auto rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{v === "raw" ? "http_requests_total" : v === "rate" ? "rate(http_requests_total[1m])" : "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))"}</pre>
               {v !== "histogram" ? (
                 <>
                   <div className="mt-3 flex h-36 items-end gap-1">

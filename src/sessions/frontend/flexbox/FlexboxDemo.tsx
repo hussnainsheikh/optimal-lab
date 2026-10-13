@@ -6,7 +6,7 @@ import { Slider } from "@/components/session/ui";
 import { SessionHeader, SessionPage } from "@/components/session/SessionHeader";
 import { SessionLayout } from "@/components/session/SessionSplitLayout";
 import { SystemMapPanel } from "@/components/system/SystemMap";
-import { ITEMS, layout } from "@/lib/flexbox";
+import { layout } from "@/lib/flexbox";
 
 const ACCENT = "var(--web)";
 const COLORS = ["var(--c1)", "var(--c2)", "var(--c3)"];

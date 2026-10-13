@@ -23,7 +23,7 @@ export default function BoxModelDemo() {
         <SessionLayout
           visual={
             <section className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-4 sm:p-5" aria-label="Live box">
-              <pre className="rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{`.card {\n  box-sizing: ${bs === "border" ? "border-box" : "content-box"};\n  width: 200px;\n  padding: ${pad}px;\n  border: ${border}px solid;\n  margin: ${margin}px;\n}`}</pre>
+              <pre className="overflow-x-auto rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{`.card {\n  box-sizing: ${bs === "border" ? "border-box" : "content-box"};\n  width: 200px;\n  padding: ${pad}px;\n  border: ${border}px solid;\n  margin: ${margin}px;\n}`}</pre>
               <div className="mt-3 overflow-x-auto rounded-lg bg-[var(--inset)]">
                 <div className="inline-block" style={{ background: "color-mix(in srgb, var(--auto) 25%, transparent)" }}>
                   <div style={{ boxSizing: bs === "border" ? "border-box" : "content-box", width: 200, padding: pad, border: `${border}px solid var(--text)`, margin, background: "color-mix(in srgb, var(--good) 30%, transparent)" }}>

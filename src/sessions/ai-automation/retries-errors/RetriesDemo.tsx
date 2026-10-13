@@ -31,7 +31,7 @@ export default function RetriesDemo() {
               <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--faint)]">Attempts, 0 to {SPAN} s</p>
               <div className="relative mt-3 h-14 rounded bg-[var(--inset)]">
                 {r.attempts.map((a, i) => (
-                  <span key={i} className="absolute top-1/2 grid h-8 min-w-8 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full px-1 font-mono text-[10px]" style={{ left: `${4 + (Math.min(a.t, SPAN) / SPAN) * 92}%`, background: a.ok ? "var(--good)" : "var(--bad)", color: "var(--on-accent)", top: `${50 + (i % 2 ? 12 : -12) * (policy === "immediate" ? 1 : 0)}%` }}>{a.code}</span>
+                  <span key={i} className="absolute top-1/2 grid h-6 min-w-6 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full px-1 font-mono text-[10px]" style={{ left: `${4 + (Math.min(a.t, SPAN) / SPAN) * 92}%`, background: a.ok ? "var(--good)" : "var(--bad)", color: "var(--on-accent)", top: `${50 + (i % 2 ? 22 : -22)}%` }}>{a.code}</span>
                 ))}
               </div>
               <ul className="mt-3 space-y-1 font-mono text-xs">

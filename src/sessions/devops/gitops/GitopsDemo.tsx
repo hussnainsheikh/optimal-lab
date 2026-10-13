@@ -32,7 +32,7 @@ function Run({ heal, setHeal }: { heal: string; setHeal: (v: string) => void }) 
           <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
             <div className="rounded-lg border-2 p-3" style={{ borderColor: f.actor === "dev" ? ACCENT : "var(--line)" }}>
               <p className="text-sm font-medium">Git repo</p>
-              <pre className="mt-1 font-mono text-xs">replicas: {f.git}</pre>
+              <pre className="overflow-x-auto mt-1 font-mono text-xs">replicas: {f.git}</pre>
             </div>
             <div className="rounded-lg border-2 p-2 text-center text-xs" style={{ borderColor: f.actor === "controller" ? ACCENT : "var(--line)" }}>controller<br /><span style={{ color: f.synced ? "var(--good)" : "var(--auto)" }}>{f.synced ? "Synced" : "OutOfSync"}</span></div>
             <div className="rounded-lg border-2 p-3" style={{ borderColor: f.actor === "human" ? "var(--bad)" : "var(--line)" }}>

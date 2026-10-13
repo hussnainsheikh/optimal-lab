@@ -21,7 +21,7 @@ export default function StorageDemo() {
           visual={
             <section className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-4 sm:p-5" aria-label="Storage options">
               <div className="overflow-x-auto">
-                <table className="w-full text-xs">
+                <table className="w-full min-w-[34rem] text-xs [&_td]:pr-3 [&_th]:pr-3">
                   <thead><tr className="text-left text-[var(--faint)]"><th className="font-normal" /><th className="font-normal">size</th><th className="font-normal">sent to server</th><th className="font-normal">API</th><th className="font-normal">readable by JS</th><th className="font-normal">lasts</th></tr></thead>
                   <tbody>{STORES.map((s) => <tr key={s.id} style={{ background: s.id === need.pick ? ACCENT : undefined, color: s.id === need.pick ? "var(--on-accent)" : undefined }}><td className="py-1.5 pl-1 font-medium">{s.name}</td><td>{s.size}</td><td>{s.sent}</td><td>{s.api}</td><td>{s.js}</td><td className="pr-1">{s.life}</td></tr>)}</tbody>
                 </table>

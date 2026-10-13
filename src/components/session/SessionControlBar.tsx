@@ -25,7 +25,7 @@ export function SessionControlBar({
   return (
     <div className="sticky top-14 z-30 -mx-4 border-b border-[var(--line)] bg-[var(--bg)]/90 px-4 py-3 backdrop-blur sm:top-[3.5rem] lg:top-20">
       <div className="flex flex-wrap items-center gap-3">
-        <p className="min-w-0 flex-1 text-sm font-medium text-[var(--text)]">{label}</p>
+        <p className="min-w-[12rem] flex-1 text-sm font-medium text-[var(--text)]">{label}</p>
         <button
           type="button"
           onClick={onRun}

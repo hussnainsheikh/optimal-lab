@@ -5,7 +5,7 @@ import { SessionHeader, SessionPage } from "@/components/session/SessionHeader";
 import { SessionLayout } from "@/components/session/SessionSplitLayout";
 import { SystemMapPanel } from "@/components/system/SystemMap";
 import { PlaybackControls, usePlayback } from "@/components/session/ui";
-import { depth, EDGES, N, rootOf, run } from "@/lib/unionFind";
+import { depth, EDGES, rootOf, run } from "@/lib/unionFind";
 
 const ACCENT = "var(--dsa)";
 const FRAMES = run(true);

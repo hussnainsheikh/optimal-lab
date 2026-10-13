@@ -27,7 +27,7 @@ export default function PrefixSumDemo() {
                 <span />
                 {NUMS.map((x, i) => <span key={i} className={cell} style={{ background: i >= lo && i <= hi ? ACCENT : "var(--inset)", color: i >= lo && i <= hi ? "var(--on-accent)" : undefined }}>{x}</span>)}
               </div>
-              <p className="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-[var(--faint)]">prefix (P[i] = sum of the first i numbers)</p>
+              <p className="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-[var(--faint)]">prefix <span className="normal-case tracking-normal">(P[i] = sum of the first i numbers)</span></p>
               <div className="mt-1 grid grid-cols-[repeat(11,minmax(0,1fr))] gap-1">
                 {PREFIX.map((x, i) => <span key={i} className={cell} style={{ background: "var(--inset)", outline: i === hi + 1 ? "2px solid var(--good)" : i === lo ? "2px solid var(--bad)" : undefined }}>{x}</span>)}
               </div>

@@ -31,7 +31,7 @@ function Run({ order, setOrder }: { order: Order; setOrder: (o: Order) => void }
     <SessionLayout
       visual={
         <section className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-4 sm:p-5" aria-label="Array and cache">
-          <pre className="rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{order === "row" ? "for (r…) for (c…) sum += a[r][c]" : "for (c…) for (r…) sum += a[r][c]"}</pre>
+          <pre className="overflow-x-auto rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{order === "row" ? "for (r…) for (c…) sum += a[r][c]" : "for (c…) for (r…) sum += a[r][c]"}</pre>
           <div className="mt-3 grid grid-cols-8 gap-0.5" style={{ maxWidth: 320 }}>
             {Array.from({ length: N * N }, (_, i) => {
               const r = Math.floor(i / N), c = i % N, line = Math.floor(i / LINE);

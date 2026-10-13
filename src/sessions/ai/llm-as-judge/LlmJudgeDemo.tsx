@@ -64,7 +64,7 @@ export default function LlmJudgeDemo() {
                 })}
               </div>
 
-              <table className="mt-4 w-full text-sm">
+              <table className="mt-4 w-full text-sm [&_td+td]:pl-2 [&_th+th]:pl-2">
                 <thead>
                   <tr className="text-left font-mono text-[11px] text-[var(--faint)]">
                     <th className="font-normal">pair</th>

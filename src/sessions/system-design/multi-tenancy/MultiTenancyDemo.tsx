@@ -24,7 +24,7 @@ export default function MultiTenancyDemo() {
           visual={
             <section className="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-4 sm:p-5" aria-label="Query result">
               <p className="font-mono text-xs text-[var(--faint)]">logged in as acme</p>
-              <pre className="mt-1 rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{m === "shared" ? (bug === "yes" ? "SELECT * FROM invoices;  -- forgot tenant filter" : "SELECT * FROM invoices WHERE tenant_id = 'acme';") : m === "schema" ? "SET search_path = acme;  SELECT * FROM invoices;" : "-- connected to the acme database\nSELECT * FROM invoices;"}</pre>
+              <pre className="overflow-x-auto mt-1 rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{m === "shared" ? (bug === "yes" ? "SELECT * FROM invoices;  -- forgot tenant filter" : "SELECT * FROM invoices WHERE tenant_id = 'acme';") : m === "schema" ? "SET search_path = acme;  SELECT * FROM invoices;" : "-- connected to the acme database\nSELECT * FROM invoices;"}</pre>
               <ul className="mt-3 space-y-1">{r.rows.map((x) => <li key={x.item} className="rounded px-2 py-1 text-sm" style={{ background: "var(--inset)", color: x.tenant !== "acme" ? "var(--bad)" : undefined }}>{x.item}{x.tenant !== "acme" ? " (another customer!)" : ""}</li>)}</ul>
               <dl className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {[["Isolation", "●".repeat(md.isolation) + "○".repeat(3 - md.isolation)], ["Cost per tenant", md.costPerTenant], ["Migrations", md.migrations], ["Noisy neighbours", md.noisy]].map(([k, v]) => <div key={k} className="rounded-lg bg-[var(--inset)] p-2"><dt className="text-xs text-[var(--faint)]">{k}</dt><dd className="text-sm">{v}</dd></div>)}

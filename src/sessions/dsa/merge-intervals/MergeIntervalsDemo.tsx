@@ -27,13 +27,13 @@ export default function MergeIntervalsDemo() {
               <ul className="mt-2 space-y-1">
                 {list.map((iv, i) => (
                   <li key={i} className="relative h-6 rounded bg-[var(--inset)]">
-                    <span className="absolute inset-y-0.5 grid place-items-center rounded font-mono text-[10px]" style={{ left: pct(iv[0]), width: pct(iv[1] - iv[0]), background: i === f.i ? ACCENT : i < f.i ? "var(--ghost)" : "var(--line-strong)", color: i === f.i ? "var(--on-accent)" : undefined }}>{iv[0]}–{iv[1]}</span>
+                    <span className="absolute inset-y-0.5 grid min-w-[2.25rem] place-items-center whitespace-nowrap rounded font-mono text-[10px]" style={{ left: pct(iv[0]), width: pct(iv[1] - iv[0]), background: i === f.i ? ACCENT : i < f.i ? "var(--ghost)" : "var(--line-strong)", color: i === f.i ? "var(--on-accent)" : undefined }}>{iv[0]}–{iv[1]}</span>
                   </li>
                 ))}
               </ul>
               <p className="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-[var(--faint)]">Merged</p>
               <div className="relative mt-2 h-8 rounded bg-[var(--inset)]">
-                {f.merged.map((iv, i) => <span key={i} className="absolute inset-y-1 grid place-items-center rounded font-mono text-[11px]" style={{ left: pct(iv[0]), width: pct(Math.max(iv[1] - iv[0], 0.6)), background: "var(--good)", color: "var(--on-accent)" }}>{iv[0]}–{iv[1]}</span>)}
+                {f.merged.map((iv, i) => <span key={i} className="absolute inset-y-1 grid min-w-[2.25rem] place-items-center whitespace-nowrap rounded font-mono text-[11px]" style={{ left: pct(iv[0]), width: pct(Math.max(iv[1] - iv[0], 0.6)), background: "var(--good)", color: "var(--on-accent)" }}>{iv[0]}–{iv[1]}</span>)}
               </div>
               <div className="mt-1 flex justify-between font-mono text-[10px] text-[var(--faint)]"><span>0</span><span>10</span><span>20</span></div>
             </section>

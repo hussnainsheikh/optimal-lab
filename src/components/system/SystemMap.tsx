@@ -172,7 +172,7 @@ export function SystemMap({
           return (
             <div
               key={n.id}
-              className={`absolute z-20 w-[clamp(5.25rem,20%,8.5rem)] -translate-x-1/2 -translate-y-1/2 rounded-lg border bg-[var(--panel)] px-2 py-1.5 text-center transition-[border-color,box-shadow,opacity] duration-200 ${
+              className={`absolute z-20 w-[clamp(5.25rem,20%,8.5rem)] min-w-min -translate-x-1/2 -translate-y-1/2 rounded-lg border bg-[var(--panel)] px-2 py-1.5 text-center transition-[border-color,box-shadow,opacity] duration-200 ${
                 n.state === "wait" && !still ? "animate-pulse" : ""
               }`}
               style={{ left: `${x}%`, top: `${y}%`, ...nodeLook(n.state ?? "idle", accent) }}

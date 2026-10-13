@@ -27,7 +27,7 @@ export default function FeatureFlagsDemo() {
                 {USERS.map((u, i) => <span key={u.id} title={`${u.id} · bucket ${BUCKETS[i]}`} className="grid aspect-square place-items-center rounded font-mono text-[9px]" style={{ background: on[i] ? ACCENT : "var(--inset)", color: on[i] ? "var(--on-accent)" : "var(--faint)", outline: u.staff ? "1.5px solid var(--good)" : undefined }}>{BUCKETS[i]}</span>)}
               </div>
               <p className="mt-2 text-xs text-[var(--muted)]">Number: the user&apos;s hash bucket (0–99). Filled: sees the new checkout. Green outline: staff.</p>
-              <pre className="mt-3 rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{`if (killSwitch) return false${staff === "yes" ? "\nif (user.isStaff) return true" : ""}\nreturn hash("new-checkout:" + user.id) % 100 < ${pct}`}</pre>
+              <pre className="overflow-x-auto mt-3 rounded-md bg-[var(--inset)] p-2 font-mono text-xs">{`if (killSwitch) return false${staff === "yes" ? "\nif (user.isStaff) return true" : ""}\nreturn hash("new-checkout:" + user.id) % 100 < ${pct}`}</pre>
               <p className="mt-2 font-mono text-sm">{n} of {USERS.length} users on the new checkout</p>
             </section>
           }

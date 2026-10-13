@@ -9,7 +9,7 @@ export function spread(fanout: number) {
   for (let k = 1; k < 20 && round.includes(-1); k++) {
     const knowers = round.map((v, i) => (v >= 0 && v < k ? i : -1)).filter((i) => i >= 0);
     const fresh: number[] = [];
-    for (const _ of knowers) for (let f = 0; f < fanout; f++) { const p = Math.floor(r() * NODES); if (round[p] < 0) { round[p] = k; fresh.push(p); } }
+    for (let k2 = 0; k2 < knowers.length; k2++) for (let f = 0; f < fanout; f++) { const p = Math.floor(r() * NODES); if (round[p] < 0) { round[p] = k; fresh.push(p); } }
     rounds.push(fresh);
   }
   return { round, rounds, total: rounds.length - 1 };

@@ -6,10 +6,10 @@ export function run(bulkhead: boolean, seconds = 12) {
   const ticks = [];
   for (let t = 0; t < seconds; t++) {
     busyPay = busyPay.filter((f) => f > t);
-    let payOk = 0, payRejected = 0;
+    let payRejected = 0;
     for (let i = 0; i < PAY_RATE; i++) {
       const used = busyPay.length;
-      if (used < payPool && (bulkhead || used < THREADS)) { busyPay.push(t + HANG); payOk++; } else payRejected++;
+      if (used < payPool && (bulkhead || used < THREADS)) { busyPay.push(t + HANG); } else payRejected++;
     }
     const free = bulkhead ? catPool : THREADS - busyPay.length;
     const catServed = Math.min(CAT_RATE, free * 10); // each free thread serves 10 fast calls a second
