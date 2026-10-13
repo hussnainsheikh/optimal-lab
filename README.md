@@ -185,6 +185,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/ai-native/latency-ux` | The same 6-second agent task shown as a spinner, progress steps, streaming and optimistic UI | — |
 | `/tracks/ai-automation/classify-route` | Route support emails with free-text labels vs a fixed enum and see which ones fall through | — |
 | `/tracks/tools/build-mcp-server` | Three versions of an order-lookup tool and how a model uses each: names, schemas and lean results | — |
+| `/tracks/devops/files-permissions` | Flip rwx bits for owner, group and others and see the octal mode and who can read, edit or run the file | — |
+| `/tracks/devops/services-ingress` | Route requests through Ingress rules to Services and pods, then break a selector and a pod's readiness | — |
+| `/tracks/devops/prometheus-metrics` | A request counter with a pod restart, rate() smoothing it out, and p95 from a histogram | — |
+| `/tracks/devops/gitops` | Merge a change and watch the controller sync it, then drift the cluster by hand with and without self-heal | — |
+| `/tracks/devops/terraform-state` | Two engineers apply at once: without a lock state is overwritten and a resource orphaned; with one, they take turns | — |
+| `/tracks/devops/backups-restore` | A table is dropped at 14:30: compare nightly, hourly and continuous backups by data lost and time to restore | — |
+| `/tracks/security/certificates` | Check a site's certificate chain when it's valid, expired, for the wrong name, missing an intermediate or self-signed | — |
+| `/tracks/security/oauth-flow` | Step through the authorization code flow, then see a stolen code succeed without PKCE and fail with it | — |
+| `/tracks/system-design/estimation` | Size a photo-sharing app: QPS, peak reads, storage per year, egress and servers from a few assumptions | — |
+| `/tracks/databases/table-partitioning` | Queries and retention on a 120M-row table, as one table and partitioned by month | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |

@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import PermissionsDemo from "./devops/files-permissions/PermissionsDemo";
+import ServicesDemo from "./devops/services-ingress/ServicesDemo";
+import PromDemo from "./devops/prometheus-metrics/PromDemo";
+import GitopsDemo from "./devops/gitops/GitopsDemo";
+import TfStateDemo from "./devops/terraform-state/TfStateDemo";
+import BackupsDemo from "./devops/backups-restore/BackupsDemo";
+import CertChainDemo from "./security/certificates/CertChainDemo";
+import OAuthDemo from "./security/oauth-flow/OAuthDemo";
+import EstimationDemo from "./system-design/estimation/EstimationDemo";
+import PartitioningDemo from "./databases/table-partitioning/PartitioningDemo";
 import OverfittingDemo from "./ai/overfitting/OverfittingDemo";
 import TinyNetDemo from "./ai/neural-networks/TinyNetDemo";
 import ScalingDemo from "./ai/scaling-laws/ScalingDemo";
@@ -157,6 +167,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "devops/files-permissions": <PermissionsDemo />,
+  "devops/services-ingress": <ServicesDemo />,
+  "devops/prometheus-metrics": <PromDemo />,
+  "devops/gitops": <GitopsDemo />,
+  "devops/terraform-state": <TfStateDemo />,
+  "devops/backups-restore": <BackupsDemo />,
+  "security/certificates": <CertChainDemo />,
+  "security/oauth-flow": <OAuthDemo />,
+  "system-design/estimation": <EstimationDemo />,
+  "databases/table-partitioning": <PartitioningDemo />,
   "ai/overfitting": <OverfittingDemo />,
   "ai/neural-networks": <TinyNetDemo />,
   "ai/scaling-laws": <ScalingDemo />,

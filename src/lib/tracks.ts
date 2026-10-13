@@ -178,7 +178,8 @@ export const TRACKS: Track[] = [
     sessions: [
       // Scalability and performance
       { id: "scaling", title: "Vertical vs horizontal scaling", blurb: "Make one server bigger or add more servers, and see where each one hits a wall.", status: "soon", section: "scalability" },
-      { id: "estimation", title: "Back-of-the-envelope estimates", blurb: "Turn daily users into requests per second, storage and bandwidth.", status: "soon", section: "scalability" },
+      { id: "estimation", title: "Back-of-the-envelope estimates", blurb: "Turn daily users into requests per second, storage and bandwidth.", status: "live", section: "scalability",
+        shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "load-balancing", title: "Load balancing strategies", blurb: "Queues, health checks, and timeouts — not just which server is next.", status: "live",
         section: "scalability",
         shape: { kind: "system", steps: 4, flow: "cycle", richSteps: true } },
@@ -430,7 +431,8 @@ export const TRACKS: Track[] = [
     sessions: [
       // Linux and the command line
       { id: "linux-processes", title: "Processes, signals and systemd", blurb: "Start, stop and supervise programs, and what happens on kill -9.", status: "soon", section: "linux" },
-      { id: "files-permissions", title: "Files, users and permissions", blurb: "Who can read, write and run what, and why chmod 777 is a bad fix.", status: "soon", section: "linux" },
+      { id: "files-permissions", title: "Files, users and permissions", blurb: "Who can read, write and run what, and why chmod 777 is a bad fix.", status: "live", section: "linux",
+        shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "shell-scripting", title: "Shell scripting and pipes", blurb: "Chain small commands into a script that does real work.", status: "soon", section: "linux" },
       { id: "system-resources", title: "CPU, memory and disk", blurb: "Read top, free and df, and find what is slowing the machine down.", status: "soon", section: "linux" },
       { id: "package-management", title: "Package management", blurb: "Install, pin and update software with apt, yum and friends.", status: "soon", section: "linux" },
@@ -467,14 +469,16 @@ export const TRACKS: Track[] = [
       { id: "pipeline-tests", title: "Tests in the pipeline", blurb: "Which tests run on every commit, which run nightly, and why the order matters.", status: "soon", section: "ci-cd" },
       { id: "build-caching", title: "Build caching and artifacts", blurb: "Stop rebuilding what didn't change, and keep the exact build you ship.", status: "soon", section: "ci-cd" },
       { id: "environments", title: "Dev, staging, production and preview environments", blurb: "How many environments you need, and keeping them alike.", status: "soon", section: "ci-cd" },
-      { id: "gitops", title: "GitOps", blurb: "Git is the source of truth; a controller makes the cluster match it.", status: "soon", section: "ci-cd" },
+      { id: "gitops", title: "GitOps", blurb: "Git is the source of truth; a controller makes the cluster match it.", status: "live", section: "ci-cd",
+        shape: { kind: "process", steps: 7, flow: "cycle" } },
       { id: "supply-chain", title: "Software supply chain security", blurb: "Lock files, SBOMs, signed images and trusting what you deploy.", status: "soon", section: "ci-cd" },
       // Kubernetes
       { id: "k8s-architecture", title: "Control plane, nodes and pods", blurb: "What each part of a cluster does, and what happens when you apply a manifest.", status: "soon", section: "kubernetes" },
       { id: "deployments-replicasets", title: "Deployments and ReplicaSets", blurb: "Declare how many copies you want and let Kubernetes keep it true.", status: "soon", section: "kubernetes" },
       { id: "rolling-deploys", title: "Kubernetes rolling deploys", blurb: "Roll out a bad version and watch probes and rollback kick in.", status: "live", section: "kubernetes",
         shape: { kind: "system", steps: 5, flow: "cycle" } },
-      { id: "services-ingress", title: "Services and Ingress", blurb: "Give pods a stable address and route outside traffic to them.", status: "soon", section: "kubernetes" },
+      { id: "services-ingress", title: "Services and Ingress", blurb: "Give pods a stable address and route outside traffic to them.", status: "live", section: "kubernetes",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "configmaps-secrets", title: "ConfigMaps and Secrets", blurb: "Pass configuration and credentials to pods without rebuilding images.", status: "soon", section: "kubernetes" },
       { id: "probes", title: "Liveness, readiness and startup probes", blurb: "Tell Kubernetes when to restart a pod and when to send it traffic.", status: "live", section: "kubernetes",
         shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
@@ -487,7 +491,8 @@ export const TRACKS: Track[] = [
       // Infrastructure as code
       { id: "terraform-plan-apply", title: "Terraform: plan and apply", blurb: "Describe infrastructure, preview the change, then apply it.", status: "live", section: "iac",
         shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
-      { id: "terraform-state", title: "State, locking and drift", blurb: "Where Terraform remembers what exists, and what happens when someone clicks in the console.", status: "soon", section: "iac" },
+      { id: "terraform-state", title: "State, locking and drift", blurb: "Where Terraform remembers what exists, and what happens when someone clicks in the console.", status: "live", section: "iac",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "terraform-modules", title: "Modules and reuse", blurb: "Package a VPC or a database once and reuse it everywhere.", status: "soon", section: "iac" },
       { id: "config-management", title: "Configuration management with Ansible", blurb: "Configure many existing servers the same way, repeatably.", status: "soon", section: "iac" },
       { id: "immutable-infrastructure", title: "Immutable infrastructure", blurb: "Replace servers instead of patching them in place.", status: "soon", section: "iac" },
@@ -503,7 +508,8 @@ export const TRACKS: Track[] = [
       { id: "cloud-costs", title: "Cloud cost management", blurb: "See where the bill comes from and cut it: rightsizing, reserved and spot capacity.", status: "soon", section: "cloud" },
       // Observability
       { id: "structured-logging", title: "Structured logs and log aggregation", blurb: "JSON logs, shipped to one place, searchable by request ID.", status: "soon", section: "observability" },
-      { id: "prometheus-metrics", title: "Metrics with Prometheus", blurb: "Counters, gauges and histograms, scraped and queried.", status: "soon", section: "observability" },
+      { id: "prometheus-metrics", title: "Metrics with Prometheus", blurb: "Counters, gauges and histograms, scraped and queried.", status: "live", section: "observability",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "dashboards", title: "Dashboards that answer questions", blurb: "The four golden signals: latency, traffic, errors and saturation.", status: "soon", section: "observability" },
       { id: "opentelemetry", title: "Tracing with OpenTelemetry", blurb: "Instrument services once and send traces anywhere.", status: "soon", section: "observability" },
       { id: "alerts-oncall", title: "Alerts and on-call", blurb: "Page a person only when users are hurting, and route it to the right one.", status: "soon", section: "observability" },
@@ -511,7 +517,8 @@ export const TRACKS: Track[] = [
       { id: "slos-error-budgets", title: "SLIs, SLOs and error budgets", blurb: "Agree how reliable is reliable enough, and spend the rest on shipping.", status: "live", section: "sre",
         shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "runbooks", title: "Runbooks", blurb: "Step-by-step fixes for known problems, written before 3 a.m.", status: "soon", section: "sre" },
-      { id: "backups-restore", title: "Backups and restore drills", blurb: "A backup you have never restored is not a backup.", status: "soon", section: "sre" },
+      { id: "backups-restore", title: "Backups and restore drills", blurb: "A backup you have never restored is not a backup.", status: "live", section: "sre",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "toil-automation", title: "Toil and automation", blurb: "Find repetitive manual work and automate it away.", status: "soon", section: "sre" },
       { id: "capacity-load-testing", title: "Load testing", blurb: "Find the breaking point before your users do.", status: "soon", section: "sre" },
       // DevSecOps
@@ -701,7 +708,8 @@ export const TRACKS: Track[] = [
         shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "read-replicas", title: "Read replicas and lag", blurb: "Spread reads, and handle data that's a few seconds old.", status: "live", section: "scaling-db",
         shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
-      { id: "table-partitioning", title: "Table partitioning", blurb: "Split one huge table by date or key.", status: "soon", section: "scaling-db" },
+      { id: "table-partitioning", title: "Table partitioning", blurb: "Split one huge table by date or key.", status: "live", section: "scaling-db",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "caching-db", title: "Caching in front of the database", blurb: "Redis as a cache, and keeping it in sync.", status: "soon", section: "scaling-db" },
       // Beyond relational
       { id: "redis-internals", title: "Key-value stores: inside Redis", blurb: "Data structures, persistence and single-threaded speed.", status: "soon", section: "beyond-relational" },
@@ -895,14 +903,16 @@ export const TRACKS: Track[] = [
       { id: "randomness", title: "Randomness and nonces", blurb: "Why predictable random numbers break everything.", status: "soon", section: "crypto" },
       // TLS and certificates
       { id: "tls-handshake", title: "The TLS handshake", blurb: "Certificates, key exchange and the first encrypted byte.", status: "soon", section: "tls-pki" },
-      { id: "certificates", title: "Certificates and certificate authorities", blurb: "The chain of trust from your site to the browser.", status: "soon", section: "tls-pki" },
+      { id: "certificates", title: "Certificates and certificate authorities", blurb: "The chain of trust from your site to the browser.", status: "live", section: "tls-pki",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "mutual-tls", title: "Mutual TLS", blurb: "Both sides prove who they are.", status: "soon", section: "tls-pki" },
       { id: "hsts", title: "HTTPS everywhere and HSTS", blurb: "Stop downgrades to plain HTTP.", status: "soon", section: "tls-pki" },
       // Identity and access
       { id: "sessions-cookies", title: "Sessions and cookies", blurb: "Stay logged in, and the cookie flags that matter.", status: "soon", section: "identity" },
       { id: "jwt", title: "JWTs", blurb: "What's inside a token, and the mistakes that make it forgeable.", status: "live", section: "identity",
         shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
-      { id: "oauth-flow", title: "The OAuth 2.0 flow", blurb: "Authorization code with PKCE, step by step.", status: "soon", section: "identity" },
+      { id: "oauth-flow", title: "The OAuth 2.0 flow", blurb: "Authorization code with PKCE, step by step.", status: "live", section: "identity",
+        shape: { kind: "process", steps: 7, flow: "pipeline" } },
       { id: "oidc", title: "OpenID Connect", blurb: "Sign in with another provider.", status: "soon", section: "identity" },
       { id: "passkeys", title: "Passkeys and WebAuthn", blurb: "Log in with a device instead of a password.", status: "soon", section: "identity" },
       { id: "mfa", title: "Multi-factor authentication", blurb: "Codes, push and hardware keys, and which ones get phished.", status: "soon", section: "identity" },

@@ -1028,6 +1028,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "MCP Inspector", kind: "software", note: "Test servers interactively.", href: "https://github.com/modelcontextprotocol/inspector" },
     ],
   },
+  "devops/files-permissions": {
+    lead: "Every Linux system and container uses these bits.",
+    tools: [
+      { name: "chmod(1)", kind: "software", note: "Change file mode bits.", href: "https://man7.org/linux/man-pages/man1/chmod.1.html" },
+      { name: "Docker USER", kind: "software", note: "Run containers as a non-root user.", href: "https://docs.docker.com/reference/dockerfile/#user" },
+      { name: "chmod calculator", kind: "software", note: "Convert between rwx and octal.", href: "https://chmod-calculator.com/" },
+    ],
+  },
+  "devops/services-ingress": {
+    lead: "Every Kubernetes app is reached through Services and an Ingress or Gateway.",
+    tools: [
+      { name: "Kubernetes Services", kind: "software", note: "Selectors, endpoints and ClusterIP.", href: "https://kubernetes.io/docs/concepts/services-networking/service/" },
+      { name: "ingress-nginx", kind: "software", note: "The common Ingress controller.", href: "https://kubernetes.github.io/ingress-nginx/" },
+      { name: "Gateway API", kind: "standard", note: "The successor to Ingress.", href: "https://gateway-api.sigs.k8s.io/" },
+    ],
+  },
+  "devops/prometheus-metrics": {
+    lead: "Prometheus is the default metrics system for cloud-native apps.",
+    tools: [
+      { name: "Prometheus", kind: "software", note: "Metrics collection and PromQL.", href: "https://prometheus.io/docs/prometheus/latest/querying/functions/#rate" },
+      { name: "Grafana", kind: "software", note: "Dashboards over Prometheus.", href: "https://grafana.com/" },
+      { name: "OpenTelemetry metrics", kind: "standard", note: "Vendor-neutral instrumentation.", href: "https://opentelemetry.io/docs/concepts/signals/metrics/" },
+    ],
+  },
+  "devops/gitops": {
+    lead: "GitOps controllers run in most Kubernetes platforms.",
+    tools: [
+      { name: "Argo CD", kind: "software", note: "Declarative GitOps for Kubernetes.", href: "https://argo-cd.readthedocs.io/" },
+      { name: "Flux", kind: "software", note: "GitOps toolkit from the CNCF.", href: "https://fluxcd.io/" },
+      { name: "OpenGitOps principles", kind: "standard", note: "The four GitOps principles.", href: "https://opengitops.dev/" },
+    ],
+  },
+  "devops/terraform-state": {
+    lead: "Remote state with locking is standard for any team using Terraform.",
+    tools: [
+      { name: "Terraform S3 backend", kind: "software", note: "Remote state with locking.", href: "https://developer.hashicorp.com/terraform/language/backend/s3" },
+      { name: "HCP Terraform", kind: "service", note: "Managed state and runs.", href: "https://developer.hashicorp.com/terraform/cloud-docs" },
+      { name: "terraform import", kind: "software", note: "Adopt existing resources.", href: "https://developer.hashicorp.com/terraform/cli/commands/import" },
+    ],
+  },
+  "devops/backups-restore": {
+    lead: "Managed databases offer snapshots and point-in-time restore.",
+    tools: [
+      { name: "PostgreSQL PITR", kind: "software", note: "Continuous archiving and point-in-time recovery.", href: "https://www.postgresql.org/docs/current/continuous-archiving.html" },
+      { name: "pgBackRest", kind: "software", note: "Backup and restore for Postgres.", href: "https://pgbackrest.org/" },
+      { name: "AWS Backup", kind: "service", note: "Policy-based backups across services.", href: "https://aws.amazon.com/backup/" },
+    ],
+  },
+  "security/certificates": {
+    lead: "Every HTTPS connection validates a certificate chain.",
+    tools: [
+      { name: "Let's Encrypt", kind: "service", note: "Free automated certificates.", href: "https://letsencrypt.org/" },
+      { name: "cert-manager", kind: "software", note: "Certificates in Kubernetes.", href: "https://cert-manager.io/" },
+      { name: "SSL Labs", kind: "service", note: "Test a server's TLS setup.", href: "https://www.ssllabs.com/ssltest/" },
+    ],
+  },
+  "security/oauth-flow": {
+    lead: "OAuth and OIDC power every \u201cSign in with\u2026\u201d button.",
+    tools: [
+      { name: "OAuth 2.1 draft", kind: "standard", note: "Authorization code + PKCE everywhere.", href: "https://oauth.net/2.1/" },
+      { name: "RFC 7636 (PKCE)", kind: "standard", note: "Proof Key for Code Exchange.", href: "https://www.rfc-editor.org/rfc/rfc7636" },
+      { name: "Auth0", kind: "service", note: "Hosted OAuth and OIDC.", href: "https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce" },
+    ],
+  },
+  "system-design/estimation": {
+    lead: "Every system design starts with rough numbers.",
+    tools: [
+      { name: "Latency numbers", kind: "standard", note: "Reference numbers for estimates.", href: "https://colin-scott.github.io/personal_website/research/interactive_latency.html" },
+      { name: "System Design Primer", kind: "standard", note: "Back-of-envelope worked examples.", href: "https://github.com/donnemartin/system-design-primer#back-of-the-envelope-calculations" },
+      { name: "Google SRE: capacity", kind: "standard", note: "Planning capacity from demand.", href: "https://sre.google/sre-book/software-engineering-in-sre/" },
+    ],
+  },
+  "databases/table-partitioning": {
+    lead: "Large time-series tables are almost always partitioned.",
+    tools: [
+      { name: "PostgreSQL partitioning", kind: "software", note: "Declarative range, list and hash partitions.", href: "https://www.postgresql.org/docs/current/ddl-partitioning.html" },
+      { name: "pg_partman", kind: "software", note: "Automates creating and dropping partitions.", href: "https://github.com/pgpartman/pg_partman" },
+      { name: "BigQuery partitioned tables", kind: "service", note: "Partition pruning to cut scan costs.", href: "https://cloud.google.com/bigquery/docs/partitioned-tables" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [
