@@ -145,6 +145,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/frontend/css-grid` | Pick a grid template, drag the container width and watch fr, fixed and auto-fill tracks resize | — |
 | `/tracks/frontend/promises-async` | Step through what await pauses and in what order logs appear, then compare sequential awaits with Promise.all | — |
 | `/tracks/security/digital-signatures` | Sign with toy RSA and verify a genuine message, a tampered one, and a forgery | — |
+| `/tracks/system-design/cache-invalidation` | A price changes under a cache: TTL, delete-on-write, a slow-reader race, and write-through | — |
+| `/tracks/system-design/backpressure` | A fast producer and slow consumer with an unbounded queue, load shedding and backpressure | — |
+| `/tracks/system-design/consensus` | Step through a Raft leader crash, election by majority, replication and commit | — |
+| `/tracks/system-design/merkle-trees` | Compare two replicas through hash trees and walk down only the branches that differ | — |
+| `/tracks/system-design/clocks` | Three processes and their messages ordered by wall clocks, Lamport clocks and vector clocks | — |
+| `/tracks/system-design/deployment-strategies` | Ship a buggy version with rolling, blue-green and canary rollouts and count failed requests | — |
+| `/tracks/system-design/hedged-requests` | Forty requests with a slow tail: send backups after a delay and watch p99 drop | — |
+| `/tracks/security/key-exchange` | Pick Alice's and Bob's secrets and watch both reach the same key while Eve sees only public values | — |
+| `/tracks/security/idor` | Change the invoice id in the URL with and without an ownership check | — |
+| `/tracks/security/ssrf` | Paste internal and sneaky URLs into a link-preview feature against three defences | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |

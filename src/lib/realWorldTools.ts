@@ -708,6 +708,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "OpenSSL dgst", kind: "software", note: "Sign and verify files on the command line.", href: "https://docs.openssl.org/master/man1/openssl-dgst/" },
     ],
   },
+  "system-design/cache-invalidation": {
+    lead: "Every cache layer needs an invalidation story.",
+    tools: [
+      { name: "Redis", kind: "software", note: "DEL on write, EXPIRE as a backstop.", href: "https://redis.io/docs/latest/commands/expire/" },
+      { name: "Memcache at Facebook", kind: "standard", note: "Leases to stop stale sets.", href: "https://www.usenix.org/conference/nsdi13/technical-sessions/presentation/nishtala" },
+      { name: "Debezium", kind: "software", note: "Invalidate caches from database change streams.", href: "https://debezium.io/" },
+    ],
+  },
+  "system-design/backpressure": {
+    lead: "Every queue and stream library has a backpressure mechanism.",
+    tools: [
+      { name: "Node.js streams", kind: "software", note: "write() returns false; wait for drain.", href: "https://nodejs.org/en/learn/modules/backpressuring-in-streams" },
+      { name: "Reactive Streams", kind: "standard", note: "Demand-based flow control for the JVM.", href: "https://www.reactive-streams.org/" },
+      { name: "Kafka consumer lag", kind: "software", note: "Measure how far consumers fall behind.", href: "https://kafka.apache.org/documentation/#monitoring" },
+    ],
+  },
+  "system-design/consensus": {
+    lead: "Consensus sits under most coordination services.",
+    tools: [
+      { name: "etcd", kind: "software", note: "Raft-based store behind Kubernetes.", href: "https://etcd.io/" },
+      { name: "Raft visualisation", kind: "standard", note: "The paper and an interactive demo.", href: "https://raft.github.io/" },
+      { name: "HashiCorp Consul", kind: "software", note: "Service discovery on Raft.", href: "https://developer.hashicorp.com/consul/docs/architecture/consensus" },
+    ],
+  },
+  "system-design/merkle-trees": {
+    lead: "Merkle trees verify and sync data everywhere.",
+    tools: [
+      { name: "Cassandra repair", kind: "software", note: "Merkle trees find out-of-sync ranges.", href: "https://cassandra.apache.org/doc/latest/cassandra/managing/operating/repair.html" },
+      { name: "Git", kind: "software", note: "Commits and trees are a Merkle structure.", href: "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects" },
+      { name: "Certificate Transparency", kind: "standard", note: "Inclusion proofs in public logs.", href: "https://certificate.transparency.dev/howctworks/" },
+    ],
+  },
+  "system-design/clocks": {
+    lead: "Distributed databases choose a clock to order events.",
+    tools: [
+      { name: "Lamport 1978", kind: "standard", note: "Time, clocks and the ordering of events.", href: "https://lamport.azurewebsites.net/pubs/time-clocks.pdf" },
+      { name: "CockroachDB HLC", kind: "software", note: "Hybrid logical clocks in practice.", href: "https://www.cockroachlabs.com/docs/stable/architecture/transaction-layer" },
+      { name: "Google Spanner TrueTime", kind: "service", note: "Bounded clock uncertainty.", href: "https://cloud.google.com/spanner/docs/true-time-external-consistency" },
+    ],
+  },
+  "system-design/deployment-strategies": {
+    lead: "Deploy tooling automates these rollouts.",
+    tools: [
+      { name: "Kubernetes Deployments", kind: "software", note: "Rolling updates by default.", href: "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#rolling-update-deployment" },
+      { name: "Argo Rollouts", kind: "software", note: "Canary and blue-green with analysis.", href: "https://argoproj.github.io/rollouts/" },
+      { name: "LaunchDarkly", kind: "service", note: "Feature flags to separate deploy from release.", href: "https://launchdarkly.com/" },
+    ],
+  },
+  "system-design/hedged-requests": {
+    lead: "Hedging is built into some RPC frameworks.",
+    tools: [
+      { name: "The Tail at Scale", kind: "standard", note: "Dean and Barroso on tail latency.", href: "https://research.google/pubs/the-tail-at-scale/" },
+      { name: "gRPC hedging", kind: "software", note: "Hedging policy in service config.", href: "https://grpc.io/docs/guides/request-hedging/" },
+      { name: "Envoy", kind: "software", note: "Request hedging on timeouts.", href: "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/http_routing#request-hedging" },
+    ],
+  },
+  "security/key-exchange": {
+    lead: "Every TLS connection starts with a key exchange.",
+    tools: [
+      { name: "X25519 (RFC 7748)", kind: "standard", note: "The elliptic-curve exchange TLS 1.3 uses.", href: "https://www.rfc-editor.org/rfc/rfc7748" },
+      { name: "Signal protocol", kind: "software", note: "Chains of DH exchanges for messaging.", href: "https://signal.org/docs/" },
+      { name: "libsodium", kind: "software", note: "crypto_kx key exchange.", href: "https://doc.libsodium.org/key_exchange" },
+    ],
+  },
+  "security/idor": {
+    lead: "Broken object-level authorisation tops the API risk list.",
+    tools: [
+      { name: "OWASP API1:2023", kind: "standard", note: "Broken Object Level Authorization.", href: "https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/" },
+      { name: "Postgres row-level security", kind: "software", note: "Enforce ownership in the database.", href: "https://www.postgresql.org/docs/current/ddl-rowsecurity.html" },
+      { name: "Burp Suite Autorize", kind: "software", note: "Replays requests as another user.", href: "https://portswigger.net/bappstore/f9bbac8c4acf4aefa4d7dc92a991af2f" },
+    ],
+  },
+  "security/ssrf": {
+    lead: "Cloud metadata endpoints make SSRF especially dangerous.",
+    tools: [
+      { name: "OWASP SSRF prevention", kind: "standard", note: "Cheat sheet with bypasses.", href: "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html" },
+      { name: "AWS IMDSv2", kind: "service", note: "Token-protected instance metadata.", href: "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html" },
+      { name: "ssrf-req-filter", kind: "software", note: "Node agent that blocks private IPs.", href: "https://www.npmjs.com/package/ssrf-req-filter" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

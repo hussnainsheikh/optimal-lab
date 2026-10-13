@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import CacheInvalidationDemo from "./system-design/cache-invalidation/CacheInvalidationDemo";
+import QueueBackpressureDemo from "./system-design/backpressure/QueueBackpressureDemo";
+import RaftDemo from "./system-design/consensus/RaftDemo";
+import MerkleDemo from "./system-design/merkle-trees/MerkleDemo";
+import ClocksDemo from "./system-design/clocks/ClocksDemo";
+import DeployDemo from "./system-design/deployment-strategies/DeployDemo";
+import HedgedDemo from "./system-design/hedged-requests/HedgedDemo";
+import KeyExchangeDemo from "./security/key-exchange/KeyExchangeDemo";
+import IdorDemo from "./security/idor/IdorDemo";
+import SsrfDemo from "./security/ssrf/SsrfDemo";
 import AutoscalingDemo from "./system-design/autoscaling/AutoscalingDemo";
 import DeliveryDemo from "./system-design/delivery-guarantees/DeliveryDemo";
 import SagaDemo from "./system-design/sagas-outbox/SagaDemo";
@@ -117,6 +127,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "system-design/cache-invalidation": <CacheInvalidationDemo />,
+  "system-design/backpressure": <QueueBackpressureDemo />,
+  "system-design/consensus": <RaftDemo />,
+  "system-design/merkle-trees": <MerkleDemo />,
+  "system-design/clocks": <ClocksDemo />,
+  "system-design/deployment-strategies": <DeployDemo />,
+  "system-design/hedged-requests": <HedgedDemo />,
+  "security/key-exchange": <KeyExchangeDemo />,
+  "security/idor": <IdorDemo />,
+  "security/ssrf": <SsrfDemo />,
   "system-design/autoscaling": <AutoscalingDemo />,
   "system-design/delivery-guarantees": <DeliveryDemo />,
   "system-design/sagas-outbox": <SagaDemo />,
