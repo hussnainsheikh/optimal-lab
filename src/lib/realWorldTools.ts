@@ -948,6 +948,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Vite code splitting", kind: "software", note: "Dynamic imports become chunks.", href: "https://vite.dev/guide/features#dynamic-import" },
     ],
   },
+  "ai/overfitting": {
+    lead: "Every training tool reports train and validation loss for this reason.",
+    tools: [
+      { name: "scikit-learn validation curves", kind: "software", note: "Plot error against model complexity.", href: "https://scikit-learn.org/stable/modules/learning_curve.html" },
+      { name: "Weights & Biases", kind: "service", note: "Track train vs eval loss per run.", href: "https://wandb.ai/" },
+      { name: "Hugging Face Trainer", kind: "software", note: "Early stopping on eval loss.", href: "https://huggingface.co/docs/transformers/main_classes/callback" },
+    ],
+  },
+  "ai/neural-networks": {
+    lead: "Neural network libraries do this arithmetic at enormous scale.",
+    tools: [
+      { name: "TensorFlow Playground", kind: "software", note: "Train tiny networks in the browser.", href: "https://playground.tensorflow.org/" },
+      { name: "PyTorch", kind: "software", note: "The most used deep learning framework.", href: "https://pytorch.org/" },
+      { name: "3Blue1Brown: neural networks", kind: "standard", note: "The visual video series.", href: "https://www.3blue1brown.com/topics/neural-networks" },
+    ],
+  },
+  "ai/scaling-laws": {
+    lead: "Labs plan training runs with fitted scaling curves.",
+    tools: [
+      { name: "Chinchilla paper", kind: "standard", note: "Training compute-optimal LLMs (Hoffmann et al.).", href: "https://arxiv.org/abs/2203.15556" },
+      { name: "Kaplan et al. 2020", kind: "standard", note: "The first LLM scaling laws.", href: "https://arxiv.org/abs/2001.08361" },
+      { name: "Epoch AI", kind: "service", note: "Data on training compute over time.", href: "https://epoch.ai/data" },
+    ],
+  },
+  "ai/long-context-vs-rag": {
+    lead: "Long context and retrieval are both standard features now.",
+    tools: [
+      { name: "Anthropic prompt caching", kind: "service", note: "Cheaper repeated long prompts.", href: "https://docs.claude.com/en/docs/build-with-claude/prompt-caching" },
+      { name: "Lost in the Middle", kind: "standard", note: "Why mid-context facts get missed.", href: "https://arxiv.org/abs/2307.03172" },
+      { name: "LlamaIndex", kind: "software", note: "RAG pipelines and indexing.", href: "https://www.llamaindex.ai/" },
+    ],
+  },
+  "ai/eval-metrics": {
+    lead: "Classification metrics apply to LLM features too.",
+    tools: [
+      { name: "scikit-learn metrics", kind: "software", note: "precision_recall_fscore_support.", href: "https://scikit-learn.org/stable/modules/model_evaluation.html#precision-recall-f-measure-metrics" },
+      { name: "Google ML crash course", kind: "standard", note: "Precision and recall explained.", href: "https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall" },
+      { name: "promptfoo", kind: "software", note: "Score prompts against labelled tests.", href: "https://www.promptfoo.dev/" },
+    ],
+  },
+  "ai-native/feature-cost": {
+    lead: "Every provider bills by tokens; observability tools track it.",
+    tools: [
+      { name: "Anthropic pricing", kind: "service", note: "Per-model token prices.", href: "https://www.anthropic.com/pricing" },
+      { name: "OpenAI pricing", kind: "service", note: "Per-model token prices.", href: "https://openai.com/api/pricing/" },
+      { name: "Helicone", kind: "service", note: "Cost and usage per request and user.", href: "https://www.helicone.ai/" },
+    ],
+  },
+  "ai-native/ab-testing-ai": {
+    lead: "Experiment platforms handle the statistics for you.",
+    tools: [
+      { name: "Statsig", kind: "service", note: "Experiments and feature gates.", href: "https://www.statsig.com/" },
+      { name: "GrowthBook", kind: "software", note: "Open-source A/B testing.", href: "https://www.growthbook.io/" },
+      { name: "Evan Miller's calculator", kind: "software", note: "Sample size for A/B tests.", href: "https://www.evanmiller.org/ab-testing/sample-size.html" },
+    ],
+  },
+  "ai-native/latency-ux": {
+    lead: "Design systems for AI products ship these patterns.",
+    tools: [
+      { name: "Vercel AI SDK UI", kind: "software", note: "Streaming and status hooks.", href: "https://ai-sdk.dev/docs/ai-sdk-ui/overview" },
+      { name: "Nielsen: response times", kind: "standard", note: "The 0.1 / 1 / 10 second limits.", href: "https://www.nngroup.com/articles/response-times-3-important-limits/" },
+      { name: "Material skeleton loaders", kind: "standard", note: "Placeholder patterns.", href: "https://m3.material.io/components/progress-indicators/overview" },
+    ],
+  },
+  "ai-automation/classify-route": {
+    lead: "Workflow tools pair an LLM step with a switch node.",
+    tools: [
+      { name: "n8n Switch node", kind: "software", note: "Route items by value.", href: "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.switch/" },
+      { name: "Zapier Paths", kind: "service", note: "Branch workflows by conditions.", href: "https://zapier.com/features/paths" },
+      { name: "Structured outputs", kind: "standard", note: "Constrain model output to a schema.", href: "https://docs.claude.com/en/docs/build-with-claude/structured-outputs" },
+    ],
+  },
+  "tools/build-mcp-server": {
+    lead: "Official SDKs make writing MCP servers quick.",
+    tools: [
+      { name: "MCP TypeScript SDK", kind: "software", note: "Build servers in TypeScript.", href: "https://github.com/modelcontextprotocol/typescript-sdk" },
+      { name: "MCP Python SDK", kind: "software", note: "FastMCP and the low-level server.", href: "https://github.com/modelcontextprotocol/python-sdk" },
+      { name: "MCP Inspector", kind: "software", note: "Test servers interactively.", href: "https://github.com/modelcontextprotocol/inspector" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

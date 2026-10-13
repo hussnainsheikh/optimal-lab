@@ -175,6 +175,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/frontend/css-cascade` | Toggle seven competing rules and see which color wins and why | — |
 | `/tracks/frontend/stacking-contexts` | A z-index 9999 modal trapped under a z-index 10 header, rendered live, and the fixes | — |
 | `/tracks/frontend/code-splitting` | One bundle vs route splitting vs lazy heavy parts, and what a visitor downloads first | — |
+| `/tracks/ai/overfitting` | Fit polynomials of degree 1 to 9 to noisy points and compare training and held-out error | — |
+| `/tracks/ai/neural-networks` | A hand-weighted two-layer network solves XOR; step the inputs and follow every sum | — |
+| `/tracks/ai/scaling-laws` | Pick a compute budget and see loss against model size, and where the optimum sits | — |
+| `/tracks/ai/long-context-vs-rag` | Grow a document set and compare cost, latency and accuracy of stuffing the context vs RAG | — |
+| `/tracks/ai/eval-metrics` | Move a spam threshold and watch the confusion matrix, precision, recall and F1 | — |
+| `/tracks/ai-native/feature-cost` | Size a feature's monthly bill from users, calls, prompt and answer length, model and caching | — |
+| `/tracks/ai-native/ab-testing-ai` | Two prompts with a small real difference: watch the confidence interval shrink as users grow | — |
+| `/tracks/ai-native/latency-ux` | The same 6-second agent task shown as a spinner, progress steps, streaming and optimistic UI | — |
+| `/tracks/ai-automation/classify-route` | Route support emails with free-text labels vs a fixed enum and see which ones fall through | — |
+| `/tracks/tools/build-mcp-server` | Three versions of an order-lookup tool and how a model uses each: names, schemas and lean results | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |

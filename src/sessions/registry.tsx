@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import OverfittingDemo from "./ai/overfitting/OverfittingDemo";
+import TinyNetDemo from "./ai/neural-networks/TinyNetDemo";
+import ScalingDemo from "./ai/scaling-laws/ScalingDemo";
+import ContextVsRagDemo from "./ai/long-context-vs-rag/ContextVsRagDemo";
+import EvalMetricsDemo from "./ai/eval-metrics/EvalMetricsDemo";
+import FeatureCostDemo from "./ai-native/feature-cost/FeatureCostDemo";
+import AbTestDemo from "./ai-native/ab-testing-ai/AbTestDemo";
+import LatencyUxDemo from "./ai-native/latency-ux/LatencyUxDemo";
+import ClassifyRouteDemo from "./ai-automation/classify-route/ClassifyRouteDemo";
+import McpServerDemo from "./tools/build-mcp-server/McpServerDemo";
 import MemoryHierarchyDemo from "./operating-systems/memory-hierarchy/MemoryHierarchyDemo";
 import CacheLocalityDemo from "./operating-systems/cache-locality/CacheLocalityDemo";
 import ProducerConsumerDemo from "./operating-systems/producer-consumer/ProducerConsumerDemo";
@@ -147,6 +157,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "ai/overfitting": <OverfittingDemo />,
+  "ai/neural-networks": <TinyNetDemo />,
+  "ai/scaling-laws": <ScalingDemo />,
+  "ai/long-context-vs-rag": <ContextVsRagDemo />,
+  "ai/eval-metrics": <EvalMetricsDemo />,
+  "ai-native/feature-cost": <FeatureCostDemo />,
+  "ai-native/ab-testing-ai": <AbTestDemo />,
+  "ai-native/latency-ux": <LatencyUxDemo />,
+  "ai-automation/classify-route": <ClassifyRouteDemo />,
+  "tools/build-mcp-server": <McpServerDemo />,
   "operating-systems/memory-hierarchy": <MemoryHierarchyDemo />,
   "operating-systems/cache-locality": <CacheLocalityDemo />,
   "operating-systems/producer-consumer": <ProducerConsumerDemo />,

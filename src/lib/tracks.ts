@@ -967,8 +967,10 @@ export const TRACKS: Track[] = [
       { id: "what-is-a-model", title: "What a model is", blurb: "Parameters in, prediction out: a model is a function you tune.", status: "soon", section: "ml-foundations" },
       { id: "training-loss", title: "Training: loss and gradient descent", blurb: "Nudge every parameter downhill until the error stops falling.", status: "live", section: "ml-foundations",
         shape: { kind: "algorithm", steps: 4, flow: "cycle" } },
-      { id: "overfitting", title: "Overfitting and train/test splits", blurb: "A model that memorizes the training set and fails on new data.", status: "soon", section: "ml-foundations" },
-      { id: "neural-networks", title: "Neural networks, layer by layer", blurb: "Weights, activations and how stacking layers learns features.", status: "soon", section: "ml-foundations" },
+      { id: "overfitting", title: "Overfitting and train/test splits", blurb: "A model that memorizes the training set and fails on new data.", status: "live", section: "ml-foundations",
+        shape: { kind: "simulation", steps: 4, flow: "state" } },
+      { id: "neural-networks", title: "Neural networks, layer by layer", blurb: "Weights, activations and how stacking layers learns features.", status: "live", section: "ml-foundations",
+        shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "learning-types", title: "Supervised, unsupervised and reinforcement learning", blurb: "Learn from labels, from structure, or from rewards.", status: "soon", section: "ml-foundations" },
       // How LLMs work
       {
@@ -1002,7 +1004,8 @@ export const TRACKS: Track[] = [
         shape: { kind: "process", steps: 5, flow: "cycle" } },
       { id: "pretraining", title: "Pretraining", blurb: "Predict the next token across trillions of words, and what comes out of it.", status: "soon", section: "llm-internals" },
       { id: "instruction-tuning", title: "Instruction tuning and RLHF", blurb: "Turn a text predictor into an assistant that follows instructions.", status: "soon", section: "llm-internals" },
-      { id: "scaling-laws", title: "Scaling laws", blurb: "More data, parameters and compute: what improves, and how fast.", status: "soon", section: "llm-internals" },
+      { id: "scaling-laws", title: "Scaling laws", blurb: "More data, parameters and compute: what improves, and how fast.", status: "live", section: "llm-internals",
+        shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "hallucinations", title: "Why models hallucinate", blurb: "Fluent text with no fact behind it, and what reduces it.", status: "soon", section: "llm-internals" },
       // Prompting
       { id: "message-roles", title: "System, user and assistant messages", blurb: "What each role is for, and what the model actually sees.", status: "soon", section: "prompting" },
@@ -1017,7 +1020,8 @@ export const TRACKS: Track[] = [
         section: "prompting",
         shape: { kind: "process", steps: 6, flow: "cycle" },
       },
-      { id: "long-context-vs-rag", title: "Long context vs retrieval", blurb: "Paste the whole document, or fetch only the relevant parts?", status: "soon", section: "prompting" },
+      { id: "long-context-vs-rag", title: "Long context vs retrieval", blurb: "Paste the whole document, or fetch only the relevant parts?", status: "live", section: "prompting",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       // Embeddings and retrieval
       { id: "embeddings", title: "Embeddings and similarity search", blurb: "Move a query in vector space and see which notes come back.", status: "live",
         section: "retrieval",
@@ -1061,7 +1065,8 @@ export const TRACKS: Track[] = [
         section: "evaluation",
         shape: { kind: "process", steps: 6, flow: "pipeline", richSteps: true },
       },
-      { id: "eval-metrics", title: "Evaluation metrics", blurb: "Exact match, similarity scores, faithfulness and when each misleads.", status: "soon", section: "evaluation" },
+      { id: "eval-metrics", title: "Evaluation metrics", blurb: "Exact match, similarity scores, faithfulness and when each misleads.", status: "live", section: "evaluation",
+        shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "llm-as-judge", title: "LLM-as-judge and its biases", blurb: "A model grading a model: position bias, length bias and self-preference.", status: "live", section: "evaluation",
         shape: { kind: "process", steps: 4, flow: "state" } },
       { id: "benchmarks", title: "Benchmarks", blurb: "What MMLU-style scores measure, and why they stop meaning much.", status: "soon", section: "evaluation" },
@@ -1129,7 +1134,8 @@ export const TRACKS: Track[] = [
       // AI user experience
       { id: "streaming-ui", title: "Streaming UI and partial results", blurb: "Show the answer as it arrives, and handle half-finished output.", status: "live", section: "ai-ux",
         shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
-      { id: "latency-ux", title: "Designing for slow responses", blurb: "Progress, skeletons and doing work before the user asks.", status: "soon", section: "ai-ux" },
+      { id: "latency-ux", title: "Designing for slow responses", blurb: "Progress, skeletons and doing work before the user asks.", status: "live", section: "ai-ux",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "trust-signals", title: "Showing sources and confidence", blurb: "Citations and uncertainty that help users decide what to trust.", status: "soon", section: "ai-ux" },
       { id: "user-control", title: "Undo, edit and regenerate", blurb: "Keep the user in charge of what the AI changes.", status: "soon", section: "ai-ux" },
       { id: "chat-vs-embedded", title: "Chat vs embedded AI", blurb: "A chat box, or AI built into buttons and forms people already use.", status: "soon", section: "ai-ux" },
@@ -1138,8 +1144,10 @@ export const TRACKS: Track[] = [
       // Shipping AI features
       { id: "prototype-to-production", title: "From prototype to production", blurb: "What breaks between a great demo and real traffic.", status: "soon", section: "shipping-ai" },
       { id: "feature-evals", title: "Evals for one feature", blurb: "A small test set per feature, run on every prompt change.", status: "soon", section: "shipping-ai" },
-      { id: "feature-cost", title: "Cost per feature and per user", blurb: "Price an AI feature before it surprises the bill.", status: "soon", section: "shipping-ai" },
-      { id: "ab-testing-ai", title: "A/B testing AI features", blurb: "Compare prompts or models on real users safely.", status: "soon", section: "shipping-ai" },
+      { id: "feature-cost", title: "Cost per feature and per user", blurb: "Price an AI feature before it surprises the bill.", status: "live", section: "shipping-ai",
+        shape: { kind: "simulation", steps: 4, flow: "state" } },
+      { id: "ab-testing-ai", title: "A/B testing AI features", blurb: "Compare prompts or models on real users safely.", status: "live", section: "shipping-ai",
+        shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "user-feedback", title: "Collecting user feedback", blurb: "Thumbs, edits and abandons as signals for the next version.", status: "soon", section: "shipping-ai" },
       { id: "model-upgrades", title: "Upgrading the model under a live feature", blurb: "Switch models without changing what users get.", status: "soon", section: "shipping-ai" },
       // AI in your development workflow
@@ -1195,7 +1203,8 @@ export const TRACKS: Track[] = [
       { id: "idempotent-steps", title: "Idempotent steps", blurb: "Run a step twice without sending two emails.", status: "soon", section: "workflow-basics" },
       // AI steps in workflows
       { id: "llm-step", title: "Adding an LLM step", blurb: "Prompt, parse and validate inside a workflow.", status: "soon", section: "ai-steps" },
-      { id: "classify-route", title: "Classify and route", blurb: "Let a model decide which branch an item takes.", status: "soon", section: "ai-steps" },
+      { id: "classify-route", title: "Classify and route", blurb: "Let a model decide which branch an item takes.", status: "live", section: "ai-steps",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "extract-and-fill", title: "Extract and fill", blurb: "Pull fields from text and write them into a system of record.", status: "soon", section: "ai-steps" },
       { id: "draft-then-review", title: "Draft, then review", blurb: "The model writes, a person or a check approves.", status: "soon", section: "ai-steps" },
       { id: "confidence-fallbacks", title: "Confidence thresholds and fallbacks", blurb: "Act alone when sure, ask for help when not.", status: "live", section: "ai-steps",
@@ -1270,7 +1279,8 @@ export const TRACKS: Track[] = [
         section: "protocols",
         shape: { kind: "system", steps: 6, flow: "pipeline" },
       },
-      { id: "build-mcp-server", title: "Building an MCP server", blurb: "Expose your own data and actions to any MCP client.", status: "soon", section: "protocols" },
+      { id: "build-mcp-server", title: "Building an MCP server", blurb: "Expose your own data and actions to any MCP client.", status: "live", section: "protocols",
+        shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "openapi-to-tools", title: "Turning an API into tools", blurb: "Generate tool definitions from an OpenAPI spec.", status: "soon", section: "protocols" },
       { id: "agent-to-agent", title: "Agent-to-agent protocols", blurb: "How agents from different vendors hand work to each other.", status: "soon", section: "protocols" },
       // Workflow builders
