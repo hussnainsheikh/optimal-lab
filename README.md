@@ -245,6 +245,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/frontend/reconciliation` | Insert at the top of two real React lists, one keyed by index and one by id | — |
 | `/tracks/frontend/hooks` | An interval counter three ways: stuck on a stale closure, fixed with an updater, and with dependencies | — |
 | `/tracks/frontend/memoization` | Type into a search box and see when an expensive chart re-renders with and without memo | — |
+| `/tracks/frontend/data-fetching` | Load a profile page with effect-driven fetches, parallel requests and server-side fetching | — |
+| `/tracks/frontend/optimistic-updates` | Like a post with a slow server, waiting vs optimistic, and roll back when it fails | — |
+| `/tracks/frontend/csr-ssr-ssg` | Compare CSR, SSR, SSG and ISR on speed and cost, and when readers see a fix | — |
+| `/tracks/frontend/images-fonts` | Apply image format, sizing, lazy loading and font fixes and watch weight, LCP and text visibility | — |
+| `/tracks/frontend/browser-caching` | Four resources with different Cache-Control headers across repeat visits and a deploy | — |
+| `/tracks/frontend/long-tasks` | A 300 ms click handler blocking, yielding in chunks, and moved to a worker | — |
+| `/tracks/frontend/browser-storage` | Pick something to store and see which of five browser storage options fits and why | — |
+| `/tracks/frontend/cors` | Call another origin's API with and without CORS headers, preflights and credentials | — |
+| `/tracks/frontend/csp` | Tighten a Content-Security-Policy and see which legitimate and injected scripts run | — |
+| `/tracks/frontend/keyboard-focus` | Tab through a page and dialog, then fix the non-button, missing outline, focus trap and focus restore | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |

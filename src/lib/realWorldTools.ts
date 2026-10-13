@@ -1508,6 +1508,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "React Compiler", kind: "software", note: "Automatic memoisation.", href: "https://react.dev/learn/react-compiler" },
     ],
   },
+  "frontend/data-fetching": {
+    lead: "Data libraries and frameworks exist largely to avoid waterfalls.",
+    tools: [
+      { name: "TanStack Query", kind: "software", note: "Caching, deduping and prefetching.", href: "https://tanstack.com/query" },
+      { name: "React Server Components", kind: "software", note: "Fetch on the server, near the data.", href: "https://react.dev/reference/rsc/server-components" },
+      { name: "Chrome DevTools Network", kind: "software", note: "Spot request staircases.", href: "https://developer.chrome.com/docs/devtools/network" },
+    ],
+  },
+  "frontend/optimistic-updates": {
+    lead: "Snappy apps update the UI before the server confirms.",
+    tools: [
+      { name: "React useOptimistic", kind: "standard", note: "Optimistic state in React.", href: "https://react.dev/reference/react/useOptimistic" },
+      { name: "TanStack Query optimistic updates", kind: "software", note: "Snapshot and roll back.", href: "https://tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates" },
+      { name: "SWR mutation", kind: "software", note: "Optimistic data with rollback.", href: "https://swr.vercel.app/docs/mutation" },
+    ],
+  },
+  "frontend/csr-ssr-ssg": {
+    lead: "Frameworks let each route choose how it renders.",
+    tools: [
+      { name: "Next.js rendering", kind: "software", note: "Static, dynamic and revalidated routes.", href: "https://nextjs.org/docs/app/building-your-application/rendering" },
+      { name: "Astro", kind: "software", note: "Static-first with islands.", href: "https://astro.build/" },
+      { name: "web.dev: rendering on the web", kind: "standard", note: "The trade-offs explained.", href: "https://web.dev/articles/rendering-on-the-web" },
+    ],
+  },
+  "frontend/images-fonts": {
+    lead: "Images and fonts are most of a typical page's weight.",
+    tools: [
+      { name: "Squoosh", kind: "software", note: "Compare image formats in the browser.", href: "https://squoosh.app/" },
+      { name: "next/image", kind: "software", note: "Resizing, formats and lazy loading.", href: "https://nextjs.org/docs/app/api-reference/components/image" },
+      { name: "web.dev: font best practices", kind: "standard", note: "Loading fonts without blocking text.", href: "https://web.dev/articles/font-best-practices" },
+    ],
+  },
+  "frontend/browser-caching": {
+    lead: "Cache headers decide how repeat visits load.",
+    tools: [
+      { name: "MDN HTTP caching", kind: "standard", note: "Cache-Control and validation.", href: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching" },
+      { name: "RFC 9111", kind: "standard", note: "HTTP caching spec.", href: "https://www.rfc-editor.org/rfc/rfc9111" },
+      { name: "web.dev: HTTP cache", kind: "standard", note: "Practical header recipes.", href: "https://web.dev/articles/http-cache" },
+    ],
+  },
+  "frontend/long-tasks": {
+    lead: "INP is a Core Web Vital measured on real users.",
+    tools: [
+      { name: "web.dev INP", kind: "standard", note: "Interaction to Next Paint.", href: "https://web.dev/articles/inp" },
+      { name: "scheduler.yield()", kind: "standard", note: "Yield to the browser between chunks.", href: "https://developer.chrome.com/blog/use-scheduler-yield" },
+      { name: "React useTransition", kind: "standard", note: "Interruptible updates.", href: "https://react.dev/reference/react/useTransition" },
+    ],
+  },
+  "frontend/browser-storage": {
+    lead: "Every web app stores something in the browser.",
+    tools: [
+      { name: "MDN Web Storage", kind: "standard", note: "localStorage and sessionStorage.", href: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API" },
+      { name: "Dexie", kind: "software", note: "A friendly IndexedDB wrapper.", href: "https://dexie.org/" },
+      { name: "Workbox", kind: "software", note: "Service worker caching strategies.", href: "https://developer.chrome.com/docs/workbox" },
+    ],
+  },
+  "frontend/cors": {
+    lead: "Cross-origin requests are governed by CORS in every browser.",
+    tools: [
+      { name: "MDN CORS", kind: "standard", note: "Headers, preflights, credentials.", href: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS" },
+      { name: "Fetch standard", kind: "standard", note: "The CORS protocol spec.", href: "https://fetch.spec.whatwg.org/#http-cors-protocol" },
+      { name: "cors (npm)", kind: "software", note: "CORS middleware for Express.", href: "https://www.npmjs.com/package/cors" },
+    ],
+  },
+  "frontend/csp": {
+    lead: "CSP is a standard defence against XSS.",
+    tools: [
+      { name: "MDN CSP", kind: "standard", note: "Directives and reporting.", href: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP" },
+      { name: "CSP Evaluator", kind: "software", note: "Check a policy for weaknesses.", href: "https://csp-evaluator.withgoogle.com/" },
+      { name: "Strict CSP", kind: "standard", note: "Nonce-based policies.", href: "https://web.dev/articles/strict-csp" },
+    ],
+  },
+  "frontend/keyboard-focus": {
+    lead: "Keyboard access is a baseline accessibility requirement.",
+    tools: [
+      { name: "WAI-ARIA dialog pattern", kind: "standard", note: "Focus handling in modals.", href: "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/" },
+      { name: "MDN :focus-visible", kind: "standard", note: "Focus styles for keyboard users.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible" },
+      { name: "axe DevTools", kind: "software", note: "Automated accessibility checks.", href: "https://www.deque.com/axe/devtools/" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [

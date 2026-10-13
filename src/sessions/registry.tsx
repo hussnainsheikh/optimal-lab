@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import FetchWaterfallDemo from "./frontend/data-fetching/FetchWaterfallDemo";
+import OptimisticDemo from "./frontend/optimistic-updates/OptimisticDemo";
+import RenderingModesDemo from "./frontend/csr-ssr-ssg/RenderingModesDemo";
+import PageWeightDemo from "./frontend/images-fonts/PageWeightDemo";
+import HttpCacheDemo from "./frontend/browser-caching/HttpCacheDemo";
+import InpDemo from "./frontend/long-tasks/InpDemo";
+import StorageDemo from "./frontend/browser-storage/StorageDemo";
+import CorsDemo from "./frontend/cors/CorsDemo";
+import CspDemo from "./frontend/csp/CspDemo";
+import FocusDemo from "./frontend/keyboard-focus/FocusDemo";
 import UrlToPixelsDemo from "./frontend/url-to-pixels/UrlToPixelsDemo";
 import WorkerDemo from "./frontend/web-workers/WorkerDemo";
 import ThisBindingDemo from "./frontend/this-binding/ThisBindingDemo";
@@ -217,6 +227,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "frontend/data-fetching": <FetchWaterfallDemo />,
+  "frontend/optimistic-updates": <OptimisticDemo />,
+  "frontend/csr-ssr-ssg": <RenderingModesDemo />,
+  "frontend/images-fonts": <PageWeightDemo />,
+  "frontend/browser-caching": <HttpCacheDemo />,
+  "frontend/long-tasks": <InpDemo />,
+  "frontend/browser-storage": <StorageDemo />,
+  "frontend/cors": <CorsDemo />,
+  "frontend/csp": <CspDemo />,
+  "frontend/keyboard-focus": <FocusDemo />,
   "frontend/url-to-pixels": <UrlToPixelsDemo />,
   "frontend/web-workers": <WorkerDemo />,
   "frontend/this-binding": <ThisBindingDemo />,
