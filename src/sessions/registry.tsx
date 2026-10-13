@@ -29,6 +29,16 @@ import N8nDemo from "./tools/n8n/N8nDemo";
 
 import AgentPatternsDemo from "./ai/agent-patterns/AgentPatternsDemo";
 import ChunkingDemo from "./ai/chunking/ChunkingDemo";
+import UrlToPixelsDemo from "./frontend/url-to-pixels/UrlToPixelsDemo";
+import WorkerDemo from "./frontend/web-workers/WorkerDemo";
+import ThisBindingDemo from "./frontend/this-binding/ThisBindingDemo";
+import PrototypesDemo from "./frontend/prototypes/PrototypesDemo";
+import BoxModelDemo from "./frontend/box-model/BoxModelDemo";
+import ResponsiveDemo from "./frontend/responsive-design/ResponsiveDemo";
+import AnimationsDemo from "./frontend/css-animations/AnimationsDemo";
+import KeysDemo from "./frontend/reconciliation/KeysDemo";
+import StaleClosureDemo from "./frontend/hooks/StaleClosureDemo";
+import MemoDemo from "./frontend/memoization/MemoDemo";
 import BranchingDemo from "./devops/branching-strategies/BranchingDemo";
 import SemverDemo from "./devops/releases-versioning/SemverDemo";
 import AffectedDemo from "./devops/build-caching/AffectedDemo";
@@ -207,6 +217,16 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
   "ai/chunking": <ChunkingDemo />,
+  "frontend/url-to-pixels": <UrlToPixelsDemo />,
+  "frontend/web-workers": <WorkerDemo />,
+  "frontend/this-binding": <ThisBindingDemo />,
+  "frontend/prototypes": <PrototypesDemo />,
+  "frontend/box-model": <BoxModelDemo />,
+  "frontend/responsive-design": <ResponsiveDemo />,
+  "frontend/css-animations": <AnimationsDemo />,
+  "frontend/reconciliation": <KeysDemo />,
+  "frontend/hooks": <StaleClosureDemo />,
+  "frontend/memoization": <MemoDemo />,
   "devops/branching-strategies": <BranchingDemo />,
   "devops/releases-versioning": <SemverDemo />,
   "devops/build-caching": <AffectedDemo />,

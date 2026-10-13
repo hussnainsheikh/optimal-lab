@@ -235,6 +235,16 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/devops/structured-logging` | Find a user's errors with grep on free-text logs, then with a query on structured JSON | — |
 | `/tracks/devops/opentelemetry` | Read a checkout trace waterfall: normal, a slow external API, and N+1 queries | — |
 | `/tracks/devops/dora-metrics` | Compare quarterly, weekly and continuous delivery teams on the four DORA metrics | — |
+| `/tracks/frontend/url-to-pixels` | Step through one page load from DNS lookup to an interactive page | — |
+| `/tracks/frontend/web-workers` | Run a 1.2 s calculation on the main thread and in a Web Worker and count dropped frames | — |
+| `/tracks/frontend/this-binding` | Call the same method five ways and see what this becomes each time | — |
+| `/tracks/frontend/prototypes` | Look up five properties on an object and watch the engine walk the prototype chain | — |
+| `/tracks/frontend/box-model` | Change padding, border and margin on a live box and compare content-box with border-box | — |
+| `/tracks/frontend/responsive-design` | Drag the viewport width and watch breakpoints, columns, navigation and image choice change | — |
+| `/tracks/frontend/css-animations` | Animate a real box with five easings, moving transform, left or width | — |
+| `/tracks/frontend/reconciliation` | Insert at the top of two real React lists, one keyed by index and one by id | — |
+| `/tracks/frontend/hooks` | An interval counter three ways: stuck on a stale closure, fixed with an updater, and with dependencies | — |
+| `/tracks/frontend/memoization` | Type into a search box and see when an expensive chart re-renders with and without memo | — |
 | `/tracks/frontend/re-renders` | A component tree: state, parent and context changes, with and without memo, and why each component rendered | — |
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |

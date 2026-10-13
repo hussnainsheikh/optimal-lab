@@ -1428,6 +1428,86 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Accelerate", kind: "standard", note: "The book behind the metrics.", href: "https://itrevolution.com/product/accelerate/" },
     ],
   },
+  "frontend/url-to-pixels": {
+    lead: "Browser devtools show every one of these steps.",
+    tools: [
+      { name: "How browsers work", kind: "standard", note: "web.dev's walkthrough.", href: "https://web.dev/articles/howbrowserswork" },
+      { name: "Chrome DevTools Network", kind: "software", note: "Waterfalls with DNS, TLS and TTFB.", href: "https://developer.chrome.com/docs/devtools/network" },
+      { name: "WebPageTest", kind: "service", note: "Filmstrips of page loads.", href: "https://www.webpagetest.org/" },
+    ],
+  },
+  "frontend/web-workers": {
+    lead: "Workers are built into every browser.",
+    tools: [
+      { name: "MDN Web Workers", kind: "standard", note: "The Worker API.", href: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" },
+      { name: "Comlink", kind: "software", note: "Call worker functions like local ones.", href: "https://github.com/GoogleChromeLabs/comlink" },
+      { name: "Partytown", kind: "software", note: "Move third-party scripts to a worker.", href: "https://partytown.qwik.dev/" },
+    ],
+  },
+  "frontend/this-binding": {
+    lead: "Every JavaScript developer meets this eventually.",
+    tools: [
+      { name: "MDN this", kind: "standard", note: "All the rules for this.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" },
+      { name: "Function.prototype.bind", kind: "standard", note: "Fix this permanently.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" },
+      { name: "TypeScript noImplicitThis", kind: "software", note: "Catch unbound this at compile time.", href: "https://www.typescriptlang.org/tsconfig/#noImplicitThis" },
+    ],
+  },
+  "frontend/prototypes": {
+    lead: "Classes in JavaScript are built on prototypes.",
+    tools: [
+      { name: "MDN prototype chain", kind: "standard", note: "Inheritance and the prototype chain.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" },
+      { name: "Object.getPrototypeOf", kind: "standard", note: "Inspect the chain.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf" },
+      { name: "Prototype pollution", kind: "standard", note: "The security bug.", href: "https://portswigger.net/web-security/prototype-pollution" },
+    ],
+  },
+  "frontend/box-model": {
+    lead: "Every element on every page is a box.",
+    tools: [
+      { name: "MDN box model", kind: "standard", note: "Content, padding, border, margin.", href: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model" },
+      { name: "box-sizing", kind: "standard", note: "content-box vs border-box.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" },
+      { name: "DevTools box model view", kind: "software", note: "Inspect any element's box.", href: "https://developer.chrome.com/docs/devtools/css/reference" },
+    ],
+  },
+  "frontend/responsive-design": {
+    lead: "Responsive layout is the default for the web.",
+    tools: [
+      { name: "MDN responsive design", kind: "standard", note: "Media queries, flexible layouts.", href: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design" },
+      { name: "Responsive images", kind: "standard", note: "srcset and sizes.", href: "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images" },
+      { name: "Container queries", kind: "standard", note: "Respond to a component's width.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries" },
+    ],
+  },
+  "frontend/css-animations": {
+    lead: "Smooth motion depends on easing and which property moves.",
+    tools: [
+      { name: "MDN CSS transitions", kind: "standard", note: "Transitions and timing functions.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions" },
+      { name: "cubic-bezier.com", kind: "software", note: "Design easing curves.", href: "https://cubic-bezier.com/" },
+      { name: "Motion", kind: "software", note: "Animation library for React.", href: "https://motion.dev/" },
+    ],
+  },
+  "frontend/reconciliation": {
+    lead: "Keys are how React matches list items between renders.",
+    tools: [
+      { name: "React: preserving state", kind: "standard", note: "Keys and identity.", href: "https://react.dev/learn/preserving-and-resetting-state" },
+      { name: "React: rendering lists", kind: "standard", note: "Why keys matter.", href: "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key" },
+      { name: "React DevTools", kind: "software", note: "Inspect the component tree.", href: "https://react.dev/learn/react-developer-tools" },
+    ],
+  },
+  "frontend/hooks": {
+    lead: "Every React developer hits this with effects and intervals.",
+    tools: [
+      { name: "React useEffect", kind: "standard", note: "Dependencies and cleanup.", href: "https://react.dev/reference/react/useEffect" },
+      { name: "eslint-plugin-react-hooks", kind: "software", note: "exhaustive-deps catches stale reads.", href: "https://www.npmjs.com/package/eslint-plugin-react-hooks" },
+      { name: "You might not need an effect", kind: "standard", note: "When to avoid effects.", href: "https://react.dev/learn/you-might-not-need-an-effect" },
+    ],
+  },
+  "frontend/memoization": {
+    lead: "React apps memoise to skip expensive re-renders.",
+    tools: [
+      { name: "React memo", kind: "standard", note: "Skip re-rendering when props are equal.", href: "https://react.dev/reference/react/memo" },
+      { name: "useCallback", kind: "standard", note: "Stable function references.", href: "https://react.dev/reference/react/useCallback" },
+      { name: "React Compiler", kind: "software", note: "Automatic memoisation.", href: "https://react.dev/learn/react-compiler" },
+    ],
+  },
   "ai/tokenization": {
     lead: "Every model ships with its own tokenizer; you count tokens to budget prompts and estimate cost, whatever your stack.",
     tools: [
