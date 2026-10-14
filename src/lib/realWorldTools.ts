@@ -657,6 +657,8 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
     tools: [
       { name: "PgBouncer", kind: "software", note: "Lightweight Postgres connection pooler.", href: "https://www.pgbouncer.org/" },
       { name: "Amazon RDS Proxy", kind: "service", note: "Managed pooling for RDS and Aurora.", href: "https://aws.amazon.com/rds/proxy/" },
+      { name: "Supavisor", kind: "software", note: "Supabase's pooler; limits come with the compute size.", href: "https://supabase.com/docs/guides/database/connecting-to-postgres" },
+      { name: "Neon pooling", kind: "service", note: "PgBouncer in transaction mode, up to 10,000 clients.", href: "https://neon.com/docs/connect/connection-pooling" },
       { name: "HikariCP", kind: "software", note: "The standard JVM connection pool.", href: "https://github.com/brettwooldridge/HikariCP" },
     ],
   },
