@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducedMotion } from "motion/react";
+import { useStill } from "@/components/useStill";
 import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import type { LessonContext } from "@/components/lesson/Lesson";
 import { REQUESTS, lru, preview, type LruStep } from "@/lib/cache";
@@ -274,7 +274,7 @@ function trip(points: ReturnType<typeof layout>, from: Who, t: number, hit: bool
 
 export function CacheStage({ scene, ctx }: { scene: CacheScene; ctx: LessonContext }) {
   const narrow = useNarrow();
-  const reduced = useReducedMotion() ?? false;
+  const reduced = useStill();
   const points = layout(narrow);
 
   if (scene.kind === "cold") return <Cold points={points} ctx={ctx} reduced={reduced} />;

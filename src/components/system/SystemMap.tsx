@@ -6,7 +6,8 @@
 // as the step flow, so the map and the steps always show the same moment.
 // See "Showing the system: the system map" in README.md.
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
+import { useStill } from "@/components/useStill";
 import { useSyncExternalStore, type ReactNode } from "react";
 
 export type NodeState = "idle" | "active" | "wait" | "good" | "bad" | "dim";
@@ -103,7 +104,7 @@ export function SystemMap({
   chrome = "inline",
 }: Props) {
   const narrow = useNarrow();
-  const still = useReducedMotion();
+  const still = useStill();
   const where = (id: string): [number, number] => {
     const node = nodes.find((n) => n.id === id);
     if (!node) return [50, 50];
