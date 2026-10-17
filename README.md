@@ -320,6 +320,46 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/tools/mcp` | A tool server lists tools; the app forwards the call | — |
 | `/tracks/tools/n8n` | Webhook → IF → Slack or email | — |
 | `/tracks/tools/github-actions` | on:, parallel jobs, a matrix, needs: and if: on three different events | — |
+| `/tracks/databases/relational-model` | Run INSERT, UPDATE and DELETE against customers and orders, and see what primary and foreign keys allow or reject | — |
+| `/tracks/databases/sql-joins` | Step through INNER, LEFT, RIGHT and FULL joins one row at a time, then filter in ON or in WHERE | — |
+| `/tracks/databases/aggregation` | Change WHERE, GROUP BY, the aggregate and HAVING, and watch eight orders regroup | — |
+| `/tracks/databases/normal-forms` | Take an enrolment sheet from raw to 3NF and count the rows each change has to touch | — |
+| `/tracks/databases/query-lifecycle` | Send a good query, a typo and a bad column through parser, analyzer, planner and executor | — |
+| `/tracks/databases/explain-plans` | Read an EXPLAIN ANALYZE plan part by part, with and without an index | — |
+| `/tracks/databases/statistics` | Break the planner with stale or correlated statistics, then fix it with ANALYZE or CREATE STATISTICS | — |
+| `/tracks/databases/query-tuning` | Fix a 410 ms query one change at a time and watch pages read fall from 64,103 to 3 | — |
+| `/tracks/databases/pages-heap` | Insert, update, delete and vacuum rows on one 8 KB page and watch the bytes move | — |
+| `/tracks/databases/other-indexes` | Pick a query and an index type (B-tree, Hash, GIN, GiST) and see whether the index can answer it | — |
+| `/tracks/networking/network-layers` | Pick a task (web, DNS, video call, email) and send it down the 5 layers; pick a symptom to see which layer is broken | — |
+| `/tracks/networking/packets` | Follow one HTTPS packet laptop → 2 routers → server, watching headers added, rewritten (MAC, TTL) and removed | — |
+| `/tracks/networking/ip-addresses` | Pick a mask and a destination, AND both addresses bit by bit, and see whether the packet goes direct or via the router | — |
+| `/tracks/networking/mac-arp` | Watch an ARP broadcast and reply fill the ARP cache and the switch's MAC table | — |
+| `/tracks/networking/ipv6` | Shorten IPv6 addresses with the RFC 5952 rules, build a link-local address from a MAC, compare the IPv4 and IPv6 headers | — |
+| `/tracks/networking/tcp-reliability` | Lose a segment, an ACK or the last segment and watch duplicate ACKs, fast retransmit or the timeout recover it | — |
+| `/tracks/networking/udp` | Stream 10 game updates over UDP, set packet loss and reorder one, and see which updates the server uses | — |
+| `/tracks/networking/tcp-vs-udp` | Send web, game, video or DNS traffic over TCP and UDP side by side, lose a packet, change the round trip | — |
+| `/tracks/networking/bgp` | Announce a prefix across 6 networks, then cut a link, hijack it or announce /25s, and turn on RPKI to block it | — |
+| `/tracks/networking/anycast` | Pick a user city and take sites down; see which of 3 anycast sites answers and the round trip vs one server | — |
+| `/tracks/operating-systems/cpu-cycle` | Step a toy CPU through fetch, decode, execute and write back while it sums n…1; change n | — |
+| `/tracks/operating-systems/binary-numbers` | Flip 8 bits, read them signed and unsigned, overflow with +1, and see the exact stored value of 0.1, 0.2 and 0.1 + 0.2 | — |
+| `/tracks/operating-systems/system-calls` | Follow write, open, a missing file or getpid through libc, the kernel and the device; try libc buffer sizes | — |
+| `/tracks/operating-systems/processes-os` | Send a process events (dispatch, read, open, malloc, exit, wait) and watch its state, memory and open files change | — |
+| `/tracks/operating-systems/threads` | Set threads and cores, see shared vs private memory, and play how 800 ms of work splits across cores | — |
+| `/tracks/operating-systems/context-switching` | Run one switch, toggle same-process vs other-process, and change the time slice to see the overhead | — |
+| `/tracks/operating-systems/fork-exec` | Run ls, ls > out.txt, sleep 5 & or a typo through fork, dup2, exec and waitpid; drag copy-on-write pages | — |
+| `/tracks/operating-systems/ipc` | Send a message by pipe, Unix socket, shared memory or signal and compare copies, syscalls and time by size | — |
+| `/tracks/operating-systems/stack-heap` | Step through malloc/free, a leak, a dangling stack pointer and runaway recursion, frame by frame | — |
+| `/tracks/operating-systems/page-faults` | Shrink RAM below the pages a loop uses and watch minor faults, major faults and the thrashing cliff | — |
+| `/tracks/security/hashing` | Type text, make a one-bit change and watch about half of SHA-256's 256 output bits flip | — |
+| `/tracks/security/symmetric-encryption` | Encrypt a picture with a toy block cipher in ECB vs CTR, try a wrong key, then encrypt and tamper with real AES-GCM | — |
+| `/tracks/security/public-key` | Pick two primes, build an RSA key pair, encrypt with the public key and decrypt with the private one | — |
+| `/tracks/security/randomness` | Issue reset tokens from a counter, a clock-seeded rand() and a crypto RNG, predict the next one, and see a reused nonce leak | — |
+| `/tracks/security/tls-handshake` | Step through TLS 1.3 message by message, as the browser and as the Wi-Fi sees it, then face a fake certificate | — |
+| `/tracks/security/mutual-tls` | Six callers try a service-to-service handshake; see which check stops each one | — |
+| `/tracks/security/hsts` | Visit a bank on café Wi-Fi with no redirect, a redirect, HSTS and preload, and change days since the last visit | — |
+| `/tracks/security/sessions-cookies` | Toggle HttpOnly, Secure, SameSite and lifetime, then run XSS, plain HTTP, cross-site and logout against the session | — |
+| `/tracks/security/oidc` | Decode an ID token and check its signature, issuer, audience, expiry and nonce; move the clock past expiry | — |
+| `/tracks/security/passkeys` | Create a passkey and sign in, on the real site and on a look-alike, with a matching or wrong fingerprint | — |
 
 Every session in `tracks.ts` gets a page. Sessions marked `soon` show a "coming soon" page: title and one-line blurb only, no visual.
 

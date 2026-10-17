@@ -2248,6 +2248,350 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Database indexes", kind: "service", note: "B-trees inside Postgres, MySQL, etc. — same halving idea on disk.", href: "https://www.postgresql.org/docs/current/indexes.html" },
     ],
   },
+  // Databases: relational basics, query engine, storage
+  "databases/relational-model": {
+    lead: "Primary and foreign keys work the same way in every relational database.",
+    tools: [
+      { name: "PostgreSQL constraints", kind: "software", note: "PRIMARY KEY, FOREIGN KEY and ON DELETE actions.", href: "https://www.postgresql.org/docs/current/ddl-constraints.html" },
+      { name: "MySQL foreign keys", kind: "software", note: "How InnoDB checks references and cascades.", href: "https://dev.mysql.com/doc/refman/8.4/en/create-table-foreign-keys.html" },
+      { name: "SQLite foreign keys", kind: "software", note: "Off by default; turn on with PRAGMA foreign_keys.", href: "https://www.sqlite.org/foreignkeys.html" },
+    ],
+  },
+  "databases/sql-joins": {
+    lead: "Join semantics are part of the SQL standard, so the same rows come out everywhere.",
+    tools: [
+      { name: "PostgreSQL joined tables", kind: "software", note: "INNER, LEFT, RIGHT and FULL joins, and ON vs WHERE.", href: "https://www.postgresql.org/docs/current/queries-table-expressions.html" },
+      { name: "SQLite SELECT", kind: "software", note: "Join syntax and processing in SQLite.", href: "https://www.sqlite.org/lang_select.html" },
+      { name: "MySQL JOIN", kind: "software", note: "MySQL's join syntax.", href: "https://dev.mysql.com/doc/refman/8.4/en/join.html" },
+    ],
+  },
+  "databases/aggregation": {
+    lead: "GROUP BY, aggregates and HAVING behave the same in every SQL database.",
+    tools: [
+      { name: "PostgreSQL aggregate functions", kind: "software", note: "COUNT, SUM, AVG, MAX and many more.", href: "https://www.postgresql.org/docs/current/functions-aggregate.html" },
+      { name: "PostgreSQL GROUP BY and HAVING", kind: "software", note: "How grouping and group filters run.", href: "https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-GROUP" },
+      { name: "MySQL GROUP BY handling", kind: "software", note: "ONLY_FULL_GROUP_BY and columns outside the group.", href: "https://dev.mysql.com/doc/refman/8.4/en/group-by-handling.html" },
+    ],
+  },
+  "databases/normal-forms": {
+    lead: "Normalizing is schema design; the database enforces it with keys and constraints.",
+    tools: [
+      { name: "PostgreSQL data definition", kind: "software", note: "Tables, keys and constraints for a normalized schema.", href: "https://www.postgresql.org/docs/current/ddl.html" },
+      { name: "dbdiagram.io", kind: "service", note: "Draw tables and relations before you create them.", href: "https://dbdiagram.io" },
+      { name: "SQLite foreign keys", kind: "software", note: "Keeps the split tables consistent.", href: "https://www.sqlite.org/foreignkeys.html" },
+    ],
+  },
+  "databases/query-lifecycle": {
+    lead: "Every SQL database parses, plans and executes; Postgres documents each stage.",
+    tools: [
+      { name: "PostgreSQL internals overview", kind: "software", note: "Parser, rewriter, planner and executor.", href: "https://www.postgresql.org/docs/current/overview.html" },
+      { name: "PREPARE", kind: "standard", note: "Parse and plan once, execute many times.", href: "https://www.postgresql.org/docs/current/sql-prepare.html" },
+      { name: "PostgreSQL wire protocol", kind: "protocol", note: "How the SQL text and the rows travel.", href: "https://www.postgresql.org/docs/current/protocol.html" },
+      { name: "SQLite architecture", kind: "software", note: "Tokenizer, parser, code generator and virtual machine.", href: "https://www.sqlite.org/arch.html" },
+    ],
+  },
+  "databases/explain-plans": {
+    lead: "EXPLAIN is how you see the plan in any database.",
+    tools: [
+      { name: "PostgreSQL EXPLAIN", kind: "software", note: "Costs, row estimates and EXPLAIN ANALYZE.", href: "https://www.postgresql.org/docs/current/using-explain.html" },
+      { name: "MySQL EXPLAIN", kind: "software", note: "Plan output, including EXPLAIN ANALYZE.", href: "https://dev.mysql.com/doc/refman/8.4/en/explain.html" },
+      { name: "PEV2", kind: "software", note: "Paste a Postgres plan and see it as a tree.", href: "https://github.com/dalibo/pev2" },
+    ],
+  },
+  "databases/statistics": {
+    lead: "The planner is only as good as the statistics ANALYZE saves.",
+    tools: [
+      { name: "PostgreSQL planner statistics", kind: "software", note: "Most common values, histograms and n_distinct.", href: "https://www.postgresql.org/docs/current/planner-stats.html" },
+      { name: "CREATE STATISTICS", kind: "software", note: "Extended statistics for correlated columns.", href: "https://www.postgresql.org/docs/current/sql-createstatistics.html" },
+      { name: "ANALYZE", kind: "software", note: "Refresh statistics after big data changes.", href: "https://www.postgresql.org/docs/current/sql-analyze.html" },
+      { name: "MySQL optimizer statistics", kind: "software", note: "Index statistics and histograms in MySQL.", href: "https://dev.mysql.com/doc/refman/8.4/en/optimizer-statistics.html" },
+    ],
+  },
+  "databases/query-tuning": {
+    lead: "Find the slow query, read its plan, change one thing, measure again.",
+    tools: [
+      { name: "pg_stat_statements", kind: "software", note: "Which queries take the most total time.", href: "https://www.postgresql.org/docs/current/pgstatstatements.html" },
+      { name: "auto_explain", kind: "software", note: "Logs the plans of slow queries automatically.", href: "https://www.postgresql.org/docs/current/auto-explain.html" },
+      { name: "Index-only scans", kind: "software", note: "Covering indexes with INCLUDE.", href: "https://www.postgresql.org/docs/current/indexes-index-only-scans.html" },
+      { name: "Indexes on expressions", kind: "software", note: "When you can't rewrite the function out of the query.", href: "https://www.postgresql.org/docs/current/indexes-expressional.html" },
+    ],
+  },
+  "databases/pages-heap": {
+    lead: "Postgres, MySQL and SQLite all store tables in fixed-size pages.",
+    tools: [
+      { name: "PostgreSQL page layout", kind: "software", note: "Header, line pointers, free space and tuples.", href: "https://www.postgresql.org/docs/current/storage-page-layout.html" },
+      { name: "pageinspect", kind: "software", note: "Look inside a real page from SQL.", href: "https://www.postgresql.org/docs/current/pageinspect.html" },
+      { name: "TOAST", kind: "software", note: "Where rows too big for a page go.", href: "https://www.postgresql.org/docs/current/storage-toast.html" },
+      { name: "InnoDB physical structure", kind: "software", note: "MySQL's 16 KB pages.", href: "https://dev.mysql.com/doc/refman/8.4/en/innodb-physical-structure.html" },
+    ],
+  },
+  "databases/other-indexes": {
+    lead: "Postgres ships several index types beyond the B-tree.",
+    tools: [
+      { name: "PostgreSQL index types", kind: "software", note: "B-tree, Hash, GiST, SP-GiST, GIN and BRIN.", href: "https://www.postgresql.org/docs/current/indexes-types.html" },
+      { name: "GIN", kind: "software", note: "Inverted indexes for arrays, jsonb and full text.", href: "https://www.postgresql.org/docs/current/gin.html" },
+      { name: "GiST", kind: "software", note: "Trees of bounding boxes for ranges and geometry.", href: "https://www.postgresql.org/docs/current/gist.html" },
+      { name: "PostGIS", kind: "software", note: "Spatial types and queries built on GiST.", href: "https://postgis.net" },
+    ],
+  },
+  // Networking: fundamentals, transport, internet
+  "networking/network-layers": {
+    lead: "Every packet capture tool shows traffic split into these layers.",
+    tools: [
+      { name: "Wireshark", kind: "software", note: "Shows each layer of a captured packet as its own section.", href: "https://www.wireshark.org/" },
+      { name: "RFC 1122", kind: "standard", note: "The internet's host requirements, organised by layer.", href: "https://www.rfc-editor.org/rfc/rfc1122" },
+      { name: "OSI model (ISO/IEC 7498-1)", kind: "standard", note: "The seven-layer reference model.", href: "https://www.iso.org/standard/20269.html" },
+      { name: "Cloudflare: the OSI model", kind: "service", note: "Plain-language guide to each layer.", href: "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/" },
+    ],
+  },
+  "networking/packets": {
+    lead: "Capture real traffic to see every header in front of the data.",
+    tools: [
+      { name: "Wireshark", kind: "software", note: "Decodes Ethernet, IP and TCP headers byte by byte.", href: "https://www.wireshark.org/" },
+      { name: "tcpdump", kind: "software", note: "Command-line packet capture on servers.", href: "https://www.tcpdump.org/" },
+      { name: "RFC 791 (IPv4)", kind: "standard", note: "The IP header: addresses, TTL, length.", href: "https://www.rfc-editor.org/rfc/rfc791" },
+      { name: "RFC 9293 (TCP)", kind: "standard", note: "The TCP header: ports and sequence numbers.", href: "https://www.rfc-editor.org/rfc/rfc9293" },
+    ],
+  },
+  "networking/ip-addresses": {
+    lead: "Every host and cloud subnet makes the local-or-gateway decision this way.",
+    tools: [
+      { name: "ip route (iproute2)", kind: "software", note: "Shows your connected subnet and default gateway.", href: "https://man7.org/linux/man-pages/man8/ip-route.8.html" },
+      { name: "RFC 4632 (CIDR)", kind: "standard", note: "Prefixes and masks.", href: "https://www.rfc-editor.org/rfc/rfc4632" },
+      { name: "RFC 1918", kind: "standard", note: "The private ranges like 192.168.0.0/16.", href: "https://www.rfc-editor.org/rfc/rfc1918" },
+    ],
+  },
+  "networking/mac-arp": {
+    lead: "ARP runs on every IPv4 Ethernet and Wi-Fi network.",
+    tools: [
+      { name: "RFC 826 (ARP)", kind: "protocol", note: "The Address Resolution Protocol.", href: "https://www.rfc-editor.org/rfc/rfc826" },
+      { name: "ip neigh (iproute2)", kind: "software", note: "Shows and clears the ARP / neighbour cache.", href: "https://man7.org/linux/man-pages/man8/ip-neighbour.8.html" },
+      { name: "Wireshark", kind: "software", note: "Filter on arp to watch requests and replies.", href: "https://www.wireshark.org/" },
+    ],
+  },
+  "networking/ipv6": {
+    lead: "IPv6 now carries a large share of traffic to big sites.",
+    tools: [
+      { name: "RFC 8200 (IPv6)", kind: "standard", note: "The IPv6 header and rules.", href: "https://www.rfc-editor.org/rfc/rfc8200" },
+      { name: "RFC 5952", kind: "standard", note: "How to write an IPv6 address short.", href: "https://www.rfc-editor.org/rfc/rfc5952" },
+      { name: "RFC 4862 (SLAAC)", kind: "protocol", note: "Devices build their own addresses.", href: "https://www.rfc-editor.org/rfc/rfc4862" },
+      { name: "Google IPv6 statistics", kind: "service", note: "Share of users reaching Google over IPv6.", href: "https://www.google.com/intl/en/ipv6/statistics.html" },
+    ],
+  },
+  "networking/tcp-reliability": {
+    lead: "Every TCP stack recovers losses with ACKs, fast retransmit and a timer.",
+    tools: [
+      { name: "RFC 9293 (TCP)", kind: "standard", note: "Sequence numbers and cumulative ACKs.", href: "https://www.rfc-editor.org/rfc/rfc9293" },
+      { name: "RFC 6298", kind: "standard", note: "How the retransmission timer is computed.", href: "https://www.rfc-editor.org/rfc/rfc6298" },
+      { name: "RFC 5681", kind: "standard", note: "Fast retransmit after 3 duplicate ACKs.", href: "https://www.rfc-editor.org/rfc/rfc5681" },
+      { name: "Wireshark", kind: "software", note: "Flags duplicate ACKs and retransmissions.", href: "https://www.wireshark.org/" },
+    ],
+  },
+  "networking/udp": {
+    lead: "DNS, games, video calls and QUIC all run on UDP.",
+    tools: [
+      { name: "RFC 768 (UDP)", kind: "standard", note: "The whole protocol: three pages.", href: "https://www.rfc-editor.org/rfc/rfc768" },
+      { name: "RFC 8085", kind: "standard", note: "Guidelines for apps that use UDP.", href: "https://www.rfc-editor.org/rfc/rfc8085" },
+      { name: "tcpdump", kind: "software", note: "Capture UDP traffic, e.g. udp port 53.", href: "https://www.tcpdump.org/" },
+    ],
+  },
+  "networking/tcp-vs-udp": {
+    lead: "Real protocols pick a transport by whether late data is still useful.",
+    tools: [
+      { name: "QUIC (RFC 9000)", kind: "protocol", note: "Reliable streams built on UDP, used by HTTP/3.", href: "https://www.rfc-editor.org/rfc/rfc9000" },
+      { name: "WebRTC", kind: "platform", note: "Real-time audio and video over UDP.", href: "https://webrtc.org/" },
+      { name: "RFC 7766", kind: "standard", note: "When DNS uses TCP instead of UDP.", href: "https://www.rfc-editor.org/rfc/rfc7766" },
+    ],
+  },
+  "networking/bgp": {
+    lead: "BGP connects every network on the internet; RPKI is how operators stop bad routes.",
+    tools: [
+      { name: "RFC 4271 (BGP-4)", kind: "protocol", note: "The Border Gateway Protocol.", href: "https://www.rfc-editor.org/rfc/rfc4271" },
+      { name: "RFC 6811 (RPKI origin validation)", kind: "standard", note: "Reject routes from the wrong origin.", href: "https://www.rfc-editor.org/rfc/rfc6811" },
+      { name: "bgp.tools", kind: "service", note: "Look up any prefix, AS number and its routes.", href: "https://bgp.tools/" },
+      { name: "Is BGP safe yet?", kind: "service", note: "Checks whether your ISP validates routes.", href: "https://isbgpsafeyet.com/" },
+    ],
+  },
+  "networking/anycast": {
+    lead: "Public DNS resolvers, root servers and CDNs all use anycast.",
+    tools: [
+      { name: "Cloudflare: what is anycast?", kind: "service", note: "How one address reaches the nearest data centre.", href: "https://www.cloudflare.com/learning/cdn/glossary/anycast-network/" },
+      { name: "RFC 4786", kind: "standard", note: "Operating anycast services.", href: "https://www.rfc-editor.org/rfc/rfc4786" },
+      { name: "Root server system", kind: "service", note: "13 root names, 1,900+ anycast sites.", href: "https://root-servers.org/" },
+      { name: "1.1.1.1", kind: "service", note: "An anycast DNS resolver.", href: "https://one.one.one.one/" },
+    ],
+  },
+  // Operating systems: hardware, processes, memory
+  "operating-systems/cpu-cycle": {
+    lead: "Every CPU runs this loop; these show what it actually executes.",
+    tools: [
+      { name: "Compiler Explorer", kind: "service", note: "See the machine instructions any code compiles to.", href: "https://godbolt.org/" },
+      { name: "perf", kind: "software", note: "Count cycles and instructions per cycle on Linux.", href: "https://perf.wiki.kernel.org/" },
+      { name: "RISC-V specifications", kind: "standard", note: "An open instruction set you can read end to end.", href: "https://riscv.org/technical/specifications/" },
+    ],
+  },
+  "operating-systems/binary-numbers": {
+    lead: "Every language stores integers and floats the same way underneath.",
+    tools: [
+      { name: "IEEE 754", kind: "standard", note: "The floating-point format behind 0.1 + 0.2.", href: "https://standards.ieee.org/ieee/754/6210/" },
+      { name: "Float Toy", kind: "software", note: "Flip the bits of a float and see its value.", href: "https://evanw.github.io/float-toy/" },
+      { name: "General Decimal Arithmetic", kind: "standard", note: "Decimal floating point for money and exact fractions.", href: "https://speleotrove.com/decimal/" },
+    ],
+  },
+  "operating-systems/system-calls": {
+    lead: "Watch the system calls any program makes, whatever language it is written in.",
+    tools: [
+      { name: "strace", kind: "software", note: "Prints every system call a process makes.", href: "https://strace.io/" },
+      { name: "syscalls(2)", kind: "standard", note: "The list of Linux system calls.", href: "https://man7.org/linux/man-pages/man2/syscalls.2.html" },
+      { name: "bpftrace", kind: "software", note: "Count and time system calls across the whole machine.", href: "https://github.com/bpftrace/bpftrace" },
+    ],
+  },
+  "operating-systems/processes-os": {
+    lead: "Every process's state, memory and open files can be inspected.",
+    tools: [
+      { name: "htop", kind: "software", note: "Live view of processes, states and memory.", href: "https://github.com/htop-dev/htop" },
+      { name: "proc(5)", kind: "standard", note: "/proc/<pid>: state, memory map and open files.", href: "https://man7.org/linux/man-pages/man5/proc.5.html" },
+      { name: "procps-ng", kind: "software", note: "ps, top and vmstat.", href: "https://gitlab.com/procps-ng/procps" },
+    ],
+  },
+  "operating-systems/threads": {
+    lead: "Most runtimes map their threads onto these OS threads.",
+    tools: [
+      { name: "pthreads(7)", kind: "standard", note: "POSIX threads: what they share and what they don't.", href: "https://man7.org/linux/man-pages/man7/pthreads.7.html" },
+      { name: "clone(2)", kind: "standard", note: "The Linux call that creates both threads and processes.", href: "https://man7.org/linux/man-pages/man2/clone.2.html" },
+      { name: "htop", kind: "software", note: "Press H to see every thread of a process.", href: "https://github.com/htop-dev/htop" },
+    ],
+  },
+  "operating-systems/context-switching": {
+    lead: "Context switches are counted by the kernel; these read the counters.",
+    tools: [
+      { name: "perf", kind: "software", note: "perf stat -e context-switches,cpu-migrations.", href: "https://perf.wiki.kernel.org/" },
+      { name: "sysstat (pidstat)", kind: "software", note: "pidstat -w shows switches per second per process.", href: "https://github.com/sysstat/sysstat" },
+      { name: "Linux scheduler docs", kind: "standard", note: "How the kernel picks the next task.", href: "https://docs.kernel.org/scheduler/sched-design-CFS.html" },
+    ],
+  },
+  "operating-systems/fork-exec": {
+    lead: "Every shell, init system and container runtime starts programs this way.",
+    tools: [
+      { name: "fork(2)", kind: "standard", note: "Copy the calling process.", href: "https://man7.org/linux/man-pages/man2/fork.2.html" },
+      { name: "execve(2)", kind: "standard", note: "Replace the process with a new program.", href: "https://man7.org/linux/man-pages/man2/execve.2.html" },
+      { name: "posix_spawn", kind: "standard", note: "fork + exec in one call.", href: "https://pubs.opengroup.org/onlinepubs/9699919799/functions/posix_spawn.html" },
+      { name: "GNU Bash", kind: "software", note: "A shell that forks and execs for every command.", href: "https://www.gnu.org/software/bash/" },
+    ],
+  },
+  "operating-systems/ipc": {
+    lead: "The kernel offers a handful of channels; everything else is built on them.",
+    tools: [
+      { name: "pipe(7)", kind: "standard", note: "Pipes and FIFOs, including the 64 KiB buffer.", href: "https://man7.org/linux/man-pages/man7/pipe.7.html" },
+      { name: "unix(7)", kind: "standard", note: "Unix domain sockets, used by Docker and databases.", href: "https://man7.org/linux/man-pages/man7/unix.7.html" },
+      { name: "shm_overview(7)", kind: "standard", note: "POSIX shared memory.", href: "https://man7.org/linux/man-pages/man7/shm_overview.7.html" },
+      { name: "signal(7)", kind: "standard", note: "Signals and their default actions.", href: "https://man7.org/linux/man-pages/man7/signal.7.html" },
+    ],
+  },
+  "operating-systems/stack-heap": {
+    lead: "These find leaks, dangling pointers and stack overflows in native code.",
+    tools: [
+      { name: "Valgrind", kind: "software", note: "Memcheck reports leaks and invalid reads.", href: "https://valgrind.org/" },
+      { name: "AddressSanitizer", kind: "software", note: "Catches use-after-return and use-after-free.", href: "https://github.com/google/sanitizers" },
+      { name: "heaptrack", kind: "software", note: "Shows where heap memory is allocated and leaked.", href: "https://github.com/KDE/heaptrack" },
+      { name: "jemalloc", kind: "software", note: "A widely used heap allocator.", href: "https://github.com/jemalloc/jemalloc" },
+    ],
+  },
+  "operating-systems/page-faults": {
+    lead: "Fault counts and swap activity are visible on any Linux machine.",
+    tools: [
+      { name: "perf", kind: "software", note: "perf stat -e minor-faults,major-faults.", href: "https://perf.wiki.kernel.org/" },
+      { name: "procps-ng (vmstat)", kind: "software", note: "vmstat 1: si/so columns show swapping.", href: "https://gitlab.com/procps-ng/procps" },
+      { name: "Linux vm sysctls", kind: "standard", note: "swappiness and other memory-pressure knobs.", href: "https://docs.kernel.org/admin-guide/sysctl/vm.html" },
+    ],
+  },
+  // Security: crypto, TLS, identity
+  "security/hashing": {
+    lead: "Hashes identify files, commits and messages everywhere.",
+    tools: [
+      { name: "SHA-2 (FIPS 180-4)", kind: "standard", note: "The SHA-256 standard this page runs.", href: "https://csrc.nist.gov/pubs/fips/180-4/upd1/final" },
+      { name: "BLAKE3", kind: "software", note: "A fast modern hash for checksums and content addressing.", href: "https://github.com/BLAKE3-team/BLAKE3" },
+      { name: "Web Crypto API", kind: "standard", note: "crypto.subtle.digest in every browser.", href: "https://www.w3.org/TR/WebCryptoAPI/" },
+    ],
+  },
+  "security/symmetric-encryption": {
+    lead: "Bulk data is always encrypted with an AEAD cipher and a fresh nonce.",
+    tools: [
+      { name: "AES-GCM (NIST SP 800-38D)", kind: "standard", note: "Counter mode plus an authentication tag.", href: "https://csrc.nist.gov/pubs/sp/800/38/d/final" },
+      { name: "ChaCha20-Poly1305 (RFC 8439)", kind: "protocol", note: "The AEAD used by TLS and WireGuard where AES hardware is missing.", href: "https://www.rfc-editor.org/rfc/rfc8439" },
+      { name: "libsodium", kind: "software", note: "AEAD and secretbox with safe defaults.", href: "https://doc.libsodium.org/secret-key_cryptography/aead" },
+      { name: "age", kind: "software", note: "Simple file encryption tool and format.", href: "https://github.com/FiloSottile/age" },
+    ],
+  },
+  "security/public-key": {
+    lead: "Public keys usually wrap or agree on a symmetric key rather than encrypt data directly.",
+    tools: [
+      { name: "RSA PKCS #1 v2.2 (RFC 8017)", kind: "standard", note: "RSA with OAEP padding.", href: "https://www.rfc-editor.org/rfc/rfc8017" },
+      { name: "HPKE (RFC 9180)", kind: "standard", note: "Hybrid public-key encryption: a key exchange plus an AEAD.", href: "https://www.rfc-editor.org/rfc/rfc9180" },
+      { name: "OpenPGP (RFC 9580)", kind: "standard", note: "Public-key encryption for email and files.", href: "https://www.rfc-editor.org/rfc/rfc9580" },
+    ],
+  },
+  "security/randomness": {
+    lead: "Tokens, keys and nonces come from the operating system's cryptographic generator.",
+    tools: [
+      { name: "RFC 4086", kind: "standard", note: "Randomness requirements for security.", href: "https://www.rfc-editor.org/rfc/rfc4086" },
+      { name: "NIST SP 800-90A", kind: "standard", note: "Deterministic random bit generators behind OS CSPRNGs.", href: "https://csrc.nist.gov/pubs/sp/800/90/a/r1/final" },
+      { name: "libsodium randombytes", kind: "software", note: "Portable access to the OS generator.", href: "https://doc.libsodium.org/generating_random_data" },
+      { name: "Web Crypto getRandomValues", kind: "standard", note: "The browser's CSPRNG.", href: "https://www.w3.org/TR/WebCryptoAPI/" },
+    ],
+  },
+  "security/tls-handshake": {
+    lead: "Every HTTPS connection starts with this handshake.",
+    tools: [
+      { name: "TLS 1.3 (RFC 8446)", kind: "protocol", note: "The handshake shown here.", href: "https://www.rfc-editor.org/rfc/rfc8446" },
+      { name: "Let's Encrypt", kind: "service", note: "Free certificates for the server's identity.", href: "https://letsencrypt.org" },
+      { name: "OpenSSL", kind: "software", note: "openssl s_client shows a real handshake.", href: "https://github.com/openssl/openssl" },
+      { name: "Wireshark", kind: "software", note: "See which handshake bytes are plain and which are encrypted.", href: "https://www.wireshark.org" },
+    ],
+  },
+  "security/mutual-tls": {
+    lead: "Service meshes give every service a short-lived certificate and turn on mTLS.",
+    tools: [
+      { name: "SPIFFE / SPIRE", kind: "standard", note: "Service identities like spiffe://shop.internal/orders.", href: "https://spiffe.io" },
+      { name: "Istio", kind: "platform", note: "Mesh with automatic mTLS between pods.", href: "https://istio.io" },
+      { name: "Linkerd", kind: "platform", note: "Lightweight mesh, mTLS on by default.", href: "https://linkerd.io" },
+      { name: "OAuth mTLS (RFC 8705)", kind: "standard", note: "Client certificates for OAuth clients and bound tokens.", href: "https://www.rfc-editor.org/rfc/rfc8705" },
+    ],
+  },
+  "security/hsts": {
+    lead: "One response header and a preload entry keep browsers off plain HTTP.",
+    tools: [
+      { name: "HSTS (RFC 6797)", kind: "standard", note: "The Strict-Transport-Security header.", href: "https://www.rfc-editor.org/rfc/rfc6797" },
+      { name: "HSTS preload list", kind: "service", note: "Submit a domain to the list built into browsers.", href: "https://hstspreload.org" },
+      { name: "OWASP HSTS Cheat Sheet", kind: "standard", note: "Rollout advice and pitfalls.", href: "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html" },
+    ],
+  },
+  "security/sessions-cookies": {
+    lead: "Server-side sessions live in a fast store; the cookie carries only the id.",
+    tools: [
+      { name: "HTTP cookies (RFC 6265)", kind: "standard", note: "Set-Cookie and its attributes.", href: "https://www.rfc-editor.org/rfc/rfc6265" },
+      { name: "OWASP Session Management Cheat Sheet", kind: "standard", note: "Ids, flags, timeouts and rotation.", href: "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html" },
+      { name: "Redis", kind: "software", note: "A common session store with per-key expiry.", href: "https://redis.io" },
+    ],
+  },
+  "security/oidc": {
+    lead: "\"Sign in with …\" buttons are OpenID Connect.",
+    tools: [
+      { name: "OpenID Connect Core 1.0", kind: "standard", note: "The ID token and the checks on it.", href: "https://openid.net/specs/openid-connect-core-1_0.html" },
+      { name: "OpenID Connect Discovery", kind: "standard", note: "Where to find the issuer's endpoints and JWKS keys.", href: "https://openid.net/specs/openid-connect-discovery-1_0.html" },
+      { name: "JSON Web Key (RFC 7517)", kind: "standard", note: "The published public-key format.", href: "https://www.rfc-editor.org/rfc/rfc7517" },
+      { name: "Keycloak", kind: "software", note: "Open-source identity provider.", href: "https://github.com/keycloak/keycloak" },
+    ],
+  },
+  "security/passkeys": {
+    lead: "Passkeys are WebAuthn credentials, synced or bound to one device.",
+    tools: [
+      { name: "Web Authentication (W3C)", kind: "standard", note: "The browser API and the checks a server runs.", href: "https://www.w3.org/TR/webauthn-3/" },
+      { name: "FIDO Alliance passkeys", kind: "standard", note: "The FIDO2 / CTAP side for authenticators.", href: "https://fidoalliance.org/passkeys/" },
+      { name: "passkeys.dev", kind: "platform", note: "Developer guide and device support tables.", href: "https://passkeys.dev" },
+    ],
+  },
+  // AI Engineering: foundations, LLM internals, prompting
 };
 
 export function realWorldKey(trackId: string, sessionId: string) {

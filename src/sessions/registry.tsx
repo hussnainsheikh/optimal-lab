@@ -263,6 +263,46 @@ import DataModelingDemo from "./system-design/data-modeling/DataModelingDemo";
 import TimeSeriesDemo from "./system-design/time-series/TimeSeriesDemo";
 import TwoPhaseCommitDemo from "./system-design/distributed-transactions/TwoPhaseCommitDemo";
 import ShardingDemo from "./system-design/sharding/ShardingDemo";
+import RelationalModelDemo from "./databases/relational-model/RelationalModelDemo";
+import SqlJoinsDemo from "./databases/sql-joins/SqlJoinsDemo";
+import AggregationDemo from "./databases/aggregation/AggregationDemo";
+import NormalFormsDemo from "./databases/normal-forms/NormalFormsDemo";
+import QueryLifecycleDemo from "./databases/query-lifecycle/QueryLifecycleDemo";
+import ExplainPlansDemo from "./databases/explain-plans/ExplainPlansDemo";
+import StatisticsDemo from "./databases/statistics/StatisticsDemo";
+import QueryTuningDemo from "./databases/query-tuning/QueryTuningDemo";
+import PagesHeapDemo from "./databases/pages-heap/PagesHeapDemo";
+import OtherIndexesDemo from "./databases/other-indexes/OtherIndexesDemo";
+import NetworkLayersDemo from "./networking/network-layers/NetworkLayersDemo";
+import PacketsDemo from "./networking/packets/PacketsDemo";
+import IpAddressesDemo from "./networking/ip-addresses/IpAddressesDemo";
+import MacArpDemo from "./networking/mac-arp/MacArpDemo";
+import Ipv6Demo from "./networking/ipv6/Ipv6Demo";
+import TcpReliabilityDemo from "./networking/tcp-reliability/TcpReliabilityDemo";
+import UdpDemo from "./networking/udp/UdpDemo";
+import TcpVsUdpDemo from "./networking/tcp-vs-udp/TcpVsUdpDemo";
+import BgpDemo from "./networking/bgp/BgpDemo";
+import AnycastDemo from "./networking/anycast/AnycastDemo";
+import CpuCycleDemo from "./operating-systems/cpu-cycle/CpuCycleDemo";
+import BinaryNumbersDemo from "./operating-systems/binary-numbers/BinaryNumbersDemo";
+import SystemCallsDemo from "./operating-systems/system-calls/SystemCallsDemo";
+import ProcessesDemo from "./operating-systems/processes-os/ProcessesDemo";
+import ThreadsDemo from "./operating-systems/threads/ThreadsDemo";
+import ContextSwitchDemo from "./operating-systems/context-switching/ContextSwitchDemo";
+import ForkExecDemo from "./operating-systems/fork-exec/ForkExecDemo";
+import IpcDemo from "./operating-systems/ipc/IpcDemo";
+import StackHeapDemo from "./operating-systems/stack-heap/StackHeapDemo";
+import PageFaultsDemo from "./operating-systems/page-faults/PageFaultsDemo";
+import HashingDemo from "./security/hashing/HashingDemo";
+import SymmetricDemo from "./security/symmetric-encryption/SymmetricDemo";
+import PublicKeyDemo from "./security/public-key/PublicKeyDemo";
+import RandomnessDemo from "./security/randomness/RandomnessDemo";
+import TlsHandshakeDemo from "./security/tls-handshake/TlsHandshakeDemo";
+import MutualTlsDemo from "./security/mutual-tls/MutualTlsDemo";
+import HstsDemo from "./security/hsts/HstsDemo";
+import SessionsCookiesDemo from "./security/sessions-cookies/SessionsCookiesDemo";
+import OidcDemo from "./security/oidc/OidcDemo";
+import PasskeysDemo from "./security/passkeys/PasskeysDemo";
 
 const SESSIONS: Record<string, ReactNode> = {
   "dsa/two-sum": <TwoSumDemo />,
@@ -524,6 +564,46 @@ const SESSIONS: Record<string, ReactNode> = {
   "tools/mcp": <McpDemo />,
   "tools/n8n": <N8nDemo />,
   "tools/github-actions": <GithubActionsDemo />,
+  "databases/relational-model": <RelationalModelDemo />,
+  "databases/sql-joins": <SqlJoinsDemo />,
+  "databases/aggregation": <AggregationDemo />,
+  "databases/normal-forms": <NormalFormsDemo />,
+  "databases/query-lifecycle": <QueryLifecycleDemo />,
+  "databases/explain-plans": <ExplainPlansDemo />,
+  "databases/statistics": <StatisticsDemo />,
+  "databases/query-tuning": <QueryTuningDemo />,
+  "databases/pages-heap": <PagesHeapDemo />,
+  "databases/other-indexes": <OtherIndexesDemo />,
+  "networking/network-layers": <NetworkLayersDemo />,
+  "networking/packets": <PacketsDemo />,
+  "networking/ip-addresses": <IpAddressesDemo />,
+  "networking/mac-arp": <MacArpDemo />,
+  "networking/ipv6": <Ipv6Demo />,
+  "networking/tcp-reliability": <TcpReliabilityDemo />,
+  "networking/udp": <UdpDemo />,
+  "networking/tcp-vs-udp": <TcpVsUdpDemo />,
+  "networking/bgp": <BgpDemo />,
+  "networking/anycast": <AnycastDemo />,
+  "operating-systems/cpu-cycle": <CpuCycleDemo />,
+  "operating-systems/binary-numbers": <BinaryNumbersDemo />,
+  "operating-systems/system-calls": <SystemCallsDemo />,
+  "operating-systems/processes-os": <ProcessesDemo />,
+  "operating-systems/threads": <ThreadsDemo />,
+  "operating-systems/context-switching": <ContextSwitchDemo />,
+  "operating-systems/fork-exec": <ForkExecDemo />,
+  "operating-systems/ipc": <IpcDemo />,
+  "operating-systems/stack-heap": <StackHeapDemo />,
+  "operating-systems/page-faults": <PageFaultsDemo />,
+  "security/hashing": <HashingDemo />,
+  "security/symmetric-encryption": <SymmetricDemo />,
+  "security/public-key": <PublicKeyDemo />,
+  "security/randomness": <RandomnessDemo />,
+  "security/tls-handshake": <TlsHandshakeDemo />,
+  "security/mutual-tls": <MutualTlsDemo />,
+  "security/hsts": <HstsDemo />,
+  "security/sessions-cookies": <SessionsCookiesDemo />,
+  "security/oidc": <OidcDemo />,
+  "security/passkeys": <PasskeysDemo />,
 };
 
 export const sessionDemo = (trackId: string, sessionId: string): ReactNode =>
