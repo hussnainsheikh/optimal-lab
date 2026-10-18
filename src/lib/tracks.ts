@@ -1123,9 +1123,12 @@ export const TRACKS: Track[] = [
       },
       { id: "react-loop", title: "The ReAct loop", blurb: "Think, act, observe, repeat, until the task is done.", status: "live", section: "agents",
         shape: { kind: "process", steps: 11, flow: "cycle" } },
-      { id: "reflection", title: "Reflection and self-correction", blurb: "The model checks its own work and tries again.", status: "soon", section: "agents" },
-      { id: "computer-use", title: "Computer-use and browser agents", blurb: "An agent that clicks, types and reads screens.", status: "soon", section: "agents" },
-      { id: "agent-failures", title: "Why agents fail", blurb: "Loops, drift, wrong tools and errors that compound over steps.", status: "soon", section: "agents" },
+      { id: "reflection", title: "Reflection and self-correction", blurb: "Revise a function against eight tests with self-critique only, the test results, or the error output, and see which one actually fixes it.", status: "live", section: "agents",
+        shape: { kind: "process", steps: 5, flow: "cycle", richSteps: true } },
+      { id: "computer-use", title: "Computer-use and browser agents", blurb: "Screenshot, model, one click, screenshot again: change an order's address, get blocked by a cookie banner, and meet instructions hidden on the page.", status: "live", section: "agents",
+        shape: { kind: "system", steps: 5, flow: "cycle" } },
+      { id: "agent-failures", title: "Why agents fail", blurb: "Twenty runs of the same task: 95% per step is about a third over 20 steps. See each failure and the safeguards that catch it.", status: "live", section: "agents",
+        shape: { kind: "process", steps: 5, flow: "state", richSteps: true } },
       // Evaluation
       {
         id: "evals",
@@ -1139,8 +1142,10 @@ export const TRACKS: Track[] = [
         shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "llm-as-judge", title: "LLM-as-judge and its biases", blurb: "A model grading a model: position bias, length bias and self-preference.", status: "live", section: "evaluation",
         shape: { kind: "process", steps: 4, flow: "state" } },
-      { id: "benchmarks", title: "Benchmarks", blurb: "What MMLU-style scores measure, and why they stop meaning much.", status: "soon", section: "evaluation" },
-      { id: "red-teaming", title: "Red-teaming", blurb: "Try hard to make the model fail before users do.", status: "soon", section: "evaluation" },
+      { id: "benchmarks", title: "Benchmarks", blurb: "Five models on a fresh, a saturated and a leaked benchmark: error bars, label-error ceilings and a model that memorized the test.", status: "live", section: "evaluation",
+        shape: { kind: "process", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "red-teaming", title: "Red-teaming", blurb: "Eight attack techniques, ten tries each, against a support bot. Add defenses and count both the attacks that get through and the honest users blocked.", status: "live", section: "evaluation",
+        shape: { kind: "process", steps: 5, flow: "cycle", richSteps: true } },
       // Adapting models
       { id: "fine-tuning", title: "Fine-tuning", blurb: "Train on your own examples to change style, format or behavior.", status: "soon", section: "adapting" },
       { id: "lora", title: "LoRA and parameter-efficient tuning", blurb: "Train a small add-on instead of the whole model.", status: "live", section: "adapting",

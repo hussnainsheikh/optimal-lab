@@ -104,6 +104,11 @@ import TinyNetDemo from "./ai/neural-networks/TinyNetDemo";
 import ScalingDemo from "./ai/scaling-laws/ScalingDemo";
 import ContextVsRagDemo from "./ai/long-context-vs-rag/ContextVsRagDemo";
 import EvalMetricsDemo from "./ai/eval-metrics/EvalMetricsDemo";
+import ReflectionDemo from "./ai/reflection/ReflectionDemo";
+import ComputerUseDemo from "./ai/computer-use/ComputerUseDemo";
+import AgentFailuresDemo from "./ai/agent-failures/AgentFailuresDemo";
+import BenchmarksDemo from "./ai/benchmarks/BenchmarksDemo";
+import RedTeamingDemo from "./ai/red-teaming/RedTeamingDemo";
 import FeatureCostDemo from "./ai-native/feature-cost/FeatureCostDemo";
 import AbTestDemo from "./ai-native/ab-testing-ai/AbTestDemo";
 import LatencyUxDemo from "./ai-native/latency-ux/LatencyUxDemo";
@@ -302,6 +307,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/scaling-laws": <ScalingDemo />,
   "ai/long-context-vs-rag": <ContextVsRagDemo />,
   "ai/eval-metrics": <EvalMetricsDemo />,
+  "ai/reflection": <ReflectionDemo />,
+  "ai/computer-use": <ComputerUseDemo />,
+  "ai/agent-failures": <AgentFailuresDemo />,
+  "ai/benchmarks": <BenchmarksDemo />,
+  "ai/red-teaming": <RedTeamingDemo />,
   "ai-native/feature-cost": <FeatureCostDemo />,
   "ai-native/ab-testing-ai": <AbTestDemo />,
   "ai-native/latency-ux": <LatencyUxDemo />,
