@@ -285,7 +285,7 @@ Every session in `tracks.ts` gets a page. Sessions marked `soon` show a "coming 
 (id, title, blurb, and `related` live sessions from other tracks), and each session names its
 `section`. The track page then shows the sessions under numbered section headings with jump
 links, and `/tracks` shows only the live ones plus a "+N topics coming" card. System Design has
-18 sections and 144 topics (9 live): scalability, data, networking, reliability, distributed
+18 sections and 123 topics (46 live): scalability, data, networking, reliability, distributed
 systems, architecture, security, production, web applications, seven AI system design
 sections (LLM apps, RAG, agents, memory, evaluation, serving, security), specialized systems,
 and case studies (design a URL shortener, chat app, news feed, payment system, coding agent…).
