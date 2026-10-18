@@ -155,6 +155,39 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "llama.cpp", kind: "software", note: "Local CPU/GPU inference for open weights.", href: "https://github.com/ggerganov/llama.cpp" },
     ],
   },
+  "ai/alignment": {
+    lead: "Specs, constitutions and safety research all answer the same question: how do you optimize for what you can't measure?",
+    tools: [
+      { name: "Specification gaming", kind: "standard", note: "DeepMind, 2020: documented cases of agents gaming their objectives.", href: "https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/" },
+      { name: "Concrete Problems in AI Safety", kind: "standard", note: "Amodei et al., 2016: reward hacking and the other failure modes, named.", href: "https://arxiv.org/abs/1606.06565" },
+      { name: "Towards Understanding Sycophancy", kind: "standard", note: "Sharma et al., 2023: preference training rewards agreement.", href: "https://arxiv.org/abs/2310.13548" },
+      { name: "Constitutional AI", kind: "standard", note: "Bai et al., 2022: written principles as the training signal.", href: "https://arxiv.org/abs/2212.08073" },
+      { name: "OpenAI Model Spec", kind: "standard", note: "The written behaviour a model is trained toward.", href: "https://model-spec.openai.com/" },
+      { name: "Claude's constitution", kind: "standard", note: "Anthropic's written principles for Claude.", href: "https://www.anthropic.com/news/claudes-constitution" },
+    ],
+  },
+  "ai/privacy-training-data": {
+    lead: "Memorization is measured in the research; the defenses are tools you run on the data and the training loop.",
+    tools: [
+      { name: "Quantifying Memorization", kind: "standard", note: "Carlini et al., 2022: memorization grows with copies, model size and context.", href: "https://arxiv.org/abs/2202.07646" },
+      { name: "Extracting Training Data from LLMs", kind: "standard", note: "Carlini et al., 2020: the attack, demonstrated on GPT-2.", href: "https://arxiv.org/abs/2012.07805" },
+      { name: "Deduplicating Training Data", kind: "standard", note: "Lee et al., 2021: fewer repeats, less memorization, a slightly better model.", href: "https://arxiv.org/abs/2107.06499" },
+      { name: "Microsoft Presidio", kind: "software", note: "Detects and redacts personal data with patterns and entity models.", href: "https://github.com/microsoft/presidio" },
+      { name: "Opacus", kind: "software", note: "Differentially private training for PyTorch.", href: "https://github.com/pytorch/opacus" },
+      { name: "OpenAI data controls", kind: "service", note: "Whether API and product data is used for training, and how to opt out.", href: "https://platform.openai.com/docs/guides/your-data" },
+      { name: "Anthropic Privacy Center", kind: "service", note: "How Anthropic handles data from its products and API.", href: "https://privacy.anthropic.com/" },
+    ],
+  },
+  "ai/ai-regulation": {
+    lead: "The EU AI Act is the one binding, general AI law so far; elsewhere, frameworks and sector rules.",
+    tools: [
+      { name: "EU AI Act (Regulation 2024/1689)", kind: "standard", note: "The official consolidated text on EUR-Lex.", href: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
+      { name: "European Commission: regulatory framework for AI", kind: "standard", note: "The Commission's overview of the tiers, duties and timeline.", href: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" },
+      { name: "AI Act Service Desk", kind: "service", note: "The Commission's help desk and compliance tools for the Act.", href: "https://digital-strategy.ec.europa.eu/en/policies/ai-act-service-desk" },
+      { name: "NIST AI Risk Management Framework", kind: "standard", note: "The US voluntary framework for managing AI risk.", href: "https://www.nist.gov/itl/ai-risk-management-framework" },
+      { name: "OECD AI Principles", kind: "standard", note: "Intergovernmental principles that many national AI policies build on.", href: "https://oecd.ai/en/ai-principles" },
+    ],
+  },
   "ai/embeddings": {
     lead: "Embedding models plus a vector index power similarity search in any application stack.",
     tools: [

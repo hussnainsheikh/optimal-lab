@@ -8,6 +8,9 @@ import EmbeddingsDemo from "./ai/embeddings/EmbeddingsDemo";
 import EvalsDemo from "./ai/evals/EvalsDemo";
 import HybridSearchDemo from "./ai/hybrid-search/HybridSearchDemo";
 import NextTokenDemo from "./ai/next-token/NextTokenDemo";
+import AlignmentDemo from "./ai/alignment/AlignmentDemo";
+import PrivacyTrainingDataDemo from "./ai/privacy-training-data/PrivacyTrainingDataDemo";
+import AiRegulationDemo from "./ai/ai-regulation/AiRegulationDemo";
 import RagDemo from "./ai/rag/RagDemo";
 import TokenizationDemo from "./ai/tokenization/TokenizationDemo";
 import WorkflowDemo from "./ai-automation/workflow/WorkflowDemo";
@@ -425,6 +428,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/tokenization": <TokenizationDemo />,
   "ai/attention": <AttentionDemo />,
   "ai/next-token": <NextTokenDemo />,
+  "ai/alignment": <AlignmentDemo />,
+  "ai/privacy-training-data": <PrivacyTrainingDataDemo />,
+  "ai/ai-regulation": <AiRegulationDemo />,
   "ai/context-window": <ContextWindowDemo />,
   "ai/embeddings": <EmbeddingsDemo />,
   "ai/hybrid-search": <HybridSearchDemo />,
