@@ -1600,6 +1600,47 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Anthropic token counting", kind: "service", note: "Count tokens for a Claude request before you send it.", href: "https://platform.claude.com/docs/en/build-with-claude/token-counting" },
     ],
   },
+  "ai/preference-tuning": {
+    lead: "The same libraries implement both: a PPO loop with a reward model, or a DPO loss on pairs.",
+    tools: [
+      { name: "Hugging Face TRL", kind: "software", note: "Reward modelling, PPO and DPO trainers for open models.", href: "https://github.com/huggingface/trl" },
+      { name: "OpenRLHF", kind: "software", note: "Scalable RLHF with PPO, DPO and friends.", href: "https://github.com/OpenRLHF/OpenRLHF" },
+      { name: "InstructGPT", kind: "standard", note: "Ouyang et al., 2022: the RLHF recipe of SFT, reward model and PPO.", href: "https://arxiv.org/abs/2203.02155" },
+      { name: "Direct Preference Optimization", kind: "standard", note: "Rafailov et al., 2023: your language model is secretly a reward model.", href: "https://arxiv.org/abs/2305.18290" },
+      { name: "Length correlations in RLHF", kind: "standard", note: "Singhal et al., 2023: why preference-tuned models get longer.", href: "https://arxiv.org/abs/2310.03716" },
+    ],
+  },
+  "ai/reasoning-models": {
+    lead: "Every provider's reasoning models take a thinking budget or an effort setting; the research names the overthinking problem.",
+    tools: [
+      { name: "Claude extended thinking", kind: "service", note: "A budget_tokens cap on thinking before the answer.", href: "https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking" },
+      { name: "OpenAI reasoning models", kind: "service", note: "A reasoning-effort setting from low to high.", href: "https://platform.openai.com/docs/guides/reasoning" },
+      { name: "Gemini thinking", kind: "service", note: "A thinking budget per request.", href: "https://ai.google.dev/gemini-api/docs/thinking" },
+      { name: "DeepSeek-R1", kind: "software", note: "An open-weight reasoning model, with its thinking visible.", href: "https://github.com/deepseek-ai/DeepSeek-R1" },
+      { name: "s1: simple test-time scaling", kind: "standard", note: "Muennighoff et al., 2025: forcing a thinking budget up or down.", href: "https://arxiv.org/abs/2501.19393" },
+      { name: "Do NOT think that much for 2+3=?", kind: "standard", note: "Chen et al., 2024: overthinking on easy problems, measured.", href: "https://arxiv.org/abs/2412.21187" },
+    ],
+  },
+  "ai/open-vs-closed": {
+    lead: "Open weights come from a few labs and run on a few serving stacks; comparison sites track price and quality across both kinds.",
+    tools: [
+      { name: "Llama", kind: "software", note: "Meta's open-weight models and reference code.", href: "https://github.com/meta-llama/llama-models" },
+      { name: "Mistral", kind: "service", note: "Open-weight models and a hosted API from the same lab.", href: "https://mistral.ai/" },
+      { name: "vLLM", kind: "software", note: "The usual way to serve open weights at scale, with batching.", href: "https://github.com/vllm-project/vllm" },
+      { name: "OpenRouter", kind: "service", note: "One API in front of hosted and open models, with prices side by side.", href: "https://openrouter.ai/" },
+      { name: "Artificial Analysis", kind: "service", note: "Independent quality, speed and price comparisons across models.", href: "https://artificialanalysis.ai/" },
+    ],
+  },
+  "ai/bias-fairness": {
+    lead: "Fairness toolkits compute these measures per group; the papers prove you can't have them all.",
+    tools: [
+      { name: "Fairlearn", kind: "software", note: "Fairness metrics by group and mitigation algorithms.", href: "https://github.com/fairlearn/fairlearn" },
+      { name: "AI Fairness 360", kind: "software", note: "IBM's toolkit of bias metrics and mitigations.", href: "https://github.com/Trusted-AI/AIF360" },
+      { name: "Aequitas", kind: "software", note: "A bias audit toolkit for decision systems.", href: "https://github.com/dssg/aequitas" },
+      { name: "Fair prediction with disparate impact", kind: "standard", note: "Chouldechova, 2017: calibration and equal error rates can't both hold when base rates differ.", href: "https://arxiv.org/abs/1703.00056" },
+      { name: "Inherent trade-offs in fair risk scores", kind: "standard", note: "Kleinberg, Mullainathan and Raghavan, 2016: the impossibility theorem.", href: "https://arxiv.org/abs/1609.05807" },
+    ],
+  },
   "ai/attention": {
     lead: "Every transformer runs this same score, mask, softmax and blend, in every head and every layer.",
     tools: [
