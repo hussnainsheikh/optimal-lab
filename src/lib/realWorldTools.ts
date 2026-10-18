@@ -196,6 +196,57 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Prompt caching", kind: "service", note: "Providers reuse the cached prefix of a repeated prompt and charge less for it.", href: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching" },
     ],
   },
+  "ai/local-inference": {
+    lead: "A handful of runtimes load quantized open models on laptops and gaming PCs; the arithmetic is the same in all of them.",
+    tools: [
+      { name: "llama.cpp", kind: "software", note: "Runs GGUF models on CPU and GPU, with Q8_0, Q4_K_M and other quantizations.", href: "https://github.com/ggml-org/llama.cpp" },
+      { name: "Ollama", kind: "software", note: "Download and run open models with one command; built on llama.cpp.", href: "https://github.com/ollama/ollama" },
+      { name: "LM Studio", kind: "software", note: "A desktop app to find, download and chat with local models.", href: "https://lmstudio.ai/" },
+      { name: "MLX", kind: "software", note: "Apple's array framework for running models on Apple-silicon unified memory.", href: "https://github.com/ml-explore/mlx" },
+      { name: "Hugging Face Hub", kind: "service", note: "Where open weights and their quantized versions are published.", href: "https://huggingface.co/models" },
+    ],
+  },
+  "ai/small-models": {
+    lead: "Small open models run on phones and laptops; the platforms ship runtimes and their own on-device models.",
+    tools: [
+      { name: "Gemma", kind: "software", note: "Google's open models, from sizes that fit on a phone upward.", href: "https://github.com/google-deepmind/gemma" },
+      { name: "Phi", kind: "software", note: "Microsoft's small language models.", href: "https://github.com/microsoft/PhiCookBook" },
+      { name: "Apple Foundation Models", kind: "platform", note: "An on-device model that apps on Apple platforms can call.", href: "https://developer.apple.com/documentation/foundationmodels" },
+      { name: "ExecuTorch", kind: "software", note: "PyTorch's runtime for models on phones and edge devices.", href: "https://github.com/pytorch/executorch" },
+      { name: "llama.cpp", kind: "software", note: "Runs small quantized models on laptops and phones.", href: "https://github.com/ggml-org/llama.cpp" },
+    ],
+  },
+  "ai/multimodal": {
+    lead: "Hosted models take images in the same request as text; the limits and per-image token cost differ by provider.",
+    tools: [
+      { name: "Claude vision", kind: "service", note: "Image limits, resizing and the 28-pixel patch token count used here.", href: "https://docs.anthropic.com/en/docs/build-with-claude/vision" },
+      { name: "OpenAI images and vision", kind: "service", note: "Image inputs with a detail setting that trades tokens for resolution.", href: "https://platform.openai.com/docs/guides/images-vision" },
+      { name: "Gemini image understanding", kind: "service", note: "Images, video and audio in one prompt.", href: "https://ai.google.dev/gemini-api/docs/image-understanding" },
+      { name: "An Image is Worth 16x16 Words", kind: "standard", note: "Dosovitskiy et al., 2020: the Vision Transformer that reads images as patches.", href: "https://arxiv.org/abs/2010.11929" },
+      { name: "LLaVA", kind: "software", note: "An open model that joins a vision encoder to an LLM.", href: "https://github.com/haotian-liu/LLaVA" },
+    ],
+  },
+  "ai/image-generation": {
+    lead: "Open diffusion pipelines expose the same knobs as this page: steps, guidance scale and seed.",
+    tools: [
+      { name: "Hugging Face Diffusers", kind: "software", note: "Diffusion pipelines and schedulers, including DDIM.", href: "https://github.com/huggingface/diffusers" },
+      { name: "ComfyUI", kind: "software", note: "A node editor for diffusion workflows.", href: "https://github.com/comfyanonymous/ComfyUI" },
+      { name: "Denoising Diffusion Probabilistic Models", kind: "standard", note: "Ho et al., 2020: the noise schedule and training objective.", href: "https://arxiv.org/abs/2006.11239" },
+      { name: "DDIM", kind: "standard", note: "Song et al., 2020: sampling in far fewer steps.", href: "https://arxiv.org/abs/2010.02502" },
+      { name: "Classifier-Free Diffusion Guidance", kind: "standard", note: "Ho and Salimans, 2022: the guidance scale.", href: "https://arxiv.org/abs/2207.12598" },
+    ],
+  },
+  "ai/speech": {
+    lead: "Voice agents combine speech-to-text, an LLM and text-to-speech, or use one speech-to-speech model.",
+    tools: [
+      { name: "Whisper", kind: "software", note: "OpenAI's open speech recognition model.", href: "https://github.com/openai/whisper" },
+      { name: "Deepgram", kind: "service", note: "Streaming speech-to-text with keyword boosting.", href: "https://deepgram.com/" },
+      { name: "ElevenLabs", kind: "service", note: "Text-to-speech voices with streaming output.", href: "https://elevenlabs.io/" },
+      { name: "Silero VAD", kind: "software", note: "A small voice-activity detector for spotting the end of a turn.", href: "https://github.com/snakers4/silero-vad" },
+      { name: "Pipecat", kind: "software", note: "An open framework for real-time voice agents.", href: "https://github.com/pipecat-ai/pipecat" },
+      { name: "OpenAI Realtime API", kind: "service", note: "Speech-to-speech in one model, without the text hops.", href: "https://platform.openai.com/docs/guides/realtime" },
+    ],
+  },
   "ai/chunking": {
     lead: "Every RAG pipeline has a splitter; most offer the same three choices: size, overlap and structure.",
     tools: [

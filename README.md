@@ -87,6 +87,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/devops/rolling-deploys` | maxSurge, readiness probes, a stalled rollout, kubectl rollout undo | — |
 | `/tracks/ai/training-loss` | Fit a line by gradient descent: predict, loss, gradient, step; four learning rates from crawl to blow-up | — |
 | `/tracks/ai/kv-cache` | Generate token by token with and without a KV cache: rows computed, and cache size by conversation length | — |
+| `/tracks/ai/local-inference` | Pick a model, precision, context and machine: memory needed, whether it fits, and tokens per second | — |
+| `/tracks/ai/small-models` | On-device, small hosted or frontier for each of six jobs: quality, speed and monthly cost | — |
+| `/tracks/ai/multimodal` | An image shrunk and cut into 28-pixel patches: token cost by tier and crop, and which details survive | — |
+| `/tracks/ai/image-generation` | Diffusion on a 16 × 16 picture: noise removed step by step, with steps and guidance to change | — |
+| `/tracks/ai/speech` | A voice agent in quiet and noisy rooms: word error rate and reply time stage by stage | — |
 | `/tracks/ai/chunking` | Fixed size, overlap or by heading on one help page: which questions get their whole answer, and what it costs | — |
 | `/tracks/ai/llm-as-judge` | Eight answer pairs graded by a judge with position and length bias; swap orders and a rubric remove confident wrong picks | — |
 | `/tracks/ai/query-rewriting` | Search with the question as typed, rewritten, or as a HyDE fake answer, and see where the right page lands | — |
