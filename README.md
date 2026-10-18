@@ -79,6 +79,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/cdn` | Edges in three cities: TTL, hit ratio, and stale files after a deploy (wait, purge, versioned names) | — |
 | `/tracks/system-design/rate-limiting` | Fixed window, sliding window and token bucket on the same bursts | — |
 | `/tracks/system-design/replication` | Async vs semi-sync, replication lag, stale reads, read-your-writes, failover losing a write | — |
+| `/tracks/system-design/database-bottlenecks` | Raise traffic on one database: N+1 queries, a missing index, too many connections and reads on the primary, each with its fix | — |
+| `/tracks/system-design/sql-vs-nosql` | The same shop in relational, document and graph form, with what each touches to show, rename and recommend | — |
+| `/tracks/system-design/data-modeling` | A blog feed normalized or with copies: rows touched per read and write, in sync or async, under three workloads | — |
+| `/tracks/system-design/time-series` | Size metrics storage: points a second, series by cardinality, Gorilla compression, rollups, and what a range query scans | — |
+| `/tracks/system-design/distributed-transactions` | Two-phase commit across two databases, then crash a participant or the coordinator and watch the locks | — |
 | `/tracks/system-design/sharding` | Hash, country or month as the shard key: hot shards and scatter queries | — |
 | `/tracks/system-design/message-queues` | At-least-once delivery: visibility timeout, duplicate charges, idempotency, dead-letter queue | — |
 | `/tracks/system-design/circuit-breaker` | Retry storms, backoff with jitter, and a breaker that lets a failing service recover | — |

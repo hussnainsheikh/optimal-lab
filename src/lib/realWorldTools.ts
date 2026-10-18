@@ -97,6 +97,56 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "MongoDB replica sets", kind: "software", note: "Write concern and read preference control durability and staleness.", href: "https://github.com/mongodb/mongo" },
     ],
   },
+  "system-design/database-bottlenecks": {
+    lead: "Each bottleneck has a tool that shows it and a tool that fixes it.",
+    tools: [
+      { name: "pg_stat_statements", kind: "software", note: "Which queries take the most total time in PostgreSQL.", href: "https://www.postgresql.org/docs/current/pgstatstatements.html" },
+      { name: "EXPLAIN ANALYZE", kind: "standard", note: "The query plan with real timings: the sequential scan an index would remove.", href: "https://www.postgresql.org/docs/current/sql-explain.html" },
+      { name: "PgBouncer", kind: "software", note: "A connection pooler in front of PostgreSQL.", href: "https://github.com/pgbouncer/pgbouncer" },
+      { name: "ProxySQL", kind: "software", note: "Pooling and read/write splitting for MySQL.", href: "https://github.com/sysown/proxysql" },
+      { name: "Amazon RDS Proxy", kind: "service", note: "Managed pooling and failover handling for RDS databases.", href: "https://aws.amazon.com/rds/proxy/" },
+    ],
+  },
+  "system-design/sql-vs-nosql": {
+    lead: "One well-known database per model, and the languages they're asked in.",
+    tools: [
+      { name: "PostgreSQL", kind: "software", note: "Relational, with JSON columns when a document fits better.", href: "https://github.com/postgres/postgres" },
+      { name: "MongoDB", kind: "software", note: "Document database: one JSON-like document per entity.", href: "https://github.com/mongodb/mongo" },
+      { name: "Amazon DynamoDB", kind: "service", note: "Key-value and document store designed around access patterns.", href: "https://aws.amazon.com/dynamodb/" },
+      { name: "Neo4j", kind: "software", note: "Graph database queried with Cypher.", href: "https://neo4j.com/" },
+      { name: "openCypher", kind: "standard", note: "The open graph query language behind MATCH … RETURN.", href: "https://opencypher.org/" },
+    ],
+  },
+  "system-design/data-modeling": {
+    lead: "Keeping copies in sync is the hard part; these are the usual ways to do it.",
+    tools: [
+      { name: "PostgreSQL materialized views", kind: "software", note: "A precomputed, refreshable copy of a query's result.", href: "https://www.postgresql.org/docs/current/sql-creatematerializedview.html" },
+      { name: "Debezium", kind: "software", note: "Change data capture to update copies from the database's own log.", href: "https://github.com/debezium/debezium" },
+      { name: "DynamoDB single-table design", kind: "standard", note: "Amazon's guide to modeling around access patterns rather than entities.", href: "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-general-nosql-design.html" },
+      { name: "Designing Data-Intensive Applications", kind: "standard", note: "Kleppmann's book: the chapters on data models and storage.", href: "https://dataintensive.net/" },
+    ],
+  },
+  "system-design/time-series": {
+    lead: "Purpose-built time-series stores, and the paper the compression comes from.",
+    tools: [
+      { name: "Prometheus", kind: "software", note: "Metrics scraping and storage with Gorilla-style compression and label-based series.", href: "https://github.com/prometheus/prometheus" },
+      { name: "VictoriaMetrics", kind: "software", note: "A Prometheus-compatible store built for high cardinality and long retention.", href: "https://github.com/VictoriaMetrics/VictoriaMetrics" },
+      { name: "TimescaleDB", kind: "software", note: "Time-series on PostgreSQL: hypertables, compression and continuous aggregates.", href: "https://github.com/timescale/timescaledb" },
+      { name: "InfluxDB", kind: "software", note: "A time-series database with retention policies and downsampling.", href: "https://github.com/influxdata/influxdb" },
+      { name: "ClickHouse", kind: "software", note: "A column store often used for metrics and events at scale.", href: "https://github.com/ClickHouse/ClickHouse" },
+      { name: "Gorilla", kind: "standard", note: "Pelkonen et al., 2015: Facebook's in-memory time-series store and its 1.37-bytes-a-point compression.", href: "https://www.vldb.org/pvldb/vol8/p1816-teller.pdf" },
+    ],
+  },
+  "system-design/distributed-transactions": {
+    lead: "Two-phase commit lives inside databases and transaction managers; across services, people reach for sagas and workflow engines instead.",
+    tools: [
+      { name: "PostgreSQL PREPARE TRANSACTION", kind: "software", note: "The participant side of 2PC, built into the database.", href: "https://www.postgresql.org/docs/current/sql-prepare-transaction.html" },
+      { name: "Seata", kind: "software", note: "A distributed transaction framework with XA and saga modes.", href: "https://github.com/seata/seata" },
+      { name: "Google Spanner", kind: "service", note: "2PC over Paxos groups: atomic commits across machines, with the coordinator itself replicated.", href: "https://cloud.google.com/spanner" },
+      { name: "Temporal", kind: "software", note: "Durable workflows: the saga alternative for work that spans services.", href: "https://github.com/temporalio/temporal" },
+      { name: "Consensus on Transaction Commit", kind: "standard", note: "Gray and Lamport, 2004: why 2PC blocks, and Paxos commit as the fix.", href: "https://www.microsoft.com/en-us/research/publication/consensus-on-transaction-commit/" },
+    ],
+  },
   "system-design/sharding": {
     lead: "When one database is too big, these systems split it by a shard key and route queries for you.",
     tools: [
