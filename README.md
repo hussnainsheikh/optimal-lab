@@ -120,6 +120,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/devops/terraform-plan-apply` | Make a change, from adding a bucket to console drift, and read the create, update, replace or destroy plan | — |
 | `/tracks/devops/slos-error-budgets` | The same incidents against 99%, 99.9% and 99.99% targets: how much budget is left | — |
 | `/tracks/ai/react-loop` | Step through thought, action and observation with search, weather and calculator tools | — |
+| `/tracks/ai/what-is-a-model` | A line, a curve or a lookup table for delivery times: set the parameters, fit them, predict an unseen order | — |
+| `/tracks/ai/learning-types` | A perceptron, k-means and Q-learning side by side on labels, no labels, and rewards | — |
+| `/tracks/ai/fine-tuning` | Goal, examples and epochs: task score, forgetting and overfitting, against a prompt and RAG | — |
+| `/tracks/ai/distillation` | A teacher labels data for a student: softmax at a temperature, and accuracy by examples | — |
+| `/tracks/ai/synthetic-data` | Eight generations trained on generated data: topics vanish and errors compound, unless verified and mixed | — |
 | `/tracks/ai-native/streaming-ui` | Stream a JSON answer and compare waiting, raw text, and parsing partial chunks | — |
 | `/tracks/ai-automation/retries-errors` | Try no retries, immediate retries and backoff against a 503, a 429 and a 400 | — |
 | `/tracks/ai-automation/confidence-fallbacks` | Slide the auto-approve threshold and trade automation rate against errors that slip through | — |

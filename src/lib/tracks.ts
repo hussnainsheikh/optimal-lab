@@ -1034,14 +1034,16 @@ export const TRACKS: Track[] = [
     ],
     sessions: [
       // Machine learning foundations
-      { id: "what-is-a-model", title: "What a model is", blurb: "Parameters in, prediction out: a model is a function you tune.", status: "soon", section: "ml-foundations" },
+      { id: "what-is-a-model", title: "What a model is", blurb: "A line, a curve or a lookup table for delivery times: set the parameters by hand, let the data set them, then predict an order it never saw.", status: "live", section: "ml-foundations",
+        shape: { kind: "process", steps: 5, flow: "pipeline", richSteps: true } },
       { id: "training-loss", title: "Training: loss and gradient descent", blurb: "Nudge every parameter downhill until the error stops falling.", status: "live", section: "ml-foundations",
         shape: { kind: "algorithm", steps: 4, flow: "cycle" } },
       { id: "overfitting", title: "Overfitting and train/test splits", blurb: "A model that memorizes the training set and fails on new data.", status: "live", section: "ml-foundations",
         shape: { kind: "simulation", steps: 4, flow: "state" } },
       { id: "neural-networks", title: "Neural networks, layer by layer", blurb: "Weights, activations and how stacking layers learns features.", status: "live", section: "ml-foundations",
         shape: { kind: "simulation", steps: 4, flow: "state" } },
-      { id: "learning-types", title: "Supervised, unsupervised and reinforcement learning", blurb: "Learn from labels, from structure, or from rewards.", status: "soon", section: "ml-foundations" },
+      { id: "learning-types", title: "Supervised, unsupervised and reinforcement learning", blurb: "A perceptron, k-means and Q-learning side by side: the same deliveries learn a line and fall into groups, and a courier learns a route from rewards.", status: "live", section: "ml-foundations",
+        shape: { kind: "comparison", steps: 3 } },
       // How LLMs work
       {
         id: "tokenization",
@@ -1142,12 +1144,15 @@ export const TRACKS: Track[] = [
       { id: "benchmarks", title: "Benchmarks", blurb: "What MMLU-style scores measure, and why they stop meaning much.", status: "soon", section: "evaluation" },
       { id: "red-teaming", title: "Red-teaming", blurb: "Try hard to make the model fail before users do.", status: "soon", section: "evaluation" },
       // Adapting models
-      { id: "fine-tuning", title: "Fine-tuning", blurb: "Train on your own examples to change style, format or behavior.", status: "soon", section: "adapting" },
+      { id: "fine-tuning", title: "Fine-tuning", blurb: "Pick a goal, the number of examples and epochs: task score, forgetting and overfitting, against a good prompt and RAG.", status: "live", section: "adapting",
+        shape: { kind: "process", steps: 5, flow: "state", richSteps: true } },
       { id: "lora", title: "LoRA and parameter-efficient tuning", blurb: "Train a small add-on instead of the whole model.", status: "live", section: "adapting",
         shape: { kind: "algorithm", steps: 4, flow: "state" } },
       { id: "preference-tuning", title: "Preference tuning: RLHF and DPO", blurb: "Teach the model which of two answers people prefer.", status: "soon", section: "adapting" },
-      { id: "distillation", title: "Distillation", blurb: "A big model teaches a small one to be nearly as good, much cheaper.", status: "soon", section: "adapting" },
-      { id: "synthetic-data", title: "Synthetic data", blurb: "Use a model to generate training and test data, and its traps.", status: "soon", section: "adapting" },
+      { id: "distillation", title: "Distillation", blurb: "A 70B teacher labels data for a small student: keep the whole distribution at a temperature, and the student needs far fewer examples.", status: "live", section: "adapting",
+        shape: { kind: "system", steps: 5, flow: "pipeline" } },
+      { id: "synthetic-data", title: "Synthetic data", blurb: "Eight generations of a model trained on its own output: rare topics vanish and errors compound, unless you verify and mix real data back in.", status: "live", section: "adapting",
+        shape: { kind: "system", steps: 5, flow: "cycle" } },
       // Choosing and running models
       { id: "open-vs-closed", title: "Open vs closed models", blurb: "API models or open weights: quality, cost, control and privacy.", status: "soon", section: "models" },
       { id: "reasoning-models", title: "Reasoning models and thinking budgets", blurb: "Spend more tokens thinking for harder problems, and when not to.", status: "soon", section: "models" },
