@@ -172,6 +172,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/clocks` | Three processes and their messages ordered by wall clocks, Lamport clocks and vector clocks | — |
 | `/tracks/system-design/deployment-strategies` | Ship a buggy version with rolling, blue-green and canary rollouts and count failed requests | — |
 | `/tracks/system-design/hedged-requests` | Forty requests with a slow tail: send backups after a delay and watch p99 drop | — |
+| `/tracks/system-design/payments-ledgers` | Two payments, a fee and a payout in balance columns or a double-entry ledger; a retried webhook, a crash mid-payout, then reconcile | — |
+| `/tracks/system-design/data-pipelines` | Orders per hour from a nightly batch or a stream, by arrival or event time: watermarks, late events, duplicates and corrections | — |
+| `/tracks/system-design/object-storage` | A 120 MB object as 2 copies, 3 copies or erasure 6+3 across three zones: fail disks and a zone, count disk and nines | — |
+| `/tracks/system-design/multi-region` | One region, read replicas, active-active or home regions: latency from three continents, a region down, and where EU data lives | — |
+| `/tracks/system-design/edge-iot` | A truck's fridge sensor through dead zones and a reboot: buffering, edge alerts, a reconnect stampede and A/B firmware updates | — |
 | `/tracks/security/key-exchange` | Pick Alice's and Bob's secrets and watch both reach the same key while Eve sees only public values | — |
 | `/tracks/security/idor` | Change the invoice id in the URL with and without an ownership check | — |
 | `/tracks/security/ssrf` | Paste internal and sneaky URLs into a link-preview feature against three defences | — |
