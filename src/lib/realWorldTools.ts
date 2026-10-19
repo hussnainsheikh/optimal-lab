@@ -1376,6 +1376,73 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Auth0", kind: "service", note: "Hosted OAuth and OIDC.", href: "https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce" },
     ],
   },
+  "system-design/monolith-vs-microservices": {
+    lead: "The choice is about teams and deploys more than technology; these are the reference points people cite.",
+    tools: [
+      { name: "MonolithFirst", kind: "standard", note: "Martin Fowler: start with a monolith and split once the boundaries are known.", href: "https://martinfowler.com/bliki/MonolithFirst.html" },
+      { name: "Microservices (Lewis and Fowler)", kind: "standard", note: "The 2014 article that defined the term and its trade-offs.", href: "https://martinfowler.com/articles/microservices.html" },
+      { name: "Shopify's modular monolith", kind: "standard", note: "How Shopify enforces boundaries inside one large Rails codebase.", href: "https://shopify.engineering/deconstructing-monolith-designing-software-maximizes-developer-productivity" },
+      { name: "Packwerk", kind: "software", note: "Shopify's tool that fails the build when a module reaches past another's public interface.", href: "https://github.com/Shopify/packwerk" },
+      { name: "Team Topologies", kind: "standard", note: "Matching service boundaries to team boundaries, and the cognitive load of each.", href: "https://teamtopologies.com/" },
+    ],
+  },
+  "system-design/clean-architecture": {
+    lead: "These are patterns, not frameworks; the original write-ups and a tool that enforces the import rule.",
+    tools: [
+      { name: "Hexagonal architecture", kind: "standard", note: "Alistair Cockburn's original description of ports and adapters.", href: "https://alistair.cockburn.us/hexagonal-architecture/" },
+      { name: "The Clean Architecture", kind: "standard", note: "Robert C. Martin: the dependency rule, drawn as concentric circles.", href: "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" },
+      { name: "ArchUnit", kind: "software", note: "Tests that fail when an import points the wrong way between layers.", href: "https://github.com/TNG/ArchUnit" },
+      { name: "dependency-cruiser", kind: "software", note: "Validates and draws module dependencies against rules you write.", href: "https://github.com/sverweij/dependency-cruiser" },
+    ],
+  },
+  "system-design/domain-driven-design": {
+    lead: "DDD is a modelling practice; the sources and the workshop formats teams use to find the boundaries.",
+    tools: [
+      { name: "Domain-Driven Design Reference", kind: "standard", note: "Eric Evans' summary of the patterns: bounded contexts, aggregates, context maps.", href: "https://www.domainlanguage.com/ddd/reference/" },
+      { name: "Bounded Context", kind: "standard", note: "Martin Fowler's short explanation, with the classic two-meanings diagram.", href: "https://martinfowler.com/bliki/BoundedContext.html" },
+      { name: "EventStorming", kind: "standard", note: "A workshop format for finding events, aggregates and context boundaries with the business.", href: "https://www.eventstorming.com/" },
+      { name: "DDD Crew", kind: "standard", note: "Open templates: bounded context canvas, context mapping, aggregate design canvas.", href: "https://github.com/ddd-crew" },
+    ],
+  },
+  "system-design/adrs": {
+    lead: "ADRs are plain text in the repository; the template and the tooling are small on purpose.",
+    tools: [
+      { name: "Documenting Architecture Decisions", kind: "standard", note: "Michael Nygard's 2011 post that introduced the format: context, decision, status, consequences.", href: "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions" },
+      { name: "MADR", kind: "standard", note: "Markdown Architectural Decision Records: a template with considered options.", href: "https://github.com/adr/madr" },
+      { name: "adr-tools", kind: "software", note: "Command-line tools to create, number and supersede ADRs.", href: "https://github.com/npryce/adr-tools" },
+      { name: "ADR GitHub organisation", kind: "standard", note: "Templates, examples and tooling collected in one place.", href: "https://adr.github.io/" },
+    ],
+  },
+  "system-design/capacity-planning": {
+    lead: "Every cloud has the same three levers: right-size, commit for a discount, and scale with the curve.",
+    tools: [
+      { name: "AWS Savings Plans", kind: "service", note: "Commit to an hourly spend for 1 or 3 years for a lower rate.", href: "https://aws.amazon.com/savingsplans/" },
+      { name: "Google Cloud committed use discounts", kind: "service", note: "The same commitment model on Google Cloud.", href: "https://cloud.google.com/docs/cuds" },
+      { name: "Kubernetes Horizontal Pod Autoscaler", kind: "software", note: "Adds and removes pods from a utilisation target, with a scale-in stabilisation window.", href: "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/" },
+      { name: "OpenCost", kind: "software", note: "Cost per workload in Kubernetes, to see what's idle.", href: "https://github.com/opencost/opencost" },
+      { name: "FinOps Foundation", kind: "standard", note: "The practice of engineering and finance owning cloud cost together.", href: "https://www.finops.org/" },
+    ],
+  },
+  "system-design/chaos-engineering": {
+    lead: "Fault injection is a product category now; these run experiments with blast radius and stop conditions built in.",
+    tools: [
+      { name: "Principles of Chaos Engineering", kind: "standard", note: "Steady state, hypothesis, real-world events, minimal blast radius.", href: "https://principlesofchaos.org/" },
+      { name: "Chaos Mesh", kind: "software", note: "Kubernetes fault injection: pod kill, network delay, IO faults.", href: "https://github.com/chaos-mesh/chaos-mesh" },
+      { name: "LitmusChaos", kind: "software", note: "Chaos experiments as Kubernetes resources, with probes that check the steady state.", href: "https://github.com/litmuschaos/litmus" },
+      { name: "AWS Fault Injection Service", kind: "service", note: "Managed experiments on AWS resources with stop conditions on CloudWatch alarms.", href: "https://aws.amazon.com/fis/" },
+      { name: "Toxiproxy", kind: "software", note: "A proxy that adds latency, drops or cuts connections between services in tests.", href: "https://github.com/Shopify/toxiproxy" },
+    ],
+  },
+  "system-design/incident-response": {
+    lead: "Paging, status pages and postmortems have standard tools; the roles come from emergency services.",
+    tools: [
+      { name: "Google SRE book: Managing Incidents", kind: "standard", note: "Incident commander, operations, communications: roles and a worked example.", href: "https://sre.google/sre-book/managing-incidents/" },
+      { name: "Google SRE book: Postmortem Culture", kind: "standard", note: "Blameless postmortems and why they work.", href: "https://sre.google/sre-book/postmortem-culture/" },
+      { name: "PagerDuty Incident Response", kind: "standard", note: "PagerDuty's open incident response guide, roles and checklists.", href: "https://response.pagerduty.com/" },
+      { name: "Grafana OnCall", kind: "software", note: "Open-source on-call schedules, escalation and paging.", href: "https://github.com/grafana/oncall" },
+      { name: "Atlassian Statuspage", kind: "service", note: "A hosted status page for incident updates to customers.", href: "https://www.atlassian.com/software/statuspage" },
+    ],
+  },
   "system-design/estimation": {
     lead: "Every system design starts with rough numbers.",
     tools: [
