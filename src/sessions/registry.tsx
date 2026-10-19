@@ -220,6 +220,11 @@ import LayersDemo from "./devops/images-layers/LayersDemo";
 import BlockingDemo from "./nodejs/blocking-the-event-loop/BlockingDemo";
 import CapDemo from "./system-design/cap-theorem/CapDemo";
 import IdempotencyDemo from "./system-design/idempotency/IdempotencyDemo";
+import AuthnAuthzDemo from "./system-design/authn-vs-authz/AuthnAuthzDemo";
+import AccessControlDemo from "./system-design/access-control/AccessControlDemo";
+import EncryptionDemo from "./system-design/encryption/EncryptionDemo";
+import SecretsDemo from "./system-design/secrets/SecretsDemo";
+import AuditLogsDemo from "./system-design/audit-logs/AuditLogsDemo";
 import BtreeDemo from "./databases/btree-index/BtreeDemo";
 import ReRendersDemo from "./frontend/re-renders/ReRendersDemo";
 import HandshakeDemo from "./networking/tcp-handshake/HandshakeDemo";
@@ -451,6 +456,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "security/password-hashing": <PasswordDemo />,
   "system-design/idempotency": <IdempotencyDemo />,
   "system-design/cap-theorem": <CapDemo />,
+  "system-design/authn-vs-authz": <AuthnAuthzDemo />,
+  "system-design/access-control": <AccessControlDemo />,
+  "system-design/encryption": <EncryptionDemo />,
+  "system-design/secrets": <SecretsDemo />,
+  "system-design/audit-logs": <AuditLogsDemo />,
   "devops/images-layers": <LayersDemo />,
   "nodejs/blocking-the-event-loop": <BlockingDemo />,
   "frontend/re-renders": <ReRendersDemo />,
