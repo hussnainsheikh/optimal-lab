@@ -99,6 +99,10 @@ import CdcDemo from "./system-design/change-data-capture/CdcDemo";
 import SchemaMigrationDemo from "./system-design/schema-migrations/SchemaMigrationDemo";
 import ApiGatewayDemo from "./system-design/api-gateway/ApiGatewayDemo";
 import WebhooksDemo from "./system-design/webhooks/WebhooksDemo";
+import AutocompleteDemo from "./system-design/design-autocomplete/AutocompleteDemo";
+import FileSyncDemo from "./system-design/design-file-sync/FileSyncDemo";
+import VideoStreamingDemo from "./system-design/design-video-streaming/VideoStreamingDemo";
+import RideSharingDemo from "./system-design/design-ride-sharing/RideSharingDemo";
 import DegradationDemo from "./system-design/graceful-degradation/DegradationDemo";
 import RequestJourneyDemo from "./system-design/request-journey/RequestJourneyDemo";
 import ApiStylesDemo from "./system-design/api-styles/ApiStylesDemo";
@@ -372,6 +376,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/schema-migrations": <SchemaMigrationDemo />,
   "system-design/api-gateway": <ApiGatewayDemo />,
   "system-design/webhooks": <WebhooksDemo />,
+  "system-design/design-autocomplete": <AutocompleteDemo />,
+  "system-design/design-file-sync": <FileSyncDemo />,
+  "system-design/design-video-streaming": <VideoStreamingDemo />,
+  "system-design/design-ride-sharing": <RideSharingDemo />,
   "system-design/graceful-degradation": <DegradationDemo />,
   "system-design/request-journey": <RequestJourneyDemo />,
   "system-design/api-styles": <ApiStylesDemo />,

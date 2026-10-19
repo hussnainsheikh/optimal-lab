@@ -1448,6 +1448,47 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Envoy", kind: "software", note: "Proxy used as gateway and mesh.", href: "https://www.envoyproxy.io/" },
     ],
   },
+  "system-design/design-autocomplete": {
+    lead: "Search engines and stores with prefix suggestions built in.",
+    tools: [
+      { name: "Elasticsearch suggesters", kind: "software", note: "Completion suggester backed by an in-memory FST.", href: "https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters.html" },
+      { name: "Apache Lucene", kind: "software", note: "The search library with finite-state transducers for prefixes.", href: "https://lucene.apache.org/" },
+      { name: "Typesense", kind: "software", note: "Open-source search with typo-tolerant search-as-you-type.", href: "https://github.com/typesense/typesense" },
+      { name: "Algolia", kind: "service", note: "Hosted search-as-you-type with query suggestions.", href: "https://www.algolia.com/" },
+    ],
+  },
+  "system-design/design-file-sync": {
+    lead: "Chunking, resumable uploads and sync in real tools.",
+    tools: [
+      { name: "Dropbox: streaming file synchronization", kind: "standard", note: "How Dropbox's client syncs blocks.", href: "https://dropbox.tech/infrastructure/streaming-file-synchronization" },
+      { name: "rsync", kind: "software", note: "Rolling checksums to send only changed parts of files.", href: "https://github.com/RsyncProject/rsync" },
+      { name: "restic", kind: "software", note: "Backups with content-defined chunking and deduplication.", href: "https://github.com/restic/restic" },
+      { name: "Syncthing", kind: "software", note: "Peer-to-peer continuous file sync with conflict copies.", href: "https://github.com/syncthing/syncthing" },
+      { name: "S3 multipart upload", kind: "service", note: "Upload big objects in parts that can be retried.", href: "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html" },
+      { name: "tus", kind: "protocol", note: "Open protocol for resumable uploads over HTTP.", href: "https://tus.io/" },
+    ],
+  },
+  "system-design/design-video-streaming": {
+    lead: "Encoders, packaging standards and players.",
+    tools: [
+      { name: "FFmpeg", kind: "software", note: "Transcode and segment video into a ladder.", href: "https://ffmpeg.org/" },
+      { name: "HLS (RFC 8216)", kind: "standard", note: "HTTP Live Streaming playlists and segments.", href: "https://www.rfc-editor.org/rfc/rfc8216" },
+      { name: "DASH Industry Forum", kind: "standard", note: "MPEG-DASH guidelines and reference player.", href: "https://dashif.org/" },
+      { name: "AWS Elemental MediaConvert", kind: "service", note: "Managed transcoding into adaptive bitrate ladders.", href: "https://aws.amazon.com/mediaconvert/" },
+      { name: "hls.js", kind: "software", note: "Browser HLS player with bitrate adaptation.", href: "https://github.com/video-dev/hls.js" },
+      { name: "Shaka Player", kind: "software", note: "DASH and HLS player with its own ABR logic.", href: "https://github.com/shaka-project/shaka-player" },
+    ],
+  },
+  "system-design/design-ride-sharing": {
+    lead: "Spatial indexes and routing engines.",
+    tools: [
+      { name: "Redis geospatial", kind: "software", note: "GEOADD and GEOSEARCH on geohash-encoded sorted sets.", href: "https://redis.io/docs/latest/develop/data-types/geospatial/" },
+      { name: "H3", kind: "software", note: "Uber's hexagonal grid index.", href: "https://github.com/uber/h3" },
+      { name: "S2 Geometry", kind: "software", note: "Google's spherical cell index.", href: "https://github.com/google/s2geometry" },
+      { name: "PostGIS", kind: "software", note: "Spatial queries in PostgreSQL.", href: "https://postgis.net/" },
+      { name: "OSRM", kind: "software", note: "Road routing for real ETAs.", href: "https://github.com/Project-OSRM/osrm-backend" },
+    ],
+  },
   "system-design/webhooks": {
     lead: "Every payment and SaaS platform sends webhooks.",
     tools: [

@@ -228,6 +228,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/schema-migrations` | Rename a column during a rolling deploy in one step, then with expand and contract | — |
 | `/tracks/system-design/api-gateway` | Send six requests through TLS, auth, rate limit, cache and routing and see where each stops | — |
 | `/tracks/system-design/webhooks` | Receive webhooks when your endpoint is down, slow or forged, with signature checks and dedupe | — |
+| `/tracks/system-design/design-autocomplete` | Case study: a real trie from query logs with the top 5 at every prefix, a 100 ms budget, debouncing and a prefix cache | — |
+| `/tracks/system-design/design-file-sync` | Case study: fixed or content-defined chunks on a real 1 MB file, upload only missing chunks, notify devices, conflicted copies | — |
+| `/tracks/system-design/design-video-streaming` | Case study: a parallel transcode ladder, segments and an HLS playlist, a CDN, and four bitrate strategies through a tunnel | — |
+| `/tracks/system-design/design-ride-sharing` | Case study: geohash cells over 400 drivers, searching neighbours, and reserving a driver so two riders don't get the same car | — |
 | `/tracks/system-design/graceful-degradation` | Break a product page's dependencies with and without timeouts and fallbacks | — |
 | `/tracks/system-design/request-journey` | Follow one request through DNS, CDN, load balancer, app, cache and database, cold and warm | — |
 | `/tracks/system-design/bulkheads` | A hanging payments dependency eats a shared thread pool; separate pools keep the catalog up | — |
