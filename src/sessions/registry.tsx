@@ -86,6 +86,11 @@ import FailoverDemo from "./system-design/failover-dr/FailoverDemo";
 import QuorumDemo from "./system-design/eventual-consistency/QuorumDemo";
 import EventSourcingDemo from "./system-design/cqrs-event-sourcing/EventSourcingDemo";
 import GossipDemo from "./system-design/gossip/GossipDemo";
+import ConversationStateDemo from "./system-design/conversation-state/ConversationStateDemo";
+import AgentMemoryDemo from "./system-design/agent-memory/AgentMemoryDemo";
+import MemoryUpdatesDemo from "./system-design/memory-updates/MemoryUpdatesDemo";
+import ContextCompressionDemo from "./system-design/context-compression/ContextCompressionDemo";
+import MemoryIsolationDemo from "./system-design/memory-isolation/MemoryIsolationDemo";
 import NinesDemo from "./system-design/availability/NinesDemo";
 import FeatureFlagsDemo from "./system-design/feature-flags/FeatureFlagsDemo";
 import RealtimeDemo from "./system-design/realtime/RealtimeDemo";
@@ -319,6 +324,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/eventual-consistency": <QuorumDemo />,
   "system-design/cqrs-event-sourcing": <EventSourcingDemo />,
   "system-design/gossip": <GossipDemo />,
+  "system-design/conversation-state": <ConversationStateDemo />,
+  "system-design/agent-memory": <AgentMemoryDemo />,
+  "system-design/memory-updates": <MemoryUpdatesDemo />,
+  "system-design/context-compression": <ContextCompressionDemo />,
+  "system-design/memory-isolation": <MemoryIsolationDemo />,
   "system-design/availability": <NinesDemo />,
   "system-design/feature-flags": <FeatureFlagsDemo />,
   "system-design/realtime": <RealtimeDemo />,
