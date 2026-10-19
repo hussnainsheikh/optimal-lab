@@ -112,6 +112,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/nodejs/blocking-the-event-loop` | A 200 ms request on the main thread delays every 2 ms request; a worker thread keeps them at 2 ms | — |
 | `/tracks/system-design/bloom-filters` | Add names to a 24-bit filter and check others: definitely not, or probably yes (with a false positive) | — |
 | `/tracks/system-design/unique-ids` | Build a Snowflake id bit by bit (time, machine, sequence) and see ids from three servers sort by time | — |
+| `/tracks/system-design/threat-modeling` | A file-sharing app's data flows: trust boundaries, STRIDE at each crossing, likelihood × impact, and mitigations | — |
+| `/tracks/system-design/ddos-waf` | Five attacks from a 300 Gbps flood to SQL injection probes, and what each edge defence and the WAF stop | — |
+| `/tracks/system-design/prompt-versioning` | A prompt edit that raises the average and breaks refunds, shipped in place, gated, per slice, or as a canary | — |
+| `/tracks/system-design/semantic-caching` | Support questions through exact and semantic caches at three thresholds: hits, cost and wrong answers | — |
 | `/tracks/system-design/distributed-locks` | A GC pause outlives a lock's lease and two clients write; a fencing token makes storage reject the stale one | — |
 | `/tracks/databases/mvcc` | Row versions with xmin/xmax: a reader keeps its snapshot while a writer commits, then VACUUM cleans up | — |
 | `/tracks/databases/isolation-anomalies` | Two deposits at once: read-then-write loses one; FOR UPDATE, SERIALIZABLE (with retry) and an atomic UPDATE don't | — |

@@ -331,8 +331,10 @@ export const TRACKS: Track[] = [
       { id: "encryption", title: "Encryption at rest and in transit", blurb: "TLS on the wire, encrypted disks and keys you can rotate.", status: "soon", section: "security" },
       { id: "secrets", title: "Secrets management", blurb: "Keep API keys and passwords out of code, and rotate them without downtime.", status: "soon", section: "security" },
       { id: "audit-logs", title: "Audit logs", blurb: "Record who did what and when, in a log nobody can quietly edit.", status: "soon", section: "security" },
-      { id: "threat-modeling", title: "Threat modeling and security boundaries", blurb: "Map where untrusted input enters and what an attacker could reach.", status: "soon", section: "security" },
-      { id: "ddos-waf", title: "DDoS protection and WAFs", blurb: "Absorb floods of traffic and filter bad requests before they reach your servers.", status: "soon", section: "security" },
+      { id: "threat-modeling", title: "Threat modeling and security boundaries", blurb: "A file-sharing app as a data-flow diagram: find the trust boundaries, ask STRIDE at each, rate likelihood × impact, and spend mitigations on the top of the list.", status: "live", section: "security",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "ddos-waf", title: "DDoS protection and WAFs", blurb: "Five attacks from a 300 Gbps flood to SQL injection probes against an origin with a 10 Gbps link: what anycast, edge caching, rate limits, bot challenges and a WAF each stop.", status: "live", section: "security",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Production engineering
       { id: "deployment-strategies", title: "Blue-green and canary deployments", blurb: "Ship to a small slice of traffic first, and roll back in seconds.", status: "live", section: "production",
         shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
@@ -358,10 +360,12 @@ export const TRACKS: Track[] = [
       { id: "collaborative-editing", title: "Collaborative editing", blurb: "Two people type in the same document: operational transforms and CRDTs.", status: "soon", section: "web" },
       { id: "email-notifications", title: "Email and notification delivery", blurb: "Queues, providers, retries, preferences and not sending the same alert twice.", status: "soon", section: "web" },
       // AI: LLM application architecture
-      { id: "prompt-versioning", title: "Prompt templates and versioning", blurb: "Treat prompts like code: templates, versions and safe rollouts.", status: "soon", section: "ai-apps" },
+      { id: "prompt-versioning", title: "Prompt templates and versioning", blurb: "A prompt edit raises the average eval score and breaks refunds: ship it in place, gated on the average, gated per slice, or as a versioned canary, and count the wrong answers.", status: "live", section: "ai-apps",
+        shape: { kind: "process", steps: 5, flow: "pipeline", richSteps: true } },
       { id: "streaming-responses", title: "Streaming responses", blurb: "Send tokens as they're generated, through every hop to the browser.", status: "live", section: "ai-apps",
         shape: { kind: "process", steps: 4, flow: "pipeline" } },
-      { id: "semantic-caching", title: "Semantic caching", blurb: "Reuse an answer when a new question means the same thing as an old one.", status: "soon", section: "ai-apps" },
+      { id: "semantic-caching", title: "Semantic caching", blurb: "Seventeen support questions through no cache, exact match and a semantic cache at three thresholds: hits, cost, wrong answers, and one customer's order shown to another.", status: "live", section: "ai-apps",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // AI: RAG and knowledge systems
       { id: "citations", title: "Citations and source attribution", blurb: "Show which document each part of the answer came from.", status: "soon", section: "ai-rag" },
       { id: "incremental-indexing", title: "Incremental indexing", blurb: "Update the index when one document changes, without rebuilding everything.", status: "soon", section: "ai-rag" },

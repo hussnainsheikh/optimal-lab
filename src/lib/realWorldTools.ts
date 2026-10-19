@@ -507,6 +507,43 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "ULID", kind: "standard", note: "Sortable 128-bit ids encoded as 26 characters.", href: "https://github.com/ulid/spec" },
     ],
   },
+  "system-design/threat-modeling": {
+    lead: "Threat modeling is a practice more than a tool; these are the methods and the tools teams use to draw and track it.",
+    tools: [
+      { name: "Threat Modeling Manifesto", kind: "standard", note: "The four questions and the values behind them, from practitioners.", href: "https://www.threatmodelingmanifesto.org/" },
+      { name: "STRIDE", kind: "standard", note: "Microsoft's six threat categories, with the security property each one breaks.", href: "https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats" },
+      { name: "OWASP Threat Dragon", kind: "software", note: "Open-source tool to draw data-flow diagrams and record threats per element.", href: "https://github.com/OWASP/threat-dragon" },
+      { name: "OWASP Threat Modeling Cheat Sheet", kind: "standard", note: "A practical walkthrough: scope, diagram, threats, mitigations, review.", href: "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html" },
+    ],
+  },
+  "system-design/ddos-waf": {
+    lead: "Volumetric attacks are absorbed by networks built for it; WAF rules and bot management run at the same edge.",
+    tools: [
+      { name: "Cloudflare DDoS protection", kind: "service", note: "Anycast network that absorbs L3/4 and L7 attacks at the edge.", href: "https://www.cloudflare.com/ddos/" },
+      { name: "AWS Shield", kind: "service", note: "DDoS protection for AWS resources, with AWS WAF for L7 rules.", href: "https://aws.amazon.com/shield/" },
+      { name: "Google Cloud Armor", kind: "service", note: "Edge DDoS defence and WAF rules in front of Google Cloud load balancers.", href: "https://cloud.google.com/security/products/armor" },
+      { name: "OWASP Core Rule Set", kind: "software", note: "Open WAF rules for ModSecurity and Coraza: SQL injection, XSS and more.", href: "https://github.com/coreruleset/coreruleset" },
+      { name: "Coraza", kind: "software", note: "An open-source WAF engine that runs the Core Rule Set.", href: "https://github.com/corazawaf/coraza" },
+    ],
+  },
+  "system-design/prompt-versioning": {
+    lead: "Prompt registries and eval runners treat prompts like code: versions, diffs, gates and rollbacks.",
+    tools: [
+      { name: "Langfuse prompt management", kind: "software", note: "Versioned prompts with labels like production, fetched at run time.", href: "https://langfuse.com/docs/prompts/get-started" },
+      { name: "promptfoo", kind: "software", note: "Run prompt evals in CI and compare versions case by case.", href: "https://github.com/promptfoo/promptfoo" },
+      { name: "OpenAI Evals", kind: "software", note: "A framework and registry of evals for comparing model and prompt versions.", href: "https://github.com/openai/evals" },
+      { name: "MLflow Prompt Registry", kind: "software", note: "Prompt versions and aliases alongside model tracking.", href: "https://mlflow.org/docs/latest/genai/prompt-registry/" },
+    ],
+  },
+  "system-design/semantic-caching": {
+    lead: "Semantic caches are a vector search in front of the model; gateways and libraries ship them ready to use.",
+    tools: [
+      { name: "GPTCache", kind: "software", note: "An open-source semantic cache for LLM calls with pluggable embeddings and stores.", href: "https://github.com/zilliztech/GPTCache" },
+      { name: "Redis vector search", kind: "software", note: "Store question embeddings and look up the nearest one with a distance threshold.", href: "https://redis.io/docs/latest/develop/ai/search-and-query/vectors/" },
+      { name: "LiteLLM caching", kind: "software", note: "A model gateway with exact and semantic caching built in.", href: "https://docs.litellm.ai/docs/proxy/caching" },
+      { name: "Anthropic prompt caching", kind: "service", note: "A different idea worth knowing: reuse the processed prompt prefix, not the answer.", href: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching" },
+    ],
+  },
   "system-design/distributed-locks": {
     lead: "Lock services give you leases; correctness under pauses needs fencing at the storage.",
     tools: [
