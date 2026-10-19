@@ -217,6 +217,11 @@ import InstructionTuningDemo from "./ai/instruction-tuning/InstructionTuningDemo
 import HallucinationsDemo from "./ai/hallucinations/HallucinationsDemo";
 import QueryRewriteDemo from "./ai/query-rewriting/QueryRewriteDemo";
 import KvCacheDemo from "./ai/kv-cache/KvCacheDemo";
+import LocalInferenceDemo from "./ai/local-inference/LocalInferenceDemo";
+import SmallModelsDemo from "./ai/small-models/SmallModelsDemo";
+import MultimodalDemo from "./ai/multimodal/MultimodalDemo";
+import ImageGenerationDemo from "./ai/image-generation/ImageGenerationDemo";
+import SpeechDemo from "./ai/speech/SpeechDemo";
 import TrainingDemo from "./ai/training-loss/TrainingDemo";
 import SchedulesDemo from "./ai-automation/schedules/SchedulesDemo";
 import RollingDeployDemo from "./devops/rolling-deploys/RollingDeployDemo";
@@ -241,6 +246,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "dsa/two-sum": <TwoSumDemo />,
   "ai/training-loss": <TrainingDemo />,
   "ai/kv-cache": <KvCacheDemo />,
+  "ai/local-inference": <LocalInferenceDemo />,
+  "ai/small-models": <SmallModelsDemo />,
+  "ai/multimodal": <MultimodalDemo />,
+  "ai/image-generation": <ImageGenerationDemo />,
+  "ai/speech": <SpeechDemo />,
   "ai/chunking": <ChunkingDemo />,
   "frontend/data-fetching": <FetchWaterfallDemo />,
   "frontend/optimistic-updates": <OptimisticDemo />,
