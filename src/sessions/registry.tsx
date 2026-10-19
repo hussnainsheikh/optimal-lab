@@ -174,6 +174,11 @@ import GitObjectsDemo from "./devops/git-internals/GitObjectsDemo";
 import TerraformDemo from "./devops/terraform-plan-apply/TerraformDemo";
 import SloDemo from "./devops/slos-error-budgets/SloDemo";
 import ReactLoopDemo from "./ai/react-loop/ReactLoopDemo";
+import WhatIsAModelDemo from "./ai/what-is-a-model/WhatIsAModelDemo";
+import LearningTypesDemo from "./ai/learning-types/LearningTypesDemo";
+import FineTuningDemo from "./ai/fine-tuning/FineTuningDemo";
+import DistillationDemo from "./ai/distillation/DistillationDemo";
+import SyntheticDataDemo from "./ai/synthetic-data/SyntheticDataDemo";
 import StreamingUiDemo from "./ai-native/streaming-ui/StreamingUiDemo";
 import RetriesDemo from "./ai-automation/retries-errors/RetriesDemo";
 import ConfidenceDemo from "./ai-automation/confidence-fallbacks/ConfidenceDemo";
@@ -392,6 +397,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "devops/terraform-plan-apply": <TerraformDemo />,
   "devops/slos-error-budgets": <SloDemo />,
   "ai/react-loop": <ReactLoopDemo />,
+  "ai/what-is-a-model": <WhatIsAModelDemo />,
+  "ai/learning-types": <LearningTypesDemo />,
+  "ai/fine-tuning": <FineTuningDemo />,
+  "ai/distillation": <DistillationDemo />,
+  "ai/synthetic-data": <SyntheticDataDemo />,
   "ai-native/streaming-ui": <StreamingUiDemo />,
   "ai-automation/retries-errors": <RetriesDemo />,
   "ai-automation/confidence-fallbacks": <ConfidenceDemo />,

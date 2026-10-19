@@ -609,6 +609,54 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Claude Agent SDK", kind: "software", note: "Anthropic's agent loop with tools.", href: "https://docs.claude.com/en/api/agent-sdk/overview" },
     ],
   },
+  "ai/what-is-a-model": {
+    lead: "Every library fits parameters to data; the shapes range from a line to a transformer.",
+    tools: [
+      { name: "scikit-learn", kind: "software", note: "Linear models, trees and more, each with a fit() that sets the parameters.", href: "https://github.com/scikit-learn/scikit-learn" },
+      { name: "PyTorch", kind: "software", note: "Build any shape from layers; autograd fits the parameters.", href: "https://github.com/pytorch/pytorch" },
+      { name: "TensorFlow Playground", kind: "software", note: "Watch a small network's parameters move as it trains, in the browser.", href: "https://playground.tensorflow.org" },
+      { name: "Hugging Face Hub", kind: "service", note: "Where trained parameters, the weights, are published and downloaded.", href: "https://huggingface.co/models" },
+    ],
+  },
+  "ai/learning-types": {
+    lead: "The three kinds of learning each have their own libraries and their own benchmarks.",
+    tools: [
+      { name: "scikit-learn", kind: "software", note: "Supervised classifiers and unsupervised clustering, including the perceptron and k-means.", href: "https://github.com/scikit-learn/scikit-learn" },
+      { name: "Gymnasium", kind: "software", note: "Standard environments for reinforcement learning agents.", href: "https://github.com/Farama-Foundation/Gymnasium" },
+      { name: "Stable-Baselines3", kind: "software", note: "Reliable implementations of reinforcement learning algorithms.", href: "https://github.com/DLR-RM/stable-baselines3" },
+      { name: "TRL", kind: "software", note: "Supervised fine-tuning and RLHF for language models, the same ideas at LLM scale.", href: "https://github.com/huggingface/trl" },
+    ],
+  },
+  "ai/fine-tuning": {
+    lead: "Hosted APIs fine-tune from a file of examples; open models fine-tune with a few libraries.",
+    tools: [
+      { name: "OpenAI fine-tuning", kind: "service", note: "Upload examples, pick epochs, get a model id to call.", href: "https://platform.openai.com/docs/guides/model-optimization" },
+      { name: "Google Vertex AI tuning", kind: "service", note: "Supervised tuning of Gemini models on your examples.", href: "https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-models" },
+      { name: "Hugging Face TRL", kind: "software", note: "Supervised fine-tuning for open models.", href: "https://github.com/huggingface/trl" },
+      { name: "Axolotl", kind: "software", note: "Config-driven fine-tuning of open models.", href: "https://github.com/axolotl-ai-cloud/axolotl" },
+      { name: "Unsloth", kind: "software", note: "Faster, lower-memory fine-tuning on one GPU.", href: "https://github.com/unslothai/unsloth" },
+    ],
+  },
+  "ai/distillation": {
+    lead: "Distillation is how most small models are made, from logit matching to training on a teacher's outputs.",
+    tools: [
+      { name: "Distilling the Knowledge in a Neural Network", kind: "standard", note: "Hinton, Vinyals and Dean, 2015: soft targets at a temperature.", href: "https://arxiv.org/abs/1503.02531" },
+      { name: "DistilBERT", kind: "standard", note: "Sanh et al., 2019: a 40% smaller BERT keeping 97% of its ability.", href: "https://arxiv.org/abs/1910.01108" },
+      { name: "OpenAI model distillation", kind: "service", note: "Capture a large model's outputs and fine-tune a smaller one on them.", href: "https://platform.openai.com/docs/guides/distillation" },
+      { name: "Gemma", kind: "software", note: "Google's small open models, trained with distillation from larger ones.", href: "https://github.com/google-deepmind/gemma" },
+      { name: "DeepSeek-R1 distilled models", kind: "software", note: "Small models trained on a reasoning model's outputs.", href: "https://github.com/deepseek-ai/DeepSeek-R1" },
+    ],
+  },
+  "ai/synthetic-data": {
+    lead: "Synthetic data pipelines generate, filter and verify; the research names the trap.",
+    tools: [
+      { name: "The Curse of Recursion", kind: "standard", note: "Shumailov et al., 2023 (Nature, 2024): models trained on generated data forget the tails (model collapse).", href: "https://arxiv.org/abs/2305.17493" },
+      { name: "Self-Instruct", kind: "standard", note: "Wang et al., 2022: bootstrapping instruction data from a model's own outputs.", href: "https://arxiv.org/abs/2212.10560" },
+      { name: "distilabel", kind: "software", note: "Pipelines for generating and judging synthetic datasets.", href: "https://github.com/argilla-io/distilabel" },
+      { name: "Cosmopedia", kind: "standard", note: "A 25-billion-token synthetic textbook dataset, with its generation recipe.", href: "https://huggingface.co/datasets/HuggingFaceTB/cosmopedia" },
+      { name: "Argilla", kind: "software", note: "Review and label generated examples before training on them.", href: "https://github.com/argilla-io/argilla" },
+    ],
+  },
   "ai-native/streaming-ui": {
     lead: "AI SDKs ship partial-object streaming helpers.",
     tools: [
