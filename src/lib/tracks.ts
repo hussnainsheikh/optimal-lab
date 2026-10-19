@@ -201,7 +201,8 @@ export const TRACKS: Track[] = [
       },
       { id: "latency-throughput", title: "Latency, throughput and concurrency", blurb: "Why a faster request and more requests per second are different goals.", status: "live", section: "scalability",
         shape: { kind: "simulation", steps: 4, flow: "state" } },
-      { id: "database-bottlenecks", title: "Database bottlenecks", blurb: "Connection pools, slow queries, N+1 calls and read replicas.", status: "soon", section: "scalability" },
+      { id: "database-bottlenecks", title: "Database bottlenecks", blurb: "Raise the traffic on one database and watch N+1 queries, a missing index, too many connections and reads on the primary take it down; fix each in turn.", status: "live", section: "scalability",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       {
         id: "rate-limiting",
         title: "Rate limiting",
@@ -217,8 +218,10 @@ export const TRACKS: Track[] = [
       { id: "top-k", title: "Top-K, trending and leaderboards", blurb: "Rank millions of scores live, and find what's trending right now.", status: "live", section: "scalability",
         shape: { kind: "algorithm", steps: 4, flow: "state" } },
       // Data and databases
-      { id: "sql-vs-nosql", title: "SQL, document and graph databases", blurb: "Same data in three models: joins, flexible documents, or relationships first.", status: "soon", section: "data" },
-      { id: "data-modeling", title: "Data modeling: normalize or denormalize", blurb: "Design a schema, then trade duplicate data for faster reads.", status: "soon", section: "data" },
+      { id: "sql-vs-nosql", title: "SQL, document and graph databases", blurb: "The same shop in three models, asked the same three questions: count what each one touches to show an order, rename a product and find what people also bought.", status: "live", section: "data",
+        shape: { kind: "comparison", steps: 3 } },
+      { id: "data-modeling", title: "Data modeling: normalize or denormalize", blurb: "A blog feed with author names and comment counts: rows touched per read and per write, normalized or with copies kept in sync, under three workloads.", status: "live", section: "data",
+        shape: { kind: "process", steps: 5, flow: "state", richSteps: true } },
       { id: "database-indexes", title: "Indexes and query optimization", blurb: "Find one row in a million with a B-tree instead of a full scan, and pay for it on writes.", status: "soon", section: "data" },
       { id: "transactions", title: "Transactions, ACID and isolation levels", blurb: "Two people book the last seat at once: see which isolation level stops the double booking.", status: "soon", section: "data" },
       {
@@ -244,7 +247,8 @@ export const TRACKS: Track[] = [
         shape: { kind: "comparison", steps: 5, flow: "pipeline" } },
       { id: "schema-migrations", title: "Zero-downtime schema migrations", blurb: "Change a table under live traffic: expand, migrate, then contract.", status: "live", section: "data",
         shape: { kind: "comparison", steps: 5, flow: "pipeline" } },
-      { id: "time-series", title: "Time-series databases", blurb: "Metrics and sensor data: append-only writes, downsampling and retention.", status: "soon", section: "data" },
+      { id: "time-series", title: "Time-series databases", blurb: "Size metrics storage for a fleet: points a second, series by label cardinality, Gorilla compression, rollups and retention, and what a range query scans.", status: "live", section: "data",
+        shape: { kind: "process", steps: 5, flow: "pipeline", richSteps: true } },
       // Networking and APIs
       { id: "request-journey", title: "DNS, TCP, TLS and HTTP: one request", blurb: "Follow a request from a domain name to a response, one layer at a time.", status: "live", section: "networking",
         shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
@@ -277,7 +281,8 @@ export const TRACKS: Track[] = [
         shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
       { id: "cap-theorem", title: "CAP theorem and quorums", blurb: "Split the network and choose: answer with stale data, or refuse until it heals.", status: "live", section: "reliability",
         shape: { kind: "system", steps: 4, flow: "state" } },
-      { id: "distributed-transactions", title: "Distributed transactions and two-phase commit", blurb: "Commit across two databases, and see what happens when the coordinator dies.", status: "soon", section: "reliability" },
+      { id: "distributed-transactions", title: "Distributed transactions and two-phase commit", blurb: "Prepare, vote, log, commit across two databases; then crash a participant or the coordinator and watch how long the locks stay held.", status: "live", section: "reliability",
+        shape: { kind: "system", steps: 5, flow: "pipeline" } },
       { id: "hedged-requests", title: "Hedged requests and retry budgets", blurb: "Send a backup request to cut slow tails, without doubling the load.", status: "live", section: "reliability",
         shape: { kind: "simulation", steps: 4, flow: "state" } },
       // Distributed systems

@@ -252,6 +252,11 @@ import CircuitBreakerDemo from "./system-design/circuit-breaker/CircuitBreakerDe
 import MessageQueueDemo from "./system-design/message-queues/MessageQueueDemo";
 import RateLimitDemo from "./system-design/rate-limiting/RateLimitDemo";
 import ReplicationDemo from "./system-design/replication/ReplicationDemo";
+import DatabaseBottlenecksDemo from "./system-design/database-bottlenecks/DatabaseBottlenecksDemo";
+import DataModelsDemo from "./system-design/sql-vs-nosql/DataModelsDemo";
+import DataModelingDemo from "./system-design/data-modeling/DataModelingDemo";
+import TimeSeriesDemo from "./system-design/time-series/TimeSeriesDemo";
+import TwoPhaseCommitDemo from "./system-design/distributed-transactions/TwoPhaseCommitDemo";
 import ShardingDemo from "./system-design/sharding/ShardingDemo";
 
 const SESSIONS: Record<string, ReactNode> = {
@@ -468,6 +473,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/rate-limiting": <RateLimitDemo />,
   "system-design/consistent-hashing": <ConsistentHashDemo />,
   "system-design/replication": <ReplicationDemo />,
+  "system-design/database-bottlenecks": <DatabaseBottlenecksDemo />,
+  "system-design/sql-vs-nosql": <DataModelsDemo />,
+  "system-design/data-modeling": <DataModelingDemo />,
+  "system-design/time-series": <TimeSeriesDemo />,
+  "system-design/distributed-transactions": <TwoPhaseCommitDemo />,
   "system-design/sharding": <ShardingDemo />,
   "system-design/message-queues": <MessageQueueDemo />,
   "system-design/circuit-breaker": <CircuitBreakerDemo />,
