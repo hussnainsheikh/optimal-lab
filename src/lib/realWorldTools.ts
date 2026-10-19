@@ -1040,6 +1040,56 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "promptfoo", kind: "software", note: "Score prompts against labelled tests.", href: "https://www.promptfoo.dev/" },
     ],
   },
+  "ai/reflection": {
+    lead: "Reflection works when the loop has a real check in it: tests, a compiler, a validator or a tool result.",
+    tools: [
+      { name: "Reflexion", kind: "standard", note: "Shinn et al., 2023: agents that retry with feedback from the environment.", href: "https://arxiv.org/abs/2303.11366" },
+      { name: "Self-Refine", kind: "standard", note: "Madaan et al., 2023: draft, self-feedback, refine.", href: "https://arxiv.org/abs/2303.17651" },
+      { name: "LLMs Cannot Self-Correct Reasoning Yet", kind: "standard", note: "Huang et al., 2023: without outside feedback, revising often doesn't help.", href: "https://arxiv.org/abs/2310.01798" },
+      { name: "Aider", kind: "software", note: "A coding agent that runs your tests and lint and fixes what fails.", href: "https://github.com/Aider-AI/aider" },
+      { name: "SWE-bench", kind: "standard", note: "Real GitHub issues, judged by the repository's own tests.", href: "https://github.com/SWE-bench/SWE-bench" },
+    ],
+  },
+  "ai/computer-use": {
+    lead: "Computer-use models plus a harness that takes screenshots and performs actions in a sandboxed browser or VM.",
+    tools: [
+      { name: "Claude computer use", kind: "service", note: "A tool for screenshots, clicks and typing, run by your own harness.", href: "https://docs.anthropic.com/en/docs/agents-and-tools/computer-use" },
+      { name: "OpenAI computer use", kind: "service", note: "A computer-use tool in the Responses API.", href: "https://platform.openai.com/docs/guides/tools-computer-use" },
+      { name: "Playwright", kind: "software", note: "Drives real browsers; many harnesses use it to act and take screenshots.", href: "https://github.com/microsoft/playwright" },
+      { name: "Browser Use", kind: "software", note: "Open-source browser agent that combines screenshots with the page structure.", href: "https://github.com/browser-use/browser-use" },
+      { name: "OSWorld", kind: "standard", note: "A benchmark of real desktop tasks for computer-use agents.", href: "https://github.com/xlang-ai/OSWorld" },
+    ],
+  },
+  "ai/agent-failures": {
+    lead: "Agent frameworks give you the safeguards; tracing and repeated-trial evals tell you how often runs actually succeed.",
+    tools: [
+      { name: "τ-bench", kind: "standard", note: "Measures pass^k: does the agent succeed every time, not just once.", href: "https://github.com/sierra-research/tau-bench" },
+      { name: "LangGraph", kind: "software", note: "Agent graphs with checkpoints, retries and a recursion limit.", href: "https://github.com/langchain-ai/langgraph" },
+      { name: "OpenAI Agents SDK", kind: "software", note: "Agents with guardrails, handoffs, max turns and tracing.", href: "https://github.com/openai/openai-agents-python" },
+      { name: "Langfuse", kind: "software", note: "Traces every step of a run, so you can see where it went wrong.", href: "https://github.com/langfuse/langfuse" },
+      { name: "Building effective agents", kind: "standard", note: "Anthropic: keep agents simple, add checks, prefer workflows when you can.", href: "https://www.anthropic.com/engineering/building-effective-agents" },
+    ],
+  },
+  "ai/benchmarks": {
+    lead: "Public benchmarks run through a few shared harnesses; fresh, harder sets replace the saturated ones.",
+    tools: [
+      { name: "MMLU", kind: "standard", note: "57 subjects of multiple-choice questions; now saturated.", href: "https://github.com/hendrycks/test" },
+      { name: "Are We Done with MMLU?", kind: "standard", note: "Gema et al., 2024: an estimated 6.49% of MMLU questions contain errors.", href: "https://arxiv.org/abs/2406.04127" },
+      { name: "GPQA", kind: "standard", note: "Graduate-level science questions written to be hard to look up.", href: "https://github.com/idavidrein/gpqa" },
+      { name: "Humanity's Last Exam", kind: "standard", note: "A newer, harder benchmark with a private held-out set.", href: "https://lastexam.ai" },
+      { name: "lm-evaluation-harness", kind: "software", note: "Runs hundreds of benchmarks the same way across models.", href: "https://github.com/EleutherAI/lm-evaluation-harness" },
+    ],
+  },
+  "ai/red-teaming": {
+    lead: "Red-teaming tools generate and replay attacks; the frameworks name what to test for.",
+    tools: [
+      { name: "garak", kind: "software", note: "NVIDIA's scanner that probes a model for jailbreaks, leaks and injection.", href: "https://github.com/NVIDIA/garak" },
+      { name: "PyRIT", kind: "software", note: "Microsoft's toolkit for automated, multi-turn red-teaming.", href: "https://github.com/Azure/PyRIT" },
+      { name: "promptfoo red teaming", kind: "software", note: "Generates attacks for your app and grades the results.", href: "https://www.promptfoo.dev/docs/red-team/" },
+      { name: "OWASP Top 10 for LLM apps", kind: "standard", note: "Prompt injection, data leaks, excessive agency and the rest.", href: "https://genai.owasp.org/llm-top-10/" },
+      { name: "MITRE ATLAS", kind: "standard", note: "A catalogue of real attack techniques against AI systems.", href: "https://atlas.mitre.org/" },
+    ],
+  },
   "ai-native/feature-cost": {
     lead: "Every provider bills by tokens; observability tools track it.",
     tools: [

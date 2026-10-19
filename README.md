@@ -185,6 +185,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/ai/scaling-laws` | Pick a compute budget and see loss against model size, and where the optimum sits | — |
 | `/tracks/ai/long-context-vs-rag` | Grow a document set and compare cost, latency and accuracy of stuffing the context vs RAG | — |
 | `/tracks/ai/eval-metrics` | Move a spam threshold and watch the confusion matrix, precision, recall and F1 | — |
+| `/tracks/ai/reflection` | Revise a function against eight tests with self-critique, test results or error output, round by round | — |
+| `/tracks/ai/computer-use` | Screenshot → model → click → screenshot: change an address, beat a cookie banner, meet hidden instructions | — |
+| `/tracks/ai/agent-failures` | Twenty runs of one task: per-step errors compound, and validation, a plan and a loop cap catch them | — |
+| `/tracks/ai/benchmarks` | Five models on a fresh, a saturated and a leaked benchmark: error bars, ceilings and contamination | — |
+| `/tracks/ai/red-teaming` | Eight attacks, ten tries each, against a support bot; add defenses and count successes and blocked users | — |
 | `/tracks/ai-native/feature-cost` | Size a feature's monthly bill from users, calls, prompt and answer length, model and caching | — |
 | `/tracks/ai-native/ab-testing-ai` | Two prompts with a small real difference: watch the confidence interval shrink as users grow | — |
 | `/tracks/ai-native/latency-ux` | The same 6-second agent task shown as a spinner, progress steps, streaming and optimistic UI | — |
