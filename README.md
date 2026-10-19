@@ -144,6 +144,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/ai-automation/retries-errors` | Try no retries, immediate retries and backoff against a 503, a 429 and a 400 | — |
 | `/tracks/ai-automation/confidence-fallbacks` | Slide the auto-approve threshold and trade automation rate against errors that slip through | — |
 | `/tracks/tools/model-routers` | Twelve requests during a provider outage: one provider, a fallback chain, or routing by difficulty | — |
+| `/tracks/system-design/citations` | A RAG answer with one miscited and one made-up sentence, cited four ways, the last verified against its chunks | — |
+| `/tracks/system-design/incremental-indexing` | Keep a vector index current: nightly rebuild, per-document events, or per-chunk hashes; cost, staleness and deletes | — |
+| `/tracks/system-design/re-embedding` | Move 2 million chunks to a new embedding model: overwrite in place, or a second index with shadow traffic and a switch | — |
+| `/tracks/system-design/inference-batching` | One GPU simulated step by step: one at a time, static batches and continuous batching; throughput, padding, latency | — |
+| `/tracks/system-design/provider-limits` | A burst against a tokens-per-minute limit: retries, a shared bucket, priorities and a fallback provider | — |
 | `/tracks/system-design/streaming-responses` | Watch tokens move model to API to proxy to browser, and see one buffering proxy undo streaming | — |
 | `/tracks/dsa/heap-top-k` | Push a stream through a min-heap of size k, with sift-up and sift-down drawn as a tree | — |
 | `/tracks/dsa/fast-slow-pointers` | Slow and fast pointers on a linked list with and without a loop, then find where the loop starts | — |

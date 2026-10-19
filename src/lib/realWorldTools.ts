@@ -772,6 +772,51 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Cloudflare AI Gateway", kind: "service", note: "Caching, retries and fallbacks.", href: "https://developers.cloudflare.com/ai-gateway/" },
     ],
   },
+  "system-design/citations": {
+    lead: "RAG frameworks keep source metadata on every chunk; some model APIs return citations as structured data.",
+    tools: [
+      { name: "Anthropic citations", kind: "service", note: "The model returns each claim with the exact passages it came from.", href: "https://docs.anthropic.com/en/docs/build-with-claude/citations" },
+      { name: "LlamaIndex citation query engine", kind: "software", note: "Splits sources into numbered chunks and asks for inline references.", href: "https://github.com/run-llama/llama_index" },
+      { name: "RAGAS faithfulness", kind: "software", note: "Measures whether each claim in an answer is supported by the retrieved context.", href: "https://github.com/explodinggradients/ragas" },
+      { name: "Vectara HHEM", kind: "software", note: "An open model that scores whether a text is supported by its source.", href: "https://huggingface.co/vectara/hallucination_evaluation_model" },
+    ],
+  },
+  "system-design/incremental-indexing": {
+    lead: "Change data capture and upsert-friendly vector stores make indexing incremental; content hashes keep it cheap.",
+    tools: [
+      { name: "Debezium", kind: "software", note: "Streams inserts, updates and deletes from a database's log as events.", href: "https://github.com/debezium/debezium" },
+      { name: "pgvector", kind: "software", note: "Vectors in Postgres, updated in the same transaction as the source rows.", href: "https://github.com/pgvector/pgvector" },
+      { name: "Qdrant", kind: "software", note: "A vector database with upserts and deletes by id and payload filters.", href: "https://github.com/qdrant/qdrant" },
+      { name: "LlamaIndex ingestion pipeline", kind: "software", note: "Caches each node by content hash so unchanged chunks aren't re-embedded.", href: "https://docs.llamaindex.ai/en/stable/module_guides/loading/ingestion_pipeline/" },
+    ],
+  },
+  "system-design/re-embedding": {
+    lead: "Vector databases support the pattern directly: a second collection, an alias, and an atomic switch.",
+    tools: [
+      { name: "Qdrant collection aliases", kind: "software", note: "Point an alias at the new collection in one call; switch back the same way.", href: "https://qdrant.tech/documentation/concepts/collections/#collection-aliases" },
+      { name: "Elasticsearch index aliases", kind: "software", note: "Reindex into a new index and move the alias atomically.", href: "https://www.elastic.co/guide/en/elasticsearch/reference/current/aliases.html" },
+      { name: "MTEB leaderboard", kind: "standard", note: "Benchmarks for embedding models; a starting point, not a substitute for your own eval.", href: "https://huggingface.co/spaces/mteb/leaderboard" },
+      { name: "Weaviate", kind: "software", note: "A vector database with named vectors, so two embeddings can live side by side.", href: "https://github.com/weaviate/weaviate" },
+    ],
+  },
+  "system-design/inference-batching": {
+    lead: "Open-source inference servers do continuous batching and paged KV caches out of the box.",
+    tools: [
+      { name: "vLLM", kind: "software", note: "Continuous batching with PagedAttention for the KV cache.", href: "https://github.com/vllm-project/vllm" },
+      { name: "Text Generation Inference", kind: "software", note: "Hugging Face's server with continuous batching and token streaming.", href: "https://github.com/huggingface/text-generation-inference" },
+      { name: "SGLang", kind: "software", note: "A fast serving engine with prefix caching and continuous batching.", href: "https://github.com/sgl-project/sglang" },
+      { name: "NVIDIA TensorRT-LLM", kind: "software", note: "Optimised kernels and in-flight batching on NVIDIA GPUs.", href: "https://github.com/NVIDIA/TensorRT-LLM" },
+    ],
+  },
+  "system-design/provider-limits": {
+    lead: "Every provider publishes its limits; gateways put a shared limiter, priorities and fallbacks in front of them.",
+    tools: [
+      { name: "Anthropic rate limits", kind: "standard", note: "Requests, input tokens and output tokens per minute, by tier, with Retry-After on 429.", href: "https://docs.anthropic.com/en/api/rate-limits" },
+      { name: "OpenAI rate limits", kind: "standard", note: "RPM and TPM per model and tier, and how to handle 429s.", href: "https://platform.openai.com/docs/guides/rate-limits" },
+      { name: "LiteLLM", kind: "software", note: "A gateway with per-key limits, retries, and fallbacks across providers.", href: "https://github.com/BerriAI/litellm" },
+      { name: "Envoy AI Gateway", kind: "software", note: "Token-based rate limiting and provider fallback on Envoy.", href: "https://github.com/envoyproxy/ai-gateway" },
+    ],
+  },
   "system-design/streaming-responses": {
     lead: "Streaming has to be enabled at every hop.",
     tools: [
