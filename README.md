@@ -217,6 +217,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/gossip` | Spread news through 32 nodes by random gossip and count the rounds for different fanouts | — |
 | `/tracks/system-design/availability` | Chain a load balancer, app servers and a database, add redundancy, and watch the nines | — |
 | `/tracks/system-design/feature-flags` | Roll a feature out to staff, then a percentage of 100 hashed users, then hit the kill switch | — |
+| `/tracks/system-design/frontend-architecture` | One product page, four places to keep its state: requests, props passed through, re-renders and stale copies | — |
+| `/tracks/system-design/backend-architecture` | Five money transfers through middleware, controller, service, database and email: which layer stops each bad one | — |
+| `/tracks/system-design/api-design` | Offset vs cursor paging on a changing list, deep-page cost, renaming a field safely, and errors a client can act on | — |
+| `/tracks/system-design/session-auth` | A credential leaks: how long the attacker keeps access with sessions, long JWTs or short tokens with refresh rotation | — |
+| `/tracks/system-design/file-uploads` | Upload through the API, with a presigned URL or in parts; drop the connection; thumbnails inline or from a queue | — |
 | `/tracks/system-design/realtime` | Deliver four chat messages with polling, long polling, SSE and WebSockets and compare delay and cost | — |
 | `/tracks/system-design/background-jobs` | Sign-up side effects done inline vs on a queue, with retries and a dead-letter queue | — |
 | `/tracks/system-design/multi-tenancy` | Compare shared tables, schema per tenant and database per tenant, then forget a WHERE clause | — |
