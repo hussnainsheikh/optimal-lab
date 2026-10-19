@@ -10,6 +10,10 @@ import HybridSearchDemo from "./ai/hybrid-search/HybridSearchDemo";
 import NextTokenDemo from "./ai/next-token/NextTokenDemo";
 import RagDemo from "./ai/rag/RagDemo";
 import TokenizationDemo from "./ai/tokenization/TokenizationDemo";
+import PreferenceTuningDemo from "./ai/preference-tuning/PreferenceTuningDemo";
+import ReasoningModelsDemo from "./ai/reasoning-models/ReasoningModelsDemo";
+import OpenVsClosedDemo from "./ai/open-vs-closed/OpenVsClosedDemo";
+import BiasFairnessDemo from "./ai/bias-fairness/BiasFairnessDemo";
 import WorkflowDemo from "./ai-automation/workflow/WorkflowDemo";
 import ApprovalDemo from "./ai-automation/human-approval/ApprovalDemo";
 import StructuredDemo from "./ai-native/structured-output/StructuredDemo";
@@ -468,6 +472,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "devops/containers-vs-vms": <ContainersDemo />,
   "devops/rolling-deploys": <RollingDeployDemo />,
   "ai/tokenization": <TokenizationDemo />,
+  "ai/preference-tuning": <PreferenceTuningDemo />,
+  "ai/reasoning-models": <ReasoningModelsDemo />,
+  "ai/open-vs-closed": <OpenVsClosedDemo />,
+  "ai/bias-fairness": <BiasFairnessDemo />,
   "ai/attention": <AttentionDemo />,
   "ai/next-token": <NextTokenDemo />,
   "ai/context-window": <ContextWindowDemo />,

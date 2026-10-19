@@ -281,6 +281,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/operating-systems/race-conditions` | Two threads, one counter: taking turns, interleaved (lost update) and with a mutex; 1,000-increment stress run | — |
 | `/tracks/security/xss` | Four comments rendered four ways (raw HTML, escaped, sanitized, CSP); what runs in the visitor's browser | — |
 | `/tracks/ai/tokenization` | Train a tiny BPE tokenizer merge by merge, then tokenize your own text | — |
+| `/tracks/ai/preference-tuning` | The same six preference pairs through RLHF and DPO side by side: what each needs, and the length bias both learn | — |
+| `/tracks/ai/reasoning-models` | A mixed queue under one thinking budget: accuracy, cost and latency per request, then a budget per request | — |
+| `/tracks/ai/open-vs-closed` | A hosted API against open weights on rented GPUs as traffic and peaks change: the break-even, and what isn't on the bill | — |
+| `/tracks/ai/bias-fairness` | One loan threshold over two groups: approval and repayer rates, a threshold per group, and the measures that can't all hold | — |
 | `/tracks/ai/attention` | One attention head: query, key, value, score, scale, mask, softmax, blend | — |
 | `/tracks/ai/next-token` | How an LLM picks the next token: logits, softmax, temperature, top-k, top-p, sampling | social-content AI Engineering #02 |
 | `/tracks/ai/context-window` | A long chat fills the window: trimming strategies, max_tokens and prompt caching cost | — |
