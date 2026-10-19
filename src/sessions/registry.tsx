@@ -94,6 +94,11 @@ import MultiTenancyDemo from "./system-design/multi-tenancy/MultiTenancyDemo";
 import ScaleOutDemo from "./system-design/scaling/ScaleOutDemo";
 import LittlesLawDemo from "./system-design/latency-throughput/LittlesLawDemo";
 import CountMinDemo from "./system-design/top-k/CountMinDemo";
+import UrlShortenerDemo from "./system-design/design-url-shortener/UrlShortenerDemo";
+import RateLimiterDesignDemo from "./system-design/design-rate-limiter/RateLimiterDesignDemo";
+import NotificationSystemDemo from "./system-design/design-notification-system/NotificationSystemDemo";
+import ChatDesignDemo from "./system-design/design-chat/ChatDesignDemo";
+import NewsFeedDemo from "./system-design/design-news-feed/NewsFeedDemo";
 import HllDemo from "./system-design/probabilistic-counting/HllDemo";
 import CdcDemo from "./system-design/change-data-capture/CdcDemo";
 import SchemaMigrationDemo from "./system-design/schema-migrations/SchemaMigrationDemo";
@@ -367,6 +372,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/scaling": <ScaleOutDemo />,
   "system-design/latency-throughput": <LittlesLawDemo />,
   "system-design/top-k": <CountMinDemo />,
+  "system-design/design-url-shortener": <UrlShortenerDemo />,
+  "system-design/design-rate-limiter": <RateLimiterDesignDemo />,
+  "system-design/design-notification-system": <NotificationSystemDemo />,
+  "system-design/design-chat": <ChatDesignDemo />,
+  "system-design/design-news-feed": <NewsFeedDemo />,
   "system-design/probabilistic-counting": <HllDemo />,
   "system-design/change-data-capture": <CdcDemo />,
   "system-design/schema-migrations": <SchemaMigrationDemo />,
