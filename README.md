@@ -240,6 +240,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/realtime` | Deliver four chat messages with polling, long polling, SSE and WebSockets and compare delay and cost | — |
 | `/tracks/system-design/background-jobs` | Sign-up side effects done inline vs on a queue, with retries and a dead-letter queue | — |
 | `/tracks/system-design/multi-tenancy` | Compare shared tables, schema per tenant and database per tenant, then forget a WHERE clause | — |
+| `/tracks/system-design/api-styles` | REST, GraphQL, gRPC and WebSockets on three real jobs: requests, round trips, bytes on the wire and fields fetched vs needed | — |
+| `/tracks/system-design/sync-vs-async` | Place an order that needs three services, waiting for all, for the slowest, or only for what the answer needs; then take one down | — |
+| `/tracks/system-design/service-mesh` | Inject sidecars between two services and turn on mTLS, retries with a budget, timeouts and a canary split | — |
+| `/tracks/system-design/event-driven` | Checkout calls three services or publishes one event: add a consumer, change the payload, take a consumer down | — |
+| `/tracks/system-design/pub-sub` | A partitioned log tick by tick: keys to partitions, two consumer groups with their own offsets, an outage and a replay | — |
 | `/tracks/devops/linux-processes` | Send SIGTERM and SIGKILL, kill a parent, and leave children unreaped in a small process tree | — |
 | `/tracks/devops/system-resources` | Read load average and CPU breakdown on a 4-core box: healthy, busy, overloaded and stuck on disk | — |
 | `/tracks/devops/dns-records` | Look up A, CNAME, MX and TXT records in a zone and follow CNAME chains | — |

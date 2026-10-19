@@ -101,6 +101,11 @@ import ApiGatewayDemo from "./system-design/api-gateway/ApiGatewayDemo";
 import WebhooksDemo from "./system-design/webhooks/WebhooksDemo";
 import DegradationDemo from "./system-design/graceful-degradation/DegradationDemo";
 import RequestJourneyDemo from "./system-design/request-journey/RequestJourneyDemo";
+import ApiStylesDemo from "./system-design/api-styles/ApiStylesDemo";
+import SyncAsyncDemo from "./system-design/sync-vs-async/SyncAsyncDemo";
+import ServiceMeshDemo from "./system-design/service-mesh/ServiceMeshDemo";
+import EventDrivenDemo from "./system-design/event-driven/EventDrivenDemo";
+import PubSubDemo from "./system-design/pub-sub/PubSubDemo";
 import PermissionsDemo from "./devops/files-permissions/PermissionsDemo";
 import ServicesDemo from "./devops/services-ingress/ServicesDemo";
 import PromDemo from "./devops/prometheus-metrics/PromDemo";
@@ -329,6 +334,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/webhooks": <WebhooksDemo />,
   "system-design/graceful-degradation": <DegradationDemo />,
   "system-design/request-journey": <RequestJourneyDemo />,
+  "system-design/api-styles": <ApiStylesDemo />,
+  "system-design/sync-vs-async": <SyncAsyncDemo />,
+  "system-design/service-mesh": <ServiceMeshDemo />,
+  "system-design/event-driven": <EventDrivenDemo />,
+  "system-design/pub-sub": <PubSubDemo />,
   "devops/files-permissions": <PermissionsDemo />,
   "devops/services-ingress": <ServicesDemo />,
   "devops/prometheus-metrics": <PromDemo />,

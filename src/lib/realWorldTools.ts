@@ -1552,6 +1552,56 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Citus", kind: "software", note: "Sharding multi-tenant Postgres.", href: "https://www.citusdata.com/use-cases/multi-tenant-apps/" },
     ],
   },
+  "system-design/api-styles": {
+    lead: "Each style has a standard and a toolchain behind it; the choice is about the job, not the language.",
+    tools: [
+      { name: "OpenAPI", kind: "standard", note: "Describe a REST API so clients, docs and validators can be generated from it.", href: "https://www.openapis.org/" },
+      { name: "GraphQL", kind: "standard", note: "The query language and spec: one request names the fields it wants.", href: "https://graphql.org/" },
+      { name: "gRPC", kind: "software", note: "Typed RPC over HTTP/2 with streaming, generated clients and servers.", href: "https://grpc.io/" },
+      { name: "Protocol Buffers", kind: "standard", note: "The binary message format gRPC uses: small, typed, versionable.", href: "https://protobuf.dev/" },
+      { name: "The WebSocket Protocol (RFC 6455)", kind: "protocol", note: "The HTTP upgrade and the frame format that keep a connection open both ways.", href: "https://datatracker.ietf.org/doc/html/rfc6455" },
+    ],
+  },
+  "system-design/sync-vs-async": {
+    lead: "Handing work to a queue is the same move on every platform; pick the broker, then make the worker idempotent.",
+    tools: [
+      { name: "Amazon SQS", kind: "service", note: "A managed queue: at-least-once delivery, visibility timeouts and dead-letter queues.", href: "https://aws.amazon.com/sqs/" },
+      { name: "RabbitMQ", kind: "software", note: "A message broker with acks, retries and routing between producers and workers.", href: "https://github.com/rabbitmq/rabbitmq-server" },
+      { name: "NATS", kind: "software", note: "A small, fast messaging system for request/reply and asynchronous work.", href: "https://github.com/nats-io/nats-server" },
+      { name: "Azure Service Bus", kind: "service", note: "Queues and topics with sessions, dead-lettering and scheduled delivery.", href: "https://azure.microsoft.com/en-us/products/service-bus" },
+      { name: "Enterprise Integration Patterns", kind: "standard", note: "Hohpe and Woolf's catalogue of messaging patterns: the vocabulary everyone borrows.", href: "https://www.enterpriseintegrationpatterns.com/" },
+    ],
+  },
+  "system-design/service-mesh": {
+    lead: "A mesh is a data plane of proxies and a control plane that configures them; these are the ones in production.",
+    tools: [
+      { name: "Istio", kind: "software", note: "Envoy sidecars (or ambient mode without them) with mTLS, retries, traffic splitting and telemetry.", href: "https://github.com/istio/istio" },
+      { name: "Linkerd", kind: "software", note: "A lighter mesh with its own small Rust proxy; mTLS and retries by default.", href: "https://github.com/linkerd/linkerd2" },
+      { name: "Envoy", kind: "software", note: "The proxy most meshes use as the sidecar: retries, timeouts, circuit breaking, per-route metrics.", href: "https://github.com/envoyproxy/envoy" },
+      { name: "Cilium", kind: "software", note: "Networking and a sidecar-free mesh built on eBPF in the kernel.", href: "https://github.com/cilium/cilium" },
+      { name: "SPIFFE", kind: "standard", note: "The identity format the certificates carry: spiffe://trust-domain/ns/…/sa/….", href: "https://spiffe.io/" },
+    ],
+  },
+  "system-design/event-driven": {
+    lead: "The broker carries the events; the standards say what an event looks like and who publishes what.",
+    tools: [
+      { name: "Apache Kafka", kind: "software", note: "The usual backbone for events that several services consume.", href: "https://github.com/apache/kafka" },
+      { name: "Amazon EventBridge", kind: "service", note: "An event bus with rules that route events to consumers, no broker to run.", href: "https://aws.amazon.com/eventbridge/" },
+      { name: "CloudEvents", kind: "standard", note: "A common envelope for events: id, source, type, time, data.", href: "https://cloudevents.io/" },
+      { name: "AsyncAPI", kind: "standard", note: "Describe the events a service publishes and subscribes to, the way OpenAPI describes endpoints.", href: "https://www.asyncapi.com/" },
+      { name: "What do you mean by “Event-Driven”?", kind: "standard", note: "Martin Fowler's four patterns: notification, carried state, event sourcing, CQRS.", href: "https://martinfowler.com/articles/201701-event-driven.html" },
+    ],
+  },
+  "system-design/pub-sub": {
+    lead: "Partitioned logs with consumer groups and offsets are a product category now, hosted or self-run.",
+    tools: [
+      { name: "Apache Kafka", kind: "software", note: "Topics, partitions, consumer groups, committed offsets and retention: the reference design.", href: "https://github.com/apache/kafka" },
+      { name: "Apache Pulsar", kind: "software", note: "A log with tiered storage and several subscription modes per topic.", href: "https://github.com/apache/pulsar" },
+      { name: "Amazon Kinesis Data Streams", kind: "service", note: "Shards, sequence numbers and a retention window, as a managed service.", href: "https://aws.amazon.com/kinesis/data-streams/" },
+      { name: "Redpanda", kind: "software", note: "A Kafka-compatible log without ZooKeeper or the JVM.", href: "https://github.com/redpanda-data/redpanda" },
+      { name: "Google Cloud Pub/Sub", kind: "service", note: "Topics and subscriptions with replay by timestamp and ordering keys.", href: "https://cloud.google.com/pubsub" },
+    ],
+  },
   "devops/linux-processes": {
     lead: "Every container and service manager works with these signals.",
     tools: [
