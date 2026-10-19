@@ -78,6 +78,10 @@ import NinesDemo from "./system-design/availability/NinesDemo";
 import FeatureFlagsDemo from "./system-design/feature-flags/FeatureFlagsDemo";
 import RealtimeDemo from "./system-design/realtime/RealtimeDemo";
 import BackgroundJobsDemo from "./system-design/background-jobs/BackgroundJobsDemo";
+import SearchDemo from "./system-design/search/SearchDemo";
+import OfflineSyncDemo from "./system-design/offline-sync/OfflineSyncDemo";
+import CollaborativeEditingDemo from "./system-design/collaborative-editing/CollaborativeEditingDemo";
+import NotificationsDemo from "./system-design/email-notifications/NotificationsDemo";
 import MultiTenancyDemo from "./system-design/multi-tenancy/MultiTenancyDemo";
 import ScaleOutDemo from "./system-design/scaling/ScaleOutDemo";
 import LittlesLawDemo from "./system-design/latency-throughput/LittlesLawDemo";
@@ -281,6 +285,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/feature-flags": <FeatureFlagsDemo />,
   "system-design/realtime": <RealtimeDemo />,
   "system-design/background-jobs": <BackgroundJobsDemo />,
+  "system-design/search": <SearchDemo />,
+  "system-design/offline-sync": <OfflineSyncDemo />,
+  "system-design/collaborative-editing": <CollaborativeEditingDemo />,
+  "system-design/email-notifications": <NotificationsDemo />,
   "system-design/multi-tenancy": <MultiTenancyDemo />,
   "system-design/scaling": <ScaleOutDemo />,
   "system-design/latency-throughput": <LittlesLawDemo />,
