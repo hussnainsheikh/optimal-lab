@@ -87,6 +87,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/sharding` | Hash, country or month as the shard key: hot shards and scatter queries | — |
 | `/tracks/system-design/message-queues` | At-least-once delivery: visibility timeout, duplicate charges, idempotency, dead-letter queue | — |
 | `/tracks/system-design/circuit-breaker` | Retry storms, backoff with jitter, and a breaker that lets a failing service recover | — |
+| `/tracks/system-design/design-web-crawler` | Case study: robots.txt, URL normalization, one queue vs a queue per host, content fingerprints and a Bloom filter seen set | — |
+| `/tracks/system-design/design-payment-system` | Case study: charge exactly once through a double click, a provider timeout and a crash, then reconcile | — |
+| `/tracks/system-design/design-document-assistant` | Case study: sync with permissions, size the vector index, filter retrieval by the asker, check citations, cost per question | — |
+| `/tracks/system-design/design-coding-agent` | Case study: one agent run with a sandbox, search-based context, tests until green and a pull request | — |
 | `/tracks/devops/ci-cd-pipeline` | Lint, test, build, deploy — stop at the first failure | — |
 | `/tracks/devops/containers-vs-vms` | Start a container, or boot a virtual machine | — |
 | `/tracks/devops/rolling-deploys` | maxSurge, readiness probes, a stalled rollout, kubectl rollout undo | — |

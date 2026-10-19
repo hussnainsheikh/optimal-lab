@@ -254,6 +254,10 @@ import GithubActionsDemo from "./tools/github-actions/GithubActionsDemo";
 
 import CdnDemo from "./system-design/cdn/CdnDemo";
 import CircuitBreakerDemo from "./system-design/circuit-breaker/CircuitBreakerDemo";
+import WebCrawlerDemo from "./system-design/design-web-crawler/WebCrawlerDemo";
+import PaymentSystemDemo from "./system-design/design-payment-system/PaymentSystemDemo";
+import DocumentAssistantDemo from "./system-design/design-document-assistant/DocumentAssistantDemo";
+import CodingAgentDemo from "./system-design/design-coding-agent/CodingAgentDemo";
 import MessageQueueDemo from "./system-design/message-queues/MessageQueueDemo";
 import RateLimitDemo from "./system-design/rate-limiting/RateLimitDemo";
 import ReplicationDemo from "./system-design/replication/ReplicationDemo";
@@ -531,6 +535,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/sharding": <ShardingDemo />,
   "system-design/message-queues": <MessageQueueDemo />,
   "system-design/circuit-breaker": <CircuitBreakerDemo />,
+  "system-design/design-web-crawler": <WebCrawlerDemo />,
+  "system-design/design-payment-system": <PaymentSystemDemo />,
+  "system-design/design-document-assistant": <DocumentAssistantDemo />,
+  "system-design/design-coding-agent": <CodingAgentDemo />,
   "devops/ci-cd-pipeline": <PipelineDemo />,
   "devops/containers-vs-vms": <ContainersDemo />,
   "devops/rolling-deploys": <RollingDeployDemo />,
