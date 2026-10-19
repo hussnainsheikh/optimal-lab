@@ -232,6 +232,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/request-journey` | Follow one request through DNS, CDN, load balancer, app, cache and database, cold and warm | — |
 | `/tracks/system-design/bulkheads` | A hanging payments dependency eats a shared thread pool; separate pools keep the catalog up | — |
 | `/tracks/system-design/failover-dr` | Lose a region and compare four DR strategies by recovery time, data loss and cost | — |
+| `/tracks/system-design/answer-quality` | Eight RAG questions scored per stage: retrieval misses, ranking, ignored context and added claims, with a fix for each | — |
+| `/tracks/system-design/agent-tracing` | A slow, costly agent run as logs and as a trace waterfall; three causes, and what tail sampling keeps | — |
+| `/tracks/system-design/prompt-injection` | Six direct and indirect injections against an email agent, from prompt rules to architectural defences | — |
+| `/tracks/system-design/tool-permissions` | Three tasks with a hijack attempt each, under four permission models, and the blast radius of each | — |
+| `/tracks/system-design/data-leakage` | Sensitive items in support tickets followed to the provider, logs, training, other users and replies | — |
 | `/tracks/system-design/eventual-consistency` | Tune W and R across three lagging replicas and see when a read can return stale data | — |
 | `/tracks/system-design/cqrs-event-sourcing` | Replay an account's events to any point and watch several read models rebuild | — |
 | `/tracks/system-design/gossip` | Spread news through 32 nodes by random gossip and count the rounds for different fanouts | — |
