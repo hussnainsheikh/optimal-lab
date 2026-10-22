@@ -219,6 +219,13 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/security/certificates` | Check a site's certificate chain when it's valid, expired, for the wrong name, missing an intermediate or self-signed | — |
 | `/tracks/security/oauth-flow` | Step through the authorization code flow, then see a stolen code succeed without PKCE and fail with it | — |
 | `/tracks/system-design/estimation` | Size a photo-sharing app: QPS, peak reads, storage per year, egress and servers from a few assumptions | — |
+| `/tracks/system-design/monolith-vs-microservices` | One checkout through five modules as a monolith, a modular monolith or services, from 2 teams to 20: request cost, availability, deploy queues | — |
+| `/tracks/system-design/clean-architecture` | The same feature written three ways: change the rule, swap the database, add a queue, test the rule, and count the files edited | — |
+| `/tracks/system-design/domain-driven-design` | One shared Product or a model per bounded context, which teams a change reaches, and an aggregate guarding a credit limit | — |
+| `/tracks/system-design/adrs` | Write a decision record, then let people leave and join: who can still say why, and superseding it when the reason changes | — |
+| `/tracks/system-design/capacity-planning` | Forecast growth, size for the peak with headroom and a lost zone, find the database wall, and pay less for idle instances | — |
+| `/tracks/system-design/chaos-engineering` | Inject a fault into part of the traffic with an abort rule, find three weak spots, fix them and rerun | — |
+| `/tracks/system-design/incident-response` | A bad deploy at 14:00: alerting, paging, a commander, rollback and a status page each cut the timeline; then the postmortem | — |
 | `/tracks/databases/table-partitioning` | Queries and retention on a 120M-row table, as one table and partitioned by month | — |
 | `/tracks/system-design/scaling` | Raise traffic and compare one bigger machine with many small ones on cost, limits and failure | — |
 | `/tracks/system-design/latency-throughput` | Increase traffic towards capacity and watch latency stay flat, then explode | — |

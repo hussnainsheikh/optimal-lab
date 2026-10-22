@@ -115,6 +115,13 @@ import BackupsDemo from "./devops/backups-restore/BackupsDemo";
 import CertChainDemo from "./security/certificates/CertChainDemo";
 import OAuthDemo from "./security/oauth-flow/OAuthDemo";
 import EstimationDemo from "./system-design/estimation/EstimationDemo";
+import MonolithServicesDemo from "./system-design/monolith-vs-microservices/MonolithServicesDemo";
+import CleanArchitectureDemo from "./system-design/clean-architecture/CleanArchitectureDemo";
+import DomainDrivenDemo from "./system-design/domain-driven-design/DomainDrivenDemo";
+import AdrDemo from "./system-design/adrs/AdrDemo";
+import CapacityPlanningDemo from "./system-design/capacity-planning/CapacityPlanningDemo";
+import ChaosDemo from "./system-design/chaos-engineering/ChaosDemo";
+import IncidentResponseDemo from "./system-design/incident-response/IncidentResponseDemo";
 import PartitioningDemo from "./databases/table-partitioning/PartitioningDemo";
 import OverfittingDemo from "./ai/overfitting/OverfittingDemo";
 import TinyNetDemo from "./ai/neural-networks/TinyNetDemo";
@@ -388,6 +395,13 @@ const SESSIONS: Record<string, ReactNode> = {
   "security/certificates": <CertChainDemo />,
   "security/oauth-flow": <OAuthDemo />,
   "system-design/estimation": <EstimationDemo />,
+  "system-design/monolith-vs-microservices": <MonolithServicesDemo />,
+  "system-design/clean-architecture": <CleanArchitectureDemo />,
+  "system-design/domain-driven-design": <DomainDrivenDemo />,
+  "system-design/adrs": <AdrDemo />,
+  "system-design/capacity-planning": <CapacityPlanningDemo />,
+  "system-design/chaos-engineering": <ChaosDemo />,
+  "system-design/incident-response": <IncidentResponseDemo />,
   "databases/table-partitioning": <PartitioningDemo />,
   "ai/overfitting": <OverfittingDemo />,
   "ai/neural-networks": <TinyNetDemo />,
