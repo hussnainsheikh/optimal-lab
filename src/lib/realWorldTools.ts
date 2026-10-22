@@ -165,6 +165,45 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Redis Streams", kind: "software", note: "Consumer groups with pending entries and claims.", href: "https://github.com/redis/redis" },
     ],
   },
+  "system-design/design-web-crawler": {
+    lead: "Crawlers, crawl data and the robots standard.",
+    tools: [
+      { name: "RFC 9309 (robots.txt)", kind: "standard", note: "The Robots Exclusion Protocol.", href: "https://www.rfc-editor.org/rfc/rfc9309" },
+      { name: "Apache Nutch", kind: "software", note: "Scalable open-source web crawler.", href: "https://nutch.apache.org/" },
+      { name: "Heritrix", kind: "software", note: "The Internet Archive's archival crawler.", href: "https://github.com/internetarchive/heritrix3" },
+      { name: "Common Crawl", kind: "service", note: "An open crawl of billions of pages, released monthly.", href: "https://commoncrawl.org/" },
+    ],
+  },
+  "system-design/design-payment-system": {
+    lead: "Payment APIs built around idempotency and explicit states.",
+    tools: [
+      { name: "Stripe Payment Intents", kind: "service", note: "A payment as a state machine from creation to capture.", href: "https://docs.stripe.com/payments/payment-intents" },
+      { name: "Stripe idempotent requests", kind: "service", note: "Idempotency keys on every write.", href: "https://docs.stripe.com/api/idempotent_requests" },
+      { name: "Adyen API idempotency", kind: "service", note: "Idempotency keys for payment requests.", href: "https://docs.adyen.com/development-resources/api-idempotency" },
+      { name: "PCI DSS", kind: "standard", note: "Security standard for handling card data.", href: "https://www.pcisecuritystandards.org/" },
+    ],
+  },
+  "system-design/design-document-assistant": {
+    lead: "Vector stores, permission systems and hosted assistants.",
+    tools: [
+      { name: "pgvector", kind: "software", note: "Vectors with metadata filters inside PostgreSQL.", href: "https://github.com/pgvector/pgvector" },
+      { name: "Qdrant", kind: "software", note: "Vector database with payload filtering and quantization.", href: "https://github.com/qdrant/qdrant" },
+      { name: "Vespa", kind: "software", note: "Search engine with vectors, filters and ranking.", href: "https://github.com/vespa-engine/vespa" },
+      { name: "OpenFGA", kind: "software", note: "Fine-grained authorization checks at query time.", href: "https://github.com/openfga/openfga" },
+      { name: "Glean", kind: "service", note: "Hosted workplace search and assistant over company apps.", href: "https://www.glean.com/" },
+    ],
+  },
+  "system-design/design-coding-agent": {
+    lead: "Coding agents, their sandboxes and how they're measured.",
+    tools: [
+      { name: "Claude Code", kind: "software", note: "Terminal coding agent with permission prompts.", href: "https://github.com/anthropics/claude-code" },
+      { name: "OpenHands", kind: "software", note: "Open-source coding agent running in a sandbox.", href: "https://github.com/All-Hands-AI/OpenHands" },
+      { name: "Model Context Protocol", kind: "protocol", note: "Standard way to give an agent tools.", href: "https://modelcontextprotocol.io/" },
+      { name: "Dev Containers", kind: "standard", note: "Reproducible containers for development and agents.", href: "https://containers.dev/" },
+      { name: "gVisor", kind: "software", note: "Sandboxed container runtime.", href: "https://github.com/google/gvisor" },
+      { name: "SWE-bench", kind: "standard", note: "Benchmark of real GitHub issues fixed with passing tests.", href: "https://www.swebench.com/" },
+    ],
+  },
   "system-design/circuit-breaker": {
     lead: "Timeouts, retries with backoff and circuit breakers are built into service meshes and resilience libraries.",
     tools: [
