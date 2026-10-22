@@ -212,6 +212,11 @@ import RetriesDemo from "./ai-automation/retries-errors/RetriesDemo";
 import ConfidenceDemo from "./ai-automation/confidence-fallbacks/ConfidenceDemo";
 import RouterDemo from "./tools/model-routers/RouterDemo";
 import StreamHopsDemo from "./system-design/streaming-responses/StreamHopsDemo";
+import CitationsDemo from "./system-design/citations/CitationsDemo";
+import IncrementalIndexingDemo from "./system-design/incremental-indexing/IncrementalIndexingDemo";
+import ReEmbeddingDemo from "./system-design/re-embedding/ReEmbeddingDemo";
+import InferenceBatchingDemo from "./system-design/inference-batching/InferenceBatchingDemo";
+import ProviderLimitsDemo from "./system-design/provider-limits/ProviderLimitsDemo";
 import JwtDemo from "./security/jwt/JwtDemo";
 import CsrfDemo from "./security/csrf/CsrfDemo";
 import SqliDemo from "./security/sql-injection/SqliDemo";
@@ -510,6 +515,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai-automation/confidence-fallbacks": <ConfidenceDemo />,
   "tools/model-routers": <RouterDemo />,
   "system-design/streaming-responses": <StreamHopsDemo />,
+  "system-design/citations": <CitationsDemo />,
+  "system-design/incremental-indexing": <IncrementalIndexingDemo />,
+  "system-design/re-embedding": <ReEmbeddingDemo />,
+  "system-design/inference-batching": <InferenceBatchingDemo />,
+  "system-design/provider-limits": <ProviderLimitsDemo />,
   "security/jwt": <JwtDemo />,
   "security/csrf": <CsrfDemo />,
   "security/sql-injection": <SqliDemo />,

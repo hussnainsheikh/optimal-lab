@@ -388,9 +388,12 @@ export const TRACKS: Track[] = [
       { id: "semantic-caching", title: "Semantic caching", blurb: "Seventeen support questions through no cache, exact match and a semantic cache at three thresholds: hits, cost, wrong answers, and one customer's order shown to another.", status: "live", section: "ai-apps",
         shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // AI: RAG and knowledge systems
-      { id: "citations", title: "Citations and source attribution", blurb: "Show which document each part of the answer came from.", status: "soon", section: "ai-rag" },
-      { id: "incremental-indexing", title: "Incremental indexing", blurb: "Update the index when one document changes, without rebuilding everything.", status: "soon", section: "ai-rag" },
-      { id: "re-embedding", title: "Changing embedding models", blurb: "Swap the embedding model without breaking search: dual indexes and backfills.", status: "soon", section: "ai-rag" },
+      { id: "citations", title: "Citations and source attribution", blurb: "A RAG answer with a miscited sentence and a made-up one: no citations, sources at the end, inline markers, and inline markers verified against their chunks.", status: "live", section: "ai-rag",
+        shape: { kind: "process", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "incremental-indexing", title: "Incremental indexing", blurb: "Keep 100,000 articles' vectors current: a nightly rebuild, re-embedding changed documents, or only changed chunks by content hash; cost, staleness and deleted articles still answering.", status: "live", section: "ai-rag",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "re-embedding", title: "Changing embedding models", blurb: "Move 2 million chunks to a new embedding model: overwrite in place and watch recall collapse, or build a second index, shadow it, and switch.", status: "live", section: "ai-rag",
+        shape: { kind: "process", steps: 5, flow: "state", richSteps: true } },
       // AI: Agents and orchestration
       { id: "tool-execution", title: "Tool execution and sandboxing", blurb: "Run the tool the model asked for, safely, with limits.", status: "soon", section: "ai-agents" },
       { id: "agent-state-machines", title: "Agent loops and state machines", blurb: "Model an agent as explicit states so you can see and resume where it is.", status: "soon", section: "ai-agents" },
@@ -407,8 +410,10 @@ export const TRACKS: Track[] = [
       { id: "answer-quality", title: "Retrieval quality vs answer quality", blurb: "Faithfulness, relevance and correctness: find which stage caused a bad answer.", status: "soon", section: "ai-quality" },
       { id: "agent-tracing", title: "Tracing and debugging agents", blurb: "See every model call, tool call and decision in one timeline.", status: "soon", section: "ai-quality" },
       // AI: Model serving and infrastructure
-      { id: "inference-batching", title: "GPU capacity, batching and queueing", blurb: "Group requests to keep GPUs busy without making users wait.", status: "soon", section: "ai-serving" },
-      { id: "provider-limits", title: "Provider rate limits and quotas", blurb: "Stay under tokens-per-minute limits across many users and keys.", status: "soon", section: "ai-serving" },
+      { id: "inference-batching", title: "GPU capacity, batching and queueing", blurb: "One GPU, a minute of chat traffic simulated step by step: one request at a time, static batches, continuous batching; tokens a second, padding and latency.", status: "live", section: "ai-serving",
+        shape: { kind: "process", steps: 5, flow: "state", richSteps: true } },
+      { id: "provider-limits", title: "Provider rate limits and quotas", blurb: "A traffic burst against a 400k-tokens-a-minute limit: send everything, retry, a shared token bucket, priority for interactive calls, and overflow to a fallback.", status: "live", section: "ai-serving",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // AI: Security and governance
       { id: "prompt-injection", title: "Prompt injection, direct and indirect", blurb: "Instructions hidden in user input or in a retrieved document take over the model.", status: "soon", section: "ai-security" },
       { id: "tool-permissions", title: "Tool permissions and least privilege", blurb: "Give an agent only the tools and scopes this task needs.", status: "soon", section: "ai-security" },
