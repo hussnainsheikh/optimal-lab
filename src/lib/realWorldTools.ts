@@ -1750,6 +1750,50 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Martin Fowler: Event Sourcing", kind: "standard", note: "The pattern explained.", href: "https://martinfowler.com/eaaDev/EventSourcing.html" },
     ],
   },
+  "system-design/conversation-state": {
+    lead: "Chat products keep conversations server-side and stream answers from resumable buffers; model APIs offer caching and stored conversations.",
+    tools: [
+      { name: "Redis Streams", kind: "software", note: "An append-only log per message that a client can resume reading from by id.", href: "https://redis.io/docs/latest/develop/data-types/streams/" },
+      { name: "Server-sent events", kind: "standard", note: "Last-Event-ID lets a reconnecting client say where it stopped.", href: "https://html.spec.whatwg.org/multipage/server-sent-events.html" },
+      { name: "Anthropic prompt caching", kind: "service", note: "Charge the unchanged conversation prefix at a fraction of the input price.", href: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching" },
+      { name: "OpenAI Conversations API", kind: "service", note: "Store conversation state on the provider's side and reference it by id.", href: "https://platform.openai.com/docs/guides/conversation-state" },
+    ],
+  },
+  "system-design/agent-memory": {
+    lead: "Memory layers for assistants extract, store and retrieve facts and episodes; the ideas come from cognitive science and a few well-known papers.",
+    tools: [
+      { name: "Mem0", kind: "software", note: "A memory layer that extracts and retrieves user memories across sessions.", href: "https://github.com/mem0ai/mem0" },
+      { name: "Letta (MemGPT)", kind: "software", note: "Agents that manage their own memory tiers, from the MemGPT paper.", href: "https://github.com/letta-ai/letta" },
+      { name: "Generative Agents", kind: "standard", note: "Park et al., 2023: a memory stream with retrieval by recency, importance and relevance.", href: "https://arxiv.org/abs/2304.03442" },
+      { name: "LangGraph memory", kind: "software", note: "Short-term thread state and long-term stores for agents.", href: "https://langchain-ai.github.io/langgraph/concepts/memory/" },
+    ],
+  },
+  "system-design/memory-updates": {
+    lead: "Temporal knowledge stores keep when each fact was true; memory products add review and deletion.",
+    tools: [
+      { name: "Zep / Graphiti", kind: "software", note: "A temporal knowledge graph: facts with validity intervals, updated as conversations arrive.", href: "https://github.com/getzep/graphiti" },
+      { name: "Mem0", kind: "software", note: "Adds, updates and deletes memories by comparing new facts with stored ones.", href: "https://github.com/mem0ai/mem0" },
+      { name: "GDPR right to erasure", kind: "standard", note: "Article 17: a user's request to delete personal data, which includes derived memories.", href: "https://gdpr-info.eu/art-17-gdpr/" },
+    ],
+  },
+  "system-design/context-compression": {
+    lead: "Agent frameworks ship trimming, summarising and compaction; the research shows why long prompts still need curating.",
+    tools: [
+      { name: "Lost in the Middle", kind: "standard", note: "Liu et al., 2023: models use information at the start and end of long contexts best.", href: "https://arxiv.org/abs/2307.03172" },
+      { name: "LLMLingua", kind: "software", note: "Prompt compression that drops low-information tokens.", href: "https://github.com/microsoft/LLMLingua" },
+      { name: "Effective context engineering", kind: "standard", note: "Anthropic's guide to compaction, note-taking and sub-agents for long tasks.", href: "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" },
+      { name: "LangGraph memory", kind: "software", note: "Trimming and summarising message history in agent threads.", href: "https://langchain-ai.github.io/langgraph/concepts/memory/" },
+    ],
+  },
+  "system-design/memory-isolation": {
+    lead: "Isolation is enforced in the store and the cache, not left to every query; the AI-specific risks are catalogued.",
+    tools: [
+      { name: "PostgreSQL row-level security", kind: "software", note: "Policies that filter every query by the current user, whatever the application code does.", href: "https://www.postgresql.org/docs/current/ddl-rowsecurity.html" },
+      { name: "Pinecone namespaces", kind: "service", note: "Partition vectors per tenant so a query can only see one namespace.", href: "https://docs.pinecone.io/guides/index-data/indexing-overview" },
+      { name: "Qdrant multitenancy", kind: "software", note: "Payload-based partitioning with a tenant index, enforced per request.", href: "https://qdrant.tech/documentation/guides/multiple-partitions/" },
+      { name: "OWASP Top 10 for LLM Applications", kind: "standard", note: "Sensitive information disclosure and prompt injection, with mitigations.", href: "https://genai.owasp.org/llm-top-10/" },
+    ],
+  },
   "system-design/gossip": {
     lead: "Gossip runs membership in many distributed databases.",
     tools: [

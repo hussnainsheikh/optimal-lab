@@ -260,6 +260,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/failover-dr` | Lose a region and compare four DR strategies by recovery time, data loss and cost | — |
 | `/tracks/system-design/eventual-consistency` | Tune W and R across three lagging replicas and see when a read can return stale data | — |
 | `/tracks/system-design/cqrs-event-sourcing` | Replay an account's events to any point and watch several read models rebuild | — |
+| `/tracks/system-design/conversation-state` | A chat in the page, the browser, a database, or with resumable streams, against reloads, devices, drops and deploys | — |
+| `/tracks/system-design/agent-memory` | One user over six sessions: no memory, transcripts, summaries or extracted memories, scored on later questions | — |
+| `/tracks/system-design/memory-updates` | A move, a new name, a joke and a request to forget, stored four ways and asked five questions | — |
+| `/tracks/system-design/context-compression` | Fit a 60-turn agent session into a budget four ways and see which key facts survive | — |
+| `/tracks/system-design/memory-isolation` | Five ways one user's memories reach another, and the control that closes each | — |
 | `/tracks/system-design/gossip` | Spread news through 32 nodes by random gossip and count the rounds for different fanouts | — |
 | `/tracks/system-design/availability` | Chain a load balancer, app servers and a database, add redundancy, and watch the nines | — |
 | `/tracks/system-design/feature-flags` | Roll a feature out to staff, then a percentage of 100 hashed users, then hit the kill switch | — |
