@@ -254,6 +254,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/scaling` | Raise traffic and compare one bigger machine with many small ones on cost, limits and failure | — |
 | `/tracks/system-design/latency-throughput` | Increase traffic towards capacity and watch latency stay flat, then explode | — |
 | `/tracks/system-design/top-k` | Hash words into a 3×8 count-min sketch and see why the minimum counter is the best estimate | — |
+| `/tracks/system-design/design-url-shortener` | Case study: size it, make codes by hash, counter or random, cache hot links, 301 or 302, count clicks on a queue | — |
+| `/tracks/system-design/design-rate-limiter` | Case study: one limit across four servers with local, Redis or synced counters, and Redis failing open or closed | — |
+| `/tracks/system-design/design-notification-system` | Case study: a campaign over push, email and SMS with preferences, queues per channel, deduplicated retries and a priority lane | — |
+| `/tracks/system-design/design-chat` | Case study: gateways, server sequence numbers against skewed clocks, group fan-out, batched receipts and presence | — |
+| `/tracks/system-design/design-news-feed` | Case study: fan-out on write, on read or hybrid: inserts per second, lookups per open and celebrity delay | — |
 | `/tracks/system-design/probabilistic-counting` | Estimate distinct visitors from 48 bytes of registers and compare with an exact set | — |
 | `/tracks/system-design/change-data-capture` | Sync a search index with dual writes and with CDC, then crash halfway | — |
 | `/tracks/system-design/schema-migrations` | Rename a column during a rolling deploy in one step, then with expand and contract | — |

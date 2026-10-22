@@ -1705,6 +1705,58 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "USE method", kind: "standard", note: "Utilisation, saturation, errors.", href: "https://www.brendangregg.com/usemethod.html" },
     ],
   },
+  "system-design/design-url-shortener": {
+    lead: "The parts a URL shortener is usually built from.",
+    tools: [
+      { name: "Bitly API", kind: "service", note: "A production URL shortener with click analytics.", href: "https://dev.bitly.com/" },
+      { name: "Redis", kind: "software", note: "Cache for the hottest code → URL mappings.", href: "https://redis.io/" },
+      { name: "Amazon DynamoDB", kind: "service", note: "Key-value store for billions of mappings.", href: "https://aws.amazon.com/dynamodb/" },
+      { name: "RFC 9110 redirects", kind: "standard", note: "What 301, 302 and 308 mean, and which are cached.", href: "https://www.rfc-editor.org/rfc/rfc9110#name-redirection-3xx" },
+      { name: "Apache Kafka", kind: "software", note: "Queue click events for analytics.", href: "https://kafka.apache.org/" },
+    ],
+  },
+  "system-design/design-rate-limiter": {
+    lead: "Shared rate limiting in proxies, stores and standards.",
+    tools: [
+      { name: "Redis INCR", kind: "software", note: "Atomic counters with expiry for window limits.", href: "https://redis.io/docs/latest/commands/incr/" },
+      { name: "Envoy global rate limiting", kind: "software", note: "Proxies ask a shared rate-limit service per request.", href: "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/other_features/global_rate_limiting" },
+      { name: "envoyproxy/ratelimit", kind: "software", note: "The Redis-backed rate-limit service Envoy calls.", href: "https://github.com/envoyproxy/ratelimit" },
+      { name: "Cloudflare rate limiting rules", kind: "service", note: "Limits enforced at the edge.", href: "https://developers.cloudflare.com/waf/rate-limiting-rules/" },
+      { name: "RFC 6585", kind: "standard", note: "Defines 429 Too Many Requests.", href: "https://www.rfc-editor.org/rfc/rfc6585" },
+      { name: "RateLimit header fields", kind: "standard", note: "IETF draft for telling clients their remaining budget.", href: "https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/" },
+    ],
+  },
+  "system-design/design-notification-system": {
+    lead: "Delivery providers and notification infrastructure.",
+    tools: [
+      { name: "Firebase Cloud Messaging", kind: "service", note: "Push to Android, iOS and the web.", href: "https://firebase.google.com/docs/cloud-messaging" },
+      { name: "Apple Push Notification service", kind: "service", note: "Push to Apple devices.", href: "https://developer.apple.com/documentation/usernotifications" },
+      { name: "Amazon SES", kind: "service", note: "Bulk and transactional email with sending quotas.", href: "https://aws.amazon.com/ses/" },
+      { name: "Twilio Messaging", kind: "service", note: "SMS with per-number throughput limits.", href: "https://www.twilio.com/docs/messaging" },
+      { name: "Novu", kind: "software", note: "Open-source notification infrastructure with preferences.", href: "https://github.com/novuhq/novu" },
+    ],
+  },
+  "system-design/design-chat": {
+    lead: "Protocols and servers chat systems are built on.",
+    tools: [
+      { name: "WebSocket (RFC 6455)", kind: "protocol", note: "A long-lived two-way connection per client.", href: "https://www.rfc-editor.org/rfc/rfc6455" },
+      { name: "Matrix", kind: "protocol", note: "Open standard for federated chat with ordered room events.", href: "https://matrix.org/" },
+      { name: "Synapse", kind: "software", note: "The reference Matrix homeserver.", href: "https://github.com/element-hq/synapse" },
+      { name: "XMPP", kind: "protocol", note: "Messaging and presence protocol.", href: "https://xmpp.org/" },
+      { name: "ejabberd", kind: "software", note: "XMPP server holding millions of connections.", href: "https://github.com/processone/ejabberd" },
+      { name: "Apache Cassandra", kind: "software", note: "Message history partitioned by conversation.", href: "https://cassandra.apache.org/" },
+    ],
+  },
+  "system-design/design-news-feed": {
+    lead: "Stores and services behind feeds.",
+    tools: [
+      { name: "Redis sorted sets", kind: "software", note: "Per-user feed lists of post ids, ordered by score.", href: "https://redis.io/docs/latest/develop/data-types/sorted-sets/" },
+      { name: "Apache Kafka", kind: "software", note: "Carries new posts to fan-out workers.", href: "https://kafka.apache.org/" },
+      { name: "Apache Cassandra", kind: "software", note: "Post storage at write-heavy scale.", href: "https://cassandra.apache.org/" },
+      { name: "Stream Activity Feeds", kind: "service", note: "Hosted feeds with push and pull built in.", href: "https://getstream.io/activity-feeds/" },
+      { name: "TAO (USENIX ATC 2013)", kind: "standard", note: "Facebook's store for the social graph.", href: "https://www.usenix.org/conference/atc13/technical-sessions/presentation/bronson" },
+    ],
+  },
   "system-design/top-k": {
     lead: "Sketches power trending lists and heavy-hitter detection.",
     tools: [
