@@ -1587,6 +1587,56 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "AWS SLAs", kind: "service", note: "Per-service availability commitments.", href: "https://aws.amazon.com/legal/service-level-agreements/" },
     ],
   },
+  "system-design/frontend-architecture": {
+    lead: "Server-state caches and stores exist for every framework; the split between server and UI state is the same everywhere.",
+    tools: [
+      { name: "TanStack Query", kind: "software", note: "A server-state cache: fetch by key, dedupe, invalidate after mutations; for React, Vue, Solid and Svelte.", href: "https://github.com/TanStack/query" },
+      { name: "SWR", kind: "software", note: "Stale-while-revalidate data fetching with request deduplication.", href: "https://github.com/vercel/swr" },
+      { name: "Redux Toolkit", kind: "software", note: "A global client store with selectors, and RTK Query for server state.", href: "https://github.com/reduxjs/redux-toolkit" },
+      { name: "Zustand", kind: "software", note: "A small store where components subscribe to exactly the slice they read.", href: "https://github.com/pmndrs/zustand" },
+      { name: "URLSearchParams", kind: "standard", note: "The browser API for keeping shareable UI state, like filters, in the URL.", href: "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams" },
+    ],
+  },
+  "system-design/backend-architecture": {
+    lead: "Every backend framework has the same seams: middleware, handlers, services, a transaction boundary, and somewhere to put side effects.",
+    tools: [
+      { name: "JSON Schema", kind: "standard", note: "Describe and validate request bodies at the edge, in any language.", href: "https://json-schema.org/" },
+      { name: "Open Policy Agent", kind: "software", note: "Authorization rules as policy, evaluated next to the service that owns the data.", href: "https://github.com/open-policy-agent/opa" },
+      { name: "OWASP API Security Top 10", kind: "standard", note: "Broken object-level authorization is number one: the “someone else's account” request.", href: "https://owasp.org/API-Security/" },
+      { name: "Transactional outbox", kind: "standard", note: "Chris Richardson's write-up of the outbox pattern for side effects after commit.", href: "https://microservices.io/patterns/data/transactional-outbox.html" },
+      { name: "Debezium", kind: "software", note: "Relays outbox rows from the database log to a broker.", href: "https://github.com/debezium/debezium" },
+    ],
+  },
+  "system-design/api-design": {
+    lead: "Public API guidelines from large providers agree on most of this; the standards are short and worth reading.",
+    tools: [
+      { name: "RFC 9457 Problem Details", kind: "standard", note: "The standard JSON shape for HTTP API errors.", href: "https://www.rfc-editor.org/rfc/rfc9457" },
+      { name: "RFC 8594 Sunset header", kind: "standard", note: "Tell clients when a deprecated endpoint or field will stop working.", href: "https://www.rfc-editor.org/rfc/rfc8594" },
+      { name: "Google API Improvement Proposals", kind: "standard", note: "Google's API design rules: resource names, pagination tokens, errors, versioning.", href: "https://google.aip.dev/" },
+      { name: "Stripe API versioning", kind: "standard", note: "How Stripe ships breaking changes as dated versions while old integrations keep working.", href: "https://stripe.com/blog/api-versioning" },
+      { name: "OpenAPI", kind: "standard", note: "Describe the API so clients, docs and contract tests come from one file.", href: "https://www.openapis.org/" },
+    ],
+  },
+  "system-design/session-auth": {
+    lead: "The building blocks are standards; hosted identity providers implement refresh rotation and revocation for you.",
+    tools: [
+      { name: "OAuth 2.0 Security Best Current Practice", kind: "standard", note: "RFC 9700: refresh token rotation, sender-constrained tokens, short lifetimes.", href: "https://www.rfc-editor.org/rfc/rfc9700" },
+      { name: "RFC 7519 JSON Web Token", kind: "standard", note: "The JWT format: claims, expiry, signatures.", href: "https://www.rfc-editor.org/rfc/rfc7519" },
+      { name: "OWASP Session Management Cheat Sheet", kind: "standard", note: "Cookie flags, session ids, timeouts and revocation.", href: "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html" },
+      { name: "Redis", kind: "software", note: "The usual server-side session store: a lookup per request, delete to sign out.", href: "https://github.com/redis/redis" },
+      { name: "Keycloak", kind: "software", note: "Open-source identity server with refresh rotation and session revocation.", href: "https://github.com/keycloak/keycloak" },
+    ],
+  },
+  "system-design/file-uploads": {
+    lead: "All three big clouds support direct, resumable uploads to private buckets and events when an object lands.",
+    tools: [
+      { name: "Amazon S3 presigned URLs", kind: "service", note: "Let a browser PUT one object without your credentials.", href: "https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html" },
+      { name: "S3 multipart upload", kind: "service", note: "Upload in parts, retry a part, join them at the end; required above 5 GB.", href: "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html" },
+      { name: "Google Cloud Storage resumable uploads", kind: "service", note: "The same idea on Google Cloud: resume from the last byte received.", href: "https://cloud.google.com/storage/docs/resumable-uploads" },
+      { name: "tus", kind: "protocol", note: "An open protocol for resumable uploads over HTTP, with servers and clients for many stacks.", href: "https://tus.io/" },
+      { name: "MinIO", kind: "software", note: "S3-compatible object storage you can run yourself, including presigned URLs and bucket events.", href: "https://github.com/minio/minio" },
+    ],
+  },
   "system-design/feature-flags": {
     lead: "Flag platforms handle targeting and rollout for you.",
     tools: [

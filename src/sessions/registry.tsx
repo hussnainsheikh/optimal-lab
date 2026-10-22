@@ -88,6 +88,11 @@ import EventSourcingDemo from "./system-design/cqrs-event-sourcing/EventSourcing
 import GossipDemo from "./system-design/gossip/GossipDemo";
 import NinesDemo from "./system-design/availability/NinesDemo";
 import FeatureFlagsDemo from "./system-design/feature-flags/FeatureFlagsDemo";
+import FrontendArchitectureDemo from "./system-design/frontend-architecture/FrontendArchitectureDemo";
+import BackendArchitectureDemo from "./system-design/backend-architecture/BackendArchitectureDemo";
+import ApiDesignDemo from "./system-design/api-design/ApiDesignDemo";
+import SessionAuthDemo from "./system-design/session-auth/SessionAuthDemo";
+import FileUploadsDemo from "./system-design/file-uploads/FileUploadsDemo";
 import RealtimeDemo from "./system-design/realtime/RealtimeDemo";
 import BackgroundJobsDemo from "./system-design/background-jobs/BackgroundJobsDemo";
 import MultiTenancyDemo from "./system-design/multi-tenancy/MultiTenancyDemo";
@@ -368,6 +373,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/gossip": <GossipDemo />,
   "system-design/availability": <NinesDemo />,
   "system-design/feature-flags": <FeatureFlagsDemo />,
+  "system-design/frontend-architecture": <FrontendArchitectureDemo />,
+  "system-design/backend-architecture": <BackendArchitectureDemo />,
+  "system-design/api-design": <ApiDesignDemo />,
+  "system-design/session-auth": <SessionAuthDemo />,
+  "system-design/file-uploads": <FileUploadsDemo />,
   "system-design/realtime": <RealtimeDemo />,
   "system-design/background-jobs": <BackgroundJobsDemo />,
   "system-design/multi-tenancy": <MultiTenancyDemo />,
