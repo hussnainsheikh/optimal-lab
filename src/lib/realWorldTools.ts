@@ -491,6 +491,56 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Clinic.js", kind: "software", note: "Find what is blocking the event loop in a running app.", href: "https://github.com/clinicjs/node-clinic" },
     ],
   },
+  "system-design/authn-vs-authz": {
+    lead: "Identity providers handle authentication; authorization stays in your service, checked on every request.",
+    tools: [
+      { name: "OWASP API Security Top 10", kind: "standard", note: "Broken object-level and function-level authorization top the list.", href: "https://owasp.org/API-Security/" },
+      { name: "OpenID Connect", kind: "standard", note: "The identity layer on OAuth 2.0: signed ID tokens that say who the user is.", href: "https://openid.net/developers/how-connect-works/" },
+      { name: "RFC 8725 JWT Best Current Practices", kind: "standard", note: "Verify the algorithm, the signature, the issuer and the audience.", href: "https://www.rfc-editor.org/rfc/rfc8725" },
+      { name: "Keycloak", kind: "software", note: "Open-source identity provider issuing signed tokens with roles.", href: "https://github.com/keycloak/keycloak" },
+      { name: "Auth0", kind: "service", note: "Hosted authentication with roles and permissions in the token.", href: "https://auth0.com/" },
+    ],
+  },
+  "system-design/access-control": {
+    lead: "Policy engines take the decision out of scattered if-statements; Zanzibar-style systems handle sharing at scale.",
+    tools: [
+      { name: "Zanzibar", kind: "standard", note: "Google's paper on relationship-based authorization for Drive, YouTube and more.", href: "https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/" },
+      { name: "OpenFGA", kind: "software", note: "An open-source Zanzibar-style authorization service (CNCF).", href: "https://github.com/openfga/openfga" },
+      { name: "SpiceDB", kind: "software", note: "Another open-source Zanzibar implementation, with a schema language for relations.", href: "https://github.com/authzed/spicedb" },
+      { name: "Open Policy Agent", kind: "software", note: "Attribute rules written as policy (Rego), evaluated anywhere.", href: "https://github.com/open-policy-agent/opa" },
+      { name: "Cedar", kind: "software", note: "AWS's open policy language for RBAC and ABAC, with automated reasoning.", href: "https://github.com/cedar-policy/cedar" },
+    ],
+  },
+  "system-design/encryption": {
+    lead: "TLS everywhere, KMS-managed keys for storage, and application-level encryption for the few fields that matter most.",
+    tools: [
+      { name: "Let's Encrypt", kind: "service", note: "Free, automated TLS certificates for public endpoints.", href: "https://letsencrypt.org/" },
+      { name: "AWS Key Management Service", kind: "service", note: "Master keys that never leave the service; envelope encryption and logged key use.", href: "https://aws.amazon.com/kms/" },
+      { name: "Google Cloud KMS", kind: "service", note: "The same model on Google Cloud, with automatic rotation.", href: "https://cloud.google.com/security/products/security-key-management" },
+      { name: "HashiCorp Vault Transit", kind: "software", note: "Encryption as a service: the app sends data, Vault returns ciphertext, keys never leave.", href: "https://developer.hashicorp.com/vault/docs/secrets/transit" },
+      { name: "Tink", kind: "software", note: "Google's cryptography library with safe defaults for field-level and envelope encryption.", href: "https://github.com/tink-crypto" },
+    ],
+  },
+  "system-design/secrets": {
+    lead: "Secrets managers, scanners and workload identity exist on every platform; the hard part is getting secrets out of code first.",
+    tools: [
+      { name: "HashiCorp Vault", kind: "software", note: "Secrets per service, dynamic database credentials and leases.", href: "https://github.com/hashicorp/vault" },
+      { name: "AWS Secrets Manager", kind: "service", note: "Stored secrets with scheduled rotation and per-role access.", href: "https://aws.amazon.com/secrets-manager/" },
+      { name: "GitHub secret scanning", kind: "service", note: "Push protection blocks commits that contain known key formats.", href: "https://docs.github.com/en/code-security/secret-scanning" },
+      { name: "gitleaks", kind: "software", note: "Scan repositories and history for committed secrets, in CI or a pre-commit hook.", href: "https://github.com/gitleaks/gitleaks" },
+      { name: "SPIFFE", kind: "standard", note: "Workload identity: services prove who they are without a stored secret.", href: "https://spiffe.io/" },
+    ],
+  },
+  "system-design/audit-logs": {
+    lead: "Write-once storage and verifiable logs make tampering impossible or visible; the format of the entries is up to you.",
+    tools: [
+      { name: "S3 Object Lock", kind: "service", note: "Write-once-read-many storage: objects can't be changed or deleted until retention ends.", href: "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html" },
+      { name: "AWS CloudTrail", kind: "service", note: "An audit log of API calls, with digest files that chain hashes for validation.", href: "https://aws.amazon.com/cloudtrail/" },
+      { name: "Trillian", kind: "software", note: "Google's verifiable log, the basis of Certificate Transparency.", href: "https://github.com/google/trillian" },
+      { name: "pgAudit", kind: "software", note: "Detailed session and object audit logging for PostgreSQL.", href: "https://github.com/pgaudit/pgaudit" },
+      { name: "OWASP Logging Cheat Sheet", kind: "standard", note: "What to log, what never to log, and protecting logs from tampering.", href: "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" },
+    ],
+  },
   "system-design/bloom-filters": {
     lead: "Bloom filters sit in front of slow lookups in databases, caches and browsers.",
     tools: [

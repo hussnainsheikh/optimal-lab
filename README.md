@@ -110,6 +110,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/cap-theorem` | Three replicas and a partition: CP refuses the minority read, AP answers stale; then the network heals | — |
 | `/tracks/devops/images-layers` | Which Dockerfile layers rebuild after a code or dependency change, for two instruction orders | — |
 | `/tracks/nodejs/blocking-the-event-loop` | A 200 ms request on the main thread delays every 2 ms request; a worker thread keeps them at 2 ms | — |
+| `/tracks/system-design/authn-vs-authz` | Seven requests to an invoicing API: verify tokens, authorize on the server, trust only verified roles, check the record | — |
+| `/tracks/system-design/access-control` | Eight document requests decided by roles, attribute rules and relationships, against what was intended | — |
+| `/tracks/system-design/encryption` | Five attackers in five places, and what TLS, disk encryption and field-level encryption each stop; envelope key rotation | — |
+| `/tracks/system-design/secrets` | A password in code, .env, CI, a secrets manager or issued per instance: how it leaks and how long a leaked one works | — |
+| `/tracks/system-design/audit-logs` | An insider edits the audit log: plain table, append-only, hash chain and an external anchor, each verified | — |
 | `/tracks/system-design/bloom-filters` | Add names to a 24-bit filter and check others: definitely not, or probably yes (with a false positive) | — |
 | `/tracks/system-design/unique-ids` | Build a Snowflake id bit by bit (time, machine, sequence) and see ids from three servers sort by time | — |
 | `/tracks/system-design/distributed-locks` | A GC pause outlives a lock's lease and two clients write; a fencing token makes storage reject the stale one | — |
