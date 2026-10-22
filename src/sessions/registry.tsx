@@ -225,6 +225,10 @@ import LimitsDemo from "./devops/resource-limits/LimitsDemo";
 import BloomDemo from "./system-design/bloom-filters/BloomDemo";
 import SnowflakeDemo from "./system-design/unique-ids/SnowflakeDemo";
 import LockDemo from "./system-design/distributed-locks/LockDemo";
+import ThreatModelingDemo from "./system-design/threat-modeling/ThreatModelingDemo";
+import DdosWafDemo from "./system-design/ddos-waf/DdosWafDemo";
+import PromptVersioningDemo from "./system-design/prompt-versioning/PromptVersioningDemo";
+import SemanticCachingDemo from "./system-design/semantic-caching/SemanticCachingDemo";
 import MvccDemo from "./databases/mvcc/MvccDemo";
 import LostUpdateDemo from "./databases/isolation-anomalies/LostUpdateDemo";
 import DnsDemo from "./networking/dns-resolution/DnsDemo";
@@ -519,6 +523,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/bloom-filters": <BloomDemo />,
   "system-design/unique-ids": <SnowflakeDemo />,
   "system-design/distributed-locks": <LockDemo />,
+  "system-design/threat-modeling": <ThreatModelingDemo />,
+  "system-design/ddos-waf": <DdosWafDemo />,
+  "system-design/prompt-versioning": <PromptVersioningDemo />,
+  "system-design/semantic-caching": <SemanticCachingDemo />,
   "databases/mvcc": <MvccDemo />,
   "databases/isolation-anomalies": <LostUpdateDemo />,
   "networking/dns-resolution": <DnsDemo />,
