@@ -256,6 +256,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/webhooks` | Receive webhooks when your endpoint is down, slow or forged, with signature checks and dedupe | — |
 | `/tracks/system-design/graceful-degradation` | Break a product page's dependencies with and without timeouts and fallbacks | — |
 | `/tracks/system-design/request-journey` | Follow one request through DNS, CDN, load balancer, app, cache and database, cold and warm | — |
+| `/tracks/system-design/permission-aware-retrieval` | Retrieval across every team's documents: no filter, a prompt rule, post-filtering or filtering in the search; revocation lag | — |
+| `/tracks/system-design/output-validation` | Six model-proposed actions through schema, business rules, allowlists and human approval | — |
+| `/tracks/system-design/ai-audit` | An auditor's questions about an AI decision months later, against four ways of recording and retaining it | — |
+| `/tracks/system-design/guardrails` | Twelve labelled messages through five guardrails: caught, missed, wrongly blocked and latency | — |
 | `/tracks/system-design/bulkheads` | A hanging payments dependency eats a shared thread pool; separate pools keep the catalog up | — |
 | `/tracks/system-design/failover-dr` | Lose a region and compare four DR strategies by recovery time, data loss and cost | — |
 | `/tracks/system-design/answer-quality` | Eight RAG questions scored per stage: retrieval misses, ranking, ignored context and added claims, with a fix for each | — |

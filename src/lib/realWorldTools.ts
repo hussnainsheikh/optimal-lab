@@ -1718,6 +1718,44 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Cloudflare CDN", kind: "service", note: "Edge caching close to users.", href: "https://www.cloudflare.com/application-services/products/cdn/" },
     ],
   },
+  "system-design/permission-aware-retrieval": {
+    lead: "Vector databases filter by metadata inside the search; authorization services answer “may this user see this document?” at query time.",
+    tools: [
+      { name: "Qdrant payload filtering", kind: "software", note: "Filter by metadata such as groups inside the vector search, not after it.", href: "https://qdrant.tech/documentation/concepts/filtering/" },
+      { name: "pgvector", kind: "software", note: "Vectors in Postgres, so row-level security and joins on ACL tables apply to search.", href: "https://github.com/pgvector/pgvector" },
+      { name: "OpenFGA", kind: "software", note: "Relationship-based authorization to check document access per user at query time.", href: "https://github.com/openfga/openfga" },
+      { name: "Microsoft Entra groups", kind: "service", note: "The groups most enterprise documents are shared with, synced into the index.", href: "https://learn.microsoft.com/en-us/entra/fundamentals/concept-learn-about-groups" },
+    ],
+  },
+  "system-design/output-validation": {
+    lead: "Structured outputs, schema validation and policy checks sit between a model's proposal and anything that changes the world.",
+    tools: [
+      { name: "JSON Schema", kind: "standard", note: "Describe and validate the action format a model must produce.", href: "https://json-schema.org/" },
+      { name: "Anthropic tool use", kind: "service", note: "Models return tool calls as JSON matching the input schema you declare.", href: "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview" },
+      { name: "Pydantic", kind: "software", note: "Validate model output into typed objects and reject what doesn't fit.", href: "https://github.com/pydantic/pydantic" },
+      { name: "Open Policy Agent", kind: "software", note: "Business rules as policy, evaluated before an action runs.", href: "https://github.com/open-policy-agent/opa" },
+      { name: "OWASP LLM05: Improper Output Handling", kind: "standard", note: "Treat model output as untrusted input to everything downstream.", href: "https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/" },
+    ],
+  },
+  "system-design/ai-audit": {
+    lead: "Regulation sets what must be recorded and for how long; logging standards and tools make the records consistent.",
+    tools: [
+      { name: "EU AI Act (Regulation 2024/1689)", kind: "standard", note: "Article 12, record-keeping: high-risk AI systems must automatically log events over their lifetime.", href: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
+      { name: "NIST AI Risk Management Framework", kind: "standard", note: "Documentation and traceability as part of governing AI systems.", href: "https://www.nist.gov/itl/ai-risk-management-framework" },
+      { name: "GDPR Article 5", kind: "standard", note: "Data minimisation and storage limitation, which pull against keeping everything.", href: "https://gdpr-info.eu/art-5-gdpr/" },
+      { name: "OpenTelemetry GenAI conventions", kind: "standard", note: "Standard attributes for model name, version and token use on every call.", href: "https://opentelemetry.io/docs/specs/semconv/gen-ai/" },
+    ],
+  },
+  "system-design/guardrails": {
+    lead: "Moderation models, guardrail frameworks and grounding checks are available off the shelf; the policy and the labelled examples are yours.",
+    tools: [
+      { name: "Llama Guard", kind: "software", note: "An open model that classifies prompts and responses against a safety policy.", href: "https://github.com/meta-llama/PurpleLlama" },
+      { name: "NeMo Guardrails", kind: "software", note: "NVIDIA's toolkit for input, output and dialogue rails around an LLM app.", href: "https://github.com/NVIDIA/NeMo-Guardrails" },
+      { name: "Guardrails AI", kind: "software", note: "Validators for LLM inputs and outputs, from PII to off-topic checks.", href: "https://github.com/guardrails-ai/guardrails" },
+      { name: "OpenAI moderation", kind: "service", note: "A free classifier for harmful content categories.", href: "https://platform.openai.com/docs/guides/moderation" },
+      { name: "Microsoft Presidio", kind: "software", note: "Detect and mask personal data before it reaches the model.", href: "https://github.com/microsoft/presidio" },
+    ],
+  },
   "system-design/bulkheads": {
     lead: "Resilience libraries implement bulkheads as separate pools.",
     tools: [

@@ -82,6 +82,10 @@ import VolumesDemo from "./devops/volumes/VolumesDemo";
 import HpaDemo from "./devops/pod-autoscaling/HpaDemo";
 import SchedulerDemo from "./devops/scheduling/SchedulerDemo";
 import BulkheadsDemo from "./system-design/bulkheads/BulkheadsDemo";
+import PermissionRetrievalDemo from "./system-design/permission-aware-retrieval/PermissionRetrievalDemo";
+import OutputValidationDemo from "./system-design/output-validation/OutputValidationDemo";
+import AiAuditDemo from "./system-design/ai-audit/AiAuditDemo";
+import GuardrailsDemo from "./system-design/guardrails/GuardrailsDemo";
 import FailoverDemo from "./system-design/failover-dr/FailoverDemo";
 import QuorumDemo from "./system-design/eventual-consistency/QuorumDemo";
 import AnswerQualityDemo from "./system-design/answer-quality/AnswerQualityDemo";
@@ -400,6 +404,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "devops/pod-autoscaling": <HpaDemo />,
   "devops/scheduling": <SchedulerDemo />,
   "system-design/bulkheads": <BulkheadsDemo />,
+  "system-design/permission-aware-retrieval": <PermissionRetrievalDemo />,
+  "system-design/output-validation": <OutputValidationDemo />,
+  "system-design/ai-audit": <AiAuditDemo />,
+  "system-design/guardrails": <GuardrailsDemo />,
   "system-design/failover-dr": <FailoverDemo />,
   "system-design/eventual-consistency": <QuorumDemo />,
   "system-design/answer-quality": <AnswerQualityDemo />,
