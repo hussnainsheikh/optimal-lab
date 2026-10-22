@@ -180,6 +180,11 @@ import SsrfDemo from "./security/ssrf/SsrfDemo";
 import AutoscalingDemo from "./system-design/autoscaling/AutoscalingDemo";
 import DeliveryDemo from "./system-design/delivery-guarantees/DeliveryDemo";
 import SagaDemo from "./system-design/sagas-outbox/SagaDemo";
+import ToolExecutionDemo from "./system-design/tool-execution/ToolExecutionDemo";
+import AgentStateMachineDemo from "./system-design/agent-state-machines/AgentStateMachineDemo";
+import TaskPlanningDemo from "./system-design/task-planning/TaskPlanningDemo";
+import MultiAgentDemo from "./system-design/multi-agent/MultiAgentDemo";
+import DurableExecutionDemo from "./system-design/durable-execution/DurableExecutionDemo";
 import PoolDemo from "./databases/connection-pooling/PoolDemo";
 import JoinDemo from "./databases/join-algorithms/JoinDemo";
 import NatDemo from "./networking/nat/NatDemo";
@@ -483,6 +488,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/autoscaling": <AutoscalingDemo />,
   "system-design/delivery-guarantees": <DeliveryDemo />,
   "system-design/sagas-outbox": <SagaDemo />,
+  "system-design/tool-execution": <ToolExecutionDemo />,
+  "system-design/agent-state-machines": <AgentStateMachineDemo />,
+  "system-design/task-planning": <TaskPlanningDemo />,
+  "system-design/multi-agent": <MultiAgentDemo />,
+  "system-design/durable-execution": <DurableExecutionDemo />,
   "databases/connection-pooling": <PoolDemo />,
   "databases/join-algorithms": <JoinDemo />,
   "networking/nat": <NatDemo />,

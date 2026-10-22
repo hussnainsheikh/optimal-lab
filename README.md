@@ -171,6 +171,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/dsa/lru-cache` | Run gets and puts against a 3-slot cache and watch hits, moves to front and evictions | — |
 | `/tracks/system-design/autoscaling` | A traffic spike against a fixed fleet, naive per-minute scaling and target tracking with cooldown | — |
 | `/tracks/system-design/delivery-guarantees` | A consumer crashes mid-stream: commit-first loses a payment, process-first doubles it, dedupe fixes it | — |
+| `/tracks/system-design/tool-execution` | Six dangerous tool calls against containers, microVMs, limits, egress rules and secret-free sandboxes | — |
+| `/tracks/system-design/agent-state-machines` | A refund agent as a free loop and as a state machine: a skipped approval, an overnight restart, resuming on an event | — |
+| `/tracks/system-design/task-planning` | Plan an offsite step by step, in dependency order, or in parallel along the critical path; replan when the venue fails | — |
+| `/tracks/system-design/multi-agent` | One agent, an orchestrator with workers, or peers on a shared doc: tokens, time, messages and colliding edits | — |
+| `/tracks/system-design/durable-execution` | A claim workflow crashes mid-way: start over, checkpoints, or durable execution with idempotency keys | — |
 | `/tracks/system-design/sagas-outbox` | Step an order saga through four services, fail a step and watch compensations, and see why the outbox exists | — |
 | `/tracks/databases/connection-pooling` | Add app servers and watch connections hit max_connections, with per-request, per-server pools and PgBouncer | — |
 | `/tracks/databases/join-algorithms` | Step through nested loop, hash and merge joins on small tables and compare costs at scale | — |

@@ -1008,6 +1008,53 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "RabbitMQ acks", kind: "software", note: "Consumer acknowledgements and redelivery.", href: "https://www.rabbitmq.com/docs/confirms" },
     ],
   },
+  "system-design/tool-execution": {
+    lead: "Code-execution sandboxes for agents are built from the same isolation pieces as any multi-tenant platform.",
+    tools: [
+      { name: "gVisor", kind: "software", note: "A user-space kernel that sits between a container and the host kernel.", href: "https://github.com/google/gvisor" },
+      { name: "Firecracker", kind: "software", note: "MicroVMs that start in about 125 ms, used by AWS Lambda.", href: "https://github.com/firecracker-microvm/firecracker" },
+      { name: "E2B", kind: "software", note: "Open-source sandboxes for running AI-generated code in Firecracker microVMs.", href: "https://github.com/e2b-dev/E2B" },
+      { name: "nsjail", kind: "software", note: "Process isolation with namespaces, seccomp and resource limits.", href: "https://github.com/google/nsjail" },
+      { name: "OWASP Top 10 for LLM Applications", kind: "standard", note: "Excessive agency and insecure output handling, with mitigations.", href: "https://genai.owasp.org/llm-top-10/" },
+    ],
+  },
+  "system-design/agent-state-machines": {
+    lead: "Graph and state-machine frameworks make an agent's steps explicit, persisted and resumable.",
+    tools: [
+      { name: "LangGraph", kind: "software", note: "Agents as graphs of nodes and edges, with checkpoints and human-in-the-loop interrupts.", href: "https://github.com/langchain-ai/langgraph" },
+      { name: "XState", kind: "software", note: "State machines and statecharts with typed events and visual inspection.", href: "https://github.com/statelyai/xstate" },
+      { name: "AWS Step Functions", kind: "service", note: "Workflows as states and transitions, with waits for callbacks lasting up to a year.", href: "https://aws.amazon.com/step-functions/" },
+      { name: "Building effective agents", kind: "standard", note: "Anthropic's guide: when to use fixed workflows and when to let the model decide.", href: "https://www.anthropic.com/engineering/building-effective-agents" },
+    ],
+  },
+  "system-design/task-planning": {
+    lead: "Planning patterns are documented in research and built into agent frameworks.",
+    tools: [
+      { name: "Plan-and-Solve prompting", kind: "standard", note: "Wang et al., 2023: ask for a plan first, then execute it, instead of reasoning step by step.", href: "https://arxiv.org/abs/2305.04091" },
+      { name: "LLMCompiler", kind: "standard", note: "Kim et al., 2023: plan a graph of tool calls and run independent ones in parallel.", href: "https://arxiv.org/abs/2312.04511" },
+      { name: "LangGraph", kind: "software", note: "Plan-and-execute and replanning agents as graphs.", href: "https://github.com/langchain-ai/langgraph" },
+      { name: "Apache Airflow", kind: "software", note: "The classic task-dependency scheduler: DAGs, retries and parallel tasks.", href: "https://github.com/apache/airflow" },
+    ],
+  },
+  "system-design/multi-agent": {
+    lead: "Orchestrator-worker setups are the common production pattern; frameworks provide hand-offs and shared state.",
+    tools: [
+      { name: "How we built our multi-agent research system", kind: "standard", note: "Anthropic's write-up of a lead agent with parallel subagents, and what it costs.", href: "https://www.anthropic.com/engineering/multi-agent-research-system" },
+      { name: "OpenAI Agents SDK", kind: "software", note: "Agents, hand-offs between them, and guardrails.", href: "https://github.com/openai/openai-agents-python" },
+      { name: "AutoGen", kind: "software", note: "Microsoft's framework for conversations between multiple agents.", href: "https://github.com/microsoft/autogen" },
+      { name: "CrewAI", kind: "software", note: "Role-based agent teams with sequential or hierarchical processes.", href: "https://github.com/crewAIInc/crewAI" },
+    ],
+  },
+  "system-design/durable-execution": {
+    lead: "Durable execution engines record each step so a workflow survives crashes; idempotency keys close the last gap.",
+    tools: [
+      { name: "Temporal", kind: "software", note: "Workflows as code with an event history; a new worker replays it and continues.", href: "https://github.com/temporalio/temporal" },
+      { name: "Restate", kind: "software", note: "Durable execution for functions and agents, with journaled side effects.", href: "https://github.com/restatedev/restate" },
+      { name: "AWS Step Functions", kind: "service", note: "Managed state machines that persist every transition.", href: "https://aws.amazon.com/step-functions/" },
+      { name: "Inngest", kind: "software", note: "Durable steps for background jobs and AI workflows, retried individually.", href: "https://github.com/inngest/inngest" },
+      { name: "Stripe idempotent requests", kind: "standard", note: "The Idempotency-Key header: retry a charge without charging twice.", href: "https://docs.stripe.com/api/idempotent_requests" },
+    ],
+  },
   "system-design/sagas-outbox": {
     lead: "Workflow engines run sagas; CDC tools relay outboxes.",
     tools: [
