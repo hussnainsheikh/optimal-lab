@@ -1734,6 +1734,54 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Google SRE: DR testing", kind: "standard", note: "Practising disaster recovery.", href: "https://sre.google/sre-book/emergency-response/" },
     ],
   },
+  "system-design/answer-quality": {
+    lead: "RAG evaluation tools score retrieval and generation separately, which is what lets you find the failing stage.",
+    tools: [
+      { name: "RAGAS", kind: "software", note: "Context recall and precision for retrieval; faithfulness and answer relevance for generation.", href: "https://github.com/explodinggradients/ragas" },
+      { name: "TruLens", kind: "software", note: "The RAG triad: context relevance, groundedness and answer relevance.", href: "https://github.com/truera/trulens" },
+      { name: "DeepEval", kind: "software", note: "Unit-test style metrics for retrieval and answers, run in CI.", href: "https://github.com/confident-ai/deepeval" },
+      { name: "Cohere Rerank", kind: "service", note: "A cross-encoder reranker that reorders retrieved chunks by relevance.", href: "https://cohere.com/rerank" },
+    ],
+  },
+  "system-design/agent-tracing": {
+    lead: "LLM observability tools record agent runs as traces, usually on OpenTelemetry, with tokens and cost per span.",
+    tools: [
+      { name: "OpenTelemetry GenAI conventions", kind: "standard", note: "Standard span names and attributes for model and tool calls.", href: "https://opentelemetry.io/docs/specs/semconv/gen-ai/" },
+      { name: "Langfuse", kind: "software", note: "Open-source tracing, cost tracking and evals for LLM apps.", href: "https://github.com/langfuse/langfuse" },
+      { name: "Arize Phoenix", kind: "software", note: "Open-source tracing and evaluation built on OpenTelemetry.", href: "https://github.com/Arize-ai/phoenix" },
+      { name: "LangSmith", kind: "service", note: "Hosted tracing and debugging for agent runs.", href: "https://www.langchain.com/langsmith" },
+      { name: "OpenTelemetry tail sampling", kind: "software", note: "Decide which traces to keep after they finish: errors, slow runs, a sample of the rest.", href: "https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/tailsamplingprocessor" },
+    ],
+  },
+  "system-design/prompt-injection": {
+    lead: "No model is immune; the published guidance stresses design over filters.",
+    tools: [
+      { name: "OWASP LLM01: Prompt Injection", kind: "standard", note: "Direct and indirect injection, with prevention and mitigation strategies.", href: "https://genai.owasp.org/llmrisk/llm01-prompt-injection/" },
+      { name: "The dual LLM pattern", kind: "standard", note: "Simon Willison: a quarantined model reads untrusted text, a privileged one has the tools.", href: "https://simonwillison.net/2023/Apr/25/dual-llm-pattern/" },
+      { name: "CaMeL", kind: "standard", note: "Debenedetti et al., 2025: defeating prompt injections by design with capabilities and data flow control.", href: "https://arxiv.org/abs/2503.18813" },
+      { name: "Not what you've signed up for", kind: "standard", note: "Greshake et al., 2023: the paper that showed indirect prompt injection against real apps.", href: "https://arxiv.org/abs/2302.12173" },
+      { name: "Llama Prompt Guard", kind: "software", note: "An open classifier that flags injection and jailbreak attempts.", href: "https://github.com/meta-llama/PurpleLlama" },
+    ],
+  },
+  "system-design/tool-permissions": {
+    lead: "OAuth scopes, short-lived tokens and fine-grained authorization are how least privilege is enforced for agents.",
+    tools: [
+      { name: "OAuth 2.0 scopes", kind: "standard", note: "RFC 6749 §3.3: request only the scopes the task needs.", href: "https://www.rfc-editor.org/rfc/rfc6749#section-3.3" },
+      { name: "RFC 8693 token exchange", kind: "standard", note: "Swap a user's token for a narrower, shorter-lived one for a specific job.", href: "https://www.rfc-editor.org/rfc/rfc8693" },
+      { name: "Model Context Protocol authorization", kind: "standard", note: "How MCP servers authorize clients and scope tool access.", href: "https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization" },
+      { name: "OWASP LLM06: Excessive Agency", kind: "standard", note: "Too much functionality, permission or autonomy, and how to limit each.", href: "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" },
+    ],
+  },
+  "system-design/data-leakage": {
+    lead: "PII detection, provider data controls and scrubbed telemetry each cover part of the path; none covers all of it.",
+    tools: [
+      { name: "Microsoft Presidio", kind: "software", note: "Detect and anonymize PII in text before it reaches a model or a log.", href: "https://github.com/microsoft/presidio" },
+      { name: "Google Cloud Sensitive Data Protection", kind: "service", note: "Managed detection and de-identification of sensitive data.", href: "https://cloud.google.com/security/products/sensitive-data-protection" },
+      { name: "Anthropic data retention", kind: "standard", note: "How long API inputs are kept and the zero-retention options.", href: "https://privacy.anthropic.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data" },
+      { name: "OWASP LLM02: Sensitive Information Disclosure", kind: "standard", note: "How personal data and secrets leak through LLM apps, and mitigations.", href: "https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/" },
+      { name: "gitleaks", kind: "software", note: "Catch API keys before they reach a prompt, a log or a repository.", href: "https://github.com/gitleaks/gitleaks" },
+    ],
+  },
   "system-design/eventual-consistency": {
     lead: "Leaderless stores let you tune R and W per query.",
     tools: [

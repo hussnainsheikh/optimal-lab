@@ -84,6 +84,11 @@ import SchedulerDemo from "./devops/scheduling/SchedulerDemo";
 import BulkheadsDemo from "./system-design/bulkheads/BulkheadsDemo";
 import FailoverDemo from "./system-design/failover-dr/FailoverDemo";
 import QuorumDemo from "./system-design/eventual-consistency/QuorumDemo";
+import AnswerQualityDemo from "./system-design/answer-quality/AnswerQualityDemo";
+import AgentTracingDemo from "./system-design/agent-tracing/AgentTracingDemo";
+import PromptInjectionDemo from "./system-design/prompt-injection/PromptInjectionDemo";
+import ToolPermissionsDemo from "./system-design/tool-permissions/ToolPermissionsDemo";
+import DataLeakageDemo from "./system-design/data-leakage/DataLeakageDemo";
 import EventSourcingDemo from "./system-design/cqrs-event-sourcing/EventSourcingDemo";
 import GossipDemo from "./system-design/gossip/GossipDemo";
 import ConversationStateDemo from "./system-design/conversation-state/ConversationStateDemo";
@@ -397,6 +402,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/bulkheads": <BulkheadsDemo />,
   "system-design/failover-dr": <FailoverDemo />,
   "system-design/eventual-consistency": <QuorumDemo />,
+  "system-design/answer-quality": <AnswerQualityDemo />,
+  "system-design/agent-tracing": <AgentTracingDemo />,
+  "system-design/prompt-injection": <PromptInjectionDemo />,
+  "system-design/tool-permissions": <ToolPermissionsDemo />,
+  "system-design/data-leakage": <DataLeakageDemo />,
   "system-design/cqrs-event-sourcing": <EventSourcingDemo />,
   "system-design/gossip": <GossipDemo />,
   "system-design/conversation-state": <ConversationStateDemo />,
