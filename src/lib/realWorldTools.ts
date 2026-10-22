@@ -1169,6 +1169,57 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "LaunchDarkly", kind: "service", note: "Feature flags to separate deploy from release.", href: "https://launchdarkly.com/" },
     ],
   },
+  "system-design/payments-ledgers": {
+    lead: "Ledger databases and payment APIs build in double entry and idempotency.",
+    tools: [
+      { name: "TigerBeetle", kind: "software", note: "A database built for double-entry financial transactions.", href: "https://github.com/tigerbeetle/tigerbeetle" },
+      { name: "Formance Ledger", kind: "software", note: "Open-source programmable double-entry ledger.", href: "https://github.com/formancehq/ledger" },
+      { name: "Modern Treasury Ledgers", kind: "service", note: "Hosted double-entry ledger API.", href: "https://www.moderntreasury.com/products/ledgers" },
+      { name: "Stripe idempotent requests", kind: "service", note: "Idempotency keys on payment API calls.", href: "https://docs.stripe.com/api/idempotent_requests" },
+      { name: "PostgreSQL transactions", kind: "software", note: "All entries of a transaction commit together or not at all.", href: "https://www.postgresql.org/docs/current/tutorial-transactions.html" },
+    ],
+  },
+  "system-design/data-pipelines": {
+    lead: "Event logs, stream processors and warehouses.",
+    tools: [
+      { name: "Apache Kafka", kind: "software", note: "The durable event log most pipelines start from.", href: "https://kafka.apache.org/" },
+      { name: "Apache Flink", kind: "software", note: "Stream processing with event time, watermarks and late data.", href: "https://nightlies.apache.org/flink/flink-docs-stable/docs/concepts/time/" },
+      { name: "Apache Beam", kind: "software", note: "One model for batch and streaming, with triggers for late data.", href: "https://beam.apache.org/" },
+      { name: "Apache Iceberg", kind: "software", note: "Table format for raw and corrected data on object storage.", href: "https://iceberg.apache.org/" },
+      { name: "Google BigQuery", kind: "service", note: "Serverless data warehouse with streaming inserts.", href: "https://cloud.google.com/bigquery" },
+    ],
+  },
+  "system-design/object-storage": {
+    lead: "Object stores replicate and erasure-code behind a simple key API.",
+    tools: [
+      { name: "Amazon S3", kind: "service", note: "Object storage across availability zones.", href: "https://aws.amazon.com/s3/" },
+      { name: "Google Cloud Storage", kind: "service", note: "Regional, dual-region and multi-region buckets.", href: "https://cloud.google.com/storage" },
+      { name: "Ceph", kind: "software", note: "Open-source storage with replicated and erasure-coded pools.", href: "https://github.com/ceph/ceph" },
+      { name: "MinIO", kind: "software", note: "S3-compatible object store with erasure coding.", href: "https://github.com/minio/minio" },
+      { name: "SeaweedFS", kind: "software", note: "Blob store with a separate metadata layer.", href: "https://github.com/seaweedfs/seaweedfs" },
+    ],
+  },
+  "system-design/multi-region": {
+    lead: "Routing and databases built for several regions.",
+    tools: [
+      { name: "Amazon Route 53", kind: "service", note: "Latency and geolocation routing with health checks.", href: "https://aws.amazon.com/route53/" },
+      { name: "Aurora Global Database", kind: "service", note: "One writer region, read replicas in others.", href: "https://aws.amazon.com/rds/aurora/global-database/" },
+      { name: "DynamoDB global tables", kind: "service", note: "Active-active replication with last-writer-wins.", href: "https://aws.amazon.com/dynamodb/global-tables/" },
+      { name: "CockroachDB table localities", kind: "software", note: "Pin each row to a home region.", href: "https://www.cockroachlabs.com/docs/stable/table-localities" },
+      { name: "Google Cloud Spanner", kind: "service", note: "Synchronous replication across regions.", href: "https://cloud.google.com/spanner" },
+    ],
+  },
+  "system-design/edge-iot": {
+    lead: "Messaging, brokers and update systems for device fleets.",
+    tools: [
+      { name: "MQTT", kind: "protocol", note: "Lightweight publish/subscribe for unreliable networks.", href: "https://mqtt.org/" },
+      { name: "Eclipse Mosquitto", kind: "software", note: "Small open-source MQTT broker.", href: "https://github.com/eclipse-mosquitto/mosquitto" },
+      { name: "EMQX", kind: "software", note: "MQTT broker for millions of connections.", href: "https://github.com/emqx/emqx" },
+      { name: "AWS IoT Core", kind: "service", note: "Managed device connections, shadows and rules.", href: "https://aws.amazon.com/iot-core/" },
+      { name: "Mender", kind: "software", note: "Over-the-air updates with A/B partitions and rollback.", href: "https://github.com/mendersoftware/mender" },
+      { name: "RAUC", kind: "software", note: "Fail-safe A/B updates for embedded Linux.", href: "https://github.com/rauc/rauc" },
+    ],
+  },
   "system-design/hedged-requests": {
     lead: "Hedging is built into some RPC frameworks.",
     tools: [

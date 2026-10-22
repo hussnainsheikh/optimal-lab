@@ -188,6 +188,11 @@ import MerkleDemo from "./system-design/merkle-trees/MerkleDemo";
 import ClocksDemo from "./system-design/clocks/ClocksDemo";
 import DeployDemo from "./system-design/deployment-strategies/DeployDemo";
 import HedgedDemo from "./system-design/hedged-requests/HedgedDemo";
+import PaymentsLedgerDemo from "./system-design/payments-ledgers/PaymentsLedgerDemo";
+import DataPipelinesDemo from "./system-design/data-pipelines/DataPipelinesDemo";
+import ObjectStorageDemo from "./system-design/object-storage/ObjectStorageDemo";
+import MultiRegionDemo from "./system-design/multi-region/MultiRegionDemo";
+import EdgeIotDemo from "./system-design/edge-iot/EdgeIotDemo";
 import KeyExchangeDemo from "./security/key-exchange/KeyExchangeDemo";
 import IdorDemo from "./security/idor/IdorDemo";
 import SsrfDemo from "./security/ssrf/SsrfDemo";
@@ -510,6 +515,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/clocks": <ClocksDemo />,
   "system-design/deployment-strategies": <DeployDemo />,
   "system-design/hedged-requests": <HedgedDemo />,
+  "system-design/payments-ledgers": <PaymentsLedgerDemo />,
+  "system-design/data-pipelines": <DataPipelinesDemo />,
+  "system-design/object-storage": <ObjectStorageDemo />,
+  "system-design/multi-region": <MultiRegionDemo />,
+  "system-design/edge-iot": <EdgeIotDemo />,
   "security/key-exchange": <KeyExchangeDemo />,
   "security/idor": <IdorDemo />,
   "security/ssrf": <SsrfDemo />,
