@@ -251,6 +251,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/file-uploads` | Upload through the API, with a presigned URL or in parts; drop the connection; thumbnails inline or from a queue | — |
 | `/tracks/system-design/realtime` | Deliver four chat messages with polling, long polling, SSE and WebSockets and compare delay and cost | — |
 | `/tracks/system-design/background-jobs` | Sign-up side effects done inline vs on a queue, with retries and a dead-letter queue | — |
+| `/tracks/system-design/search` | Analyse, index, filter and rank a dozen listings with BM25, typo tolerance and stemming, against SQL LIKE | — |
+| `/tracks/system-design/offline-sync` | A phone edits offline while a laptop edits online: versions, delta sync, clock skew and four ways to merge | — |
+| `/tracks/system-design/collaborative-editing` | Two people type at once: positions applied as sent diverge; operational transformation and a CRDT converge | — |
+| `/tracks/system-design/email-notifications` | Three alerts to 10,000 subscribers through preferences, a queue, an idempotent sender, rate limits and bounces | — |
 | `/tracks/system-design/multi-tenancy` | Compare shared tables, schema per tenant and database per tenant, then forget a WHERE clause | — |
 | `/tracks/system-design/api-styles` | REST, GraphQL, gRPC and WebSockets on three real jobs: requests, round trips, bytes on the wire and fields fetched vs needed | — |
 | `/tracks/system-design/sync-vs-async` | Place an order that needs three services, waiting for all, for the slowest, or only for what the answer needs; then take one down | — |

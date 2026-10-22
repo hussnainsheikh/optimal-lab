@@ -1661,6 +1661,45 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Amazon SQS dead-letter queues", kind: "service", note: "Park messages that keep failing.", href: "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html" },
     ],
   },
+  "system-design/search": {
+    lead: "Inverted indexes and BM25 are the default in every mainstream search engine, hosted or self-run.",
+    tools: [
+      { name: "Elasticsearch", kind: "software", note: "Analysers, an inverted index per field, BM25 by default, filters and aggregations for facets.", href: "https://github.com/elastic/elasticsearch" },
+      { name: "OpenSearch", kind: "software", note: "The open-source fork of Elasticsearch, with the same index and query model.", href: "https://github.com/opensearch-project/OpenSearch" },
+      { name: "PostgreSQL full-text search", kind: "software", note: "tsvector, GIN indexes and ts_rank inside the database you already run.", href: "https://www.postgresql.org/docs/current/textsearch.html" },
+      { name: "Meilisearch", kind: "software", note: "A small search engine with typo tolerance and facets out of the box.", href: "https://github.com/meilisearch/meilisearch" },
+      { name: "Apache Lucene", kind: "software", note: "The library under Elasticsearch, OpenSearch and Solr: analysers, postings, BM25.", href: "https://github.com/apache/lucene" },
+    ],
+  },
+  "system-design/offline-sync": {
+    lead: "Local-first sync is a product category: a database on the device, a sync protocol, and a conflict policy.",
+    tools: [
+      { name: "SQLite", kind: "software", note: "The database on almost every phone, and the usual local store for offline apps.", href: "https://www.sqlite.org/" },
+      { name: "PowerSync", kind: "software", note: "Syncs Postgres to SQLite on the device, with an upload queue for offline writes.", href: "https://github.com/powersync-ja" },
+      { name: "CouchDB replication", kind: "software", note: "Revision trees and conflict documents: keep both, let the app choose.", href: "https://docs.couchdb.org/en/stable/replication/conflicts.html" },
+      { name: "Firebase Cloud Messaging", kind: "service", note: "Silent pushes that wake an Android or web app to sync.", href: "https://firebase.google.com/docs/cloud-messaging" },
+      { name: "Apple Push Notification service", kind: "service", note: "Background pushes that tell an iOS app new data is waiting.", href: "https://developer.apple.com/documentation/usernotifications" },
+    ],
+  },
+  "system-design/collaborative-editing": {
+    lead: "Most collaborative editors use one of a few open CRDT libraries, or OT behind a central server.",
+    tools: [
+      { name: "Yjs", kind: "software", note: "A CRDT for shared text, lists and maps, with bindings for common editors.", href: "https://github.com/yjs/yjs" },
+      { name: "Automerge", kind: "software", note: "A JSON-like CRDT with history, built for local-first apps.", href: "https://github.com/automerge/automerge" },
+      { name: "ShareDB", kind: "software", note: "Operational transformation over JSON documents with a central server.", href: "https://github.com/share/sharedb" },
+      { name: "CRDT resources", kind: "standard", note: "Papers, implementations and talks collected by the CRDT research community.", href: "https://crdt.tech/" },
+    ],
+  },
+  "system-design/email-notifications": {
+    lead: "Providers handle delivery; the preferences, deduplication, retries and suppression around them are yours.",
+    tools: [
+      { name: "Amazon SES", kind: "service", note: "Email sending with per-account rate limits, and bounce and complaint notifications.", href: "https://aws.amazon.com/ses/" },
+      { name: "Postmark", kind: "service", note: "Transactional email with bounce webhooks and a suppression list per stream.", href: "https://postmarkapp.com/" },
+      { name: "Novu", kind: "software", note: "Open-source notification infrastructure: preferences, digests and channels.", href: "https://github.com/novuhq/novu" },
+      { name: "Gmail sender guidelines", kind: "standard", note: "Authentication, one-click unsubscribe and the spam-rate threshold for bulk senders.", href: "https://support.google.com/a/answer/81126" },
+      { name: "RFC 8058 one-click unsubscribe", kind: "standard", note: "The List-Unsubscribe-Post header mailbox providers now expect.", href: "https://www.rfc-editor.org/rfc/rfc8058" },
+    ],
+  },
   "system-design/multi-tenancy": {
     lead: "SaaS platforms choose a tenancy model early.",
     tools: [
