@@ -130,6 +130,9 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/databases/isolation-anomalies` | Two deposits at once: read-then-write loses one; FOR UPDATE, SERIALIZABLE (with retry) and an atomic UPDATE don't | — |
 | `/tracks/networking/dns-resolution` | Resolve a name cold (browser, OS, resolver, root, TLD, authoritative: 103 ms) or warm (8 ms) | — |
 | `/tracks/networking/congestion-control` | The congestion window per round trip: slow start, additive increase, and Reno vs Tahoe after a loss | — |
+| `/tracks/networking/peering` | A video service reaches viewers in a home ISP over transit, an internet exchange, a private cross-connect or caches inside the ISP: BGP's choice, a full port at the evening peak, and transit billed at the 95th percentile | — |
+| `/tracks/networking/dns-caching` | Move a name to a new server or launch one people already looked up: 3,000 resolvers hold the old answer until its TTL runs out, lowering the TTL a day ahead, negative caching, and lookups by TTL | — |
+| `/tracks/networking/dhcp` | Join a café's Wi-Fi with DISCOVER, OFFER, REQUEST and ACK; a rogue server hands out itself as the router until DHCP snooping drops it, a printer's static IP is caught by the ARP probe, and three days of leases fill the pool | — |
 | `/tracks/operating-systems/deadlocks` | Two threads take two locks in opposite order and hang; one global lock order prevents it | — |
 | `/tracks/operating-systems/cpu-scheduling` | Four processes under FCFS, shortest-job-first and round robin: a Gantt chart, waiting times and switches | — |
 | `/tracks/security/password-hashing` | A leaked users table under plain text, SHA-256, salted SHA-256 and bcrypt: what the attacker sees and how long cracking takes | — |

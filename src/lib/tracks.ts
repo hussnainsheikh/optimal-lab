@@ -905,12 +905,15 @@ export const TRACKS: Track[] = [
         shape: { kind: "system", steps: 5, flow: "pipeline" } },
       { id: "traceroute", title: "Traceroute and latency", blurb: "See every hop and where the time goes.", status: "live", section: "internet",
         shape: { kind: "process", steps: 6, flow: "pipeline" } },
-      { id: "peering", title: "ISPs, peering and exchanges", blurb: "Who carries your traffic and who pays.", status: "soon", section: "internet" },
+      { id: "peering", title: "ISPs, peering and exchanges", blurb: "Who carries your traffic and who pays.", status: "live", section: "internet",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Names and addresses
       { id: "dns-resolution", title: "DNS resolution, hop by hop", blurb: "Stub resolver, recursive resolver, root, TLD, authoritative.", status: "live", section: "naming",
         shape: { kind: "system", steps: 4, flow: "pipeline" } },
-      { id: "dns-caching", title: "DNS caching and TTLs", blurb: "Why a DNS change takes time to reach everyone.", status: "soon", section: "naming" },
-      { id: "dhcp", title: "DHCP", blurb: "How a device gets its address when it joins a network.", status: "soon", section: "naming" },
+      { id: "dns-caching", title: "DNS caching and TTLs", blurb: "Why a DNS change takes time to reach everyone.", status: "live", section: "naming",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "dhcp", title: "DHCP", blurb: "How a device gets its address when it joins a network.", status: "live", section: "naming",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Web protocols
       { id: "http1", title: "HTTP/1.1", blurb: "Requests, responses, headers and keep-alive.", status: "soon", section: "web-protocols" },
       { id: "http2", title: "HTTP/2 multiplexing", blurb: "Many requests on one connection.", status: "live", section: "web-protocols",

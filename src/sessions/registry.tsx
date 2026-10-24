@@ -271,6 +271,9 @@ import MvccDemo from "./databases/mvcc/MvccDemo";
 import LostUpdateDemo from "./databases/isolation-anomalies/LostUpdateDemo";
 import DnsDemo from "./networking/dns-resolution/DnsDemo";
 import CongestionDemo from "./networking/congestion-control/CongestionDemo";
+import PeeringDemo from "./networking/peering/PeeringDemo";
+import DnsCachingDemo from "./networking/dns-caching/DnsCachingDemo";
+import DhcpDemo from "./networking/dhcp/DhcpDemo";
 import DeadlockDemo from "./operating-systems/deadlocks/DeadlockDemo";
 import SchedulingDemo from "./operating-systems/cpu-scheduling/SchedulingDemo";
 import PasswordDemo from "./security/password-hashing/PasswordDemo";
@@ -611,6 +614,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "databases/isolation-anomalies": <LostUpdateDemo />,
   "networking/dns-resolution": <DnsDemo />,
   "networking/congestion-control": <CongestionDemo />,
+  "networking/peering": <PeeringDemo />,
+  "networking/dns-caching": <DnsCachingDemo />,
+  "networking/dhcp": <DhcpDemo />,
   "operating-systems/deadlocks": <DeadlockDemo />,
   "operating-systems/cpu-scheduling": <SchedulingDemo />,
   "security/password-hashing": <PasswordDemo />,
