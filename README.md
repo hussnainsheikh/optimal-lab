@@ -182,6 +182,9 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/durable-execution` | A claim workflow crashes mid-way: start over, checkpoints, or durable execution with idempotency keys | — |
 | `/tracks/system-design/sagas-outbox` | Step an order saga through four services, fail a step and watch compensations, and see why the outbox exists | — |
 | `/tracks/databases/connection-pooling` | Add app servers and watch connections hit max_connections, with per-request, per-server pools and PgBouncer | — |
+| `/tracks/databases/caching-db` | Size a Redis cache against a 200,000-request Zipf stream (exact LRU hit ratios), set a TTL or delete on write, guard a hot key from a stampede, and restart into a cold cache | — |
+| `/tracks/databases/redis-internals` | Run real commands against a small Redis: the single thread and KEYS vs SCAN, data types, listpack vs hashtable encodings, RDB vs AOF on a crash, and maxmemory eviction policies | — |
+| `/tracks/databases/document-databases` | 2,000 orders as JSON documents: one-read order pages, queries into arrays with a multikey index, embed vs reference on a rename, the 16 MB limit, and schema validation | — |
 | `/tracks/databases/join-algorithms` | Step through nested loop, hash and merge joins on small tables and compare costs at scale | — |
 | `/tracks/networking/nat` | Packets leave three private devices, get rewritten by the router, and replies are mapped back | — |
 | `/tracks/operating-systems/virtual-memory` | Translate addresses through a TLB and page table, and trigger page faults that evict a page | — |
