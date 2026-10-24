@@ -206,6 +206,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/databases/window-functions` | Running totals, ranks and LAG over a sales table, with the partition and frame highlighted | — |
 | `/tracks/databases/lsm-trees` | Step through writes, flushes to SSTables, reads across files and compaction | — |
 | `/tracks/databases/write-ahead-log` | A committed transfer and a crash, with and without a write-ahead log and recovery | — |
+| `/tracks/databases/crash-recovery` | Pick a checkpoint, crash after any LSN, tear a page, and watch redo apply, skip or rebuild each record from full-page images; WAL volume against recovery time by checkpoint interval | — |
+| `/tracks/databases/backups-pitr` | An accidental DELETE at 10:42:31: a nightly dump vs a base backup plus archived WAL, a missing segment, recovery_target_time to the second, and restoring beside production | — |
+| `/tracks/databases/vacuum` | Twelve hours of updates on a 10-million-row table: dead rows, the autovacuum scale factor, an idle-in-transaction session that blocks cleanup, bloat, and VACUUM FULL | — |
+| `/tracks/databases/columnar-storage` | 100,000 orders stored as rows and as compressed column chunks: encodings per column, min/max skipping, and bytes read for analytics, a point lookup and an insert | — |
 | `/tracks/databases/read-replicas` | A user renames themselves and reloads: stale replicas, read-your-writes routing and waiting for catch-up | — |
 | `/tracks/databases/composite-indexes` | Run five WHERE clauses against an index on (country, city, age) and see which entries are read | — |
 | `/tracks/networking/routing` | Send packets to five destinations and see which routes match and which one wins | — |

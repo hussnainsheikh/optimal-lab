@@ -1315,6 +1315,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "ARIES", kind: "standard", note: "The classic recovery algorithm.", href: "https://cs.stanford.edu/people/chrismre/cs345/rl/aries.pdf" },
     ],
   },
+  "databases/crash-recovery": {
+    lead: "Every durable database checkpoints and replays a log; the knobs have different names.",
+    tools: [
+      { name: "WAL configuration", kind: "software", note: "Postgres checkpoints, checkpoint_timeout and max_wal_size.", href: "https://www.postgresql.org/docs/current/wal-configuration.html" },
+      { name: "full_page_writes", kind: "standard", note: "Why the first change after a checkpoint logs the whole page.", href: "https://www.postgresql.org/docs/current/runtime-config-wal.html" },
+      { name: "InnoDB redo log", kind: "software", note: "MySQL's redo log and fuzzy checkpoints.", href: "https://dev.mysql.com/doc/refman/8.4/en/innodb-redo-log.html" },
+      { name: "SQLite WAL mode", kind: "software", note: "Checkpoints moving the log back into the database file.", href: "https://www.sqlite.org/wal.html" },
+    ],
+  },
+  "databases/backups-pitr": {
+    lead: "Base backups and WAL archiving are usually run by a tool, not by hand.",
+    tools: [
+      { name: "Continuous archiving and PITR", kind: "software", note: "The Postgres docs for base backups, archive_command and recovery targets.", href: "https://www.postgresql.org/docs/current/continuous-archiving.html" },
+      { name: "pgBackRest", kind: "software", note: "Backups, WAL archiving, retention and restore for Postgres.", href: "https://github.com/pgbackrest/pgbackrest" },
+      { name: "WAL-G", kind: "software", note: "Archives base backups and WAL to S3, GCS or Azure.", href: "https://github.com/wal-g/wal-g" },
+      { name: "Barman", kind: "software", note: "Backup and recovery manager for Postgres fleets.", href: "https://github.com/EnterpriseDB/barman" },
+    ],
+  },
+  "databases/vacuum": {
+    lead: "Watch dead rows and the oldest snapshot; shrink tables online when you have to.",
+    tools: [
+      { name: "Routine vacuuming", kind: "software", note: "How Postgres vacuum, autovacuum and freezing work.", href: "https://www.postgresql.org/docs/current/routine-vacuuming.html" },
+      { name: "pg_repack", kind: "software", note: "Remove bloat without holding an exclusive lock.", href: "https://github.com/reorg/pg_repack" },
+      { name: "pgstattuple", kind: "software", note: "Measure dead tuples and free space in a table.", href: "https://www.postgresql.org/docs/current/pgstattuple.html" },
+      { name: "idle_in_transaction_session_timeout", kind: "standard", note: "End sessions that sit in an open transaction.", href: "https://www.postgresql.org/docs/current/runtime-config-client.html" },
+    ],
+  },
+  "databases/columnar-storage": {
+    lead: "Column stores and file formats built for analytics.",
+    tools: [
+      { name: "ClickHouse", kind: "software", note: "A column-oriented database for real-time analytics.", href: "https://github.com/ClickHouse/ClickHouse" },
+      { name: "DuckDB", kind: "software", note: "An in-process columnar database for analytics.", href: "https://github.com/duckdb/duckdb" },
+      { name: "Apache Parquet", kind: "standard", note: "A columnar file format with row groups, encodings and min/max statistics.", href: "https://parquet.apache.org/" },
+      { name: "BigQuery", kind: "service", note: "Google's serverless columnar data warehouse.", href: "https://cloud.google.com/bigquery" },
+    ],
+  },
   "databases/read-replicas": {
     lead: "Managed databases make replicas one click; lag is still yours.",
     tools: [

@@ -813,7 +813,8 @@ export const TRACKS: Track[] = [
         shape: { kind: "process", steps: 6, flow: "state" } },
       { id: "lsm-trees", title: "LSM trees", blurb: "Fast writes with memtables, SSTables and compaction.", status: "live", section: "storage-indexes",
         shape: { kind: "process", steps: 14, flow: "state" } },
-      { id: "columnar-storage", title: "Row vs columnar storage", blurb: "Why analytics databases store columns together.", status: "soon", section: "storage-indexes" },
+      { id: "columnar-storage", title: "Row vs columnar storage", blurb: "Why analytics databases store columns together.", status: "live", section: "storage-indexes",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Transactions and concurrency
       { id: "acid", title: "ACID in practice", blurb: "What each letter actually guarantees.", status: "soon", section: "db-transactions" },
       { id: "isolation-anomalies", title: "The lost update", blurb: "Two deposits at once and one disappears: four ways to stop it.", status: "live", section: "db-transactions",
@@ -826,9 +827,12 @@ export const TRACKS: Track[] = [
       // Durability and recovery
       { id: "write-ahead-log", title: "The write-ahead log", blurb: "Write the change to the log first, then to the table.", status: "live", section: "durability",
         shape: { kind: "comparison", steps: 4, flow: "pipeline" } },
-      { id: "crash-recovery", title: "Checkpoints and crash recovery", blurb: "Replay the log after a crash.", status: "soon", section: "durability" },
-      { id: "backups-pitr", title: "Backups and point-in-time recovery", blurb: "Restore the database to 10:42 this morning.", status: "soon", section: "durability" },
-      { id: "vacuum", title: "Vacuum and bloat", blurb: "Cleaning up dead row versions in Postgres.", status: "soon", section: "durability" },
+      { id: "crash-recovery", title: "Checkpoints and crash recovery", blurb: "Replay the log after a crash.", status: "live", section: "durability",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "backups-pitr", title: "Backups and point-in-time recovery", blurb: "Restore the database to 10:42 this morning.", status: "live", section: "durability",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "vacuum", title: "Vacuum and bloat", blurb: "Cleaning up dead row versions in Postgres.", status: "live", section: "durability",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Scaling a database
       { id: "connection-pooling", title: "Connection pooling", blurb: "Why 1,000 app servers can't each open 100 connections.", status: "live", section: "scaling-db",
         shape: { kind: "simulation", steps: 4, flow: "state" } },
