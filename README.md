@@ -438,7 +438,7 @@ links, and `/tracks` shows only the live ones plus a "+N topics coming" card. Sy
 systems, architecture, security, production, web applications, seven AI system design
 sections (LLM apps, RAG, agents, memory, evaluation, serving, security), specialized systems,
 and case studies (design a URL shortener, chat app, news feed, payment system, coding agent…).
-DevOps uses the same layout: 13 sections and 77 topics (36 live), from Linux, networking and Git
+DevOps uses the same layout: 13 sections and 77 topics, all live, from Linux, networking and Git
 through containers, CI/CD, Kubernetes, infrastructure as code, cloud, observability, SRE,
 DevSecOps and platform engineering, to end-to-end case studies.
 The four AI tracks are split by question so they don't repeat each other or System Design
