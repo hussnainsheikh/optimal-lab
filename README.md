@@ -444,8 +444,8 @@ DevSecOps and platform engineering, to end-to-end case studies.
 The four AI tracks are split by question so they don't repeat each other or System Design
 (which owns AI architecture: gateways, serving, RAG pipelines, memory, AI security):
 **AI Engineering** (53 topics, all live) covers how models work and the core techniques; **AI Native**
-(28, 6 live) covers AI features, AI UX and shipping them; **AI Automation** (28, 6 live) covers workflows with
-AI steps and people in the loop; **Tools** (27, 6 live) covers the actual tools: coding agents, MCP,
+(28, all live) covers AI features, AI UX and shipping them; **AI Automation** (28, all live) covers workflows with
+AI steps and people in the loop; **Tools** (27, all live) covers the actual tools: coding agents, MCP,
 workflow builders, model SDKs, vector databases and LLMOps.
 Five more tracks have their own topic maps, part live: **Frontend and the browser** (60
 topics, 33 live), **Databases in depth** (40, 21 live), **Networking** (37, 19 live), **Operating
