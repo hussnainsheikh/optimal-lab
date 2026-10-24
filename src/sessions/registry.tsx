@@ -180,6 +180,10 @@ import ClosuresDemo from "./frontend/closures/ClosuresDemo";
 import CascadeDemo from "./frontend/css-cascade/CascadeDemo";
 import StackingDemo from "./frontend/stacking-contexts/StackingDemo";
 import CodeSplittingDemo from "./frontend/code-splitting/CodeSplittingDemo";
+import StreamingSsrDemo from "./frontend/streaming-ssr/StreamingSsrDemo";
+import IslandsDemo from "./frontend/islands/IslandsDemo";
+import EdgeRenderingDemo from "./frontend/edge-rendering/EdgeRenderingDemo";
+import CriticalPathDemo from "./frontend/critical-path/CriticalPathDemo";
 import WindowFunctionsDemo from "./databases/window-functions/WindowFunctionsDemo";
 import LsmDemo from "./databases/lsm-trees/LsmDemo";
 import WalDemo from "./databases/write-ahead-log/WalDemo";
@@ -520,6 +524,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "frontend/css-cascade": <CascadeDemo />,
   "frontend/stacking-contexts": <StackingDemo />,
   "frontend/code-splitting": <CodeSplittingDemo />,
+  "frontend/streaming-ssr": <StreamingSsrDemo />,
+  "frontend/islands": <IslandsDemo />,
+  "frontend/edge-rendering": <EdgeRenderingDemo />,
+  "frontend/critical-path": <CriticalPathDemo />,
   "databases/window-functions": <WindowFunctionsDemo />,
   "databases/lsm-trees": <LsmDemo />,
   "databases/write-ahead-log": <WalDemo />,

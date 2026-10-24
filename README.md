@@ -223,6 +223,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/frontend/css-cascade` | Toggle seven competing rules and see which color wins and why | — |
 | `/tracks/frontend/stacking-contexts` | A z-index 9999 modal trapped under a z-index 10 header, rendered live, and the fixes | — |
 | `/tracks/frontend/code-splitting` | One bundle vs route splitting vs lazy heavy parts, and what a visitor downloads first | — |
+| `/tracks/frontend/streaming-ssr` | Send a product page buffered or as real HTTP chunks: the shell first, out-of-order parts, a buffering proxy, a blocking head script and a 404 decided too late | — |
+| `/tracks/frontend/islands` | A blog post as static HTML with five islands on load, idle, visible or no JS: bytes at load, a reader's scrolls and clicks, and progressive enhancement | — |
+| `/tracks/frontend/edge-rendering` | Render at the origin or the edge for visitors in six cities: round trips from real distances, sequential queries, replicated data and the edge runtime's limits | — |
+| `/tracks/frontend/critical-path` | An article's first visit with TCP slow start: inline critical CSS, an @import chain, a head script, a font origin, font-display and a high-priority hero, against FCP and LCP | — |
 | `/tracks/ai/overfitting` | Fit polynomials of degree 1 to 9 to noisy points and compare training and held-out error | — |
 | `/tracks/ai/neural-networks` | A hand-weighted two-layer network solves XOR; step the inputs and follow every sum | — |
 | `/tracks/ai/scaling-laws` | Pick a compute budget and see loss against model size, and where the optimum sits | — |
