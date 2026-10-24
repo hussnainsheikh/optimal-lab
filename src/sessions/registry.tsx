@@ -258,6 +258,10 @@ import BrowserLoopDemo from "./frontend/browser-event-loop/BrowserLoopDemo";
 import HydrationDemo from "./frontend/hydration/HydrationDemo";
 import LcpDemo from "./frontend/core-web-vitals/LcpDemo";
 import FlexboxDemo from "./frontend/flexbox/FlexboxDemo";
+import InfiniteFeedDemo from "./frontend/infinite-feed/InfiniteFeedDemo";
+import AutocompleteInputDemo from "./frontend/autocomplete-ui/AutocompleteInputDemo";
+import LiveDashboardDemo from "./frontend/live-dashboard/LiveDashboardDemo";
+import OfflineNotesDemo from "./frontend/offline-notes/OfflineNotesDemo";
 import ProbesDemo from "./devops/probes/ProbesDemo";
 import LimitsDemo from "./devops/resource-limits/LimitsDemo";
 import BloomDemo from "./system-design/bloom-filters/BloomDemo";
@@ -598,6 +602,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "frontend/hydration": <HydrationDemo />,
   "frontend/core-web-vitals": <LcpDemo />,
   "frontend/flexbox": <FlexboxDemo />,
+  "frontend/infinite-feed": <InfiniteFeedDemo />,
+  "frontend/autocomplete-ui": <AutocompleteInputDemo />,
+  "frontend/live-dashboard": <LiveDashboardDemo />,
+  "frontend/offline-notes": <OfflineNotesDemo />,
   "devops/probes": <ProbesDemo />,
   "devops/resource-limits": <LimitsDemo />,
   "system-design/bloom-filters": <BloomDemo />,

@@ -762,6 +762,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "MDN flexbox guide", kind: "standard", note: "Controlling ratios of flex items.", href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis" },
     ],
   },
+  "frontend/infinite-feed": {
+    lead: "Virtual lists, a sentinel to load more, and cursors that survive new posts.",
+    tools: [
+      { name: "TanStack Virtual", kind: "software", note: "Headless virtualization for long lists.", href: "https://github.com/TanStack/virtual" },
+      { name: "Intersection Observer", kind: "standard", note: "Know when the sentinel scrolls into view.", href: "https://w3c.github.io/IntersectionObserver/" },
+      { name: "Cursor connections", kind: "standard", note: "Relay's spec for cursor-based pagination.", href: "https://relay.dev/graphql/connections.htm" },
+      { name: "content-visibility", kind: "standard", note: "Let the browser skip rendering off-screen rows.", href: "https://www.w3.org/TR/css-contain-2/#content-visibility" },
+    ],
+  },
+  "frontend/autocomplete-ui": {
+    lead: "The accessible pattern, cancelling requests, and libraries that do both.",
+    tools: [
+      { name: "Combobox pattern", kind: "standard", note: "The ARIA Authoring Practices pattern for autocomplete.", href: "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/" },
+      { name: "AbortController", kind: "standard", note: "Cancel a fetch that's no longer wanted.", href: "https://dom.spec.whatwg.org/#interface-abortcontroller" },
+      { name: "Downshift", kind: "software", note: "Accessible combobox and select primitives.", href: "https://github.com/downshift-js/downshift" },
+      { name: "Algolia Autocomplete", kind: "software", note: "An autocomplete UI with sources and debouncing.", href: "https://github.com/algolia/autocomplete" },
+    ],
+  },
+  "frontend/live-dashboard": {
+    lead: "Sockets, visibility, and servers that help clients recover.",
+    tools: [
+      { name: "WebSockets", kind: "standard", note: "The WHATWG WebSocket API.", href: "https://websockets.spec.whatwg.org/" },
+      { name: "Page Visibility", kind: "standard", note: "visibilitychange and document.hidden.", href: "https://www.w3.org/TR/page-visibility/" },
+      { name: "Centrifugo", kind: "software", note: "A real-time server with history to recover missed messages.", href: "https://github.com/centrifugal/centrifugo" },
+      { name: "Backoff and jitter", kind: "standard", note: "Why retries need randomness.", href: "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/" },
+    ],
+  },
+  "frontend/offline-notes": {
+    lead: "Local storage that lasts, and sync that merges.",
+    tools: [
+      { name: "IndexedDB", kind: "standard", note: "Asynchronous, structured storage in the browser.", href: "https://www.w3.org/TR/IndexedDB/" },
+      { name: "Storage Standard", kind: "standard", note: "Quotas, eviction and navigator.storage.persist().", href: "https://storage.spec.whatwg.org/" },
+      { name: "Background Sync", kind: "standard", note: "Let a service worker send the outbox when the connection returns.", href: "https://wicg.github.io/background-sync/spec/" },
+      { name: "Automerge", kind: "software", note: "CRDTs that merge edits from any number of devices.", href: "https://github.com/automerge/automerge" },
+    ],
+  },
   "devops/probes": {
     lead: "Probes are how Kubernetes decides to route to or restart a container.",
     tools: [
