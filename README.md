@@ -128,6 +128,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/distributed-locks` | A GC pause outlives a lock's lease and two clients write; a fencing token makes storage reject the stale one | — |
 | `/tracks/databases/mvcc` | Row versions with xmin/xmax: a reader keeps its snapshot while a writer commits, then VACUUM cleans up | — |
 | `/tracks/databases/isolation-anomalies` | Two deposits at once: read-then-write loses one; FOR UPDATE, SERIALIZABLE (with retry) and an atomic UPDATE don't | — |
+| `/tracks/databases/acid` | Move $100 from Alice to Bob, then crash mid-transfer, overdraw past a CHECK, run a report during it at three isolation levels, and cut the power after COMMIT | — |
+| `/tracks/databases/row-locks` | Three transactions want one row: Postgres's four row-lock modes and their conflicts, a lock queue timeline, NOWAIT and lock_timeout, and SKIP LOCKED for a jobs table | — |
+| `/tracks/databases/db-deadlocks` | Two transfers in opposite order, a ring of three and a share-then-update: the wait-for graph, deadlock_timeout, the 40P01 victim, retries, and lock ordering | — |
+| `/tracks/databases/optimistic-locking` | Two people edit one product: no check loses a change, a version column turns it into a conflict, FOR UPDATE makes one wait; then retries vs lock waits under contention | — |
 | `/tracks/networking/dns-resolution` | Resolve a name cold (browser, OS, resolver, root, TLD, authoritative: 103 ms) or warm (8 ms) | — |
 | `/tracks/networking/congestion-control` | The congestion window per round trip: slow start, additive increase, and Reno vs Tahoe after a loss | — |
 | `/tracks/operating-systems/deadlocks` | Two threads take two locks in opposite order and hang; one global lock order prevents it | — |

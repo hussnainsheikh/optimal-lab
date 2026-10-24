@@ -269,6 +269,10 @@ import PromptVersioningDemo from "./system-design/prompt-versioning/PromptVersio
 import SemanticCachingDemo from "./system-design/semantic-caching/SemanticCachingDemo";
 import MvccDemo from "./databases/mvcc/MvccDemo";
 import LostUpdateDemo from "./databases/isolation-anomalies/LostUpdateDemo";
+import AcidDemo from "./databases/acid/AcidDemo";
+import RowLocksDemo from "./databases/row-locks/RowLocksDemo";
+import DbDeadlocksDemo from "./databases/db-deadlocks/DbDeadlocksDemo";
+import OptimisticLockingDemo from "./databases/optimistic-locking/OptimisticLockingDemo";
 import DnsDemo from "./networking/dns-resolution/DnsDemo";
 import CongestionDemo from "./networking/congestion-control/CongestionDemo";
 import DeadlockDemo from "./operating-systems/deadlocks/DeadlockDemo";
@@ -609,6 +613,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/semantic-caching": <SemanticCachingDemo />,
   "databases/mvcc": <MvccDemo />,
   "databases/isolation-anomalies": <LostUpdateDemo />,
+  "databases/acid": <AcidDemo />,
+  "databases/row-locks": <RowLocksDemo />,
+  "databases/db-deadlocks": <DbDeadlocksDemo />,
+  "databases/optimistic-locking": <OptimisticLockingDemo />,
   "networking/dns-resolution": <DnsDemo />,
   "networking/congestion-control": <CongestionDemo />,
   "operating-systems/deadlocks": <DeadlockDemo />,
