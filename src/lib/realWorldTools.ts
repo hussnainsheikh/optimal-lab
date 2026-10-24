@@ -1144,6 +1144,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Firefox grid inspector", kind: "software", note: "Overlay grid lines in devtools.", href: "https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_grid_layouts/" },
     ],
   },
+  "frontend/bundlers": {
+    lead: "Dev servers and production bundlers.",
+    tools: [
+      { name: "Vite", kind: "software", note: "An ESM dev server with esbuild and a Rollup-style build.", href: "https://github.com/vitejs/vite" },
+      { name: "webpack", kind: "software", note: "The long-standing configurable bundler.", href: "https://github.com/webpack/webpack" },
+      { name: "esbuild", kind: "software", note: "A very fast bundler and transformer written in Go.", href: "https://github.com/evanw/esbuild" },
+      { name: "Rolldown", kind: "software", note: "A Rust bundler with Rollup's API, built for Vite.", href: "https://github.com/rolldown/rolldown" },
+    ],
+  },
+  "frontend/typescript-frontend": {
+    lead: "Types in your code, and contracts for the data that crosses the network.",
+    tools: [
+      { name: "TypeScript", kind: "software", note: "The compiler and the language.", href: "https://github.com/microsoft/TypeScript" },
+      { name: "OpenAPI", kind: "standard", note: "A machine-readable description of an HTTP API.", href: "https://www.openapis.org/" },
+      { name: "openapi-typescript", kind: "software", note: "Generate TypeScript types from an OpenAPI spec.", href: "https://github.com/openapi-ts/openapi-typescript" },
+      { name: "Standard Schema", kind: "standard", note: "One interface for runtime validation libraries.", href: "https://github.com/standard-schema/standard-schema" },
+    ],
+  },
+  "frontend/frontend-testing": {
+    lead: "A runner for each level, and a way to fake the network.",
+    tools: [
+      { name: "Vitest", kind: "software", note: "Fast unit and component tests.", href: "https://github.com/vitest-dev/vitest" },
+      { name: "Testing Library", kind: "software", note: "Query the DOM the way people use the page.", href: "https://github.com/testing-library/dom-testing-library" },
+      { name: "Playwright", kind: "software", note: "End-to-end tests in real browsers and device sizes.", href: "https://github.com/microsoft/playwright" },
+      { name: "Mock Service Worker", kind: "software", note: "Mock the API at the network level.", href: "https://github.com/mswjs/msw" },
+    ],
+  },
+  "frontend/design-systems": {
+    lead: "Tokens, components and releases.",
+    tools: [
+      { name: "Design Tokens format", kind: "standard", note: "The W3C community group's token file format.", href: "https://tr.designtokens.org/format/" },
+      { name: "Style Dictionary", kind: "software", note: "Turn tokens into CSS, iOS and Android values.", href: "https://github.com/style-dictionary/style-dictionary" },
+      { name: "Storybook", kind: "software", note: "Build and document components in isolation.", href: "https://github.com/storybookjs/storybook" },
+      { name: "Changesets", kind: "software", note: "Version and changelog a package's releases.", href: "https://github.com/changesets/changesets" },
+    ],
+  },
   "frontend/promises-async": {
     lead: "async/await is built into every JavaScript runtime.",
     tools: [

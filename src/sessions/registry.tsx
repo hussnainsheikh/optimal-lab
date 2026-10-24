@@ -218,6 +218,10 @@ import JoinDemo from "./databases/join-algorithms/JoinDemo";
 import NatDemo from "./networking/nat/NatDemo";
 import VirtualMemoryDemo from "./operating-systems/virtual-memory/VirtualMemoryDemo";
 import CssGridDemo from "./frontend/css-grid/CssGridDemo";
+import BundlersDemo from "./frontend/bundlers/BundlersDemo";
+import TypeScriptDemo from "./frontend/typescript-frontend/TypeScriptDemo";
+import TestingDemo from "./frontend/frontend-testing/TestingDemo";
+import DesignSystemsDemo from "./frontend/design-systems/DesignSystemsDemo";
 import AsyncAwaitDemo from "./frontend/promises-async/AsyncAwaitDemo";
 import SignatureDemo from "./security/digital-signatures/SignatureDemo";
 import HeapDemo from "./dsa/heap-top-k/HeapDemo";
@@ -558,6 +562,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "networking/nat": <NatDemo />,
   "operating-systems/virtual-memory": <VirtualMemoryDemo />,
   "frontend/css-grid": <CssGridDemo />,
+  "frontend/bundlers": <BundlersDemo />,
+  "frontend/typescript-frontend": <TypeScriptDemo />,
+  "frontend/frontend-testing": <TestingDemo />,
+  "frontend/design-systems": <DesignSystemsDemo />,
   "frontend/promises-async": <AsyncAwaitDemo />,
   "security/digital-signatures": <SignatureDemo />,
   "dsa/heap-top-k": <HeapDemo />,
