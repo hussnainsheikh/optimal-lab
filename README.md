@@ -258,6 +258,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/system-design/chaos-engineering` | Inject a fault into part of the traffic with an abort rule, find three weak spots, fix them and rerun | — |
 | `/tracks/system-design/incident-response` | A bad deploy at 14:00: alerting, paging, a commander, rollback and a status page each cut the timeline; then the postmortem | — |
 | `/tracks/databases/table-partitioning` | Queries and retention on a 120M-row table, as one table and partitioned by month | — |
+| `/tracks/databases/wide-column` | A chat app's messages on a six-node Murmur3 token ring: partition by channel or channel and day, queries the partition key allows, a table per query, and consistency levels with replicas down | — |
+| `/tracks/databases/graph-databases` | A 3,000-person social graph: friends-of-friends in Cypher and SQL, hops walked vs index probes, a celebrity supernode, and shortest paths searched from one or both ends | — |
+| `/tracks/databases/inverted-index` | 3,000 support tickets analyzed into posting lists: AND queries by walking or leapfrogging lists, gap-and-varint compression, and segments, deletes and merges | — |
+| `/tracks/databases/hnsw` | A real HNSW index over 800 points: random layers, greedy descent, a layer-0 beam, recall@10 against brute force by M and efSearch, and memory per vector | — |
 | `/tracks/system-design/scaling` | Raise traffic and compare one bigger machine with many small ones on cost, limits and failure | — |
 | `/tracks/system-design/latency-throughput` | Increase traffic towards capacity and watch latency stay flat, then explode | — |
 | `/tracks/system-design/top-k` | Hash words into a 3×8 count-min sketch and see why the minimum counter is the best estimate | — |
