@@ -137,6 +137,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/security/csrf` | A malicious page submits a form to your bank; try each defense and see which request gets through | — |
 | `/tracks/security/sql-injection` | Type a login payload and compare string concatenation with a parameterized query | — |
 | `/tracks/frontend/rendering-pipeline` | Change width, color or transform and see which of style, layout, paint and composite each one runs | — |
+| `/tracks/frontend/dom-parsing` | Parse four pages with a real tokenizer and tree builder: implied tags, misnested tags reopened, a tbody added, and how classic, defer, async and module scripts pause the parser | — |
+| `/tracks/frontend/reflow-repaint` | Write sizes, colours or transforms on 100 cards in three loop shapes: forced layouts counted through the browser's dirty flags, then measured for real in your browser | — |
+| `/tracks/frontend/js-garbage-collection` | Open and close a photo viewer: mark its object graph from the roots, follow the retainer path that keeps it alive, and fix listeners, timers, a cache and a stray variable | — |
+| `/tracks/frontend/modules-bundling` | Load a module graph natively (round trip per level, modulepreload) or bundle it: tree-shaking ESM vs CommonJS, the sideEffects field, and import() chunks | — |
 | `/tracks/frontend/browser-event-loop` | Step through sync code, a promise and a setTimeout to see why the output is A E C D B | — |
 | `/tracks/frontend/hydration` | Compare client rendering, server rendering and islands: when content appears and when it can be clicked | — |
 | `/tracks/frontend/core-web-vitals` | Toggle a CDN, deferred scripts, a preload and image compression and watch LCP drop below 2.5 s | — |

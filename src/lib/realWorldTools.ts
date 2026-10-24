@@ -730,6 +730,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Firefox Profiler", kind: "software", note: "Frame-by-frame timing in Firefox.", href: "https://profiler.firefox.com/" },
     ],
   },
+  "frontend/dom-parsing": {
+    lead: "The HTML standard defines exactly how every broken page is parsed.",
+    tools: [
+      { name: "HTML parsing spec", kind: "standard", note: "The WHATWG tokenizer and tree construction rules.", href: "https://html.spec.whatwg.org/multipage/parsing.html" },
+      { name: "html5lib-tests", kind: "software", note: "The shared test suite browsers and parsers check against.", href: "https://github.com/html5lib/html5lib-tests" },
+      { name: "Nu Html Checker", kind: "software", note: "The W3C validator that reports what the parser had to fix.", href: "https://github.com/validator/validator" },
+      { name: "Chrome DevTools Elements", kind: "software", note: "The DOM the parser actually built.", href: "https://developer.chrome.com/docs/devtools/dom" },
+    ],
+  },
+  "frontend/reflow-repaint": {
+    lead: "Find forced layouts in a trace and keep reads and writes apart.",
+    tools: [
+      { name: "Chrome DevTools Performance", kind: "software", note: "Flags forced reflows in purple with the line that caused them.", href: "https://developer.chrome.com/docs/devtools/performance" },
+      { name: "What forces layout", kind: "standard", note: "Paul Irish's list of properties and methods that force layout.", href: "https://gist.github.com/paulirish/5d52fb081b3570c81e3a" },
+      { name: "CSS Containment", kind: "standard", note: "contain and content-visibility limit how much is laid out.", href: "https://www.w3.org/TR/css-contain-2/" },
+      { name: "Firefox Profiler", kind: "software", note: "Style and layout markers in Firefox.", href: "https://profiler.firefox.com/" },
+    ],
+  },
+  "frontend/js-garbage-collection": {
+    lead: "Heap snapshots show what's alive and the chain keeping it there.",
+    tools: [
+      { name: "Chrome DevTools Memory", kind: "software", note: "Heap snapshots, retainers and detached DOM nodes.", href: "https://developer.chrome.com/docs/devtools/memory-problems" },
+      { name: "MemLab", kind: "software", note: "Finds leaks by comparing snapshots in automated runs.", href: "https://github.com/facebook/memlab" },
+      { name: "V8", kind: "software", note: "The engine whose generational collector is modelled here.", href: "https://v8.dev/blog/trash-talk" },
+      { name: "WeakRefs", kind: "standard", note: "WeakRef and FinalizationRegistry in JavaScript.", href: "https://github.com/tc39/proposal-weakrefs" },
+    ],
+  },
+  "frontend/modules-bundling": {
+    lead: "ES modules in the browser, and the bundlers that shake them.",
+    tools: [
+      { name: "Rollup", kind: "software", note: "The bundler that made tree shaking common.", href: "https://github.com/rollup/rollup" },
+      { name: "Import maps", kind: "standard", note: "Map bare specifiers like \"lodash-es\" to URLs in the browser.", href: "https://html.spec.whatwg.org/multipage/webappapis.html#import-maps" },
+      { name: "modulepreload", kind: "standard", note: "Fetch a module and its imports before they're discovered.", href: "https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload" },
+      { name: "Bundlephobia", kind: "service", note: "A package's size and whether it can be tree-shaken.", href: "https://bundlephobia.com/" },
+    ],
+  },
   "frontend/browser-event-loop": {
     lead: "Every browser follows the same HTML event loop spec.",
     tools: [
