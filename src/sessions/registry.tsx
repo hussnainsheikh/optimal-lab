@@ -340,6 +340,10 @@ import StatisticsDemo from "./databases/statistics/StatisticsDemo";
 import QueryTuningDemo from "./databases/query-tuning/QueryTuningDemo";
 import PagesHeapDemo from "./databases/pages-heap/PagesHeapDemo";
 import OtherIndexesDemo from "./databases/other-indexes/OtherIndexesDemo";
+import MigrationsPracticeDemo from "./databases/migrations-practice/MigrationsPracticeDemo";
+import SlowQueriesDemo from "./databases/slow-queries/SlowQueriesDemo";
+import OrmPitfallsDemo from "./databases/orm-pitfalls/OrmPitfallsDemo";
+import DbSecurityDemo from "./databases/db-security/DbSecurityDemo";
 import NetworkLayersDemo from "./networking/network-layers/NetworkLayersDemo";
 import PacketsDemo from "./networking/packets/PacketsDemo";
 import IpAddressesDemo from "./networking/ip-addresses/IpAddressesDemo";
@@ -708,6 +712,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "databases/query-tuning": <QueryTuningDemo />,
   "databases/pages-heap": <PagesHeapDemo />,
   "databases/other-indexes": <OtherIndexesDemo />,
+  "databases/migrations-practice": <MigrationsPracticeDemo />,
+  "databases/slow-queries": <SlowQueriesDemo />,
+  "databases/orm-pitfalls": <OrmPitfallsDemo />,
+  "databases/db-security": <DbSecurityDemo />,
   "networking/network-layers": <NetworkLayersDemo />,
   "networking/packets": <PacketsDemo />,
   "networking/ip-addresses": <IpAddressesDemo />,

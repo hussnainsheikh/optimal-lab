@@ -397,6 +397,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/databases/query-tuning` | Fix a 410 ms query one change at a time and watch pages read fall from 64,103 to 3 | — |
 | `/tracks/databases/pages-heap` | Insert, update, delete and vacuum rows on one 8 KB page and watch the bytes move | — |
 | `/tracks/databases/other-indexes` | Pick a query and an index type (B-tree, Hash, GIN, GiST) and see whether the index can answer it | — |
+| `/tracks/databases/migrations-practice` | Six schema changes on a table taking 100 queries a second: the lock each takes, the queue behind a waiting ALTER, lock_timeout with retries, NOT VALID and CONCURRENTLY, and batched backfills | — |
+| `/tracks/databases/slow-queries` | An hour of 60,000 queries normalized like pg_stat_statements: rank by total, mean or calls, what a slow-query log threshold catches, EXPLAIN plans, and fixes measured | — |
+| `/tracks/databases/orm-pitfalls` | One page of 20 posts through lazy loading, one big JOIN and one query per relation: the SQL sent, N+1 round trips, row explosion, network distance and SELECT * | — |
+| `/tracks/databases/db-security` | A multi-tenant invoicing app connected as superuser, owner or a narrow role: six attacks against grants, row-level security, column grants, an append-only audit log, TLS and IAM tokens | — |
 | `/tracks/networking/network-layers` | Pick a task (web, DNS, video call, email) and send it down the 5 layers; pick a symptom to see which layer is broken | — |
 | `/tracks/networking/packets` | Follow one HTTPS packet laptop → 2 routers → server, watching headers added, rewritten (MAC, TTL) and removed | — |
 | `/tracks/networking/ip-addresses` | Pick a mask and a destination, AND both addresses bit by bit, and see whether the packet goes direct or via the router | — |
