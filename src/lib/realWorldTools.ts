@@ -1419,6 +1419,51 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "React events", kind: "software", note: "React delegates to the root.", href: "https://react.dev/learn/responding-to-events#event-propagation" },
     ],
   },
+  "frontend/pwa": {
+    lead: "The manifest, the worker and the libraries that write caching strategies for you.",
+    tools: [
+      { name: "Web App Manifest", kind: "standard", note: "Name, icons, start URL and display mode.", href: "https://www.w3.org/TR/appmanifest/" },
+      { name: "Service Workers", kind: "standard", note: "The script between the page and the network.", href: "https://www.w3.org/TR/service-workers/" },
+      { name: "Workbox", kind: "software", note: "Caching strategies and precaching for service workers.", href: "https://github.com/GoogleChrome/workbox" },
+      { name: "Push API", kind: "standard", note: "Messages from a server, even when the page is closed.", href: "https://www.w3.org/TR/push-api/" },
+    ],
+  },
+  "frontend/web-components": {
+    lead: "The platform APIs, and libraries that make them pleasant.",
+    tools: [
+      { name: "Custom elements", kind: "standard", note: "The HTML standard's custom element definitions.", href: "https://html.spec.whatwg.org/multipage/custom-elements.html" },
+      { name: "Lit", kind: "software", note: "A small base class for fast web components.", href: "https://github.com/lit/lit" },
+      { name: "Shoelace", kind: "software", note: "A component library built as web components.", href: "https://github.com/shoelace-style/shoelace" },
+      { name: "Custom Elements Manifest", kind: "standard", note: "Describe your elements for tools and docs.", href: "https://github.com/webcomponents/custom-elements-manifest" },
+    ],
+  },
+  "frontend/accessibility-tree": {
+    lead: "See the tree your page produces, and listen to it.",
+    tools: [
+      { name: "Chrome DevTools Accessibility pane", kind: "software", note: "The full accessibility tree for any element.", href: "https://developer.chrome.com/docs/devtools/accessibility/reference" },
+      { name: "HTML-AAM", kind: "standard", note: "How each HTML element maps to a role.", href: "https://www.w3.org/TR/html-aam-1.0/" },
+      { name: "Accessible Name computation", kind: "standard", note: "The order names are looked for.", href: "https://www.w3.org/TR/accname-1.2/" },
+      { name: "NVDA", kind: "software", note: "A free screen reader for Windows.", href: "https://www.nvaccess.org/" },
+    ],
+  },
+  "frontend/aria": {
+    lead: "Patterns that work, and checks that find what they can.",
+    tools: [
+      { name: "ARIA Authoring Practices", kind: "standard", note: "Tested patterns for common widgets.", href: "https://www.w3.org/WAI/ARIA/apg/" },
+      { name: "Using ARIA", kind: "standard", note: "The rules of ARIA, starting with: use native HTML.", href: "https://www.w3.org/TR/using-aria/" },
+      { name: "axe-core", kind: "software", note: "Automated accessibility rules for the browser and CI.", href: "https://github.com/dequelabs/axe-core" },
+      { name: "WAI-ARIA 1.2", kind: "standard", note: "Roles, states and properties.", href: "https://www.w3.org/TR/wai-aria-1.2/" },
+    ],
+  },
+  "frontend/contrast-motion": {
+    lead: "Check contrast while designing, and emulate what others see.",
+    tools: [
+      { name: "WCAG 2.2", kind: "standard", note: "Contrast minimums, non-text contrast and pause, stop, hide.", href: "https://www.w3.org/TR/WCAG22/" },
+      { name: "WebAIM Contrast Checker", kind: "service", note: "Check any two colours against WCAG.", href: "https://webaim.org/resources/contrastchecker/" },
+      { name: "prefers-reduced-motion", kind: "standard", note: "The media query for the OS setting.", href: "https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion" },
+      { name: "Chrome DevTools rendering emulation", kind: "software", note: "Emulate vision deficiencies and reduced motion.", href: "https://developer.chrome.com/docs/devtools/rendering/emulate-css" },
+    ],
+  },
   "frontend/closures": {
     lead: "Closures are everywhere in JavaScript: callbacks, hooks, modules.",
     tools: [
