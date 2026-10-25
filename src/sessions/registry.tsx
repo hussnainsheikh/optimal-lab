@@ -351,6 +351,10 @@ import TcpVsUdpDemo from "./networking/tcp-vs-udp/TcpVsUdpDemo";
 import BgpDemo from "./networking/bgp/BgpDemo";
 import AnycastDemo from "./networking/anycast/AnycastDemo";
 import CpuCycleDemo from "./operating-systems/cpu-cycle/CpuCycleDemo";
+import FileSystemsDemo from "./operating-systems/file-systems/FileSystemsDemo";
+import FileDescriptorsDemo from "./operating-systems/file-descriptors/FileDescriptorsDemo";
+import PageCacheDemo from "./operating-systems/page-cache/PageCacheDemo";
+import FsyncDemo from "./operating-systems/fsync/FsyncDemo";
 import BinaryNumbersDemo from "./operating-systems/binary-numbers/BinaryNumbersDemo";
 import SystemCallsDemo from "./operating-systems/system-calls/SystemCallsDemo";
 import ProcessesDemo from "./operating-systems/processes-os/ProcessesDemo";
@@ -719,6 +723,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "networking/bgp": <BgpDemo />,
   "networking/anycast": <AnycastDemo />,
   "operating-systems/cpu-cycle": <CpuCycleDemo />,
+  "operating-systems/file-systems": <FileSystemsDemo />,
+  "operating-systems/file-descriptors": <FileDescriptorsDemo />,
+  "operating-systems/page-cache": <PageCacheDemo />,
+  "operating-systems/fsync": <FsyncDemo />,
   "operating-systems/binary-numbers": <BinaryNumbersDemo />,
   "operating-systems/system-calls": <SystemCallsDemo />,
   "operating-systems/processes-os": <ProcessesDemo />,

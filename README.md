@@ -408,6 +408,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/networking/bgp` | Announce a prefix across 6 networks, then cut a link, hijack it or announce /25s, and turn on RPKI to block it | — |
 | `/tracks/networking/anycast` | Pick a user city and take sites down; see which of 3 anycast sites answers and the round trip vs one server | — |
 | `/tracks/operating-systems/cpu-cycle` | Step a toy CPU through fetch, decode, execute and write back while it sums n…1; change n | — |
+| `/tracks/operating-systems/file-systems` | A tiny ext2-style file system: walk a path counting disk reads, read an inode (no name in it), follow direct and indirect blocks, hard-link, delete, move and break a symlink, then the largest file and running out of inodes | — |
+| `/tracks/operating-systems/file-descriptors` | Step through fd tables, open file descriptions and files for > out 2>&1 vs 2>&1 > out, fork sharing an offset vs two open() calls clobbering, a leak to EMFILE, and a key file inherited through exec without O_CLOEXEC | — |
+| `/tracks/operating-systems/page-cache` | Write 0.5 to 8 GB to a hard disk, SATA or NVMe SSD: write() returning at memory speed, dirty pages at risk from a power cut, background writeback at 10% or after 30 s, throttling at 20%, and warm reads | — |
+| `/tracks/operating-systems/fsync` | Save a config file four ways and cut the power at six moments: zero-length files from overwrite and rename without fsync, a torn file mid-fsync, the temp + fsync + rename + fsync(dir) dance, and group commit by drive | — |
 | `/tracks/operating-systems/binary-numbers` | Flip 8 bits, read them signed and unsigned, overflow with +1, and see the exact stored value of 0.1, 0.2 and 0.1 + 0.2 | — |
 | `/tracks/operating-systems/system-calls` | Follow write, open, a missing file or getpid through libc, the kernel and the device; try libc buffer sizes | — |
 | `/tracks/operating-systems/processes-os` | Send a process events (dispatch, read, open, malloc, exit, wait) and watch its state, memory and open files change | — |
