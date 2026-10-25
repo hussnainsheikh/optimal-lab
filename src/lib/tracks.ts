@@ -926,8 +926,10 @@ export const TRACKS: Track[] = [
       { id: "edge-networks", title: "CDNs and edge networks", blurb: "Move content closer to cut round trips.", status: "soon", section: "net-performance" },
       { id: "wireless", title: "Wi-Fi and mobile networks", blurb: "Radio, signal loss and why mobile latency jumps around.", status: "soon", section: "net-performance" },
       // Network security
-      { id: "firewalls", title: "Firewalls", blurb: "Allow and deny rules, stateful and stateless.", status: "soon", section: "net-security" },
-      { id: "vpns", title: "VPNs and tunnels", blurb: "Wrap traffic inside an encrypted tunnel.", status: "soon", section: "net-security" },
+      { id: "firewalls", title: "Firewalls", blurb: "Allow and deny rules, stateful and stateless.", status: "live", section: "net-security",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "vpns", title: "VPNs and tunnels", blurb: "Wrap traffic inside an encrypted tunnel.", status: "live", section: "net-security",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       { id: "ddos-attacks", title: "DDoS attacks", blurb: "Floods at different layers, and how they're absorbed.", status: "soon", section: "net-security" },
       { id: "mitm", title: "Man-in-the-middle attacks", blurb: "Intercepting traffic, and how TLS stops it.", status: "soon", section: "net-security" },
       // Debugging networks

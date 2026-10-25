@@ -1128,6 +1128,24 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "STUN (RFC 8489)", kind: "protocol", note: "Lets peers discover their public address.", href: "https://www.rfc-editor.org/rfc/rfc8489" },
     ],
   },
+  "networking/firewalls": {
+    lead: "Firewalls and the connection tables behind them.",
+    tools: [
+      { name: "nftables", kind: "software", note: "The Linux packet filter, with ct state matching and notrack.", href: "https://netfilter.org/projects/nftables/" },
+      { name: "conntrack-tools", kind: "software", note: "List, watch and tune Linux's connection-tracking table.", href: "https://conntrack-tools.netfilter.org/" },
+      { name: "AWS security groups", kind: "service", note: "Stateful rules per instance, with tracked-connection timeouts.", href: "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html" },
+      { name: "pf", kind: "software", note: "The BSD packet filter: stateful by default with keep state.", href: "https://www.openbsd.org/faq/pf/" },
+    ],
+  },
+  "networking/vpns": {
+    lead: "Tunnel protocols and the software that runs them.",
+    tools: [
+      { name: "WireGuard", kind: "software", note: "A small, modern VPN in the Linux kernel and on every platform.", href: "https://www.wireguard.com/" },
+      { name: "strongSwan", kind: "software", note: "An IPsec implementation for site-to-site and remote-access VPNs.", href: "https://github.com/strongswan/strongswan" },
+      { name: "Tailscale", kind: "service", note: "A mesh of WireGuard tunnels with identity-based access.", href: "https://tailscale.com/" },
+      { name: "IPsec ESP (RFC 4303)", kind: "protocol", note: "The encapsulation IPsec tunnels use, with its header and trailer.", href: "https://www.rfc-editor.org/rfc/rfc4303" },
+    ],
+  },
   "operating-systems/virtual-memory": {
     lead: "Every modern OS and CPU translates addresses this way.",
     tools: [

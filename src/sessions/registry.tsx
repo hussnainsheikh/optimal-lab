@@ -216,6 +216,8 @@ import DurableExecutionDemo from "./system-design/durable-execution/DurableExecu
 import PoolDemo from "./databases/connection-pooling/PoolDemo";
 import JoinDemo from "./databases/join-algorithms/JoinDemo";
 import NatDemo from "./networking/nat/NatDemo";
+import FirewallsDemo from "./networking/firewalls/FirewallsDemo";
+import VpnDemo from "./networking/vpns/VpnDemo";
 import VirtualMemoryDemo from "./operating-systems/virtual-memory/VirtualMemoryDemo";
 import CssGridDemo from "./frontend/css-grid/CssGridDemo";
 import AsyncAwaitDemo from "./frontend/promises-async/AsyncAwaitDemo";
@@ -556,6 +558,8 @@ const SESSIONS: Record<string, ReactNode> = {
   "databases/connection-pooling": <PoolDemo />,
   "databases/join-algorithms": <JoinDemo />,
   "networking/nat": <NatDemo />,
+  "networking/firewalls": <FirewallsDemo />,
+  "networking/vpns": <VpnDemo />,
   "operating-systems/virtual-memory": <VirtualMemoryDemo />,
   "frontend/css-grid": <CssGridDemo />,
   "frontend/promises-async": <AsyncAwaitDemo />,
