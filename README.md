@@ -411,6 +411,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/operating-systems/binary-numbers` | Flip 8 bits, read them signed and unsigned, overflow with +1, and see the exact stored value of 0.1, 0.2 and 0.1 + 0.2 | — |
 | `/tracks/operating-systems/system-calls` | Follow write, open, a missing file or getpid through libc, the kernel and the device; try libc buffer sizes | — |
 | `/tracks/operating-systems/processes-os` | Send a process events (dispatch, read, open, malloc, exit, wait) and watch its state, memory and open files change | — |
+| `/tracks/operating-systems/blocking-io` | One server thread, four connections arriving at different times: blocking reads, non-blocking polling, epoll readiness and io_uring completions, with each request's wait, syscalls, CPU spent spinning and why file reads still block | — |
+| `/tracks/operating-systems/async-vs-threads` | Grow from 100 to a million mostly idle connections under a thread each, an async event loop and green threads: memory against 16 GB, switching cost per message, and one 200 ms handler stalling a cooperative loop | — |
+| `/tracks/operating-systems/concurrency-vs-parallelism` | Schedule four tasks on 1, 2 or 4 cores, with and without switching on waits, as a per-core Gantt chart; then Amdahl's law caps the speedup by the serial share | — |
+| `/tracks/operating-systems/actors-channels` | Two producers send orders to one inventory process through an actor mailbox, an unbuffered channel and a buffered one: where the backlog waits, a crash with and without a supervisor, and a two-channel deadlock | — |
 | `/tracks/operating-systems/threads` | Set threads and cores, see shared vs private memory, and play how 800 ms of work splits across cores | — |
 | `/tracks/operating-systems/context-switching` | Run one switch, toggle same-process vs other-process, and change the time slice to see the overhead | — |
 | `/tracks/operating-systems/fork-exec` | Run ls, ls > out.txt, sleep 5 & or a typo through fork, dup2, exec and waitpid; drag copy-on-write pages | — |

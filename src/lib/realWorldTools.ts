@@ -3102,6 +3102,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "procps-ng", kind: "software", note: "ps, top and vmstat.", href: "https://gitlab.com/procps-ng/procps" },
     ],
   },
+  "operating-systems/blocking-io": {
+    lead: "The kernel interfaces for waiting on I/O.",
+    tools: [
+      { name: "epoll", kind: "software", note: "Linux readiness notification: one call waits on thousands of sockets.", href: "https://man7.org/linux/man-pages/man7/epoll.7.html" },
+      { name: "io_uring", kind: "software", note: "Linux completion-based I/O through shared rings, files included.", href: "https://github.com/axboe/liburing" },
+      { name: "kqueue", kind: "software", note: "The BSD and macOS equivalent of epoll, for sockets, files and timers.", href: "https://man.freebsd.org/cgi/man.cgi?query=kqueue" },
+      { name: "libuv", kind: "software", note: "Wraps epoll, kqueue and IOCP, and sends file I/O to a thread pool.", href: "https://github.com/libuv/libuv" },
+    ],
+  },
+  "operating-systems/async-vs-threads": {
+    lead: "Servers built on each model.",
+    tools: [
+      { name: "NGINX", kind: "software", note: "One event loop per worker process, tens of thousands of connections each.", href: "https://nginx.org/" },
+      { name: "HAProxy", kind: "software", note: "An event-driven proxy: a few threads, each running its own loop.", href: "https://www.haproxy.org/" },
+      { name: "Apache HTTP Server", kind: "software", note: "Thread- and process-per-connection MPMs, and an event MPM for idle keep-alives.", href: "https://httpd.apache.org/" },
+      { name: "libuv", kind: "software", note: "The event loop library under Node.js and other async runtimes.", href: "https://github.com/libuv/libuv" },
+    ],
+  },
+  "operating-systems/concurrency-vs-parallelism": {
+    lead: "Tools for running work concurrently and in parallel.",
+    tools: [
+      { name: "Linux scheduler (EEVDF)", kind: "software", note: "Decides which runnable thread gets each core, and when to switch.", href: "https://docs.kernel.org/scheduler/sched-eevdf.html" },
+      { name: "OpenMP", kind: "standard", note: "Split loops across cores on one machine with compiler directives.", href: "https://www.openmp.org/" },
+      { name: "MPI", kind: "standard", note: "Parallelism across many machines by passing messages.", href: "https://www.mpi-forum.org/" },
+      { name: "htop", kind: "software", note: "Per-core load at a glance: one busy core or all of them.", href: "https://htop.dev/" },
+    ],
+  },
+  "operating-systems/actors-channels": {
+    lead: "Runtimes built on message passing.",
+    tools: [
+      { name: "Erlang/OTP", kind: "platform", note: "Lightweight processes with mailboxes and supervision trees.", href: "https://www.erlang.org/" },
+      { name: "Akka", kind: "software", note: "Actors, mailboxes and supervisor strategies on the JVM.", href: "https://akka.io/" },
+      { name: "Microsoft Orleans", kind: "software", note: "Virtual actors (grains) spread across a cluster.", href: "https://github.com/dotnet/orleans" },
+      { name: "Dapr", kind: "platform", note: "An actor building block any language can call over HTTP or gRPC.", href: "https://dapr.io/" },
+    ],
+  },
   "operating-systems/threads": {
     lead: "Most runtimes map their threads onto these OS threads.",
     tools: [

@@ -354,6 +354,10 @@ import CpuCycleDemo from "./operating-systems/cpu-cycle/CpuCycleDemo";
 import BinaryNumbersDemo from "./operating-systems/binary-numbers/BinaryNumbersDemo";
 import SystemCallsDemo from "./operating-systems/system-calls/SystemCallsDemo";
 import ProcessesDemo from "./operating-systems/processes-os/ProcessesDemo";
+import BlockingIoDemo from "./operating-systems/blocking-io/BlockingIoDemo";
+import AsyncVsThreadsDemo from "./operating-systems/async-vs-threads/AsyncVsThreadsDemo";
+import ConcurrencyParallelismDemo from "./operating-systems/concurrency-vs-parallelism/ConcurrencyParallelismDemo";
+import ActorsChannelsDemo from "./operating-systems/actors-channels/ActorsChannelsDemo";
 import ThreadsDemo from "./operating-systems/threads/ThreadsDemo";
 import ContextSwitchDemo from "./operating-systems/context-switching/ContextSwitchDemo";
 import ForkExecDemo from "./operating-systems/fork-exec/ForkExecDemo";
@@ -722,6 +726,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "operating-systems/binary-numbers": <BinaryNumbersDemo />,
   "operating-systems/system-calls": <SystemCallsDemo />,
   "operating-systems/processes-os": <ProcessesDemo />,
+  "operating-systems/blocking-io": <BlockingIoDemo />,
+  "operating-systems/async-vs-threads": <AsyncVsThreadsDemo />,
+  "operating-systems/concurrency-vs-parallelism": <ConcurrencyParallelismDemo />,
+  "operating-systems/actors-channels": <ActorsChannelsDemo />,
   "operating-systems/threads": <ThreadsDemo />,
   "operating-systems/context-switching": <ContextSwitchDemo />,
   "operating-systems/fork-exec": <ForkExecDemo />,
