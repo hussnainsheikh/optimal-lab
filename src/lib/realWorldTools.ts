@@ -1355,6 +1355,33 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "RIPE Atlas", kind: "service", note: "Traceroutes from probes worldwide.", href: "https://atlas.ripe.net/" },
     ],
   },
+  "networking/curl-dig": {
+    lead: "The command-line tools that check one stage each.",
+    tools: [
+      { name: "curl", kind: "software", note: "curl -v and -w show every stage of a request and its timing.", href: "https://github.com/curl/curl" },
+      { name: "dig (BIND)", kind: "software", note: "Query DNS directly and read the exact answer.", href: "https://www.isc.org/bind/" },
+      { name: "OpenSSL s_client", kind: "software", note: "Do the TLS handshake by hand and read the certificate.", href: "https://github.com/openssl/openssl" },
+      { name: "netcat", kind: "software", note: "nc -vz opens just the TCP connection to tell refused from filtered.", href: "https://nmap.org/ncat/" },
+    ],
+  },
+  "networking/packet-capture": {
+    lead: "Tools that record and read the packets themselves.",
+    tools: [
+      { name: "Wireshark", kind: "software", note: "The graphical capture tool, with display filters and Follow Stream.", href: "https://www.wireshark.org/" },
+      { name: "tcpdump", kind: "software", note: "Capture from the command line and write a .pcap.", href: "https://github.com/the-tcpdump-group/tcpdump" },
+      { name: "pcap filter syntax", kind: "standard", note: "The BPF capture-filter language tcpdump and Wireshark share.", href: "https://github.com/the-tcpdump-group/libpcap" },
+      { name: "Wireshark display filters", kind: "standard", note: "The field expressions that narrow a capture after the fact.", href: "https://www.wireshark.org/docs/dfref/" },
+    ],
+  },
+  "networking/ports-connections": {
+    lead: "Tools that read the kernel's socket table.",
+    tools: [
+      { name: "ss (iproute2)", kind: "software", note: "The fast modern replacement for netstat; ss -tanp lists every socket.", href: "https://github.com/iproute2/iproute2" },
+      { name: "lsof", kind: "software", note: "lsof -i shows which process holds which port or connection.", href: "https://github.com/lsof-org/lsof" },
+      { name: "netstat (net-tools)", kind: "software", note: "The classic socket and routing table viewer.", href: "https://github.com/ecki/net-tools" },
+      { name: "TCP (RFC 9293)", kind: "protocol", note: "The connection state machine behind LISTEN, TIME_WAIT and CLOSE_WAIT.", href: "https://www.rfc-editor.org/rfc/rfc9293" },
+    ],
+  },
   "networking/flow-control": {
     lead: "Flow control is built into TCP and QUIC.",
     tools: [

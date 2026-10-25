@@ -211,6 +211,9 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/networking/routing` | Send packets to five destinations and see which routes match and which one wins | — |
 | `/tracks/networking/http2` | Load ten files over HTTP/1.1, HTTP/2 and HTTP/3, then lose a packet | — |
 | `/tracks/networking/traceroute` | Raise the TTL one hop at a time and watch each router reveal itself | — |
+| `/tracks/networking/curl-dig` | Break a request five ways (bad name, stale record, refused, firewalled, expired cert, slow app) and watch which tool pins it: dig for the name, nc for the port, openssl for TLS, curl -w for the stage timings | — |
+| `/tracks/networking/packet-capture` | Filter a short capture with a real Wireshark-style expression, follow one TCP stream, read the handshake and SNI in the clear, and see where Application Data turns to ciphertext | — |
+| `/tracks/networking/ports-connections` | Read the socket table for a healthy server, a port that won't bind, a CLOSE_WAIT leak and a TIME_WAIT flood: what's listening, the connection states, and which layer each bug is in | — |
 | `/tracks/networking/flow-control` | A receiving app stalls; watch the window shrink to zero and the sender pause | — |
 | `/tracks/networking/latency-bandwidth` | Change bandwidth and round-trip time and see handshakes, slow start and transfer for three sizes | — |
 | `/tracks/operating-systems/memory-hierarchy` | Access times from registers to cross-continent round trips, in real time and at human scale | — |

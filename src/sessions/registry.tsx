@@ -188,6 +188,9 @@ import CompositeIndexDemo from "./databases/composite-indexes/CompositeIndexDemo
 import RoutingDemo from "./networking/routing/RoutingDemo";
 import Http2Demo from "./networking/http2/Http2Demo";
 import TracerouteDemo from "./networking/traceroute/TracerouteDemo";
+import CurlDigDemo from "./networking/curl-dig/CurlDigDemo";
+import PacketCaptureDemo from "./networking/packet-capture/PacketCaptureDemo";
+import SocketsDemo from "./networking/ports-connections/SocketsDemo";
 import FlowControlDemo from "./networking/flow-control/FlowControlDemo";
 import LatencyBandwidthDemo from "./networking/latency-bandwidth/LatencyBandwidthDemo";
 import CacheInvalidationDemo from "./system-design/cache-invalidation/CacheInvalidationDemo";
@@ -528,6 +531,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "networking/routing": <RoutingDemo />,
   "networking/http2": <Http2Demo />,
   "networking/traceroute": <TracerouteDemo />,
+  "networking/curl-dig": <CurlDigDemo />,
+  "networking/packet-capture": <PacketCaptureDemo />,
+  "networking/ports-connections": <SocketsDemo />,
   "networking/flow-control": <FlowControlDemo />,
   "networking/latency-bandwidth": <LatencyBandwidthDemo />,
   "system-design/cache-invalidation": <CacheInvalidationDemo />,
