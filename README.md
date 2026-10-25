@@ -210,6 +210,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/databases/composite-indexes` | Run five WHERE clauses against an index on (country, city, age) and see which entries are read | — |
 | `/tracks/networking/routing` | Send packets to five destinations and see which routes match and which one wins | — |
 | `/tracks/networking/http2` | Load ten files over HTTP/1.1, HTTP/2 and HTTP/3, then lose a packet | — |
+| `/tracks/networking/http1` | The real bytes of a request and two responses on one connection: Content-Length, chunked or close, a wrong length that breaks the next response, then 30 files over new connections, keep-alive, pipelining and six connections | — |
+| `/tracks/networking/http3-quic` | Discover HTTP/3 through Alt-Svc or an HTTPS record, see the bytes a firewall can read in a TCP segment and a QUIC packet, move a download from Wi-Fi to 5G, and fall back when UDP is blocked | — |
+| `/tracks/networking/tls-handshake-net` | Count the round trips and bytes before the first byte: TLS 1.2 vs 1.3, TCP vs QUIC, the certificate chain against the initial window and QUIC's 3× limit, compression, and resumption with 0-RTT | — |
+| `/tracks/networking/websocket-protocol` | The Upgrade handshake with a real Sec-WebSocket-Accept hash, your message as a masked frame byte by byte, server push vs polling, and an hour behind a proxy that closes idle connections | — |
+| `/tracks/networking/grpc-protobuf` | Encode an Order as protobuf byte by byte (varints, zigzag, packed), frame it as a gRPC call on HTTP/2 with status in trailers, then change the .proto and watch an old client decode the new bytes | — |
 | `/tracks/networking/traceroute` | Raise the TTL one hop at a time and watch each router reveal itself | — |
 | `/tracks/networking/flow-control` | A receiving app stalls; watch the window shrink to zero and the sender pause | — |
 | `/tracks/networking/latency-bandwidth` | Change bandwidth and round-trip time and see handshakes, slow start and transfer for three sizes | — |

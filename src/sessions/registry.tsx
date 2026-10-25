@@ -187,6 +187,11 @@ import ReplicasDemo from "./databases/read-replicas/ReplicasDemo";
 import CompositeIndexDemo from "./databases/composite-indexes/CompositeIndexDemo";
 import RoutingDemo from "./networking/routing/RoutingDemo";
 import Http2Demo from "./networking/http2/Http2Demo";
+import Http1Demo from "./networking/http1/Http1Demo";
+import Http3QuicDemo from "./networking/http3-quic/Http3QuicDemo";
+import TlsNetDemo from "./networking/tls-handshake-net/TlsNetDemo";
+import WebSocketDemo from "./networking/websocket-protocol/WebSocketDemo";
+import GrpcDemo from "./networking/grpc-protobuf/GrpcDemo";
 import TracerouteDemo from "./networking/traceroute/TracerouteDemo";
 import FlowControlDemo from "./networking/flow-control/FlowControlDemo";
 import LatencyBandwidthDemo from "./networking/latency-bandwidth/LatencyBandwidthDemo";
@@ -527,6 +532,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "databases/composite-indexes": <CompositeIndexDemo />,
   "networking/routing": <RoutingDemo />,
   "networking/http2": <Http2Demo />,
+  "networking/http1": <Http1Demo />,
+  "networking/http3-quic": <Http3QuicDemo />,
+  "networking/tls-handshake-net": <TlsNetDemo />,
+  "networking/websocket-protocol": <WebSocketDemo />,
+  "networking/grpc-protobuf": <GrpcDemo />,
   "networking/traceroute": <TracerouteDemo />,
   "networking/flow-control": <FlowControlDemo />,
   "networking/latency-bandwidth": <LatencyBandwidthDemo />,
