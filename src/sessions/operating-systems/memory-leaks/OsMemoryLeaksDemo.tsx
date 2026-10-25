@@ -46,7 +46,7 @@ function Chart({ s, label }: { s: Series; label: string }) {
   );
 }
 
-export default function MemoryLeaksDemo() {
+export default function OsMemoryLeaksDemo() {
   const [leak, setLeak] = useState<Leak>("cache");
   const [rps, setRps] = useState(50);
   const [fixed, setFixed] = useState(false);
