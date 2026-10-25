@@ -449,7 +449,7 @@ AI steps and people in the loop; **Tools** (27, all live) covers the actual tool
 workflow builders, model SDKs, vector databases and LLMOps.
 Five more tracks have their own topic maps: **Frontend and the browser** (60
 topics, all live), **Databases in depth** (40, all live), **Networking** (37, all live), **Operating
-systems and concurrency** (35, 19 live) and **Security and cryptography** (40, 21 live). Each has its own accent token in `globals.css`
+systems and concurrency** (35, all live) and **Security and cryptography** (40, 21 live). Each has its own accent token in `globals.css`
 (`--web`, `--db`, `--net`, `--os`, `--sec`) for dark and light mode.
 Topics already live in another track (structured output, MCP, CI/CD, evals and so on) are
 linked from the matching section through `related` instead of being repeated.
