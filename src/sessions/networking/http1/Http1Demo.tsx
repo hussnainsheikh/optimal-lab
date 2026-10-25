@@ -20,7 +20,7 @@ const LENGTH_ERRORS = [
   { id: "-6", label: "6 bytes short" },
   { id: "4", label: "4 bytes long" },
 ];
-const PHASE_COLOR = { connect: "var(--c4)", wait: "var(--line-strong)", transfer: ACCENT } as const;
+const PHASE_COLOR = { connect: "var(--c2)", wait: "var(--line-strong)", transfer: ACCENT } as const;
 const ms = (x: number) => (x >= 1000 ? `${(x / 1000).toFixed(2)} s` : `${Math.round(x)} ms`);
 const show = (raw: string) => raw.replace(/\r\n/g, "␍␊\n");
 
@@ -107,7 +107,7 @@ export default function Http1Demo() {
                   <text x={300} y={rows * 14 + 12} fontSize={8} fill="var(--faint)" textAnchor="end">{ms(load.total)}</text>
                 </svg>
                 <p className="mt-1 flex flex-wrap gap-x-3 text-[11px] text-[var(--muted)]">
-                  <span><span style={{ color: "var(--c4)" }}>■</span> handshake</span>
+                  <span><span style={{ color: "var(--c2)" }}>■</span> handshake</span>
                   <span><span style={{ color: "var(--line-strong)" }}>■</span> waiting</span>
                   <span><span style={{ color: ACCENT }}>■</span> downloading</span>
                   <span><span style={{ color: "var(--bad)" }}>■</span> /api/cart</span>

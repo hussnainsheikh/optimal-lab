@@ -85,7 +85,7 @@ export default function TlsNetDemo() {
                 <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--faint)]">Round trips to the first byte</p>
                 <div className="mt-2 flex h-7 overflow-hidden rounded-md text-[10px] font-medium text-[var(--on-accent)]">
                   {[
-                    ["TCP", c.transportRtts, "var(--c4)"],
+                    ["TCP", c.transportRtts, "var(--c5)"],
                     ["TLS", c.tlsRtts, ACCENT],
                     ["wait", c.waits, "var(--bad)"],
                     ["request", c.requestRtts + (o.resumed && o.version === "1.3" ? 1 : 0), "var(--good)"],

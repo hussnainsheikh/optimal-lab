@@ -16,7 +16,7 @@ const H2: Opts = { visit: "first", rtt: 60, view: "tcp", move: "walk", strategy:
 const H3: Opts = { visit: "repeat", rtt: 60, view: "quic", move: "walk", strategy: "quic", blocked: false, fallback: "race" };
 
 const STRATS: Strategy[] = ["restart", "range", "quic"];
-const LINE: Record<Strategy, string> = { restart: "var(--bad)", range: "var(--c4)", quic: ACCENT };
+const LINE: Record<Strategy, string> = { restart: "var(--bad)", range: "var(--c2)", quic: ACCENT };
 
 function Bytes({ fields }: { fields: Field[] }) {
   return (
