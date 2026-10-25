@@ -3153,6 +3153,24 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Linux vm sysctls", kind: "standard", note: "swappiness and other memory-pressure knobs.", href: "https://docs.kernel.org/admin-guide/sysctl/vm.html" },
     ],
   },
+  "operating-systems/allocation": {
+    lead: "The allocators that sit under every language runtime.",
+    tools: [
+      { name: "glibc malloc", kind: "software", note: "The default Linux allocator: bins of free chunks, sbrk for the main heap and mmap for big requests.", href: "https://sourceware.org/glibc/" },
+      { name: "jemalloc", kind: "software", note: "Size classes and per-thread caches; built to keep fragmentation low in long-running servers.", href: "https://github.com/jemalloc/jemalloc" },
+      { name: "TCMalloc", kind: "software", note: "Google's allocator: per-CPU caches and size classes for fast small allocations.", href: "https://github.com/google/tcmalloc" },
+      { name: "mimalloc", kind: "software", note: "Microsoft's compact allocator with free lists per page, often a drop-in speedup.", href: "https://github.com/microsoft/mimalloc" },
+    ],
+  },
+  "operating-systems/memory-leaks": {
+    lead: "Tools that find memory nobody frees.",
+    tools: [
+      { name: "Valgrind (Memcheck)", kind: "software", note: "Runs a native program under instrumentation and reports definitely lost and still reachable blocks.", href: "https://valgrind.org/" },
+      { name: "LeakSanitizer", kind: "software", note: "The leak checker in Clang and GCC's sanitizers; fast enough to run in CI.", href: "https://github.com/google/sanitizers" },
+      { name: "heaptrack", kind: "software", note: "Records every allocation with its call stack and shows which sites grow.", href: "https://github.com/KDE/heaptrack" },
+      { name: "pprof", kind: "software", note: "Heap profiles by allocation site, diffed between two points in time.", href: "https://github.com/google/pprof" },
+    ],
+  },
   // Security: crypto, TLS, identity
   "security/hashing": {
     lead: "Hashes identify files, commits and messages everywhere.",

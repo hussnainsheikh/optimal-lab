@@ -360,6 +360,8 @@ import ForkExecDemo from "./operating-systems/fork-exec/ForkExecDemo";
 import IpcDemo from "./operating-systems/ipc/IpcDemo";
 import StackHeapDemo from "./operating-systems/stack-heap/StackHeapDemo";
 import PageFaultsDemo from "./operating-systems/page-faults/PageFaultsDemo";
+import AllocationDemo from "./operating-systems/allocation/AllocationDemo";
+import MemoryLeaksDemo from "./operating-systems/memory-leaks/MemoryLeaksDemo";
 import HashingDemo from "./security/hashing/HashingDemo";
 import SymmetricDemo from "./security/symmetric-encryption/SymmetricDemo";
 import PublicKeyDemo from "./security/public-key/PublicKeyDemo";
@@ -728,6 +730,8 @@ const SESSIONS: Record<string, ReactNode> = {
   "operating-systems/ipc": <IpcDemo />,
   "operating-systems/stack-heap": <StackHeapDemo />,
   "operating-systems/page-faults": <PageFaultsDemo />,
+  "operating-systems/allocation": <AllocationDemo />,
+  "operating-systems/memory-leaks": <MemoryLeaksDemo />,
   "security/hashing": <HashingDemo />,
   "security/symmetric-encryption": <SymmetricDemo />,
   "security/public-key": <PublicKeyDemo />,
