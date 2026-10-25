@@ -186,6 +186,8 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/networking/nat` | Packets leave three private devices, get rewritten by the router, and replies are mapped back | — |
 | `/tracks/networking/firewalls` | Six packets through a stateless filter, one with every high port open, and a stateful firewall with a connection table; a pooled database connection forgotten after an idle timeout, and the table filling up | — |
 | `/tracks/networking/vpns` | Send to a company wiki, a public site and a DNS server from café Wi-Fi: full vs split tunnel by longest prefix, WireGuard and IPsec wrappers byte by byte, the MTU black hole, NAT at the VPN server and a DNS leak | — |
+| `/tracks/networking/ddos-attacks` | Keep a service up under three kinds of flood: a bandwidth flood absorbed by a link, a blackhole or an anycast scrubber; a connection flood defused by SYN cookies; and an application flood filtered by rate limits, challenges and reputation | — |
+| `/tracks/networking/mitm` | Why TLS defeats interception: from a rogue hotspot, ARP spoofing or DNS spoofing, see what an attacker gets against plain HTTP, HTTPS, HSTS and certificate pinning, and which defence catches a downgrade or a forged certificate | — |
 | `/tracks/operating-systems/virtual-memory` | Translate addresses through a TLB and page table, and trigger page faults that evict a page | — |
 | `/tracks/frontend/css-grid` | Pick a grid template, drag the container width and watch fr, fixed and auto-fill tracks resize | — |
 | `/tracks/frontend/promises-async` | Step through what await pauses and in what order logs appear, then compare sequential awaits with Promise.all | — |

@@ -930,8 +930,10 @@ export const TRACKS: Track[] = [
         shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       { id: "vpns", title: "VPNs and tunnels", blurb: "Wrap traffic inside an encrypted tunnel.", status: "live", section: "net-security",
         shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
-      { id: "ddos-attacks", title: "DDoS attacks", blurb: "Floods at different layers, and how they're absorbed.", status: "soon", section: "net-security" },
-      { id: "mitm", title: "Man-in-the-middle attacks", blurb: "Intercepting traffic, and how TLS stops it.", status: "soon", section: "net-security" },
+      { id: "ddos-attacks", title: "DDoS attacks", blurb: "Floods at different layers, and how they're absorbed.", status: "live", section: "net-security",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "mitm", title: "Man-in-the-middle attacks", blurb: "Intercepting traffic, and how TLS stops it.", status: "live", section: "net-security",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Debugging networks
       { id: "curl-dig", title: "curl, dig and friends", blurb: "Check each step of a request from the command line.", status: "soon", section: "net-debugging" },
       { id: "packet-capture", title: "Packet capture with Wireshark", blurb: "See the actual packets on the wire.", status: "soon", section: "net-debugging" },

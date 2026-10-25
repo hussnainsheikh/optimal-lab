@@ -218,6 +218,8 @@ import JoinDemo from "./databases/join-algorithms/JoinDemo";
 import NatDemo from "./networking/nat/NatDemo";
 import FirewallsDemo from "./networking/firewalls/FirewallsDemo";
 import VpnDemo from "./networking/vpns/VpnDemo";
+import DdosDemo from "./networking/ddos-attacks/DdosDemo";
+import MitmDemo from "./networking/mitm/MitmDemo";
 import VirtualMemoryDemo from "./operating-systems/virtual-memory/VirtualMemoryDemo";
 import CssGridDemo from "./frontend/css-grid/CssGridDemo";
 import AsyncAwaitDemo from "./frontend/promises-async/AsyncAwaitDemo";
@@ -560,6 +562,8 @@ const SESSIONS: Record<string, ReactNode> = {
   "networking/nat": <NatDemo />,
   "networking/firewalls": <FirewallsDemo />,
   "networking/vpns": <VpnDemo />,
+  "networking/ddos-attacks": <DdosDemo />,
+  "networking/mitm": <MitmDemo />,
   "operating-systems/virtual-memory": <VirtualMemoryDemo />,
   "frontend/css-grid": <CssGridDemo />,
   "frontend/promises-async": <AsyncAwaitDemo />,
