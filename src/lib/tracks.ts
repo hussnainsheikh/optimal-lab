@@ -1013,8 +1013,10 @@ export const TRACKS: Track[] = [
       { id: "page-cache", title: "Disk I/O and the page cache", blurb: "Why a write returns before it reaches the disk.", status: "soon", section: "files-storage" },
       { id: "fsync", title: "fsync and durability", blurb: "Forcing data onto the disk, and what it costs.", status: "soon", section: "files-storage" },
       // Virtualization and containers
-      { id: "hypervisors", title: "Virtual machines and hypervisors", blurb: "Run whole operating systems side by side.", status: "soon", section: "virtualization" },
-      { id: "namespaces-cgroups", title: "Namespaces and cgroups", blurb: "The kernel features that make a container.", status: "soon", section: "virtualization" },
+      { id: "hypervisors", title: "Virtual machines and hypervisors", blurb: "Run whole operating systems side by side.", status: "live", section: "virtualization",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "namespaces-cgroups", title: "Namespaces and cgroups", blurb: "The kernel features that make a container.", status: "live", section: "virtualization",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
     ],
     roadmap: ["How a computer runs code", "Processes, threads and memory", "Concurrency", "Async models", "Files, storage and virtualization"],
     projects: ["Write a thread-safe queue", "Find and fix a deadlock", "Profile a program that's slow for no obvious reason"],

@@ -3127,6 +3127,24 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "GNU Bash", kind: "software", note: "A shell that forks and execs for every command.", href: "https://www.gnu.org/software/bash/" },
     ],
   },
+  "operating-systems/hypervisors": {
+    lead: "Hypervisors and the devices they offer guests.",
+    tools: [
+      { name: "KVM", kind: "software", note: "The hypervisor built into Linux: VT-x and AMD-V guests as ordinary processes.", href: "https://linux-kvm.org/" },
+      { name: "QEMU", kind: "software", note: "Emulates whole machines and devices; with KVM it handles the exits that need emulation.", href: "https://www.qemu.org/" },
+      { name: "Xen", kind: "software", note: "A type 1 hypervisor that runs directly on the hardware.", href: "https://xenproject.org/" },
+      { name: "virtio", kind: "standard", note: "The paravirtual device standard: shared rings, few exits.", href: "https://docs.oasis-open.org/virtio/virtio/v1.2/virtio-v1.2.html" },
+    ],
+  },
+  "operating-systems/namespaces-cgroups": {
+    lead: "The pieces a container is made of.",
+    tools: [
+      { name: "runc", kind: "software", note: "The reference OCI runtime: sets up namespaces and cgroups, then execs the app.", href: "https://github.com/opencontainers/runc" },
+      { name: "Linux namespaces", kind: "software", note: "The seven kinds of namespace and what each one isolates.", href: "https://man7.org/linux/man-pages/man7/namespaces.7.html" },
+      { name: "cgroup v2", kind: "software", note: "memory.max, cpu.max, pids.max and the rest of the controller files.", href: "https://docs.kernel.org/admin-guide/cgroup-v2.html" },
+      { name: "gVisor", kind: "software", note: "A user-space kernel that stands between containers and the host kernel.", href: "https://gvisor.dev/" },
+    ],
+  },
   "operating-systems/ipc": {
     lead: "The kernel offers a handful of channels; everything else is built on them.",
     tools: [

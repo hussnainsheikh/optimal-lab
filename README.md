@@ -414,6 +414,8 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/operating-systems/threads` | Set threads and cores, see shared vs private memory, and play how 800 ms of work splits across cores | — |
 | `/tracks/operating-systems/context-switching` | Run one switch, toggle same-process vs other-process, and change the time slice to see the overhead | — |
 | `/tracks/operating-systems/fork-exec` | Run ls, ls > out.txt, sleep 5 & or a typo through fork, dup2, exec and waitpid; drag copy-on-write pages | — |
+| `/tracks/operating-systems/hypervisors` | A compute job, a web server and a database in a VM with an emulated device, virtio or passthrough: VM exits per second, I/O one core can virtualize, the 24-read nested page walk (15 with huge pages), and total overhead | — |
+| `/tracks/operating-systems/namespaces-cgroups` | Toggle PID, mount, network, UTS, user and IPC namespaces and read what ps, ls, ip, hostname and id print inside; then hit memory.max, cpu.max throttling (a 30 ms request taking 105 ms) and pids.max | — |
 | `/tracks/operating-systems/ipc` | Send a message by pipe, Unix socket, shared memory or signal and compare copies, syscalls and time by size | — |
 | `/tracks/operating-systems/stack-heap` | Step through malloc/free, a leak, a dangling stack pointer and runaway recursion, frame by frame | — |
 | `/tracks/operating-systems/page-faults` | Shrink RAM below the pages a loop uses and watch minor faults, major faults and the thrashing cliff | — |
