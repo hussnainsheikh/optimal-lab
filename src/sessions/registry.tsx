@@ -190,6 +190,9 @@ import Http2Demo from "./networking/http2/Http2Demo";
 import TracerouteDemo from "./networking/traceroute/TracerouteDemo";
 import FlowControlDemo from "./networking/flow-control/FlowControlDemo";
 import LatencyBandwidthDemo from "./networking/latency-bandwidth/LatencyBandwidthDemo";
+import HolDemo from "./networking/head-of-line-blocking/HolDemo";
+import EdgeDemo from "./networking/edge-networks/EdgeDemo";
+import WirelessDemo from "./networking/wireless/WirelessDemo";
 import CacheInvalidationDemo from "./system-design/cache-invalidation/CacheInvalidationDemo";
 import QueueBackpressureDemo from "./system-design/backpressure/QueueBackpressureDemo";
 import RaftDemo from "./system-design/consensus/RaftDemo";
@@ -530,6 +533,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "networking/traceroute": <TracerouteDemo />,
   "networking/flow-control": <FlowControlDemo />,
   "networking/latency-bandwidth": <LatencyBandwidthDemo />,
+  "networking/head-of-line-blocking": <HolDemo />,
+  "networking/edge-networks": <EdgeDemo />,
+  "networking/wireless": <WirelessDemo />,
   "system-design/cache-invalidation": <CacheInvalidationDemo />,
   "system-design/backpressure": <QueueBackpressureDemo />,
   "system-design/consensus": <RaftDemo />,

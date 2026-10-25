@@ -1371,6 +1371,33 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "WebPageTest", kind: "service", note: "Waterfalls with real round trips.", href: "https://www.webpagetest.org/" },
     ],
   },
+  "networking/head-of-line-blocking": {
+    lead: "Protocols that avoid head-of-line blocking, and tools to reproduce it.",
+    tools: [
+      { name: "HTTP/2 (RFC 9113)", kind: "protocol", note: "Streams interleaved on one TCP connection.", href: "https://www.rfc-editor.org/rfc/rfc9113" },
+      { name: "QUIC (RFC 9000)", kind: "protocol", note: "Streams ordered independently, so one loss stalls one stream.", href: "https://www.rfc-editor.org/rfc/rfc9000" },
+      { name: "netem", kind: "software", note: "Linux traffic control that adds loss, delay and reordering to test with.", href: "https://man7.org/linux/man-pages/man8/tc-netem.8.html" },
+      { name: "WebPageTest", kind: "service", note: "Load a page over a throttled, lossy connection and see the waterfall.", href: "https://www.webpagetest.org/" },
+    ],
+  },
+  "networking/edge-networks": {
+    lead: "Edge networks, and the tiering that protects the origin.",
+    tools: [
+      { name: "Cloudflare Tiered Cache", kind: "service", note: "Edges ask an upper tier before the origin.", href: "https://developers.cloudflare.com/cache/how-to/tiered-cache/" },
+      { name: "CloudFront Origin Shield", kind: "service", note: "One regional cache layer in front of the origin.", href: "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html" },
+      { name: "Fastly", kind: "service", note: "An edge cloud with configurable shielding and edge compute.", href: "https://www.fastly.com/" },
+      { name: "Varnish Cache", kind: "software", note: "The open-source HTTP cache many CDNs and origins run.", href: "https://github.com/varnishcache/varnish-cache" },
+    ],
+  },
+  "networking/wireless": {
+    lead: "Standards and tools for measuring and tuning wireless links.",
+    tools: [
+      { name: "Wi-Fi CERTIFIED 6", kind: "standard", note: "802.11ax: OFDMA, 1024-QAM and the rates in this page.", href: "https://www.wi-fi.org/discover-wi-fi/wi-fi-certified-6" },
+      { name: "OpenWrt", kind: "software", note: "Router firmware with airtime fairness and queue management for Wi-Fi.", href: "https://github.com/openwrt/openwrt" },
+      { name: "iperf3", kind: "software", note: "Measure real throughput between two devices over Wi-Fi or mobile.", href: "https://github.com/esnet/iperf" },
+      { name: "3GPP", kind: "standard", note: "Writes the 4G and 5G specs, including the radio states and timers.", href: "https://www.3gpp.org/" },
+    ],
+  },
   "operating-systems/memory-hierarchy": {
     lead: "Every performance decision sits on these numbers.",
     tools: [
