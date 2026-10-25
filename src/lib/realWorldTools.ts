@@ -487,6 +487,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Atomics.add", kind: "standard", note: "JavaScript's atomic increment on shared memory between workers.", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/add" },
     ],
   },
+  "operating-systems/mutexes": {
+    lead: "The kernel and tooling behind locks.",
+    tools: [
+      { name: "futex (Linux)", kind: "software", note: "The system call mutexes sleep and wake on; the uncontended path never enters the kernel.", href: "https://man7.org/linux/man-pages/man2/futex.2.html" },
+      { name: "POSIX mutexes", kind: "standard", note: "pthread_mutex_lock and friends: the lock API every language runtime builds on.", href: "https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_mutex_lock.html" },
+      { name: "ThreadSanitizer", kind: "software", note: "Finds data races: shared memory touched by two threads without a lock.", href: "https://clang.llvm.org/docs/ThreadSanitizer.html" },
+      { name: "perf", kind: "software", note: "perf lock and perf sched show which locks are contended and who waits.", href: "https://perf.wiki.kernel.org/" },
+    ],
+  },
+  "operating-systems/semaphores": {
+    lead: "Places a concurrency limit protects a backend.",
+    tools: [
+      { name: "POSIX semaphores", kind: "standard", note: "sem_wait and sem_post: counting semaphores between threads or processes.", href: "https://man7.org/linux/man-pages/man7/sem_overview.7.html" },
+      { name: "PgBouncer", kind: "software", note: "Caps connections to Postgres and queues the rest: a semaphore in front of the database.", href: "https://www.pgbouncer.org/" },
+      { name: "Envoy", kind: "software", note: "Circuit-breaker limits on concurrent requests and pending queue per upstream.", href: "https://www.envoyproxy.io/" },
+      { name: "HAProxy", kind: "software", note: "maxconn per server: only N requests in flight, the rest wait in the proxy's queue.", href: "https://www.haproxy.org/" },
+    ],
+  },
+  "operating-systems/atomics": {
+    lead: "Tools and specs for lock-free code.",
+    tools: [
+      { name: "Linux kernel memory model", kind: "standard", note: "A formal model of what atomics and barriers guarantee across cores, with a checker.", href: "https://github.com/torvalds/linux/tree/master/tools/memory-model" },
+      { name: "liburcu", kind: "software", note: "Read-copy-update: safe memory reclamation for lock-free structures, avoiding ABA.", href: "https://liburcu.org/" },
+      { name: "ThreadSanitizer", kind: "software", note: "Flags plain reads and writes that race, which atomics would have fixed.", href: "https://clang.llvm.org/docs/ThreadSanitizer.html" },
+      { name: "perf c2c", kind: "software", note: "Finds cache lines bouncing between cores: contended atomics and false sharing.", href: "https://man7.org/linux/man-pages/man1/perf-c2c.1.html" },
+    ],
+  },
+  "operating-systems/thread-pools": {
+    lead: "Servers built around a pool of worker threads.",
+    tools: [
+      { name: "NGINX", kind: "software", note: "Event-loop workers, plus thread pools that take blocking file reads off the loop.", href: "https://nginx.org/" },
+      { name: "Apache HTTP Server", kind: "software", note: "The worker and event MPMs: a fixed pool of threads per process with a request queue.", href: "https://httpd.apache.org/" },
+      { name: "libuv", kind: "software", note: "The thread pool behind Node.js and other runtimes for file, DNS and crypto work.", href: "https://github.com/libuv/libuv" },
+      { name: "Envoy", kind: "software", note: "One worker thread per core, each running its own event loop.", href: "https://www.envoyproxy.io/" },
+    ],
+  },
   "security/xss": {
     lead: "Frameworks escape by default; XSS comes back wherever code opts out.",
     tools: [

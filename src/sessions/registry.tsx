@@ -287,6 +287,10 @@ import BtreeDemo from "./databases/btree-index/BtreeDemo";
 import ReRendersDemo from "./frontend/re-renders/ReRendersDemo";
 import HandshakeDemo from "./networking/tcp-handshake/HandshakeDemo";
 import RaceDemo from "./operating-systems/race-conditions/RaceDemo";
+import MutexesDemo from "./operating-systems/mutexes/MutexesDemo";
+import SemaphoresDemo from "./operating-systems/semaphores/SemaphoresDemo";
+import AtomicsDemo from "./operating-systems/atomics/AtomicsDemo";
+import ThreadPoolsDemo from "./operating-systems/thread-pools/ThreadPoolsDemo";
 import XssDemo from "./security/xss/XssDemo";
 import LlmJudgeDemo from "./ai/llm-as-judge/LlmJudgeDemo";
 import LoraDemo from "./ai/lora/LoraDemo";
@@ -627,6 +631,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "databases/btree-index": <BtreeDemo />,
   "networking/tcp-handshake": <HandshakeDemo />,
   "operating-systems/race-conditions": <RaceDemo />,
+  "operating-systems/mutexes": <MutexesDemo />,
+  "operating-systems/semaphores": <SemaphoresDemo />,
+  "operating-systems/atomics": <AtomicsDemo />,
+  "operating-systems/thread-pools": <ThreadPoolsDemo />,
   "security/xss": <XssDemo />,
   "ai/llm-as-judge": <LlmJudgeDemo />,
   "ai/query-rewriting": <QueryRewriteDemo />,
