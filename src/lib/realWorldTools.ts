@@ -4291,6 +4291,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "PostGIS", kind: "software", note: "Spatial types and queries built on GiST.", href: "https://postgis.net" },
     ],
   },
+  "databases/migrations-practice": {
+    lead: "Tools that check migrations before they run, and run big changes online.",
+    tools: [
+      { name: "Postgres table locks", kind: "software", note: "Which lock each command takes, and what it conflicts with.", href: "https://www.postgresql.org/docs/current/explicit-locking.html" },
+      { name: "Squawk", kind: "software", note: "A linter that flags unsafe Postgres migrations.", href: "https://github.com/sbdchd/squawk" },
+      { name: "pgroll", kind: "software", note: "Zero-downtime, reversible Postgres schema changes.", href: "https://github.com/xataio/pgroll" },
+      { name: "gh-ost", kind: "software", note: "GitHub's online schema change tool for MySQL.", href: "https://github.com/github/gh-ost" },
+    ],
+  },
+  "databases/slow-queries": {
+    lead: "Where query time is recorded, and tools that read it for you.",
+    tools: [
+      { name: "pg_stat_statements", kind: "software", note: "Per-query-shape calls, total and mean time in Postgres.", href: "https://www.postgresql.org/docs/current/pgstatstatements.html" },
+      { name: "auto_explain", kind: "software", note: "Log the plan of every query slower than a threshold.", href: "https://www.postgresql.org/docs/current/auto-explain.html" },
+      { name: "pgBadger", kind: "software", note: "Turns Postgres logs into reports of the slowest and most frequent queries.", href: "https://github.com/darold/pgbadger" },
+      { name: "pganalyze", kind: "service", note: "Query performance monitoring and index advice for Postgres.", href: "https://pganalyze.com/" },
+    ],
+  },
+  "databases/orm-pitfalls": {
+    lead: "Seeing the queries an ORM really sends, whatever the language.",
+    tools: [
+      { name: "pg_stat_statements", kind: "software", note: "An N+1 shows up as one cheap query with a huge call count.", href: "https://www.postgresql.org/docs/current/pgstatstatements.html" },
+      { name: "OpenTelemetry database spans", kind: "standard", note: "Trace every query a request makes, with its text.", href: "https://opentelemetry.io/docs/specs/semconv/database/" },
+      { name: "Jaeger", kind: "software", note: "A trace view where N+1 queries look like a staircase.", href: "https://github.com/jaegertracing/jaeger" },
+      { name: "Sentry N+1 detection", kind: "service", note: "Flags repeated identical queries in one request.", href: "https://docs.sentry.io/product/issues/issue-details/performance-issues/n-one-queries/" },
+    ],
+  },
+  "databases/db-security": {
+    lead: "The database's own controls, and short-lived credentials.",
+    tools: [
+      { name: "Row security policies", kind: "software", note: "Postgres row-level security: policies on every query.", href: "https://www.postgresql.org/docs/current/ddl-rowsecurity.html" },
+      { name: "Postgres privileges", kind: "software", note: "GRANT on tables and columns, and who bypasses it.", href: "https://www.postgresql.org/docs/current/ddl-priv.html" },
+      { name: "RDS IAM authentication", kind: "service", note: "Connect with 15-minute tokens instead of a stored password.", href: "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html" },
+      { name: "Vault database secrets", kind: "software", note: "Issues short-lived database users on demand.", href: "https://developer.hashicorp.com/vault/docs/secrets/databases" },
+    ],
+  },
   // Networking: fundamentals, transport, internet
   "networking/network-layers": {
     lead: "Every packet capture tool shows traffic split into these layers.",
