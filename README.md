@@ -587,6 +587,8 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/operating-systems/ipc` | Send a message by pipe, Unix socket, shared memory or signal and compare copies, syscalls and time by size | — |
 | `/tracks/operating-systems/stack-heap` | Step through malloc/free, a leak, a dangling stack pointer and runaway recursion, frame by frame | — |
 | `/tracks/operating-systems/page-faults` | Shrink RAM below the pages a loop uses and watch minor faults, major faults and the thrashing cliff | — |
+| `/tracks/operating-systems/allocation` | Scrub malloc and free calls under first fit, next fit, best fit and size classes: headers and alignment, splitting, sbrk, coalescing and external fragmentation | — |
+| `/tracks/operating-systems/memory-leaks` | An unbounded cache, a forgotten listener and a missing free(): memory over 8 hours with OOM kills, a heap-snapshot diff, what still holds the leak, and the fix | — |
 | `/tracks/security/hashing` | Type text, make a one-bit change and watch about half of SHA-256's 256 output bits flip | — |
 | `/tracks/security/symmetric-encryption` | Encrypt a picture with a toy block cipher in ECB vs CTR, try a wrong key, then encrypt and tamper with real AES-GCM | — |
 | `/tracks/security/public-key` | Pick two primes, build an RSA key pair, encrypt with the public key and decrypt with the private one | — |
