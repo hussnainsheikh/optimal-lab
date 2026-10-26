@@ -213,6 +213,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/networking/nat` | Packets leave three private devices, get rewritten by the router, and replies are mapped back | — |
 | `/tracks/operating-systems/virtual-memory` | Translate addresses through a TLB and page table, and trigger page faults that evict a page | — |
 | `/tracks/frontend/css-grid` | Pick a grid template, drag the container width and watch fr, fixed and auto-fill tracks resize | — |
+| `/tracks/frontend/bundlers` | Start a bundling or ESM dev server, hot-swap an edit, transform for production, and see which SHA-256-named files a returning visitor downloads again | — |
+| `/tracks/frontend/typescript-frontend` | Typed props, state as a union instead of three booleans, and a server that renames a field: any, an interface, a runtime schema or types generated from the API spec | — |
+| `/tracks/frontend/frontend-testing` | Plant five bugs in a checkout and run real unit, component and end-to-end tests (desktop and 390px) against it: what each level catches and what escapes | — |
+| `/tracks/frontend/design-systems` | Rebrand a shop with copied values or semantic tokens, check a dark theme's contrast pair by pair, and ship a fix to four apps with different semver ranges | — |
 | `/tracks/frontend/promises-async` | Step through what await pauses and in what order logs appear, then compare sequential awaits with Promise.all | — |
 | `/tracks/security/digital-signatures` | Sign with toy RSA and verify a genuine message, a tampered one, and a forgery | — |
 | `/tracks/system-design/cache-invalidation` | A price changes under a cache: TTL, delete-on-write, a slow-reader race, and write-through | — |

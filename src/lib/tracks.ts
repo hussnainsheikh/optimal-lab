@@ -810,10 +810,14 @@ export const TRACKS: Track[] = [
       { id: "contrast-motion", title: "Contrast and motion", blurb: "Readable colours and respecting reduced motion.", status: "live", section: "accessibility",
         shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Tooling and testing
-      { id: "bundlers", title: "Bundlers", blurb: "Vite, webpack and esbuild: what a bundler does.", status: "soon", section: "fe-tooling" },
-      { id: "typescript-frontend", title: "TypeScript for the frontend", blurb: "Types for props, state and API responses.", status: "soon", section: "fe-tooling" },
-      { id: "frontend-testing", title: "Testing components and flows", blurb: "Unit, component and end-to-end tests, and what each catches.", status: "soon", section: "fe-tooling" },
-      { id: "design-systems", title: "Design systems", blurb: "Shared components and tokens across a product.", status: "soon", section: "fe-tooling" },
+      { id: "bundlers", title: "Bundlers", blurb: "Vite, webpack and esbuild: what a bundler does.", status: "live", section: "fe-tooling",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "typescript-frontend", title: "TypeScript for the frontend", blurb: "Types for props, state and API responses.", status: "live", section: "fe-tooling",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "frontend-testing", title: "Testing components and flows", blurb: "Unit, component and end-to-end tests, and what each catches.", status: "live", section: "fe-tooling",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "design-systems", title: "Design systems", blurb: "Shared components and tokens across a product.", status: "live", section: "fe-tooling",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Case studies: build it
       { id: "infinite-feed", title: "An infinite scrolling feed", blurb: "Pagination, virtualization and keeping scroll position.", status: "soon", section: "frontend-projects" },
       { id: "autocomplete-ui", title: "An autocomplete input", blurb: "Debouncing, race conditions and keyboard support.", status: "soon", section: "frontend-projects" },
