@@ -100,6 +100,8 @@ import ManagedDbDemo from "./devops/managed-databases/ManagedDbDemo";
 import CloudIamDemo from "./devops/cloud-iam/CloudIamDemo";
 import ServerlessDemo from "./devops/serverless/ServerlessDemo";
 import CloudCostsDemo from "./devops/cloud-costs/CloudCostsDemo";
+import DevPlatformDemo from "./devops/developer-platforms/DevPlatformDemo";
+import GoldenPathsDemo from "./devops/golden-paths/GoldenPathsDemo";
 import StructuredLogsDemo from "./devops/structured-logging/StructuredLogsDemo";
 import TraceDemo from "./devops/opentelemetry/TraceDemo";
 import DashboardsDemo from "./devops/dashboards/DashboardsDemo";
@@ -520,6 +522,8 @@ const SESSIONS: Record<string, ReactNode> = {
   "devops/cloud-iam": <CloudIamDemo />,
   "devops/serverless": <ServerlessDemo />,
   "devops/cloud-costs": <CloudCostsDemo />,
+  "devops/developer-platforms": <DevPlatformDemo />,
+  "devops/golden-paths": <GoldenPathsDemo />,
   "devops/structured-logging": <StructuredLogsDemo />,
   "devops/opentelemetry": <TraceDemo />,
   "devops/dashboards": <DashboardsDemo />,

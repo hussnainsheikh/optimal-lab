@@ -397,6 +397,8 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/devops/cloud-iam` | Eight requests through an IAM evaluator: role policies, OIDC for CI instead of stored keys, an MFA condition and organization SCPs, explicit deny first | — |
 | `/tracks/devops/serverless` | Compare function and container costs as traffic grows, and cold starts by traffic shape | — |
 | `/tracks/devops/cloud-costs` | Apply six common savings to a monthly cloud bill and see which lines shrink | — |
+| `/tracks/devops/developer-platforms` | A new service's path to first deploy as a task graph: tickets to four teams vs self-service infra, automatic DNS and TLS, default telemetry and a service catalog | — |
+| `/tracks/devops/golden-paths` | Thirty services over a year while standards change twice: copy an old repo or a template with telemetry and signing, update pull requests and scorecards | — |
 | `/tracks/devops/structured-logging` | Find a user's errors with grep on free-text logs, then with a query on structured JSON | — |
 | `/tracks/devops/opentelemetry` | Read a checkout trace waterfall: normal, a slow external API, and N+1 queries | — |
 | `/tracks/devops/dashboards` | An hour of a checkout service built request by request: averages vs p99, per-endpoint lines, error rates and the right saturation panel, against four questions | — |
