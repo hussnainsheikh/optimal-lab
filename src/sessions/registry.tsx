@@ -225,6 +225,10 @@ import CapacityPlanningDemo from "./system-design/capacity-planning/CapacityPlan
 import ChaosDemo from "./system-design/chaos-engineering/ChaosDemo";
 import IncidentResponseDemo from "./system-design/incident-response/IncidentResponseDemo";
 import PartitioningDemo from "./databases/table-partitioning/PartitioningDemo";
+import WideColumnDemo from "./databases/wide-column/WideColumnDemo";
+import GraphDbDemo from "./databases/graph-databases/GraphDbDemo";
+import InvertedIndexDemo from "./databases/inverted-index/InvertedIndexDemo";
+import HnswDemo from "./databases/hnsw/HnswDemo";
 import OverfittingDemo from "./ai/overfitting/OverfittingDemo";
 import TinyNetDemo from "./ai/neural-networks/TinyNetDemo";
 import ScalingDemo from "./ai/scaling-laws/ScalingDemo";
@@ -689,6 +693,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/chaos-engineering": <ChaosDemo />,
   "system-design/incident-response": <IncidentResponseDemo />,
   "databases/table-partitioning": <PartitioningDemo />,
+  "databases/wide-column": <WideColumnDemo />,
+  "databases/graph-databases": <GraphDbDemo />,
+  "databases/inverted-index": <InvertedIndexDemo />,
+  "databases/hnsw": <HnswDemo />,
   "ai/overfitting": <OverfittingDemo />,
   "ai/neural-networks": <TinyNetDemo />,
   "ai/scaling-laws": <ScalingDemo />,

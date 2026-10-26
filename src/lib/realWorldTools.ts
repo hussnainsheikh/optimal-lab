@@ -2335,6 +2335,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "BigQuery partitioned tables", kind: "service", note: "Partition pruning to cut scan costs.", href: "https://cloud.google.com/bigquery/docs/partitioned-tables" },
     ],
   },
+  "databases/wide-column": {
+    lead: "Wide-column databases and the managed services that run them.",
+    tools: [
+      { name: "Apache Cassandra", kind: "software", note: "Partitioned, replicated, tunable consistency, queried with CQL.", href: "https://github.com/apache/cassandra" },
+      { name: "ScyllaDB", kind: "software", note: "A Cassandra-compatible database rewritten in C++.", href: "https://github.com/scylladb/scylladb" },
+      { name: "Google Bigtable", kind: "service", note: "Google's managed wide-column store, the design Cassandra borrowed from.", href: "https://cloud.google.com/bigtable" },
+      { name: "Amazon Keyspaces", kind: "service", note: "Managed, serverless Cassandra-compatible tables.", href: "https://aws.amazon.com/keyspaces/" },
+    ],
+  },
+  "databases/graph-databases": {
+    lead: "Graph databases, and graph queries inside Postgres.",
+    tools: [
+      { name: "Neo4j", kind: "software", note: "The best-known graph database, queried with Cypher.", href: "https://github.com/neo4j/neo4j" },
+      { name: "Apache AGE", kind: "software", note: "Graph queries in openCypher inside PostgreSQL.", href: "https://github.com/apache/age" },
+      { name: "Amazon Neptune", kind: "service", note: "A managed graph database for property graphs and RDF.", href: "https://aws.amazon.com/neptune/" },
+      { name: "openCypher", kind: "standard", note: "The open specification of the Cypher query language.", href: "https://opencypher.org/" },
+    ],
+  },
+  "databases/inverted-index": {
+    lead: "Search engines built on inverted indexes, and the one inside Postgres.",
+    tools: [
+      { name: "Apache Lucene", kind: "software", note: "The search library under Elasticsearch, OpenSearch and Solr.", href: "https://github.com/apache/lucene" },
+      { name: "Elasticsearch", kind: "software", note: "Distributed search and analytics on Lucene.", href: "https://github.com/elastic/elasticsearch" },
+      { name: "OpenSearch", kind: "software", note: "An open-source search engine forked from Elasticsearch.", href: "https://github.com/opensearch-project/OpenSearch" },
+      { name: "Postgres GIN indexes", kind: "software", note: "Inverted indexes for full-text search inside Postgres.", href: "https://www.postgresql.org/docs/current/textsearch-indexes.html" },
+    ],
+  },
+  "databases/hnsw": {
+    lead: "HNSW is the default index in most vector databases.",
+    tools: [
+      { name: "pgvector", kind: "software", note: "Vector similarity search in Postgres, with HNSW and IVFFlat indexes.", href: "https://github.com/pgvector/pgvector" },
+      { name: "hnswlib", kind: "software", note: "The reference HNSW implementation from the paper's authors.", href: "https://github.com/nmslib/hnswlib" },
+      { name: "FAISS", kind: "software", note: "Meta's library of vector indexes, HNSW among them.", href: "https://github.com/facebookresearch/faiss" },
+      { name: "Qdrant", kind: "software", note: "A vector database built on HNSW with filtering.", href: "https://github.com/qdrant/qdrant" },
+    ],
+  },
   "system-design/scaling": {
     lead: "Clouds make both kinds of scaling a configuration change.",
     tools: [
