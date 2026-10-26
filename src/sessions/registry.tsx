@@ -102,6 +102,11 @@ import ServerlessDemo from "./devops/serverless/ServerlessDemo";
 import CloudCostsDemo from "./devops/cloud-costs/CloudCostsDemo";
 import StructuredLogsDemo from "./devops/structured-logging/StructuredLogsDemo";
 import TraceDemo from "./devops/opentelemetry/TraceDemo";
+import DashboardsDemo from "./devops/dashboards/DashboardsDemo";
+import AlertsDemo from "./devops/alerts-oncall/AlertsDemo";
+import RunbooksDemo from "./devops/runbooks/RunbooksDemo";
+import ToilDemo from "./devops/toil-automation/ToilDemo";
+import LoadTestDemo from "./devops/capacity-load-testing/LoadTestDemo";
 import DoraDemo from "./devops/dora-metrics/DoraDemo";
 import ProcessTreeDemo from "./devops/linux-processes/ProcessTreeDemo";
 import ShellPipesDemo from "./devops/shell-scripting/ShellPipesDemo";
@@ -513,6 +518,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "devops/cloud-costs": <CloudCostsDemo />,
   "devops/structured-logging": <StructuredLogsDemo />,
   "devops/opentelemetry": <TraceDemo />,
+  "devops/dashboards": <DashboardsDemo />,
+  "devops/alerts-oncall": <AlertsDemo />,
+  "devops/runbooks": <RunbooksDemo />,
+  "devops/toil-automation": <ToilDemo />,
+  "devops/capacity-load-testing": <LoadTestDemo />,
   "devops/dora-metrics": <DoraDemo />,
   "devops/linux-processes": <ProcessTreeDemo />,
   "devops/shell-scripting": <ShellPipesDemo />,
