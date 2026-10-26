@@ -277,6 +277,10 @@ import CriticalPathDemo from "./frontend/critical-path/CriticalPathDemo";
 import WindowFunctionsDemo from "./databases/window-functions/WindowFunctionsDemo";
 import LsmDemo from "./databases/lsm-trees/LsmDemo";
 import WalDemo from "./databases/write-ahead-log/WalDemo";
+import CrashRecoveryDemo from "./databases/crash-recovery/CrashRecoveryDemo";
+import BackupsPitrDemo from "./databases/backups-pitr/BackupsPitrDemo";
+import VacuumDemo from "./databases/vacuum/VacuumDemo";
+import ColumnarStorageDemo from "./databases/columnar-storage/ColumnarStorageDemo";
 import ReplicasDemo from "./databases/read-replicas/ReplicasDemo";
 import CompositeIndexDemo from "./databases/composite-indexes/CompositeIndexDemo";
 import RoutingDemo from "./networking/routing/RoutingDemo";
@@ -734,6 +738,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "databases/window-functions": <WindowFunctionsDemo />,
   "databases/lsm-trees": <LsmDemo />,
   "databases/write-ahead-log": <WalDemo />,
+  "databases/crash-recovery": <CrashRecoveryDemo />,
+  "databases/backups-pitr": <BackupsPitrDemo />,
+  "databases/vacuum": <VacuumDemo />,
+  "databases/columnar-storage": <ColumnarStorageDemo />,
   "databases/read-replicas": <ReplicasDemo />,
   "databases/composite-indexes": <CompositeIndexDemo />,
   "networking/routing": <RoutingDemo />,
