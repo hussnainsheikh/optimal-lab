@@ -189,6 +189,9 @@ import InvoiceExtractorDemo from "./ai-native/invoice-extractor/InvoiceExtractor
 import MeetingNotesDemo from "./ai-native/meeting-notes/MeetingNotesDemo";
 import SmartSearchDemo from "./ai-native/smart-search/SmartSearchDemo";
 import ClassifyRouteDemo from "./ai-automation/classify-route/ClassifyRouteDemo";
+import LlmStepDemo from "./ai-automation/llm-step/LlmStepDemo";
+import ExtractFillDemo from "./ai-automation/extract-and-fill/ExtractFillDemo";
+import DraftReviewDemo from "./ai-automation/draft-then-review/DraftReviewDemo";
 import McpServerDemo from "./tools/build-mcp-server/McpServerDemo";
 import MemoryHierarchyDemo from "./operating-systems/memory-hierarchy/MemoryHierarchyDemo";
 import CacheLocalityDemo from "./operating-systems/cache-locality/CacheLocalityDemo";
@@ -546,6 +549,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai-native/meeting-notes": <MeetingNotesDemo />,
   "ai-native/smart-search": <SmartSearchDemo />,
   "ai-automation/classify-route": <ClassifyRouteDemo />,
+  "ai-automation/llm-step": <LlmStepDemo />,
+  "ai-automation/extract-and-fill": <ExtractFillDemo />,
+  "ai-automation/draft-then-review": <DraftReviewDemo />,
   "tools/build-mcp-server": <McpServerDemo />,
   "operating-systems/memory-hierarchy": <MemoryHierarchyDemo />,
   "operating-systems/cache-locality": <CacheLocalityDemo />,
