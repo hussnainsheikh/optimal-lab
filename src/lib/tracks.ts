@@ -1123,10 +1123,14 @@ export const TRACKS: Track[] = [
       { id: "actors-channels", title: "Actors and channels", blurb: "Share by communicating instead of sharing memory.", status: "live", section: "async-models",
         shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Files and storage
-      { id: "file-systems", title: "File systems and inodes", blurb: "How files, directories and metadata are stored.", status: "soon", section: "files-storage" },
-      { id: "file-descriptors", title: "File descriptors", blurb: "The numbers that stand for open files and sockets.", status: "soon", section: "files-storage" },
-      { id: "page-cache", title: "Disk I/O and the page cache", blurb: "Why a write returns before it reaches the disk.", status: "soon", section: "files-storage" },
-      { id: "fsync", title: "fsync and durability", blurb: "Forcing data onto the disk, and what it costs.", status: "soon", section: "files-storage" },
+      { id: "file-systems", title: "File systems and inodes", blurb: "How files, directories and metadata are stored.", status: "live", section: "files-storage",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "file-descriptors", title: "File descriptors", blurb: "The numbers that stand for open files and sockets.", status: "live", section: "files-storage",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "page-cache", title: "Disk I/O and the page cache", blurb: "Why a write returns before it reaches the disk.", status: "live", section: "files-storage",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
+      { id: "fsync", title: "fsync and durability", blurb: "Forcing data onto the disk, and what it costs.", status: "live", section: "files-storage",
+        shape: { kind: "system", steps: 5, flow: "pipeline", richSteps: true } },
       // Virtualization and containers
       { id: "hypervisors", title: "Virtual machines and hypervisors", blurb: "Run whole operating systems side by side.", status: "soon", section: "virtualization" },
       { id: "namespaces-cgroups", title: "Namespaces and cgroups", blurb: "The kernel features that make a container.", status: "soon", section: "virtualization" },

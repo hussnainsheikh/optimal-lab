@@ -4621,6 +4621,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "RISC-V specifications", kind: "standard", note: "An open instruction set you can read end to end.", href: "https://riscv.org/technical/specifications/" },
     ],
   },
+  "operating-systems/file-systems": {
+    lead: "File systems and the tools that show inodes.",
+    tools: [
+      { name: "ext4", kind: "software", note: "Linux's default file system: inodes, extents and a journal.", href: "https://ext4.wiki.kernel.org/" },
+      { name: "OpenZFS", kind: "software", note: "Copy-on-write file system and volume manager with checksums on every block.", href: "https://openzfs.org/" },
+      { name: "Btrfs", kind: "software", note: "Copy-on-write Linux file system with snapshots and subvolumes.", href: "https://btrfs.readthedocs.io/" },
+      { name: "stat", kind: "software", note: "Prints a file's inode: number, size, links, owner, times and blocks.", href: "https://man7.org/linux/man-pages/man1/stat.1.html" },
+    ],
+  },
+  "operating-systems/file-descriptors": {
+    lead: "The calls and tools for open files.",
+    tools: [
+      { name: "open, dup and fcntl", kind: "standard", note: "The POSIX calls that create fds, share descriptions and set O_CLOEXEC.", href: "https://man7.org/linux/man-pages/man2/dup.2.html" },
+      { name: "lsof", kind: "software", note: "Lists every open file, socket and pipe, and which process holds it.", href: "https://github.com/lsof-org/lsof" },
+      { name: "/proc/PID/fd", kind: "software", note: "Each process's fd table, readable as a directory of links.", href: "https://man7.org/linux/man-pages/man5/proc.5.html" },
+      { name: "open(2)", kind: "standard", note: "Flags such as O_APPEND, O_TRUNC and O_CLOEXEC, and the EMFILE error.", href: "https://man7.org/linux/man-pages/man2/open.2.html" },
+    ],
+  },
+  "operating-systems/page-cache": {
+    lead: "Seeing and tuning the page cache.",
+    tools: [
+      { name: "vm sysctls", kind: "software", note: "dirty_background_ratio, dirty_ratio and dirty_expire_centisecs, documented.", href: "https://docs.kernel.org/admin-guide/sysctl/vm.html" },
+      { name: "free (procps)", kind: "software", note: "The buff/cache column: memory holding file data, given back on demand.", href: "https://man7.org/linux/man-pages/man1/free.1.html" },
+      { name: "BCC (cachestat)", kind: "software", note: "eBPF tools that count page-cache hits and misses live.", href: "https://github.com/iovisor/bcc" },
+      { name: "fio", kind: "software", note: "Benchmark buffered vs direct I/O and see the cache's effect.", href: "https://github.com/axboe/fio" },
+    ],
+  },
+  "operating-systems/fsync": {
+    lead: "Durability in practice.",
+    tools: [
+      { name: "fsync(2)", kind: "standard", note: "What fsync and fdatasync guarantee, including syncing the directory.", href: "https://man7.org/linux/man-pages/man2/fsync.2.html" },
+      { name: "PostgreSQL WAL", kind: "software", note: "How Postgres uses fsync on its write-ahead log, and why drive caches matter.", href: "https://www.postgresql.org/docs/current/wal-reliability.html" },
+      { name: "SQLite atomic commit", kind: "software", note: "A step-by-step account of a crash-safe commit with a journal.", href: "https://www.sqlite.org/atomiccommit.html" },
+      { name: "fio", kind: "software", note: "Measure fsync latency on your drive with --fsync=1.", href: "https://github.com/axboe/fio" },
+    ],
+  },
   "operating-systems/binary-numbers": {
     lead: "Every language stores integers and floats the same way underneath.",
     tools: [
