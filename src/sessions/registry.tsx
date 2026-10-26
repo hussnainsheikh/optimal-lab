@@ -75,6 +75,9 @@ import CorsDemo from "./frontend/cors/CorsDemo";
 import CspDemo from "./frontend/csp/CspDemo";
 import FocusDemo from "./frontend/keyboard-focus/FocusDemo";
 import UrlToPixelsDemo from "./frontend/url-to-pixels/UrlToPixelsDemo";
+import StateKindsDemo from "./frontend/state-kinds/StateKindsDemo";
+import FormsDemo from "./frontend/forms/FormsDemo";
+import UrlStateDemo from "./frontend/url-state/UrlStateDemo";
 import WorkerDemo from "./frontend/web-workers/WorkerDemo";
 import ThisBindingDemo from "./frontend/this-binding/ThisBindingDemo";
 import PrototypesDemo from "./frontend/prototypes/PrototypesDemo";
@@ -508,6 +511,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "frontend/csp": <CspDemo />,
   "frontend/keyboard-focus": <FocusDemo />,
   "frontend/url-to-pixels": <UrlToPixelsDemo />,
+  "frontend/state-kinds": <StateKindsDemo />,
+  "frontend/forms": <FormsDemo />,
+  "frontend/url-state": <UrlStateDemo />,
   "frontend/web-workers": <WorkerDemo />,
   "frontend/this-binding": <ThisBindingDemo />,
   "frontend/prototypes": <PrototypesDemo />,

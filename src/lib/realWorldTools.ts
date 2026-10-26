@@ -3161,6 +3161,33 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "WebPageTest", kind: "service", note: "Filmstrips of page loads.", href: "https://www.webpagetest.org/" },
     ],
   },
+  "frontend/state-kinds": {
+    lead: "A cache for server data, a store for shared client state, and the platform for the rest.",
+    tools: [
+      { name: "TanStack Query", kind: "software", note: "Server state as a cache: refetching, staleness and invalidation.", href: "https://github.com/TanStack/query" },
+      { name: "SWR", kind: "software", note: "Stale-while-revalidate data fetching.", href: "https://github.com/vercel/swr" },
+      { name: "Redux Toolkit", kind: "software", note: "A global store, with RTK Query for server data.", href: "https://github.com/reduxjs/redux-toolkit" },
+      { name: "Web Storage", kind: "standard", note: "localStorage and sessionStorage.", href: "https://html.spec.whatwg.org/multipage/webstorage.html" },
+    ],
+  },
+  "frontend/forms": {
+    lead: "Checks in the page help people; checks on the server and in the database protect the data.",
+    tools: [
+      { name: "Constraint validation", kind: "standard", note: "required, type, pattern and the validity API in HTML.", href: "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#constraints" },
+      { name: "JSON Schema", kind: "standard", note: "One schema shared by client and server.", href: "https://json-schema.org/" },
+      { name: "Pwned Passwords", kind: "service", note: "Check a password against known breaches.", href: "https://haveibeenpwned.com/Passwords" },
+      { name: "PostgreSQL constraints", kind: "software", note: "UNIQUE and CHECK constraints as the last line.", href: "https://www.postgresql.org/docs/current/ddl-constraints.html" },
+    ],
+  },
+  "frontend/url-state": {
+    lead: "The URL and history APIs, and libraries that type them.",
+    tools: [
+      { name: "URLSearchParams", kind: "standard", note: "The URL Standard's query string API.", href: "https://url.spec.whatwg.org/#interface-urlsearchparams" },
+      { name: "History API", kind: "standard", note: "pushState, replaceState and popstate.", href: "https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-history-interface" },
+      { name: "Navigation API", kind: "standard", note: "A newer API for intercepting navigations.", href: "https://github.com/WICG/navigation-api" },
+      { name: "nuqs", kind: "software", note: "Type-safe search params as state.", href: "https://github.com/47ng/nuqs" },
+    ],
+  },
   "frontend/web-workers": {
     lead: "Workers are built into every browser.",
     tools: [

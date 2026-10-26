@@ -416,6 +416,9 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/devops/capacity-load-testing` | Load test a product API modelled as queues: ramp or constant, realistic cache hits, staging vs production shape, p99 vs average, and which tier saturates | — |
 | `/tracks/devops/dora-metrics` | Compare quarterly, weekly and continuous delivery teams on the four DORA metrics | — |
 | `/tracks/frontend/url-to-pixels` | Step through one page load from DNS lookup to an interactive page | — |
+| `/tracks/frontend/state-kinds` | Give six pieces of state a home (component, store, query cache, URL, localStorage), then navigate, reload, share, open a tab and let a colleague edit | — |
+| `/tracks/frontend/forms` | Type into a sign-up form checked by the browser, a client schema, the server and a unique index; when errors show, a curl bypass and two sign-ups racing | — |
+| `/tracks/frontend/url-state` | Move a product list's filters into the URL with URLSearchParams: defaults left out, pushState vs replaceState while typing, a hand-edited URL checked, then reload, share and Back | — |
 | `/tracks/frontend/web-workers` | Run a 1.2 s calculation on the main thread and in a Web Worker and count dropped frames | — |
 | `/tracks/frontend/this-binding` | Call the same method five ways and see what this becomes each time | — |
 | `/tracks/frontend/prototypes` | Look up five properties on an object and watch the engine walk the prototype chain | — |
