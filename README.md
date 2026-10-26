@@ -148,6 +148,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/frontend/hydration` | Compare client rendering, server rendering and islands: when content appears and when it can be clicked | — |
 | `/tracks/frontend/core-web-vitals` | Toggle a CDN, deferred scripts, a preload and image compression and watch LCP drop below 2.5 s | — |
 | `/tracks/frontend/flexbox` | Drag the container width and see grow split the extra space and shrink take it back | — |
+| `/tracks/frontend/infinite-feed` | Case study: cursor vs offset paging on a feed that grows, prefetch distance against scroll speed, a live virtualized list, one request per page and Back to the same post | — |
+| `/tracks/frontend/autocomplete-ui` | Case study: replay a typing session with debounce, latest-only responses, a cache and a minimum length, then use a live ARIA combobox from the keyboard | — |
+| `/tracks/frontend/live-dashboard` | Case study: 400 rows at 50 to 1,000 updates a second: render strategies, pausing hidden tabs, sequence gaps after a drop, and reconnect jitter for 10,000 clients | — |
+| `/tracks/frontend/offline-notes` | Case study: localStorage vs IndexedDB, an outbox with idempotency keys replayed in order, last-write-wins vs a three-way merge across two devices, and persistent storage | — |
 | `/tracks/devops/probes` | An app warms up and later hangs; try no probes, readiness, liveness or both and count failed requests | — |
 | `/tracks/devops/resource-limits` | A leaking app under different memory and CPU limits: OOM kills versus throttling | — |
 | `/tracks/devops/ip-subnets` | Drag the prefix length to see network and host bits, split a /16 into subnets and test which IPs fall inside | — |
