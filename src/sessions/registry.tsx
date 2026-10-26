@@ -176,6 +176,10 @@ import FeatureEvalsDemo from "./ai-native/feature-evals/FeatureEvalsDemo";
 import UserFeedbackDemo from "./ai-native/user-feedback/UserFeedbackDemo";
 import ModelUpgradesDemo from "./ai-native/model-upgrades/ModelUpgradesDemo";
 import AbTestDemo from "./ai-native/ab-testing-ai/AbTestDemo";
+import PairProgrammingDemo from "./ai-native/pair-programming/PairProgrammingDemo";
+import SpecsForAgentsDemo from "./ai-native/specs-for-agents/SpecsForAgentsDemo";
+import AiCodeReviewDemo from "./ai-native/ai-code-review/AiCodeReviewDemo";
+import AiTestsDemo from "./ai-native/ai-tests/AiTestsDemo";
 import LatencyUxDemo from "./ai-native/latency-ux/LatencyUxDemo";
 import ClassifyRouteDemo from "./ai-automation/classify-route/ClassifyRouteDemo";
 import McpServerDemo from "./tools/build-mcp-server/McpServerDemo";
@@ -525,6 +529,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai-native/user-feedback": <UserFeedbackDemo />,
   "ai-native/model-upgrades": <ModelUpgradesDemo />,
   "ai-native/ab-testing-ai": <AbTestDemo />,
+  "ai-native/pair-programming": <PairProgrammingDemo />,
+  "ai-native/specs-for-agents": <SpecsForAgentsDemo />,
+  "ai-native/ai-code-review": <AiCodeReviewDemo />,
+  "ai-native/ai-tests": <AiTestsDemo />,
   "ai-native/latency-ux": <LatencyUxDemo />,
   "ai-automation/classify-route": <ClassifyRouteDemo />,
   "tools/build-mcp-server": <McpServerDemo />,
