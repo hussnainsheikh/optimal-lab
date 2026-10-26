@@ -1772,6 +1772,51 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Chrome DevTools Network", kind: "software", note: "The Protocol column shows h2 or h3.", href: "https://developer.chrome.com/docs/devtools/network" },
     ],
   },
+  "networking/http1": {
+    lead: "Servers and tools that speak HTTP/1.1 every day.",
+    tools: [
+      { name: "HTTP/1.1 (RFC 9112)", kind: "protocol", note: "Message syntax, Content-Length, chunked encoding and persistent connections.", href: "https://www.rfc-editor.org/rfc/rfc9112" },
+      { name: "nginx", kind: "software", note: "Keeps connections alive to clients and upstreams; keepalive_timeout and keepalive_requests.", href: "https://github.com/nginx/nginx" },
+      { name: "curl", kind: "software", note: "curl -v prints every request and response header line.", href: "https://github.com/curl/curl" },
+      { name: "HAProxy", kind: "software", note: "An HTTP/1.1 proxy strict about framing, which matters for request smuggling.", href: "https://github.com/haproxy/haproxy" },
+    ],
+  },
+  "networking/http3-quic": {
+    lead: "QUIC implementations and the services that run HTTP/3 at scale.",
+    tools: [
+      { name: "QUIC (RFC 9000)", kind: "protocol", note: "Connection IDs, path validation, migration and the anti-amplification limit.", href: "https://www.rfc-editor.org/rfc/rfc9000" },
+      { name: "quiche", kind: "software", note: "Cloudflare's QUIC and HTTP/3 library.", href: "https://github.com/cloudflare/quiche" },
+      { name: "msquic", kind: "software", note: "Microsoft's cross-platform QUIC implementation.", href: "https://github.com/microsoft/msquic" },
+      { name: "Cloudflare HTTP/3", kind: "service", note: "HTTP/3 at the edge for any site behind the CDN.", href: "https://developers.cloudflare.com/speed/optimization/protocol/http3/" },
+    ],
+  },
+  "networking/tls-handshake-net": {
+    lead: "Libraries and tools that run and inspect TLS handshakes.",
+    tools: [
+      { name: "TLS 1.3 (RFC 8446)", kind: "protocol", note: "One-round-trip handshake, session resumption and 0-RTT.", href: "https://www.rfc-editor.org/rfc/rfc8446" },
+      { name: "OpenSSL", kind: "software", note: "openssl s_client shows the chain, protocol and handshake bytes.", href: "https://github.com/openssl/openssl" },
+      { name: "BoringSSL", kind: "software", note: "Google's TLS library in Chrome and Android, with certificate compression.", href: "https://boringssl.googlesource.com/boringssl" },
+      { name: "SSL Labs Server Test", kind: "service", note: "Grades a site's TLS setup, chain and protocol support.", href: "https://www.ssllabs.com/ssltest/" },
+    ],
+  },
+  "networking/websocket-protocol": {
+    lead: "Servers and proxies that carry WebSockets.",
+    tools: [
+      { name: "WebSocket (RFC 6455)", kind: "protocol", note: "The opening handshake, framing, masking, ping and pong.", href: "https://www.rfc-editor.org/rfc/rfc6455" },
+      { name: "nginx WebSocket proxying", kind: "software", note: "Pass Upgrade through and raise proxy_read_timeout for quiet sockets.", href: "https://nginx.org/en/docs/http/websocket.html" },
+      { name: "Autobahn TestSuite", kind: "software", note: "Checks a WebSocket implementation against the protocol, case by case.", href: "https://github.com/crossbario/autobahn-testsuite" },
+      { name: "websocat", kind: "software", note: "A command-line client to open and talk to a WebSocket.", href: "https://github.com/vi/websocat" },
+    ],
+  },
+  "networking/grpc-protobuf": {
+    lead: "The contract, the runtime, and tools to call and check it.",
+    tools: [
+      { name: "Protocol Buffers", kind: "software", note: "The schema language, compiler and wire format.", href: "https://github.com/protocolbuffers/protobuf" },
+      { name: "gRPC", kind: "software", note: "RPC over HTTP/2 with deadlines, status codes and streaming.", href: "https://grpc.io/" },
+      { name: "Buf", kind: "software", note: "Lints .proto files and fails the build on breaking changes.", href: "https://github.com/bufbuild/buf" },
+      { name: "grpcurl", kind: "software", note: "curl for gRPC: call methods from the command line.", href: "https://github.com/fullstorydev/grpcurl" },
+    ],
+  },
   "networking/traceroute": {
     lead: "Path tools are the first step in debugging the network.",
     tools: [
