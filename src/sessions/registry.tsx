@@ -18,6 +18,9 @@ import ReasoningModelsDemo from "./ai/reasoning-models/ReasoningModelsDemo";
 import OpenVsClosedDemo from "./ai/open-vs-closed/OpenVsClosedDemo";
 import BiasFairnessDemo from "./ai/bias-fairness/BiasFairnessDemo";
 import WorkflowDemo from "./ai-automation/workflow/WorkflowDemo";
+import TriggersDemo from "./ai-automation/triggers/TriggersDemo";
+import WorkflowBranchingDemo from "./ai-automation/branching/WorkflowBranchingDemo";
+import IdempotentStepsDemo from "./ai-automation/idempotent-steps/IdempotentStepsDemo";
 import ApprovalDemo from "./ai-automation/human-approval/ApprovalDemo";
 import StructuredDemo from "./ai-native/structured-output/StructuredDemo";
 import ToolCallDemo from "./ai-native/tool-calling/ToolCallDemo";
@@ -736,6 +739,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai-native/writing-assist": <WritingAssistDemo />,
   "ai-native/semantic-search-feature": <SemanticSearchFeatureDemo />,
   "ai-automation/workflow": <WorkflowDemo />,
+  "ai-automation/triggers": <TriggersDemo />,
+  "ai-automation/branching": <WorkflowBranchingDemo />,
+  "ai-automation/idempotent-steps": <IdempotentStepsDemo />,
   "ai-automation/human-approval": <ApprovalDemo />,
   "ai-automation/schedules": <SchedulesDemo />,
   "tools/cursor-agent": <AgentLoopDemo />,
