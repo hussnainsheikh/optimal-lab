@@ -353,6 +353,10 @@ import JwtDemo from "./security/jwt/JwtDemo";
 import CsrfDemo from "./security/csrf/CsrfDemo";
 import SqliDemo from "./security/sql-injection/SqliDemo";
 import PipelineStagesDemo from "./frontend/rendering-pipeline/PipelineStagesDemo";
+import DomParsingDemo from "./frontend/dom-parsing/DomParsingDemo";
+import ReflowDemo from "./frontend/reflow-repaint/ReflowDemo";
+import MemoryLeaksDemo from "./frontend/js-garbage-collection/MemoryLeaksDemo";
+import ModulesDemo from "./frontend/modules-bundling/ModulesDemo";
 import BrowserLoopDemo from "./frontend/browser-event-loop/BrowserLoopDemo";
 import HydrationDemo from "./frontend/hydration/HydrationDemo";
 import LcpDemo from "./frontend/core-web-vitals/LcpDemo";
@@ -779,6 +783,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "security/csrf": <CsrfDemo />,
   "security/sql-injection": <SqliDemo />,
   "frontend/rendering-pipeline": <PipelineStagesDemo />,
+  "frontend/dom-parsing": <DomParsingDemo />,
+  "frontend/reflow-repaint": <ReflowDemo />,
+  "frontend/js-garbage-collection": <MemoryLeaksDemo />,
+  "frontend/modules-bundling": <ModulesDemo />,
   "frontend/browser-event-loop": <BrowserLoopDemo />,
   "frontend/hydration": <HydrationDemo />,
   "frontend/core-web-vitals": <LcpDemo />,
