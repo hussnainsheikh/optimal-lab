@@ -91,6 +91,10 @@ import PipelineTestsDemo from "./devops/pipeline-tests/PipelineTestsDemo";
 import EnvironmentsDemo from "./devops/environments/EnvironmentsDemo";
 import SemverDemo from "./devops/releases-versioning/SemverDemo";
 import AffectedDemo from "./devops/build-caching/AffectedDemo";
+import ShipToK8sDemo from "./devops/ship-node-app/ShipToK8sDemo";
+import ZeroDowntimeDemo from "./devops/zero-downtime-release/ZeroDowntimeDemo";
+import PreviewEnvsDemo from "./devops/preview-environments/PreviewEnvsDemo";
+import OutageDrillDemo from "./devops/outage-drill/OutageDrillDemo";
 import SupplyChainDemo from "./devops/supply-chain/SupplyChainDemo";
 import ZonesDemo from "./devops/regions-zones/ZonesDemo";
 import CloudModelsDemo from "./devops/cloud-models/CloudModelsDemo";
@@ -513,6 +517,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "devops/environments": <EnvironmentsDemo />,
   "devops/releases-versioning": <SemverDemo />,
   "devops/build-caching": <AffectedDemo />,
+  "devops/ship-node-app": <ShipToK8sDemo />,
+  "devops/zero-downtime-release": <ZeroDowntimeDemo />,
+  "devops/preview-environments": <PreviewEnvsDemo />,
+  "devops/outage-drill": <OutageDrillDemo />,
   "devops/supply-chain": <SupplyChainDemo />,
   "devops/regions-zones": <ZonesDemo />,
   "devops/cloud-models": <CloudModelsDemo />,
