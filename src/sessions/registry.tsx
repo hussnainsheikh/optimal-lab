@@ -332,6 +332,9 @@ import ImageGenerationDemo from "./ai/image-generation/ImageGenerationDemo";
 import SpeechDemo from "./ai/speech/SpeechDemo";
 import TrainingDemo from "./ai/training-loss/TrainingDemo";
 import SchedulesDemo from "./ai-automation/schedules/SchedulesDemo";
+import EscalationDemo from "./ai-automation/escalation/EscalationDemo";
+import ApprovalTimeoutsDemo from "./ai-automation/approval-timeouts/ApprovalTimeoutsDemo";
+import ApprovalAuditDemo from "./ai-automation/approval-audit/ApprovalAuditDemo";
 import RollingDeployDemo from "./devops/rolling-deploys/RollingDeployDemo";
 import BfsDfsDemo from "./dsa/bfs-vs-dfs/BfsDfsDemo";
 import DynamicProgrammingDemo from "./dsa/dynamic-programming/DynamicProgrammingDemo";
@@ -750,6 +753,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai-automation/idempotent-steps": <IdempotentStepsDemo />,
   "ai-automation/human-approval": <ApprovalDemo />,
   "ai-automation/schedules": <SchedulesDemo />,
+  "ai-automation/escalation": <EscalationDemo />,
+  "ai-automation/approval-timeouts": <ApprovalTimeoutsDemo />,
+  "ai-automation/approval-audit": <ApprovalAuditDemo />,
   "tools/cursor-agent": <AgentLoopDemo />,
   "tools/mcp": <McpDemo />,
   "tools/n8n": <N8nDemo />,
