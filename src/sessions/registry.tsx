@@ -295,6 +295,9 @@ import TlsNetDemo from "./networking/tls-handshake-net/TlsNetDemo";
 import WebSocketDemo from "./networking/websocket-protocol/WebSocketDemo";
 import GrpcDemo from "./networking/grpc-protobuf/GrpcDemo";
 import TracerouteDemo from "./networking/traceroute/TracerouteDemo";
+import CurlDigDemo from "./networking/curl-dig/CurlDigDemo";
+import PacketCaptureDemo from "./networking/packet-capture/PacketCaptureDemo";
+import SocketsDemo from "./networking/ports-connections/SocketsDemo";
 import FlowControlDemo from "./networking/flow-control/FlowControlDemo";
 import LatencyBandwidthDemo from "./networking/latency-bandwidth/LatencyBandwidthDemo";
 import HolDemo from "./networking/head-of-line-blocking/HolDemo";
@@ -782,6 +785,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "networking/websocket-protocol": <WebSocketDemo />,
   "networking/grpc-protobuf": <GrpcDemo />,
   "networking/traceroute": <TracerouteDemo />,
+  "networking/curl-dig": <CurlDigDemo />,
+  "networking/packet-capture": <PacketCaptureDemo />,
+  "networking/ports-connections": <SocketsDemo />,
   "networking/flow-control": <FlowControlDemo />,
   "networking/latency-bandwidth": <LatencyBandwidthDemo />,
   "networking/head-of-line-blocking": <HolDemo />,
