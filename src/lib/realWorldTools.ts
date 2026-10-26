@@ -735,6 +735,33 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "TCP congestion control (RFC 5681)", kind: "protocol", note: "Slow start, congestion avoidance and fast recovery.", href: "https://www.rfc-editor.org/rfc/rfc5681" },
     ],
   },
+  "networking/peering": {
+    lead: "Where networks meet, and the data operators use to decide who to peer with.",
+    tools: [
+      { name: "PeeringDB", kind: "service", note: "Which networks are at which exchanges and data centres, and their peering policy.", href: "https://www.peeringdb.com/" },
+      { name: "DE-CIX", kind: "service", note: "One of the largest internet exchanges: networks swap traffic over a shared switch.", href: "https://www.de-cix.net/" },
+      { name: "Netflix Open Connect", kind: "service", note: "Caches Netflix places inside ISPs for free, filled overnight.", href: "https://openconnect.netflix.com/" },
+      { name: "BIRD", kind: "software", note: "The routing daemon most exchange route servers run.", href: "https://bird.network.cz/" },
+    ],
+  },
+  "networking/dns-caching": {
+    lead: "Resolvers, their caches, and the knobs that decide how long answers live.",
+    tools: [
+      { name: "Unbound", kind: "software", note: "A caching recursive resolver; cache-min-ttl and serve-expired change how long answers live.", href: "https://github.com/NLnetLabs/unbound" },
+      { name: "Google Public DNS cache flush", kind: "service", note: "Ask Google's resolver to drop its cached answer for a name.", href: "https://developers.google.com/speed/public-dns/cache" },
+      { name: "Negative caching (RFC 2308)", kind: "standard", note: "How long 'this name does not exist' may be cached.", href: "https://www.rfc-editor.org/rfc/rfc2308" },
+      { name: "Amazon Route 53", kind: "service", note: "Authoritative DNS billed per query, so TTLs show up on the bill.", href: "https://aws.amazon.com/route53/" },
+    ],
+  },
+  "networking/dhcp": {
+    lead: "DHCP servers and the protections around them.",
+    tools: [
+      { name: "Kea", kind: "software", note: "ISC's DHCP server for IPv4 and IPv6, with a lease database and an API.", href: "https://github.com/isc-projects/kea" },
+      { name: "dnsmasq", kind: "software", note: "The small DHCP and DNS server inside many home routers.", href: "https://thekelleys.org.uk/dnsmasq/doc.html" },
+      { name: "DHCP (RFC 2131)", kind: "protocol", note: "The four messages, lease timers T1 and T2, and DHCPDECLINE.", href: "https://www.rfc-editor.org/rfc/rfc2131" },
+      { name: "Address conflict detection (RFC 5227)", kind: "standard", note: "The ARP probe a client sends before using an address.", href: "https://www.rfc-editor.org/rfc/rfc5227" },
+    ],
+  },
   "operating-systems/deadlocks": {
     lead: "Deadlocks appear in threads and in database transactions alike.",
     tools: [
