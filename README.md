@@ -225,6 +225,8 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/databases/document-databases` | 2,000 orders as JSON documents: one-read order pages, queries into arrays with a multikey index, embed vs reference on a rename, the 16 MB limit, and schema validation | — |
 | `/tracks/databases/join-algorithms` | Step through nested loop, hash and merge joins on small tables and compare costs at scale | — |
 | `/tracks/networking/nat` | Packets leave three private devices, get rewritten by the router, and replies are mapped back | — |
+| `/tracks/networking/firewalls` | Six packets through a stateless filter, one with every high port open, and a stateful firewall with a connection table; a pooled database connection forgotten after an idle timeout, and the table filling up | — |
+| `/tracks/networking/vpns` | Send to a company wiki, a public site and a DNS server from café Wi-Fi: full vs split tunnel by longest prefix, WireGuard and IPsec wrappers byte by byte, the MTU black hole, NAT at the VPN server and a DNS leak | — |
 | `/tracks/operating-systems/virtual-memory` | Translate addresses through a TLB and page table, and trigger page faults that evict a page | — |
 | `/tracks/frontend/css-grid` | Pick a grid template, drag the container width and watch fr, fixed and auto-fill tracks resize | — |
 | `/tracks/frontend/bundlers` | Start a bundling or ESM dev server, hot-swap an edit, transform for production, and see which SHA-256-named files a returning visitor downloads again | — |
