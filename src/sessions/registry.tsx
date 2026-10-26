@@ -23,6 +23,10 @@ import WorkflowBranchingDemo from "./ai-automation/branching/WorkflowBranchingDe
 import IdempotentStepsDemo from "./ai-automation/idempotent-steps/IdempotentStepsDemo";
 import ApprovalDemo from "./ai-automation/human-approval/ApprovalDemo";
 import StructuredDemo from "./ai-native/structured-output/StructuredDemo";
+import RunMonitoringDemo from "./ai-automation/run-monitoring/RunMonitoringDemo";
+import AutomationCostDemo from "./ai-automation/automation-cost/AutomationCostDemo";
+import WorkflowVersioningDemo from "./ai-automation/workflow-versioning/WorkflowVersioningDemo";
+import DurableWorkflowsDemo from "./ai-automation/durable-workflows/DurableWorkflowsDemo";
 import ToolCallDemo from "./ai-native/tool-calling/ToolCallDemo";
 import ClassificationDemo from "./ai-native/classification/ClassificationDemo";
 import ExtractionDemo from "./ai-native/extraction/ExtractionDemo";
@@ -751,6 +755,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai/prompt-patterns": <PromptPatternsDemo />,
   "ai/graph-rag": <GraphRagDemo />,
   "ai-native/structured-output": <StructuredDemo />,
+  "ai-automation/run-monitoring": <RunMonitoringDemo />,
+  "ai-automation/automation-cost": <AutomationCostDemo />,
+  "ai-automation/workflow-versioning": <WorkflowVersioningDemo />,
+  "ai-automation/durable-workflows": <DurableWorkflowsDemo />,
   "ai-native/tool-calling": <ToolCallDemo />,
   "ai-native/classification": <ClassificationDemo />,
   "ai-native/extraction": <ExtractionDemo />,
