@@ -424,6 +424,9 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/frontend/css-animations` | Animate a real box with five easings, moving transform, left or width | — |
 | `/tracks/frontend/reconciliation` | Insert at the top of two real React lists, one keyed by index and one by id | — |
 | `/tracks/frontend/hooks` | An interval counter three ways: stuck on a stale closure, fixed with an updater, and with dependencies | — |
+| `/tracks/frontend/context` | A shop's tree wired with props, one context or a context per kind, state in App or in providers: who renders and why for four changes, by React's rules | — |
+| `/tracks/frontend/server-components` | Place each part of a product page on the server or the client: JavaScript shipped, RSC payload, serializable props, the use client boundary, and time to interactive | — |
+| `/tracks/frontend/suspense` | Place Suspense boundaries on a page with four slow parts: what shows when, a fetch waterfall, layout shift from small fallbacks, and startTransition | — |
 | `/tracks/frontend/memoization` | Type into a search box and see when an expensive chart re-renders with and without memo | — |
 | `/tracks/frontend/data-fetching` | Load a profile page with effect-driven fetches, parallel requests and server-side fetching | — |
 | `/tracks/frontend/optimistic-updates` | Like a post with a slow server, waiting vs optimistic, and roll back when it fails | — |

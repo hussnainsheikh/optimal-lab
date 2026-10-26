@@ -3225,6 +3225,33 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "You might not need an effect", kind: "standard", note: "When to avoid effects.", href: "https://react.dev/learn/you-might-not-need-an-effect" },
     ],
   },
+  "frontend/context": {
+    lead: "Context, the Profiler to see who rendered, and stores for state that changes often.",
+    tools: [
+      { name: "useContext", kind: "standard", note: "React's reference, including value identity.", href: "https://react.dev/reference/react/useContext" },
+      { name: "React Developer Tools", kind: "software", note: "The Profiler highlights renders and why they happened.", href: "https://react.dev/learn/react-developer-tools" },
+      { name: "use-context-selector", kind: "software", note: "Subscribe to one slice of a context.", href: "https://github.com/dai-shi/use-context-selector" },
+      { name: "Zustand", kind: "software", note: "A small store where components subscribe to what they read.", href: "https://github.com/pmndrs/zustand" },
+    ],
+  },
+  "frontend/server-components": {
+    lead: "Frameworks that run React Server Components.",
+    tools: [
+      { name: "React Server Components", kind: "standard", note: "React's reference for server components.", href: "https://react.dev/reference/rsc/server-components" },
+      { name: "\"use client\"", kind: "standard", note: "How the client boundary works.", href: "https://react.dev/reference/rsc/use-client" },
+      { name: "Next.js App Router", kind: "software", note: "Server components by default.", href: "https://nextjs.org/docs/app" },
+      { name: "Waku", kind: "software", note: "A minimal framework built around server components.", href: "https://github.com/wakujs/waku" },
+    ],
+  },
+  "frontend/suspense": {
+    lead: "Boundaries, transitions and data libraries that suspend.",
+    tools: [
+      { name: "<Suspense>", kind: "standard", note: "React's reference for boundaries and fallbacks.", href: "https://react.dev/reference/react/Suspense" },
+      { name: "startTransition", kind: "standard", note: "Keep the current UI while an update loads.", href: "https://react.dev/reference/react/startTransition" },
+      { name: "TanStack Query", kind: "software", note: "Data fetching with Suspense support.", href: "https://github.com/TanStack/query" },
+      { name: "Cumulative Layout Shift", kind: "standard", note: "How content that jumps is measured.", href: "https://web.dev/articles/cls" },
+    ],
+  },
   "frontend/memoization": {
     lead: "React apps memoise to skip expensive re-renders.",
     tools: [

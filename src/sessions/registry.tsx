@@ -83,6 +83,9 @@ import ResponsiveDemo from "./frontend/responsive-design/ResponsiveDemo";
 import AnimationsDemo from "./frontend/css-animations/AnimationsDemo";
 import KeysDemo from "./frontend/reconciliation/KeysDemo";
 import StaleClosureDemo from "./frontend/hooks/StaleClosureDemo";
+import ContextDemo from "./frontend/context/ContextDemo";
+import ServerComponentsDemo from "./frontend/server-components/ServerComponentsDemo";
+import SuspenseDemo from "./frontend/suspense/SuspenseDemo";
 import MemoDemo from "./frontend/memoization/MemoDemo";
 import BranchingDemo from "./devops/branching-strategies/BranchingDemo";
 import PullRequestsDemo from "./devops/pull-requests/PullRequestsDemo";
@@ -513,6 +516,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "frontend/css-animations": <AnimationsDemo />,
   "frontend/reconciliation": <KeysDemo />,
   "frontend/hooks": <StaleClosureDemo />,
+  "frontend/context": <ContextDemo />,
+  "frontend/server-components": <ServerComponentsDemo />,
+  "frontend/suspense": <SuspenseDemo />,
   "frontend/memoization": <MemoDemo />,
   "devops/branching-strategies": <BranchingDemo />,
   "devops/pull-requests": <PullRequestsDemo />,
