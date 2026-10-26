@@ -116,6 +116,10 @@ import FirewallDemo from "./devops/ports-firewalls/FirewallDemo";
 import CertRenewalDemo from "./devops/tls-certificates/CertRenewalDemo";
 import LoadAverageDemo from "./devops/system-resources/LoadAverageDemo";
 import DnsRecordsDemo from "./devops/dns-records/DnsRecordsDemo";
+import PipelineSecretsDemo from "./devops/pipeline-secrets/PipelineSecretsDemo";
+import VulnScanningDemo from "./devops/vulnerability-scanning/VulnScanningDemo";
+import NetworkPoliciesDemo from "./devops/network-policies/NetworkPoliciesDemo";
+import AuditDemo from "./devops/audit-compliance/AuditDemo";
 import ReverseProxyDemo from "./devops/reverse-proxy-config/ReverseProxyDemo";
 import VpcDemo from "./devops/vpc/VpcDemo";
 import TfModulesDemo from "./devops/terraform-modules/TfModulesDemo";
@@ -532,6 +536,10 @@ const SESSIONS: Record<string, ReactNode> = {
   "devops/tls-certificates": <CertRenewalDemo />,
   "devops/system-resources": <LoadAverageDemo />,
   "devops/dns-records": <DnsRecordsDemo />,
+  "devops/pipeline-secrets": <PipelineSecretsDemo />,
+  "devops/vulnerability-scanning": <VulnScanningDemo />,
+  "devops/network-policies": <NetworkPoliciesDemo />,
+  "devops/audit-compliance": <AuditDemo />,
   "devops/reverse-proxy-config": <ReverseProxyDemo />,
   "devops/vpc": <VpcDemo />,
   "devops/terraform-modules": <TfModulesDemo />,

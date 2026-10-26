@@ -358,6 +358,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/devops/tls-certificates` | A year of ACME renewals: HTTP-01 vs DNS-01, a closed port 80, a rotated DNS token, a missing reload hook and expiry monitoring | — |
 | `/tracks/devops/system-resources` | Read load average and CPU breakdown on a 4-core box: healthy, busy, overloaded and stuck on disk | — |
 | `/tracks/devops/dns-records` | Look up A, CNAME, MX and TXT records in a zone and follow CNAME chains | — |
+| `/tracks/devops/pipeline-secrets` | Five ways a CI token leaks: a commit, a base64 debug line masking misses, a build ARG, a fork's pull request and a token found 90 days later | — |
+| `/tracks/devops/vulnerability-scanning` | 96 findings, 15 fixes a sprint, one exploited high: drop dev-only packages, rank by CISA KEV and EPSS, check reachability, and see if it's fixed in time | — |
+| `/tracks/devops/network-policies` | Seven pod-to-pod connections through real NetworkPolicy evaluation: default deny, explicit allows, a cross-namespace scrape, egress deny and the DNS trap | — |
+| `/tracks/devops/audit-compliance` | Six SOC 2 auditor questions answered by controls: pipeline-only changes, locked audit logs, access reviews, break-glass access and continuous evidence | — |
 | `/tracks/devops/reverse-proxy-config` | Route five requests through nginx location blocks to an upstream pool, WebSockets and static files | — |
 | `/tracks/devops/vpc` | Trace five flows through public and private subnets, gateways and security groups | — |
 | `/tracks/devops/terraform-modules` | A database for three environments, copied or as a module: one fix everywhere, input validation, pinned versions and a v2 rename that plans a destroy unless a moved block maps it | — |
