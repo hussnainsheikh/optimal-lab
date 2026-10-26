@@ -1678,6 +1678,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Vite code splitting", kind: "software", note: "Dynamic imports become chunks.", href: "https://vite.dev/guide/features#dynamic-import" },
     ],
   },
+  "frontend/streaming-ssr": {
+    lead: "Streaming renderers, and the HTTP and proxy settings that let chunks through.",
+    tools: [
+      { name: "renderToPipeableStream", kind: "standard", note: "React's streaming server renderer.", href: "https://react.dev/reference/react-dom/server/renderToPipeableStream" },
+      { name: "HTTP/1.1 chunked transfer coding", kind: "protocol", note: "RFC 9112's chunk framing.", href: "https://www.rfc-editor.org/rfc/rfc9112#section-7.1" },
+      { name: "nginx proxy_buffering", kind: "software", note: "Turn it off for streamed responses.", href: "https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering" },
+      { name: "Soft 404 errors", kind: "standard", note: "How Google treats a not-found page sent with 200.", href: "https://developers.google.com/search/docs/crawling-indexing/http-network-errors#soft-404-errors" },
+    ],
+  },
+  "frontend/islands": {
+    lead: "Frameworks built around islands, and the browser APIs behind their directives.",
+    tools: [
+      { name: "Astro", kind: "software", note: "Islands with client:load, idle, visible and media.", href: "https://github.com/withastro/astro" },
+      { name: "Fresh", kind: "software", note: "Islands with no JavaScript by default.", href: "https://github.com/denoland/fresh" },
+      { name: "Intersection Observer", kind: "standard", note: "What client:visible waits on.", href: "https://w3c.github.io/IntersectionObserver/" },
+      { name: "requestIdleCallback", kind: "standard", note: "What client:idle waits on.", href: "https://w3c.github.io/requestidlecallback/" },
+    ],
+  },
+  "frontend/edge-rendering": {
+    lead: "Edge runtimes, the API surface they share, and databases they can reach.",
+    tools: [
+      { name: "Cloudflare Workers", kind: "platform", note: "V8 isolates in hundreds of cities.", href: "https://workers.cloudflare.com/" },
+      { name: "Deno Deploy", kind: "platform", note: "Edge JavaScript with web-standard APIs.", href: "https://deno.com/deploy" },
+      { name: "WinterTC", kind: "standard", note: "The common API set server-side runtimes agree on.", href: "https://wintertc.org/" },
+      { name: "Neon serverless driver", kind: "software", note: "Postgres over HTTP and WebSockets, for runtimes without TCP.", href: "https://github.com/neondatabase/serverless" },
+    ],
+  },
+  "frontend/critical-path": {
+    lead: "Measure the chain, then cut it.",
+    tools: [
+      { name: "WebPageTest", kind: "software", note: "Waterfalls with connection and render-blocking detail.", href: "https://github.com/catchpoint/WebPageTest" },
+      { name: "Lighthouse", kind: "software", note: "Flags render-blocking resources and request chains.", href: "https://github.com/GoogleChrome/lighthouse" },
+      { name: "preconnect", kind: "standard", note: "Open a connection to an origin early.", href: "https://html.spec.whatwg.org/multipage/links.html#link-type-preconnect" },
+      { name: "TCP initial window", kind: "protocol", note: "RFC 6928: ten segments in the first round trip.", href: "https://www.rfc-editor.org/rfc/rfc6928" },
+    ],
+  },
   "ai/overfitting": {
     lead: "Every training tool reports train and validation loss for this reason.",
     tools: [
