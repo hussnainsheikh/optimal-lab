@@ -246,6 +246,11 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/operating-systems/epoll` | Five connections with requests at different times under blocking reads, a thread each, and epoll | — |
 | `/tracks/operating-systems/gc` | Reference counting and mark-and-sweep on a small heap with an unreachable cycle | — |
 | `/tracks/frontend/event-propagation` | Click a nested button and watch capture, target and bubble, then stopPropagation and delegation | — |
+| `/tracks/frontend/pwa` | Make a shop installable and offline-ready: a manifest checked against Chrome's criteria, a service worker strategy per request under offline, lie-fi and a deploy, and push prompt timing | — |
+| `/tracks/frontend/web-components` | A real <ol-rating> element defined in your browser: lifecycle callbacks, a shadow root against page CSS, custom properties and ::part, composed events and form association, all measured live | — |
+| `/tracks/frontend/accessibility-tree` | Switch eight parts of a page from div soup to semantic HTML: the accessibility tree with roles and names, headings, landmarks and links lists, the readout and Tab order | — |
+| `/tracks/frontend/aria` | Five widgets written several ways (div role=button, aria-label mismatch, aria-hidden vs inert, live regions, a presentation table) judged for mouse, keyboard, screen reader and voice users | — |
+| `/tracks/frontend/contrast-motion` | Pick text and background colours for WCAG contrast, fix a pale input border, simulate colour blindness on status badges, and respect your system's reduced-motion setting | — |
 | `/tracks/frontend/closures` | var vs let in a loop and a private counter, with the scopes each function keeps alive | — |
 | `/tracks/frontend/css-cascade` | Toggle seven competing rules and see which color wins and why | — |
 | `/tracks/frontend/stacking-contexts` | A z-index 9999 modal trapped under a z-index 10 header, rendered live, and the fixes | — |

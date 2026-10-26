@@ -261,6 +261,11 @@ import ProducerConsumerDemo from "./operating-systems/producer-consumer/Producer
 import EpollDemo from "./operating-systems/epoll/EpollDemo";
 import GcDemo from "./operating-systems/gc/GcDemo";
 import EventPropagationDemo from "./frontend/event-propagation/EventPropagationDemo";
+import PwaDemo from "./frontend/pwa/PwaDemo";
+import WebComponentsDemo from "./frontend/web-components/WebComponentsDemo";
+import AccessibilityTreeDemo from "./frontend/accessibility-tree/AccessibilityTreeDemo";
+import AriaDemo from "./frontend/aria/AriaDemo";
+import ContrastMotionDemo from "./frontend/contrast-motion/ContrastMotionDemo";
 import ClosuresDemo from "./frontend/closures/ClosuresDemo";
 import CascadeDemo from "./frontend/css-cascade/CascadeDemo";
 import StackingDemo from "./frontend/stacking-contexts/StackingDemo";
@@ -701,6 +706,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "operating-systems/epoll": <EpollDemo />,
   "operating-systems/gc": <GcDemo />,
   "frontend/event-propagation": <EventPropagationDemo />,
+  "frontend/pwa": <PwaDemo />,
+  "frontend/web-components": <WebComponentsDemo />,
+  "frontend/accessibility-tree": <AccessibilityTreeDemo />,
+  "frontend/aria": <AriaDemo />,
+  "frontend/contrast-motion": <ContrastMotionDemo />,
   "frontend/closures": <ClosuresDemo />,
   "frontend/css-cascade": <CascadeDemo />,
   "frontend/stacking-contexts": <StackingDemo />,
