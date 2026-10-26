@@ -495,6 +495,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/databases/btree-index` | Find an id through a three-level B+ tree vs a 9-page full scan; page reads at up to a billion rows | — |
 | `/tracks/networking/tcp-handshake` | TCP + TLS 1.2, TLS 1.3, QUIC and 0-RTT as message diagrams; time to first byte by distance | — |
 | `/tracks/operating-systems/race-conditions` | Two threads, one counter: taking turns, interleaved (lost update) and with a mutex; 1,000-increment stress run | — |
+| `/tracks/operating-systems/mutexes` | Threads queue for one lock on four cores, simulated microsecond by microsecond: no lock loses updates, spinning burns cores (and collapses with more threads than cores), sleeping costs wake-ups, and striping splits the queue | — |
+| `/tracks/operating-systems/semaphores` | A burst of 24 or 48 callers through a counting semaphore in front of a backend that peaks at 8 concurrent jobs: wait() and signal() step by step, the wait queue, and which permit count avoids timeouts | — |
+| `/tracks/operating-systems/atomics` | Interleave load/add/store, fetch_add, a CAS loop and a spinlock instruction by instruction and count lost updates, run the ABA bug on a lock-free stack with and without a version tag, and see why one shared counter doesn't scale | — |
+| `/tracks/operating-systems/thread-pools` | CPU-bound and I/O-bound tasks through pools of 1 to 128 workers and a thread per task: queueing, cores busy, a bounded queue rejecting work, thread stacks running out of memory, and cores × (1 + wait ÷ compute) | — |
 | `/tracks/security/xss` | Four comments rendered four ways (raw HTML, escaped, sanitized, CSP); what runs in the visitor's browser | — |
 | `/tracks/ai/tokenization` | Train a tiny BPE tokenizer merge by merge, then tokenize your own text | — |
 | `/tracks/ai/preference-tuning` | The same six preference pairs through RLHF and DPO side by side: what each needs, and the length bias both learn | — |
