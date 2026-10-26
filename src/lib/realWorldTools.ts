@@ -1499,6 +1499,24 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "IPsec ESP (RFC 4303)", kind: "protocol", note: "The encapsulation IPsec tunnels use, with its header and trailer.", href: "https://www.rfc-editor.org/rfc/rfc4303" },
     ],
   },
+  "networking/ddos-attacks": {
+    lead: "Services and mechanisms that absorb and filter floods.",
+    tools: [
+      { name: "Cloudflare DDoS protection", kind: "service", note: "Anycast scrubbing that filters floods across a global network.", href: "https://www.cloudflare.com/ddos/" },
+      { name: "AWS Shield", kind: "service", note: "Managed protection in front of AWS endpoints.", href: "https://aws.amazon.com/shield/" },
+      { name: "SYN cookies", kind: "standard", note: "Answer a handshake without storing half-open state (RFC 4987).", href: "https://www.rfc-editor.org/rfc/rfc4987" },
+      { name: "BCP 38 / RFC 2827", kind: "standard", note: "Source-address filtering at the network edge, which denies the spoofing floods rely on.", href: "https://www.rfc-editor.org/rfc/rfc2827" },
+    ],
+  },
+  "networking/mitm": {
+    lead: "The protections that make the middle position worthless.",
+    tools: [
+      { name: "HSTS (RFC 6797)", kind: "standard", note: "Tells browsers to only ever use HTTPS for a site, blocking downgrades.", href: "https://www.rfc-editor.org/rfc/rfc6797" },
+      { name: "HSTS preload list", kind: "service", note: "Ships the HTTPS-only rule to browsers before the first visit.", href: "https://hstspreload.org/" },
+      { name: "Certificate Transparency", kind: "standard", note: "Public logs that expose a certificate wrongly issued for a name.", href: "https://certificate.transparency.dev/" },
+      { name: "mkcert", kind: "software", note: "Make locally-trusted certificates for testing, instead of disabling verification.", href: "https://github.com/FiloSottile/mkcert" },
+    ],
+  },
   "operating-systems/virtual-memory": {
     lead: "Every modern OS and CPU translates addresses this way.",
     tools: [
