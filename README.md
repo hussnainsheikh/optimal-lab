@@ -249,6 +249,10 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/ai-native/ai-code-review` | A model reviewer on 12 pull requests with 10 hidden bugs: drop style, a confidence threshold and required evidence against precision and bugs caught | — |
 | `/tracks/ai-native/ai-tests` | Tests written from the code, from the spec, and from surviving mutants for a shipping function with a £50 bug; run them and mutation-test them | — |
 | `/tracks/ai-native/latency-ux` | The same 6-second agent task shown as a spinner, progress steps, streaming and optimistic UI | — |
+| `/tracks/ai-native/support-assistant` | Case study: 2,000 tickets a day drafted from 300 help articles; retrieval, grounded drafts and auto-send against agent hours and wrong replies | — |
+| `/tracks/ai-native/invoice-extractor` | Case study: 30,000 invoices a month through OCR, a small or large model, duplicate, sum, supplier and PO checks, and a review queue | — |
+| `/tracks/ai-native/meeting-notes` | Case study: a 60-minute meeting to recap and tasks; speaker labels, model choice, owner lookup among attendees and a host check | — |
+| `/tracks/ai-native/smart-search` | Case study: search over 20 million listings in 300 ms; vector size and quantization, where model calls go, a reranker, cost and keyword fallback | — |
 | `/tracks/ai-automation/classify-route` | Route support emails with free-text labels vs a fixed enum and see which ones fall through | — |
 | `/tracks/tools/build-mcp-server` | Three versions of an order-lookup tool and how a model uses each: names, schemas and lean results | — |
 | `/tracks/devops/files-permissions` | Flip rwx bits for owner, group and others and see the octal mode and who can read, edit or run the file | — |
