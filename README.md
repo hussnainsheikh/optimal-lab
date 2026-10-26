@@ -267,6 +267,9 @@ are written by hand, with no AI; keep that pledge when bringing problems into Pr
 | `/tracks/networking/traceroute` | Raise the TTL one hop at a time and watch each router reveal itself | — |
 | `/tracks/networking/flow-control` | A receiving app stalls; watch the window shrink to zero and the sender pause | — |
 | `/tracks/networking/latency-bandwidth` | Change bandwidth and round-trip time and see handshakes, slow start and transfer for three sizes | — |
+| `/tracks/networking/head-of-line-blocking` | Six files over a lossy link packet by packet: HTTP/1.1 on one connection or six, HTTP/2 over TCP and HTTP/3 over QUIC; what waits behind a gap, fast retransmit vs timeouts, and 200 runs at each loss rate | — |
+| `/tracks/networking/edge-networks` | Fetch an image, an API call and a fresh page from Sydney to Frankfurt: handshakes at the edge, slow start on the long haul, warm origin connections, and an hour across 30 edges with and without an origin shield | — |
+| `/tracks/networking/wireless` | Walk away from the router through walls: signal, noise and the Wi-Fi 6 rate it allows, a slow device dragging everyone without airtime fairness, retries under interference, and a 4G or 5G radio waking up | — |
 | `/tracks/operating-systems/memory-hierarchy` | Access times from registers to cross-continent round trips, in real time and at human scale | — |
 | `/tracks/operating-systems/cache-locality` | Sum an 8×8 array row by row and column by column through a tiny cache and count the misses | — |
 | `/tracks/operating-systems/producer-consumer` | A fast producer and slow consumer share a 3-slot buffer, without coordination and with semaphores | — |
