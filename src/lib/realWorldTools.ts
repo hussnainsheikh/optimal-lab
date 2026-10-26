@@ -683,6 +683,42 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "Hermitage", kind: "software", note: "Tests of which anomalies each database really prevents.", href: "https://github.com/ept/hermitage" },
     ],
   },
+  "databases/acid": {
+    lead: "Every relational database makes these promises; the settings that weaken them are worth knowing.",
+    tools: [
+      { name: "PostgreSQL", kind: "software", note: "Transactions, constraints, MVCC isolation and the WAL behind them.", href: "https://www.postgresql.org/" },
+      { name: "synchronous_commit", kind: "standard", note: "Postgres's setting for trading durability for commit speed.", href: "https://www.postgresql.org/docs/current/wal-async-commit.html" },
+      { name: "SQLite", kind: "software", note: "A full ACID database in one file, with its atomic-commit design documented.", href: "https://www.sqlite.org/atomiccommit.html" },
+      { name: "Jepsen", kind: "software", note: "Independent tests of what databases really guarantee under failure.", href: "https://jepsen.io/" },
+    ],
+  },
+  "databases/row-locks": {
+    lead: "Row locks, the views that show who's waiting, and queues built on SKIP LOCKED.",
+    tools: [
+      { name: "Row-level locks", kind: "standard", note: "Postgres's four row-lock modes and which conflict.", href: "https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-ROWS" },
+      { name: "pg_locks", kind: "software", note: "The view of every lock held or awaited, with pg_blocking_pids().", href: "https://www.postgresql.org/docs/current/view-pg-locks.html" },
+      { name: "InnoDB locking reads", kind: "software", note: "MySQL's FOR UPDATE, FOR SHARE, NOWAIT and SKIP LOCKED.", href: "https://dev.mysql.com/doc/refman/8.4/en/innodb-locking-reads.html" },
+      { name: "PGMQ", kind: "software", note: "A message queue inside Postgres, built on SKIP LOCKED.", href: "https://github.com/pgmq/pgmq" },
+    ],
+  },
+  "databases/db-deadlocks": {
+    lead: "Every lock-based database detects deadlocks; logging them is how you find the cause.",
+    tools: [
+      { name: "Postgres deadlocks", kind: "software", note: "How Postgres detects deadlocks, and deadlock_timeout.", href: "https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-DEADLOCKS" },
+      { name: "log_lock_waits", kind: "standard", note: "Log every lock wait longer than deadlock_timeout.", href: "https://www.postgresql.org/docs/current/runtime-config-logging.html" },
+      { name: "InnoDB deadlocks", kind: "software", note: "MySQL's detector and SHOW ENGINE INNODB STATUS.", href: "https://dev.mysql.com/doc/refman/8.4/en/innodb-deadlocks.html" },
+      { name: "SQL Server deadlocks guide", kind: "software", note: "Deadlock graphs and victim choice in SQL Server.", href: "https://learn.microsoft.com/en-us/sql/relational-databases/sql-server-deadlocks-guide" },
+    ],
+  },
+  "databases/optimistic-locking": {
+    lead: "Compare-and-set on a version shows up in databases, HTTP and cluster APIs alike.",
+    tools: [
+      { name: "HTTP If-Match", kind: "standard", note: "ETags and 412 Precondition Failed: optimistic locking for REST APIs.", href: "https://www.rfc-editor.org/rfc/rfc9110#name-if-match" },
+      { name: "DynamoDB condition expressions", kind: "service", note: "Write only if an attribute still has the value you read.", href: "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html" },
+      { name: "Redis WATCH", kind: "software", note: "Abort a MULTI/EXEC transaction if a watched key changed.", href: "https://redis.io/docs/latest/develop/using-commands/transactions/" },
+      { name: "Kubernetes resourceVersion", kind: "platform", note: "Every object update is a compare-and-set on its version.", href: "https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions" },
+    ],
+  },
   "networking/dns-resolution": {
     lead: "Every connection starts with a lookup like this one.",
     tools: [
