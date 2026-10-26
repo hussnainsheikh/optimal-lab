@@ -1411,6 +1411,33 @@ export const REAL_WORLD_TOOLS: Record<string, RealWorldEntry> = {
       { name: "HikariCP", kind: "software", note: "The standard JVM connection pool.", href: "https://github.com/brettwooldridge/HikariCP" },
     ],
   },
+  "databases/caching-db": {
+    lead: "In-memory caches that sit in front of a database, self-hosted or managed.",
+    tools: [
+      { name: "Redis", kind: "software", note: "The usual cache in front of a database: GET, SET … EX, eviction policies.", href: "https://github.com/redis/redis" },
+      { name: "Valkey", kind: "software", note: "An open-source fork of Redis, run by the Linux Foundation.", href: "https://github.com/valkey-io/valkey" },
+      { name: "Memcached", kind: "software", note: "A simple, multi-threaded key-value cache.", href: "https://memcached.org/" },
+      { name: "Amazon ElastiCache", kind: "service", note: "Managed Redis, Valkey or Memcached on AWS.", href: "https://aws.amazon.com/elasticache/" },
+    ],
+  },
+  "databases/redis-internals": {
+    lead: "Redis and the alternatives built on the same model.",
+    tools: [
+      { name: "Redis persistence", kind: "software", note: "RDB snapshots, the append-only file, and their fsync settings.", href: "https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/" },
+      { name: "Key eviction", kind: "software", note: "maxmemory and the eviction policies, with sampled LRU and LFU.", href: "https://redis.io/docs/latest/develop/reference/eviction/" },
+      { name: "Valkey", kind: "software", note: "The Linux Foundation's Redis fork, with multi-threaded I/O.", href: "https://github.com/valkey-io/valkey" },
+      { name: "Dragonfly", kind: "software", note: "A Redis-compatible store that uses all CPU cores.", href: "https://github.com/dragonflydb/dragonfly" },
+    ],
+  },
+  "databases/document-databases": {
+    lead: "Document stores, and JSON inside a relational database.",
+    tools: [
+      { name: "MongoDB", kind: "software", note: "The best-known document database, with $jsonSchema validation.", href: "https://www.mongodb.com/" },
+      { name: "Firestore", kind: "service", note: "Google's serverless document database.", href: "https://firebase.google.com/docs/firestore" },
+      { name: "Couchbase", kind: "software", note: "A JSON document database with SQL++ queries.", href: "https://www.couchbase.com/" },
+      { name: "PostgreSQL jsonb", kind: "software", note: "Documents in a column, with GIN indexes on their fields.", href: "https://www.postgresql.org/docs/current/datatype-json.html" },
+    ],
+  },
   "databases/join-algorithms": {
     lead: "Every SQL planner chooses between these three.",
     tools: [

@@ -312,6 +312,9 @@ import TaskPlanningDemo from "./system-design/task-planning/TaskPlanningDemo";
 import MultiAgentDemo from "./system-design/multi-agent/MultiAgentDemo";
 import DurableExecutionDemo from "./system-design/durable-execution/DurableExecutionDemo";
 import PoolDemo from "./databases/connection-pooling/PoolDemo";
+import CachingDbDemo from "./databases/caching-db/CachingDbDemo";
+import RedisInternalsDemo from "./databases/redis-internals/RedisInternalsDemo";
+import DocumentDbDemo from "./databases/document-databases/DocumentDbDemo";
 import JoinDemo from "./databases/join-algorithms/JoinDemo";
 import NatDemo from "./networking/nat/NatDemo";
 import VirtualMemoryDemo from "./operating-systems/virtual-memory/VirtualMemoryDemo";
@@ -773,6 +776,9 @@ const SESSIONS: Record<string, ReactNode> = {
   "system-design/multi-agent": <MultiAgentDemo />,
   "system-design/durable-execution": <DurableExecutionDemo />,
   "databases/connection-pooling": <PoolDemo />,
+  "databases/caching-db": <CachingDbDemo />,
+  "databases/redis-internals": <RedisInternalsDemo />,
+  "databases/document-databases": <DocumentDbDemo />,
   "databases/join-algorithms": <JoinDemo />,
   "networking/nat": <NatDemo />,
   "operating-systems/virtual-memory": <VirtualMemoryDemo />,
