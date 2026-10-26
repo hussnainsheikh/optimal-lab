@@ -270,6 +270,11 @@ import ChatVsEmbeddedDemo from "./ai-native/chat-vs-embedded/ChatVsEmbeddedDemo"
 import CopilotsDemo from "./ai-native/copilots/CopilotsDemo";
 import GracefulFailureDemo from "./ai-native/graceful-failure/GracefulFailureDemo";
 import RetriesDemo from "./ai-automation/retries-errors/RetriesDemo";
+import ApiConnectionsDemo from "./ai-automation/api-connections/ApiConnectionsDemo";
+import EmailAutomationDemo from "./ai-automation/email-automation/EmailAutomationDemo";
+import SheetsCrmsDemo from "./ai-automation/sheets-crms/SheetsCrmsDemo";
+import DocumentProcessingDemo from "./ai-automation/document-processing/DocumentProcessingDemo";
+import ChatBotsDemo from "./ai-automation/chat-bots/ChatBotsDemo";
 import ConfidenceDemo from "./ai-automation/confidence-fallbacks/ConfidenceDemo";
 import RouterDemo from "./tools/model-routers/RouterDemo";
 import StreamHopsDemo from "./system-design/streaming-responses/StreamHopsDemo";
@@ -633,6 +638,11 @@ const SESSIONS: Record<string, ReactNode> = {
   "ai-native/copilots": <CopilotsDemo />,
   "ai-native/graceful-failure": <GracefulFailureDemo />,
   "ai-automation/retries-errors": <RetriesDemo />,
+  "ai-automation/api-connections": <ApiConnectionsDemo />,
+  "ai-automation/email-automation": <EmailAutomationDemo />,
+  "ai-automation/sheets-crms": <SheetsCrmsDemo />,
+  "ai-automation/document-processing": <DocumentProcessingDemo />,
+  "ai-automation/chat-bots": <ChatBotsDemo />,
   "ai-automation/confidence-fallbacks": <ConfidenceDemo />,
   "tools/model-routers": <RouterDemo />,
   "system-design/streaming-responses": <StreamHopsDemo />,
