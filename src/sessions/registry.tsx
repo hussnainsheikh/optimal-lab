@@ -539,6 +539,8 @@ import ActorsChannelsDemo from "./operating-systems/actors-channels/ActorsChanne
 import ThreadsDemo from "./operating-systems/threads/ThreadsDemo";
 import ContextSwitchDemo from "./operating-systems/context-switching/ContextSwitchDemo";
 import ForkExecDemo from "./operating-systems/fork-exec/ForkExecDemo";
+import HypervisorsDemo from "./operating-systems/hypervisors/HypervisorsDemo";
+import NamespacesCgroupsDemo from "./operating-systems/namespaces-cgroups/NamespacesCgroupsDemo";
 import IpcDemo from "./operating-systems/ipc/IpcDemo";
 import StackHeapDemo from "./operating-systems/stack-heap/StackHeapDemo";
 import PageFaultsDemo from "./operating-systems/page-faults/PageFaultsDemo";
@@ -1091,6 +1093,8 @@ const SESSIONS: Record<string, ReactNode> = {
   "operating-systems/threads": <ThreadsDemo />,
   "operating-systems/context-switching": <ContextSwitchDemo />,
   "operating-systems/fork-exec": <ForkExecDemo />,
+  "operating-systems/hypervisors": <HypervisorsDemo />,
+  "operating-systems/namespaces-cgroups": <NamespacesCgroupsDemo />,
   "operating-systems/ipc": <IpcDemo />,
   "operating-systems/stack-heap": <StackHeapDemo />,
   "operating-systems/page-faults": <PageFaultsDemo />,
